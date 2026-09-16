@@ -2,7 +2,7 @@
 lang: it
 source: content/en/site-en.md (traduzione)
 updated: 2026-09-16
-note: Traduzione italiana per correggere il selettore linguistico IT del prototipo ChatGPT Site (eduardo-alencar.ealencar.chatgpt.site), che mostrava contenuto solo in inglese/portoghese. Il sito Astro (site-astro/) resta EN/PT per decisione approvata il 17/08/2026; questo file serve solo al prototipo ChatGPT Site.
+note: Fonte editoriale pubblica in italiano per eduardocnalencar.com. Il sito Astro (site-astro/) la pubblica insieme a EN/PT/ES dal 2026-09-16.
 ---
 
 # Home

@@ -2,7 +2,7 @@
 lang: es
 source: content/en/site-en.md (traducción)
 updated: 2026-09-16
-note: Traducción al español para corregir el selector de idioma ES del prototipo ChatGPT Site (eduardo-alencar.ealencar.chatgpt.site), que mostraba contenido solo en inglés/portugués. El sitio Astro (site-astro/) permanece EN/PT por decisión aprobada el 17/08/2026; este archivo es solo para el prototipo ChatGPT Site.
+note: Fuente editorial pública en español para eduardocnalencar.com. El sitio Astro (site-astro/) la publica junto con EN/PT/IT desde 2026-09-16.
 ---
 
 # Inicio
