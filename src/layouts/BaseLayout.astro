@@ -2,10 +2,13 @@
 import '../styles/global.css';
 interface Props { title: string; description: string; lang?: 'en' | 'pt'; }
 const { title, description, lang = 'en' } = Astro.props;
-const alternate = lang === 'pt' ? '/en/' : '/pt/';
+const base = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL : `${import.meta.env.BASE_URL}/`;
+const local = (path: string) => `${base}${path.replace(/^\//, '')}`;
+const alternatePath = lang === 'pt' ? '/en/' : '/pt/';
+const alternate = local(alternatePath);
 const nav = lang === 'pt'
-  ? [['Início', '/pt/'], ['Pesquisa', '/pt/research/'], ['Laboratório', '/pt/evidence-lab/'], ['Publicações', '/pt/publications/'], ['Docência', '/pt/teaching/'], ['CV', '/pt/cv/'], ['Textos', '/pt/writing/']]
-  : [['Home', '/en/'], ['Research', '/en/research/'], ['Evidence Lab', '/en/evidence-lab/'], ['Publications', '/en/publications/'], ['Teaching', '/en/teaching/'], ['CV', '/en/cv/'], ['Writing', '/en/writing/']];
+  ? [['Início', local('/pt/')], ['Pesquisa', local('/pt/research/')], ['Laboratório', local('/pt/evidence-lab/')], ['Publicações', local('/pt/publications/')], ['Docência', local('/pt/teaching/')], ['CV', local('/pt/cv/')], ['Textos', local('/pt/writing/')]]
+  : [['Home', local('/en/')], ['Research', local('/en/research/')], ['Evidence Lab', local('/en/evidence-lab/')], ['Publications', local('/en/publications/')], ['Teaching', local('/en/teaching/')], ['CV', local('/en/cv/')], ['Writing', local('/en/writing/')]];
 ---
 <!doctype html>
 <html lang={lang}>
@@ -14,9 +17,9 @@ const nav = lang === 'pt'
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content={description} />
     <link rel="canonical" href={new URL(Astro.url.pathname, Astro.site)} />
-    <link rel="alternate" hreflang={lang === 'pt' ? 'en' : 'pt'} href={new URL(alternate, Astro.site)} />
+    <link rel="alternate" hreflang={lang === 'pt' ? 'en' : 'pt'} href={new URL(alternatePath, Astro.site)} />
     <link rel="alternate" hreflang="x-default" href={new URL('/en/', Astro.site)} />
-    <link rel="alternate" type="application/rss+xml" title="Evidence notebook" href="/rss.xml" />
+    <link rel="alternate" type="application/rss+xml" title="Evidence notebook" href={local('/rss.xml')} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:type" content="website" />
@@ -25,7 +28,7 @@ const nav = lang === 'pt'
   <body>
     <a class="skip" href="#content">{lang === 'pt' ? 'Pular para o conteúdo' : 'Skip to content'}</a>
     <header class="site-header">
-      <a class="brand" href={`/${lang}/`}>EA<span>·</span> Evidence Lab</a>
+      <a class="brand" href={local(`/${lang}/`)}>EA<span>·</span> Evidence Lab</a>
       <nav aria-label={lang === 'pt' ? 'Navegação principal' : 'Primary navigation'}>
         {nav.map(([label, href]) => <a href={href}>{label}</a>)}
       </nav>

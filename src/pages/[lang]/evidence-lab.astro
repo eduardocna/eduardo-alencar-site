@@ -3,9 +3,10 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import { publicItems } from '../../data/catalog';
 export function getStaticPaths() { return ['en', 'pt'].map((lang) => ({ params: { lang } })); }
 const lang = Astro.params.lang === 'pt' ? 'pt' : 'en'; const pt = lang === 'pt';
+const base = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL : `${import.meta.env.BASE_URL}/`;
 const tools = publicItems.filter((item) => item.type.includes('Aplicação') || item.type.includes('Sistema'));
 ---
 <BaseLayout lang={lang} title={pt ? 'Laboratório de evidência | Eduardo Alencar' : 'Evidence Lab | Eduardo Alencar'} description={pt ? 'Ferramentas, dados, limites e trilhas de evidência.' : 'Tools, data, limitations and evidence trails.'}>
   <section class="section"><p class="eyebrow">Evidence Lab</p><h1 class="page-title">{pt ? 'Não é um portfólio de promessas.' : 'Not a portfolio of promises.'}</h1><p class="lede">{pt ? 'Cada ferramenta parte de uma pergunta operacional, declara seus dados e método, expõe limites e aponta o próximo passo de verificação humana.' : 'Each tool begins with an operational question, states its data and method, surfaces limits, and points to the next human verification step.'}</p></section>
-  <section class="section"><div class="case-grid">{tools.map((item) => <article class="case"><p class="eyebrow">{item.type} · {item.year}</p><h3>{item.title}</h3><p>{item.summary}</p><p><strong>{pt ? 'Métodos:' : 'Methods:'}</strong> {item.methods.join(' · ')}</p><p class="notice">{item.rights}</p><a class="button" href={`/publications/${item.slug}/`}>{pt ? 'Abrir trilha de evidência' : 'Open evidence trail'}</a></article>)}</div></section>
+  <section class="section"><div class="case-grid">{tools.map((item) => <article class="case"><p class="eyebrow">{item.type} · {item.year}</p><h3>{item.title}</h3><p>{item.summary}</p><p><strong>{pt ? 'Métodos:' : 'Methods:'}</strong> {item.methods.join(' · ')}</p><p class="notice">{item.rights}</p><a class="button" href={`${base}publications/${item.slug}/`}>{pt ? 'Abrir trilha de evidência' : 'Open evidence trail'}</a></article>)}</div></section>
 </BaseLayout>

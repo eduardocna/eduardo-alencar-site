@@ -5,6 +5,7 @@ import { publicItems } from '../../data/catalog';
 export function getStaticPaths() { return ['en', 'pt'].map((lang) => ({ params: { lang } })); }
 const lang = Astro.params.lang === 'pt' ? 'pt' : 'en';
 const pt = lang === 'pt';
+const base = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL : `${import.meta.env.BASE_URL}/`;
 const tools = publicItems.filter((item) => item.type.includes('Aplicação') || item.type.includes('Sistema'));
 const featured = publicItems.filter((item) => ['synthetic-control-lava-jato', 'phd-procurement-fraud', 'formal-replies-substantive-evasion'].includes(item.slug));
 ---
@@ -14,11 +15,11 @@ const featured = publicItems.filter((item) => ['synthetic-control-lava-jato', 'p
       <p class="eyebrow">Eduardo Alencar · PhD · scholar-practitioner</p>
       <h1>{pt ? 'Integridade pública, medida.' : 'Public integrity, measured.'}</h1>
       <p class="lede">{pt ? 'Construo infraestrutura de evidência para mostrar se fiscalização, governança e inovação pública funcionam na prática.' : 'I build evidence infrastructure that shows whether oversight, governance and public innovation work in practice.'}</p>
-      <div class="actions"><a class="button" href={`/${lang}/evidence-lab/`}>{pt ? 'Explorar o laboratório' : 'Explore the lab'}</a><a class="button secondary" href={`/${lang}/publications/`}>{pt ? 'Ver publicações' : 'Browse publications'}</a></div>
+      <div class="actions"><a class="button" href={`${base}${lang}/evidence-lab/`}>{pt ? 'Explorar o laboratório' : 'Explore the lab'}</a><a class="button secondary" href={`${base}${lang}/publications/`}>{pt ? 'Ver publicações' : 'Browse publications'}</a></div>
     </div>
     <aside class="hero-note"><strong>{pt ? 'A promessa do site' : 'The site promise'}</strong><p>{pt ? 'Cada afirmação relevante aponta para uma fonte, método, limite ou artefato verificável.' : 'Every material claim points to a source, method, limitation, or verifiable artifact.'}</p></aside>
   </section>
   <section class="section"><p class="eyebrow">{pt ? 'Mesa de evidência' : 'Evidence desk'}</p><div class="metric-grid"><article class="metric"><strong>13,042</strong><span>{pt ? 'pares de requerimento e resposta no corpus de fiscalização' : 'oversight request–response pairs in the research corpus'}</span></article><article class="metric"><strong>30,304</strong><span>{pt ? 'contratações federais rastreadas pelo Radar Aberto' : 'federal contracts screened by Radar Aberto'}</span></article><article class="metric"><strong>32</strong><span>{pt ? 'testes de atenção, sempre com verificação humana' : 'attention tests, always requiring human verification'}</span></article></div><p class="trail"><a href="https://radar-aberto-integridade.streamlit.app/">{pt ? 'Fonte e método do Radar Aberto' : 'Radar Aberto source and method'}</a> · {pt ? 'números atualizados na documentação do projeto.' : 'figures maintained in the project documentation.'}</p></section>
-  <section class="section"><p class="eyebrow">{pt ? 'Artefatos vivos' : 'Live artifacts'}</p><div class="case-grid">{tools.map((item) => <article class="case"><p class="eyebrow">{item.status}</p><h3>{item.title}</h3><p>{item.summary}</p><a class="button secondary" href={`/publications/${item.slug}/`}>{pt ? 'Ver caso e limites' : 'View case and limits'}</a></article>)}</div></section>
-  <section class="section"><p class="eyebrow">{pt ? 'Pesquisa selecionada' : 'Selected research'}</p><div class="card-grid">{featured.map((item) => <PublicationCard item={item} lang={lang} />)}</div><p><a href={`/${lang}/research/`}>{pt ? 'Ver agenda de pesquisa →' : 'See research agenda →'}</a></p></section>
+  <section class="section"><p class="eyebrow">{pt ? 'Artefatos vivos' : 'Live artifacts'}</p><div class="case-grid">{tools.map((item) => <article class="case"><p class="eyebrow">{item.status}</p><h3>{item.title}</h3><p>{item.summary}</p><a class="button secondary" href={`${base}publications/${item.slug}/`}>{pt ? 'Ver caso e limites' : 'View case and limits'}</a></article>)}</div></section>
+  <section class="section"><p class="eyebrow">{pt ? 'Pesquisa selecionada' : 'Selected research'}</p><div class="card-grid">{featured.map((item) => <PublicationCard item={item} lang={lang} />)}</div><p><a href={`${base}${lang}/research/`}>{pt ? 'Ver agenda de pesquisa →' : 'See research agenda →'}</a></p></section>
 </BaseLayout>
