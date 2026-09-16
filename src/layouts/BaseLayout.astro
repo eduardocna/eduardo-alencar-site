@@ -1,23 +1,23 @@
 ---
 import '../styles/global.css';
-interface Props { title: string; description: string; lang?: 'en' | 'pt'; }
+import '../styles/narrative.css';
+import { copy, locales, sectionIds, type Locale } from '../data/site';
+interface Props { title: string; description: string; lang?: Locale; }
 const { title, description, lang = 'en' } = Astro.props;
 const base = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL : `${import.meta.env.BASE_URL}/`;
 const local = (path: string) => `${base}${path.replace(/^\//, '')}`;
-const alternatePath = lang === 'pt' ? '/en/' : '/pt/';
-const alternate = local(alternatePath);
-const nav = lang === 'pt'
-  ? [['Início', local('/pt/')], ['Pesquisa', local('/pt/research/')], ['Laboratório', local('/pt/evidence-lab/')], ['Publicações', local('/pt/publications/')], ['Docência', local('/pt/teaching/')], ['CV', local('/pt/cv/')], ['Textos', local('/pt/writing/')]]
-  : [['Home', local('/en/')], ['Research', local('/en/research/')], ['Evidence Lab', local('/en/evidence-lab/')], ['Publications', local('/en/publications/')], ['Teaching', local('/en/teaching/')], ['CV', local('/en/cv/')], ['Writing', local('/en/writing/')]];
+const ui = copy[lang];
+const localeNames: Record<Locale, string> = { en: 'EN', pt: 'PT', es: 'ES', it: 'IT' };
+const canonicalPath = `/${lang}/`;
 ---
 <!doctype html>
-<html lang={lang}>
+<html lang={lang} data-theme="dark">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content={description} />
-    <link rel="canonical" href={new URL(Astro.url.pathname, Astro.site)} />
-    <link rel="alternate" hreflang={lang === 'pt' ? 'en' : 'pt'} href={new URL(alternatePath, Astro.site)} />
+    <link rel="canonical" href={new URL(canonicalPath, Astro.site)} />
+    {locales.map((locale) => <link rel="alternate" hreflang={locale} href={new URL(`/${locale}/`, Astro.site)} />)}
     <link rel="alternate" hreflang="x-default" href={new URL('/en/', Astro.site)} />
     <link rel="alternate" type="application/rss+xml" title="Evidence notebook" href={local('/rss.xml')} />
     <meta property="og:title" content={title} />
@@ -26,18 +26,17 @@ const nav = lang === 'pt'
     <title>{title}</title>
   </head>
   <body>
-    <a class="skip" href="#content">{lang === 'pt' ? 'Pular para o conteúdo' : 'Skip to content'}</a>
-    <header class="site-header">
+    <a class="skip" href="#home">Skip to content</a>
+    <header class="protobar">
       <a class="brand" href={local(`/${lang}/`)}>EA<span>·</span> Evidence Lab</a>
-      <nav aria-label={lang === 'pt' ? 'Navegação principal' : 'Primary navigation'}>
-        {nav.map(([label, href]) => <a href={href}>{label}</a>)}
-      </nav>
-      <a class="language" href={alternate}>{lang === 'pt' ? 'EN' : 'PT'}</a>
+      <nav aria-label="Primary navigation">{sectionIds.map((id, index) => <a href={`#${id}`}>{ui.nav[index]}</a>)}</nav>
+      <div class="toolbar"><div class="langtoggle" aria-label="Language selector">{locales.map((locale) => <a href={local(`/${locale}/`)} aria-current={locale === lang ? 'page' : undefined}>{localeNames[locale]}</a>)}</div><button class="themebtn" id="themebtn" type="button">{ui.theme}</button></div>
     </header>
-    <main id="content"><slot /></main>
+    <main><slot /></main>
     <footer>
       <p>© {new Date().getFullYear()} Eduardo Alencar · Brasília, Brazil</p>
       <p><a href="https://www.linkedin.com/in/eduardocna">LinkedIn</a> · <a href="https://orcid.org/0000-0002-9218-1798">ORCID</a> · <a href="https://scholar.google.com/citations?user=vJ12isgAAAAJ">Google Scholar</a> · <a href="mailto:eduardocna@gmail.com">Email</a></p>
     </footer>
+    <script is:inline>{`const b=document.getElementById('themebtn');b?.addEventListener('click',()=>{const root=document.documentElement;const light=root.dataset.theme==='light';root.dataset.theme=light?'dark':'light';b.textContent=light?'${ui.theme}':'Dark view'})`}</script>
   </body>
 </html>
