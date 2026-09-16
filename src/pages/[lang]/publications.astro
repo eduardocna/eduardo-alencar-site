@@ -1,0 +1,13 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PublicationCard from '../../components/PublicationCard.astro';
+import { publicItems } from '../../data/catalog';
+export function getStaticPaths() { return ['en', 'pt'].map((lang) => ({ params: { lang } })); }
+const lang = Astro.params.lang === 'pt' ? 'pt' : 'en'; const pt = lang === 'pt';
+---
+<BaseLayout lang={lang} title={pt ? 'Publicações | Eduardo Alencar' : 'Publications | Eduardo Alencar'} description={pt ? 'Atlas verificável de produção, pesquisa e ferramentas.' : 'A verifiable atlas of scholarship, research and tools.'}>
+  <section class="section"><p class="eyebrow">{pt ? 'Atlas público' : 'Public atlas'}</p><h1 class="page-title">{pt ? 'Produção, sem caixas-pretas.' : 'Work, without black boxes.'}</h1><p class="lede">{pt ? 'Filtre por tema, método, idioma ou status. O status editorial descreve a situação atual e não converte submissão em publicação.' : 'Filter by theme, method, language, or status. Editorial status describes the current state and never turns a submission into a publication.'}</p>
+  <div class="filter-bar"><label>{pt ? 'Tema' : 'Theme'} <select data-filter="theme"><option value="">{pt ? 'Todos' : 'All'}</option><option value="integridade">{pt ? 'Integridade' : 'Integrity'}</option><option value="governança">{pt ? 'Governança' : 'Governance'}</option><option value="fiscalização">{pt ? 'Fiscalização' : 'Oversight'}</option><option value="ia">IA</option></select></label><label>{pt ? 'Idioma' : 'Language'} <select data-filter="language"><option value="">{pt ? 'Todos' : 'All'}</option><option value="en">EN</option><option value="pt">PT</option></select></label><label>{pt ? 'Status' : 'Status'} <select data-filter="status"><option value="">{pt ? 'Todos' : 'All'}</option><option value="publicado">{pt ? 'Publicado' : 'Published'}</option><option value="em avaliacao">{pt ? 'Em avaliação' : 'Under review'}</option><option value="em preparacao">{pt ? 'Em preparação' : 'In preparation'}</option></select></label></div>
+  <div class="card-grid" id="catalog">{publicItems.map((item) => <PublicationCard item={item} lang={lang} />)}</div></section>
+  <script is:inline>{`const selects=document.querySelectorAll('[data-filter]');const cards=document.querySelectorAll('#catalog .publication-card');function filter(){const selected=Object.fromEntries([...selects].map(s=>[s.dataset.filter,s.value]));cards.forEach(card=>{const ok=Object.entries(selected).every(([key,value])=>!value||card.dataset[key].includes(value));card.hidden=!ok})}selects.forEach(select=>select.addEventListener('change',filter));`}</script>
+</BaseLayout>

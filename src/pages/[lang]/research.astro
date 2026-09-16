@@ -1,0 +1,12 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PublicationCard from '../../components/PublicationCard.astro';
+import { publicItems } from '../../data/catalog';
+export function getStaticPaths() { return ['en', 'pt'].map((lang) => ({ params: { lang } })); }
+const lang = Astro.params.lang === 'pt' ? 'pt' : 'en'; const pt = lang === 'pt';
+const research = publicItems.filter((item) => !item.type.includes('Aplicação') && !item.type.includes('Sistema') && !item.type.includes('Currículo') && !item.type.includes('Material'));
+---
+<BaseLayout lang={lang} title={pt ? 'Pesquisa | Eduardo Alencar' : 'Research | Eduardo Alencar'} description={pt ? 'Agenda de pesquisa aplicada sobre integridade e capacidade estatal.' : 'Applied research agenda on integrity and state capacity.'}>
+  <section class="section"><p class="eyebrow">{pt ? 'Agenda de pesquisa' : 'Research agenda'}</p><h1 class="page-title">{pt ? 'Evidência que chega à decisão.' : 'Evidence that reaches decisions.'}</h1><p class="lede">{pt ? 'Compras públicas, integridade, inferência causal e fiscalização analítica, com atenção explícita a limites de evidência.' : 'Public procurement, integrity, causal inference and oversight analytics, with explicit attention to evidentiary limits.'}</p></section>
+  <section class="section"><div class="card-grid">{research.map((item) => <PublicationCard item={item} lang={lang} />)}</div></section>
+</BaseLayout>

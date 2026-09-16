@@ -1,0 +1,8 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+export function getStaticPaths() { return ['en', 'pt'].map((lang) => ({ params: { lang } })); }
+const lang = Astro.params.lang === 'pt' ? 'pt' : 'en'; const pt = lang === 'pt';
+---
+<BaseLayout lang={lang} title={pt ? 'Contato | Eduardo Alencar' : 'Contact | Eduardo Alencar'} description={pt ? 'Contato para pesquisa, palestras e colaboração.' : 'Contact for research, speaking and collaboration.'}>
+  <section class="section"><p class="eyebrow">{pt ? 'Contato' : 'Contact'}</p><h1 class="page-title">{pt ? 'Vamos tornar a evidência utilizável.' : 'Let’s make evidence usable.'}</h1><p class="lede">{pt ? 'Para pesquisa, colaboração, palestras ou acesso a materiais que não podem ser publicados integralmente.' : 'For research, collaboration, speaking, or access to material that cannot be published in full.'}</p><div class="actions"><a class="button" href="mailto:eduardocna@gmail.com">eduardocna@gmail.com</a><a class="button secondary" href="https://www.linkedin.com/in/eduardocna">LinkedIn</a></div></section>
+</BaseLayout>

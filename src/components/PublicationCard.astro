@@ -1,0 +1,14 @@
+---
+import { statusLabel, type CatalogItem } from '../data/catalog';
+interface Props { item: CatalogItem; lang?: 'en' | 'pt'; }
+const { item, lang = 'en' } = Astro.props;
+const labels = lang === 'pt' ? { view: 'Ver registro', source: 'Trilha de evidência' } : { view: 'View record', source: 'Evidence trail' };
+---
+<article class="publication-card" data-theme={item.themes.join(' ').toLowerCase()} data-method={item.methods.join(' ').toLowerCase()} data-status={item.status} data-language={item.languages.join(' ')}>
+  <p class="eyebrow">{item.type} · {item.year}</p>
+  <h3><a href={`/publications/${item.slug}/`}>{item.title}</a></h3>
+  <p>{item.summary}</p>
+  <p class="tags">{item.themes.map((theme) => <span>{theme}</span>)}</p>
+  <div class="card-footer"><span class="status">{statusLabel(item.status, lang)}</span><a href={`/publications/${item.slug}/`}>{labels.view} →</a></div>
+  <details><summary>{labels.source}</summary><code>{item.canonical_source}</code><p>{item.rights}</p></details>
+</article>

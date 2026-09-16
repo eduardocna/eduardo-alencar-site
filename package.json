@@ -1,0 +1,17 @@
+{
+  "name": "eduardo-alencar-site",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro check && astro build",
+    "preview": "astro preview",
+    "validate:catalog": "python3 scripts/validate_catalog.py"
+  },
+  "devDependencies": {
+    "@astrojs/check": "^0.9.10",
+    "astro": "^5.0.0",
+    "typescript": "^5.7.0"
+  }
+}

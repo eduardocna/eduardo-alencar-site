@@ -1,0 +1,11 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { publicItems, statusLabel } from '../../data/catalog';
+export function getStaticPaths() { return publicItems.map((item) => ({ params: { slug: item.slug }, props: { item } })); }
+const { item } = Astro.props;
+---
+<BaseLayout title={`${item.title} | Eduardo Alencar`} description={item.summary}>
+  <section class="section"><p class="eyebrow">{item.type} · {item.year}</p><h1 class="page-title">{item.title}</h1><p class="lede">{item.summary}</p><div class="actions"><a class="button" href={item.public_url}>{item.access === 'publico' ? 'Open public resource' : 'Read public summary'}</a>{item.repository_url && <a class="button secondary" href={item.repository_url}>Code / report</a>}</div></section>
+  <section class="section"><div class="case-grid"><article class="case"><h3>Methods</h3><p>{item.methods.length ? item.methods.join(' · ') : 'Institutional record'}</p><h3>Themes</h3><p>{item.themes.join(' · ')}</p><h3>Status</h3><p>{statusLabel(item.status)}</p></article><article class="case"><h3>Evidence trail</h3><p><strong>Canonical source</strong></p><code>{item.canonical_source}</code><p><strong>Publication condition</strong></p><p>{item.rights}</p><p><strong>Last checked</strong><br />{item.last_checked}</p></article></div></section>
+  {item.access !== 'publico' && <section class="notice">This record is public; the underlying file is deliberately not published until rights, privacy, or editorial status permits it.</section>}
+</BaseLayout>
