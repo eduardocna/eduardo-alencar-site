@@ -88,9 +88,13 @@ const editorial: Record<string, WorkEditorial> = {
     methods: l('Human-validated language models and text-as-data', 'Modelos de linguagem com validação humana e text-as-data', 'Modelos lingüísticos con validación humana y text-as-data', 'Modelli linguistici con validazione umana e text-as-data')
   },
   'cv-eduardo-alencar': {
-    kind: 'profile', status: 'updating', category: 'profile',
+    kind: 'profile', status: 'published', category: 'profile',
     summary: l('Academic and professional record covering public service, research, teaching, awards and professional service.', 'Trajetória acadêmica e profissional cobrindo serviço público, pesquisa, docência, prêmios e serviço profissional.', 'Trayectoria académica y profesional que abarca servicio público, investigación, docencia, premios y servicio profesional.', 'Percorso accademico e professionale che comprende servizio pubblico, ricerca, didattica, premi e servizio professionale.'),
-    methods: l('Verified curriculum record', 'Currículo verificável', 'Currículum verificable', 'Curriculum verificabile')
+    methods: l('Verified curriculum record', 'Currículo verificável', 'Currículum verificable', 'Curriculum verificabile'),
+    links: [
+      { kind: 'download', href: '/downloads/cv-eduardo-alencar-en.pdf', label: l('Download CV (English, PDF)', 'Baixar CV (inglês, PDF)', 'Descargar CV (inglés, PDF)', 'Scarica CV (inglese, PDF)') },
+      { kind: 'download', href: '/downloads/cv-eduardo-alencar-pt.pdf', label: l('Download CV (Portuguese, PDF)', 'Baixar CV (português, PDF)', 'Descargar CV (portugués, PDF)', 'Scarica CV (portoghese, PDF)') }
+    ]
   },
   'uci-teaching-evidence': {
     kind: 'teaching', status: 'summary-pending', category: 'profile',

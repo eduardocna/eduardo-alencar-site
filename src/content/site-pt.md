@@ -256,7 +256,7 @@ Transcrição automatizada e análise de texto de audiências de comissões esta
 **Campus Summer Intern**, University of California, Irvine, 2018.
 Resiliência a secas na Califórnia com métodos econométricos, com a professora Maura Allaire.
 
-[Baixe o currículo completo (PDF)]
+[Baixe o currículo completo (PDF)](/downloads/cv-eduardo-alencar-pt.pdf)
 
 ---
 

@@ -256,7 +256,7 @@ Automated transcription and text analysis of US state committee hearings on elec
 **Campus Summer Intern**, University of California, Irvine — 2018
 Drought resiliency in California using econometric methods, with Dr. Maura Allaire.
 
-[Download the full CV (PDF)]
+[Download the full CV (PDF)](/downloads/cv-eduardo-alencar-en.pdf)
 
 ---
 

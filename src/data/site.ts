@@ -2,6 +2,7 @@ import enRaw from '../content/site-en.md?raw';
 import ptRaw from '../content/site-pt.md?raw';
 import esRaw from '../content/site-es.md?raw';
 import itRaw from '../content/site-it.md?raw';
+import { withBase } from './paths';
 
 export const locales = ['en', 'pt', 'es', 'it'] as const;
 export type Locale = (typeof locales)[number];
@@ -42,7 +43,11 @@ export const copy: Record<Locale, {
 const escape = (value: string) => value.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
 export function inline(value: string) {
   return escape(value)
-    .replace(/\[([^\]]+)\]\((https?:\/\/[^\s)]+)\)/g, '<a href="$2" target="_blank" rel="noreferrer">$1</a>')
+    .replace(/\[([^\]]+)\]\((https?:\/\/[^\s)]+|\/[^\s)]+)\)/g, (_match, text: string, url: string) =>
+      url.startsWith('/')
+        ? `<a href="${withBase(url)}">${text}</a>`
+        : `<a href="${url}" target="_blank" rel="noreferrer">${text}</a>`
+    )
     .replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>')
     .replace(/\*([^*]+)\*/g, '<em>$1</em>');
 }

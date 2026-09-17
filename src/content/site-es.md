@@ -256,7 +256,7 @@ Transcripción automatizada y análisis textual de audiencias de comités estata
 **Campus Summer Intern**, University of California, Irvine — 2018
 Resiliencia a la sequía en California mediante métodos econométricos, con la Dra. Maura Allaire.
 
-[Descarga el CV completo (PDF)]
+[Descarga el CV completo (PDF)](/downloads/cv-eduardo-alencar-en.pdf)
 
 ---
 

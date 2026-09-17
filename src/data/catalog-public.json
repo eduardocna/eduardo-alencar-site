@@ -212,12 +212,12 @@
       "summary": "Currículo acadêmico e profissional com trajetória pública, pesquisa, docência, prêmios e serviço profissional.",
       "themes": ["trajetória", "pesquisa", "docência"],
       "methods": [],
-      "status": "atualizacao necessaria",
+      "status": "publicado",
       "canonical_source": "Private CV master, reviewed for public release",
-      "public_file": "07 — Currículo e materiais institucionais/cv-eduardo-alencar.pdf",
-      "public_url": "",
+      "public_file": "07 — Currículo e materiais institucionais/cv-eduardo-alencar-site-en-layout.pdf",
+      "public_url": "/downloads/cv-eduardo-alencar-en.pdf",
       "rights": "Gerar PDF público sem dados pessoais e sem referências privadas.",
-      "last_checked": "2026-09-13",
+      "last_checked": "2026-09-17",
       "access": "resumo_publico"
     },
     {

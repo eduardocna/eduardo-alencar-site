@@ -256,7 +256,7 @@ Trascrizione automatizzata e analisi testuale delle audizioni delle commissioni 
 **Campus Summer Intern**, University of California, Irvine — 2018
 Resilienza alla siccità in California con metodi econometrici, con la prof.ssa Maura Allaire.
 
-[Scarica il CV completo (PDF)]
+[Scarica il CV completo (PDF)](/downloads/cv-eduardo-alencar-en.pdf)
 
 ---
 
