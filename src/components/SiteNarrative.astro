@@ -8,6 +8,7 @@ import WorkExplorer from './WorkExplorer.astro';
 import CareerGantt from './CareerGantt.astro';
 import ContentBlocks from './ContentBlocks.astro';
 import WorkCatalog from './WorkCatalog.astro';
+import { withBase } from '../data/paths';
 interface Props { lang: Locale; }
 const { lang } = Astro.props;
 const doc = documents[lang];
@@ -17,6 +18,7 @@ const home = pages[0];
 const sectionNumber = (id: string) => String(sectionIds.indexOf(id as typeof sectionIds[number]) + 1).padStart(2, '0');
 const catalogueTitle = { en:'Selected research and public work', pt:'Pesquisa e trabalhos públicos selecionados', es:'Investigación y trabajos públicos seleccionados', it:'Ricerca e lavori pubblici selezionati' }[lang];
 const toolsTitle = { en:'Tools with a public evidence trail', pt:'Ferramentas com trilha pública de evidências', es:'Herramientas con ruta pública de evidencia', it:'Strumenti con un percorso pubblico di evidenza' }[lang];
+const bookCoverAlt = { en:'Cover of “Governança em Tempo Real”', pt:'Capa de “Governança em Tempo Real”', es:'Portada de “Governança em Tempo Real”', it:'Copertina di “Governança em Tempo Real”' }[lang];
 ---
 <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
 <article id="home">
@@ -30,6 +32,7 @@ const toolsTitle = { en:'Tools with a public evidence trail', pt:'Ferramentas co
 
 {pages.slice(1).map((page: NarrativePage) => <article class="editorial-section" id={page.id}>
   <header class="section-shell section-intro reveal"><p class="eyebrow">{sectionNumber(page.id)}</p><h2>{page.title}</h2>{page.intro.map((line: string) => <p class="lede" set:html={inline(line)}></p>)}</header>
+  {page.id === 'book' && <figure class="book-cover reveal"><img src={withBase('images/governanca-em-tempo-real-capa.png')} alt={bookCoverAlt} width="515" height="605" loading="lazy" /></figure>}
   {page.id === 'research' && <WorkCatalog lang={lang} categories={['research','policy']} title={catalogueTitle} />}
   {page.id === 'tools' && <>
     <section class="verified-scale section-shell reveal"><div><strong>30,304</strong><span>{lang === 'pt' ? 'contratações' : lang === 'es' ? 'contratos' : lang === 'it' ? 'contratti' : 'contracts'}</span></div><div><strong>R$ 59.2bn</strong><span>{lang === 'pt' ? 'valor analisado' : lang === 'es' ? 'valor analizado' : lang === 'it' ? 'valore analizzato' : 'value screened'}</span></div><div><strong>32</strong><span>{lang === 'pt' ? 'testes' : lang === 'es' ? 'pruebas' : lang === 'it' ? 'test' : 'tests'}</span></div><div><strong>13,042</strong><span>{lang === 'pt' ? 'pares RIC–resposta' : lang === 'es' ? 'pares solicitud–respuesta' : lang === 'it' ? 'coppie richiesta–risposta' : 'request–reply pairs'}</span></div></section>
