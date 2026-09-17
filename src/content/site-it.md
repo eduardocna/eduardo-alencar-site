@@ -71,7 +71,7 @@ Data e sede del lancio a Brasília saranno annunciate a breve.
 
 [Vedi la pagina di prelancio su Editora JusPodivm](https://www.editorajuspodivm.com.br/governanca-em-tempo-real-como-o-brasil-pode-parar-de-fingir-que-governa-2027-alencar)
 
-[Prenota un posto al lancio](mailto:eduardocna@gmail.com?subject=Prenotazione%20%E2%80%94%20Lancio%20Governan%C3%A7a%20em%20Tempo%20Real)
+[Prenota un posto al lancio](https://forms.gle/LdBksUCusmA99NvV8)
 
 ---
 
