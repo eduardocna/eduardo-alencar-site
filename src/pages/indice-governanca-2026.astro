@@ -1,0 +1,71 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+const APP_URL = 'https://planosgov2026.online/';
+const REPORT_URL = 'https://drive.google.com/file/d/149Q8440qbRi2VDdT1EoLm106_Cf7bzFW/view?usp=sharing';
+---
+<BaseLayout lang="pt" title="Propostas que podem ser cobradas | Eduardo Alencar" description="Uma leitura de governança dos programas presidenciais registrados no TSE em 2026." contentPath="indice-governanca-2026/">
+  <article class="page-shell">
+    <header class="section-shell">
+      <p class="eyebrow">Estudo analítico independente · Agosto de 2026</p>
+      <h1 class="page-title">Propostas que podem ser cobradas</h1>
+      <p class="lede" style="font-style:italic">Uma leitura de governança dos programas presidenciais registrados no TSE em 2026.</p>
+      <p class="lede">Planos de governo costumam ser lidos como catálogos de preferências. Este estudo pergunta outra coisa: a proposta permite que a sociedade cobre execução, aprenda com falhas e corrija rumos?</p>
+    </header>
+
+    <section class="section-shell">
+      <p class="notice"><strong>Mede o documento, não a pessoa candidata.</strong> Não é ranking eleitoral e não prevê desempenho de governo: é uma leitura de governança do texto protocolado no TSE.</p>
+    </section>
+
+    <section class="section-shell">
+      <div class="verified-scale" style="grid-template-columns:repeat(3,1fr)">
+        <div><strong>13</strong><span>documentos oficiais analisados</span></div>
+        <div><strong>12</strong><span>perfis de propostas</span></div>
+        <div><strong>10</strong><span>clusters comparáveis</span></div>
+      </div>
+      <div class="ctarow">
+        <a class="cta" href={APP_URL} target="_blank" rel="noreferrer">Abrir o Índice ↗</a>
+        <span class="hero-location">Aplicativo público · comparar perfis, filtrar propostas, exportar em CSV</span>
+      </div>
+    </section>
+
+    <section class="section-shell section-intro">
+      <h2>O que o índice mede</h2>
+      <p class="lede">Uma promessa se torna governável quando percorre uma cadeia inteira. O estudo verifica se o documento fecha cada elo, e o último é justamente o que quase sempre falta.</p>
+      <p style="margin-top:18px;font:11px var(--mono);letter-spacing:.07em;text-transform:uppercase;color:var(--muted)">
+        Problema → Instrumento → Responsável → Recurso → Métrica → <strong style="color:var(--accent-ink)">Consequência</strong>
+      </p>
+    </section>
+
+    <section class="section-shell section-intro">
+      <h2>Três coisas que a leitura mostrou</h2>
+      <div class="content-grid" style="margin-top:20px">
+        <article class="content-card"><h3>Detalhe não é sinônimo de governança</h3><p>Planos longos podem faltar responsável, custo ou mecanismo de correção; planos curtos podem tê-los. Por isso a comparação não usa número de páginas como atalho.</p></article>
+        <article class="content-card"><h3>A lacuna recorrente é a passagem da intenção à consequência</h3><p>Diagnóstico e valor público aparecem mais que custo, linha de base, avaliação independente e consequência para desempenho insuficiente.</p></article>
+        <article class="content-card"><h3>Programa político e programa de governo não são a mesma peça</h3><p>Plataformas de luta ou de transformação social são uma escolha legítima, mas limitam o que pode ser avaliado sob a pergunta deste estudo.</p></article>
+      </div>
+    </section>
+
+    <section class="section-shell">
+      <blockquote style="margin:0;padding:10px 0 10px 26px;border-left:3px solid var(--accent);font:400 clamp(20px,2.7vw,26px)/1.38 var(--serif);color:var(--ink);max-width:44ch">Promessa pública não se torna governável porque é desejável. Torna-se governável quando deixa claro problema, instrumento, responsável, recurso, métrica e consequência.</blockquote>
+    </section>
+
+    <section class="section-shell section-intro">
+      <h2>Ir além da landing</h2>
+      <p class="lede">Compare os 12 perfis com evidência e página-fonte no aplicativo, ou leia a análise completa (método, tabela comparativa e leitura por candidato) no relatório executivo.</p>
+      <div class="content-grid" style="margin-top:20px">
+        <article class="content-card">
+          <a class="cta" href={APP_URL} target="_blank" rel="noreferrer" style="width:100%;justify-content:center">Abrir o Índice ↗</a>
+          <p style="margin-top:14px">Aplicativo · perfis, filtros, comparação lado a lado e método completo com pesos e limites.</p>
+        </article>
+        <article class="content-card">
+          <a class="cta ghost" href={REPORT_URL} target="_blank" rel="noreferrer" style="width:100%;justify-content:center">Ler o relatório executivo ↗</a>
+          <p style="margin-top:14px">PDF · resumo executivo, método e limites, tabela comparativa e leitura por candidato.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section-shell">
+      <p class="hero-location">Eduardo Carvalho Nepomuceno Alencar, análise independente · Avaliação de propostas, não de candidatos.</p>
+    </section>
+  </article>
+</BaseLayout>

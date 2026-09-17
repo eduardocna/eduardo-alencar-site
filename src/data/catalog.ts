@@ -89,8 +89,9 @@ const editorial: Record<string, WorkEditorial> = {
     summary: l('A comparison of 13 official government-plan documents focused on monitorability, accountability and implementation capacity.', 'Comparação de 13 documentos oficiais de programas de governo, com foco em monitorabilidade, responsabilização e capacidade de implementação.', 'Comparación de 13 documentos oficiales de programas de gobierno centrada en monitoreo, rendición de cuentas y capacidad de implementación.', 'Confronto tra 13 documenti ufficiali di programma di governo incentrato su monitoraggio, responsabilità e capacità di attuazione.'),
     methods: l('Document analysis and governance rubric', 'Análise documental e rubrica de governança', 'Análisis documental y rúbrica de gobernanza', 'Analisi documentale e rubrica di governance'),
     links: [
-      { kind: 'app', href: 'https://indicegovernanca2026.base44.app', label: l('Open application', 'Abrir aplicação', 'Abrir aplicación', 'Apri applicazione') },
-      { kind: 'report', href: 'https://drive.google.com/file/d/149Q8440qbRi2VDdT1EoLm106_Cf7bzFW/view?usp=sharing', label: l('Read report', 'Ler relatório', 'Leer informe', 'Leggi rapporto') }
+      { kind: 'app', href: 'https://planosgov2026.online/', label: l('Open application', 'Abrir aplicação', 'Abrir aplicación', 'Apri applicazione') },
+      { kind: 'report', href: 'https://drive.google.com/file/d/149Q8440qbRi2VDdT1EoLm106_Cf7bzFW/view?usp=sharing', label: l('Read report', 'Ler relatório', 'Leer informe', 'Leggi rapporto') },
+      { kind: 'report', href: '/indice-governanca-2026/', label: l('Full landing page (Portuguese)', 'Página completa do estudo', 'Página completa del estudio (portugués)', 'Pagina completa dello studio (portoghese)') }
     ]
   },
   'ai-parliamentary-oversight-audit': {
