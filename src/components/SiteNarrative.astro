@@ -30,6 +30,7 @@ const block = (value: string) => { const [heading, ...body] = value.split('\n').
   <section class="section-shell"><div class="grid2">{page.blocks.map((value) => { const item = block(value); return <article class="card reveal"><h3 set:html={inline(item.heading)}></h3>{item.list.length ? <ul>{item.list.map((line) => <li set:html={inline(line.slice(2))}></li>)}</ul> : item.body.map((line) => <p set:html={inline(line)}></p>)}</article>; })}</div></section></article>)}
 
 <script is:inline define:vars={{ explorer }}>
+  document.documentElement.classList.add('js');
   const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
   const pages = [...document.querySelectorAll('.site-page')], links = [...document.querySelectorAll('[data-page-link]')];
   function activate(id){pages.forEach(p=>p.classList.toggle('on',p.dataset.page===id));links.forEach(l=>l.setAttribute('aria-current',l.dataset.pageLink===id?'page':'false'));scrollTo({top:0,behavior:reduced?'auto':'smooth'});}
