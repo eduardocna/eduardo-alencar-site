@@ -1,0 +1,43 @@
+---
+import type { Locale } from '../data/site';
+import { at, dimensions, homeUi, storySteps } from '../data/home';
+interface Props { lang: Locale; }
+const { lang } = Astro.props;
+---
+<section class="story-section section-shell" id="evidence-story" aria-labelledby="story-title">
+  <div class="story-stage reveal" data-story-stage data-step="1">
+    <p class="story-note" data-story-note>{at(homeUi.conceptual, lang)}</p>
+    <div class="evidence-field" aria-hidden="true">
+      {Array.from({ length: 70 }).map((_, i) => <i class="evidence-cell" style={`--tone:${i % 5};--row:${Math.floor(i / 10)};--col:${i % 10};--seed:${(i * 17) % 11};--hit:${i % 13 === 0 ? 1 : 0}`}></i>)}
+    </div>
+    <div class="story-core"><span data-story-number>01</span><strong data-story-title>{at(storySteps[0].title, lang)}</strong></div>
+    <div class="story-legend">{dimensions.map((label, i) => <span><i style={`--tone:${i}`}></i>{at(label, lang)}</span>)}</div>
+  </div>
+  <div class="story-copy">
+    <header class="story-intro">
+      <p class="eyebrow">{at(homeUi.storyEyebrow, lang)}</p>
+      <h2 id="story-title">{at(homeUi.storyTitle, lang)}</h2>
+      <p class="lede">{at(homeUi.storyLede, lang)}</p>
+    </header>
+    {storySteps.map((step, i) => <article class="story-beat" data-story-beat={i + 1}>
+      <span>0{i + 1}</span><h3>{at(step.title, lang)}</h3><p>{at(step.detail, lang)}</p>
+    </article>)}
+  </div>
+</section>
+
+<script is:inline define:vars={{ localizedSteps: storySteps.map((step) => ({ title: at(step.title, lang), detail: at(step.detail, lang) })) }}>
+  const stage = document.querySelector('[data-story-stage]');
+  const beats = document.querySelectorAll('[data-story-beat]');
+  const reducedStory = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (stage && !reducedStory && 'IntersectionObserver' in window) {
+    const observer = new IntersectionObserver((entries) => entries.forEach((entry) => {
+      if (!entry.isIntersecting) return;
+      const step = Number(entry.target.dataset.storyBeat);
+      stage.dataset.step = String(step);
+      stage.querySelector('[data-story-number]').textContent = `0${step}`;
+      stage.querySelector('[data-story-title]').textContent = localizedSteps[step - 1].title;
+    }), { threshold: .56, rootMargin: '-16% 0px -28% 0px' });
+    beats.forEach((beat) => observer.observe(beat));
+  } else if (stage) stage.dataset.step = '4';
+</script>
+

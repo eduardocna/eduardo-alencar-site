@@ -1,0 +1,28 @@
+---
+import PublicationCard from './PublicationCard.astro';
+import { categoryLabels, works, type WorkCategory } from '../data/catalog';
+import type { Locale } from '../data/site';
+interface Props { lang: Locale; categories?: WorkCategory[]; title?: string; }
+const { lang, categories, title } = Astro.props;
+const items = categories ? works.filter((item) => categories.includes(item.category)) : works;
+const filters = categories ?? ['research','policy','tools','profile'] as WorkCategory[];
+const all = categoryLabels.all[lang];
+---
+<section class="work-catalog section-shell" aria-label={title ?? all}>
+  {title && <h2>{title}</h2>}
+  <div class="filterbar" role="group" aria-label={all}>
+    <button type="button" data-work-filter="all" aria-pressed="true">{all}</button>
+    {filters.map((filter: WorkCategory) => <button type="button" data-work-filter={filter} aria-pressed="false">{categoryLabels[filter][lang]}</button>)}
+  </div>
+  <div class="entries" data-work-grid>{items.map((item) => <PublicationCard item={item} lang={lang} />)}</div>
+</section>
+<script is:inline>
+  document.querySelectorAll('.work-catalog').forEach((catalog) => {
+    const buttons = catalog.querySelectorAll('[data-work-filter]');
+    const cards = catalog.querySelectorAll('[data-category]');
+    buttons.forEach((button) => button.addEventListener('click', () => {
+      buttons.forEach((item) => item.setAttribute('aria-pressed', String(item === button)));
+      cards.forEach((card) => card.hidden = button.dataset.workFilter !== 'all' && card.dataset.category !== button.dataset.workFilter);
+    }));
+  });
+</script>

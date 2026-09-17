@@ -1,0 +1,26 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import { locales, type Locale } from '../../../data/site';
+import { statusLabel, typeLabel, works, type WorkItem, type VerifiedLink } from '../../../data/catalog';
+import { withBase } from '../../../data/paths';
+export function getStaticPaths(){return locales.flatMap((lang)=>works.map((item)=>({params:{lang,slug:item.slug},props:{lang,item}})));}
+interface Props { lang: Locale; item: WorkItem; }
+const { lang, item } = Astro.props;
+const ui={
+  en:{work:'Public work',authors:'Authors',year:'Year',type:'Type',status:'Status',language:'Document language',methods:'Methods',available:'Verified public sources',summary:'Public summary',contact:'The full artefact is not currently approved for public distribution. Contact Eduardo about this work.',email:'Contact about this work'},
+  pt:{work:'Trabalho público',authors:'Autoria',year:'Ano',type:'Tipo',status:'Status',language:'Idioma do documento',methods:'Métodos',available:'Fontes públicas verificadas',summary:'Resumo público',contact:'O artefato integral não está atualmente aprovado para distribuição pública. Entre em contato com Eduardo sobre este trabalho.',email:'Contato sobre este trabalho'},
+  es:{work:'Trabajo público',authors:'Autoría',year:'Año',type:'Tipo',status:'Estado',language:'Idioma del documento',methods:'Métodos',available:'Fuentes públicas verificadas',summary:'Resumen público',contact:'El artefacto completo no está aprobado actualmente para distribución pública. Contacta con Eduardo sobre este trabajo.',email:'Contactar sobre este trabajo'},
+  it:{work:'Lavoro pubblico',authors:'Autori',year:'Anno',type:'Tipo',status:'Stato',language:'Lingua del documento',methods:'Metodi',available:'Fonti pubbliche verificate',summary:'Sintesi pubblica',contact:'Il documento completo non è attualmente approvato per la distribuzione pubblica. Contatta Eduardo per questo lavoro.',email:'Contatta per questo lavoro'}
+}[lang];
+const languageNames:Record<string,Record<Locale,string>>={en:{en:'English',pt:'Inglês',es:'Inglés',it:'Inglese'},pt:{en:'Portuguese',pt:'Português',es:'Portugués',it:'Portoghese'},es:{en:'Spanish',pt:'Espanhol',es:'Español',it:'Spagnolo'},it:{en:'Italian',pt:'Italiano',es:'Italiano',it:'Italiano'}};
+const href=(value:string)=>value.startsWith('/')?withBase(value):value;
+---
+<BaseLayout lang={lang} title={`${item.title} | Eduardo Alencar`} description={item.localizedSummary[lang]} contentPath={`work/${item.slug}/`}>
+  <article class="page-shell section-shell work-detail">
+    <div><p class="eyebrow">{ui.work} · {typeLabel(item,lang)}</p><h1 class="page-title">{item.title}</h1><p class="lede">{item.localizedSummary[lang]}</p>
+      <section><h2>{ui.summary}</h2><p>{item.localizedSummary[lang]}</p></section>
+      <section><h2>{ui.available}</h2>{item.verifiedLinks.length ? <div class="page-actions">{item.verifiedLinks.map((link: VerifiedLink)=><a class="cta" href={href(link.href)} target={link.href.startsWith('/')?undefined:'_blank'} rel={link.href.startsWith('/')?undefined:'noreferrer'}>{link.label[lang]} {link.href.startsWith('/')?'↓':'↗'}</a>)}</div> : <><p class="notice">{ui.contact}</p><a class="text-link" href={`mailto:eduardocna@gmail.com?subject=${encodeURIComponent(`${ui.email}: ${item.title}`)}`}>{ui.email} →</a></>}</section>
+    </div>
+    <aside class="work-facts"><dl><div><dt>{ui.authors}</dt><dd>{item.authors.join(' · ')}</dd></div><div><dt>{ui.year}</dt><dd>{item.year}</dd></div><div><dt>{ui.type}</dt><dd>{typeLabel(item,lang)}</dd></div><div><dt>{ui.status}</dt><dd>{statusLabel(item,lang)}</dd></div><div><dt>{ui.language}</dt><dd>{item.languages.map((code: string)=>languageNames[code]?.[lang]??code.toUpperCase()).join(' · ')}</dd></div><div><dt>{ui.methods}</dt><dd>{item.localizedMethods[lang]}</dd></div></dl></aside>
+  </article>
+</BaseLayout>

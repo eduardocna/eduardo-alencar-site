@@ -1,0 +1,16 @@
+---
+import type { Locale } from '../data/site';
+import { documents, inline, sectionIds } from '../data/site';
+import ContentBlocks from './ContentBlocks.astro';
+import WorkCatalog from './WorkCatalog.astro';
+interface Props { lang: Locale; id: typeof sectionIds[number]; }
+const { lang, id } = Astro.props;
+const section = documents[lang].sections[sectionIds.indexOf(id)];
+const catalogTitle = { en:'Browse the evidence trail', pt:'Explore a trilha de evidências', es:'Explora la ruta de evidencia', it:'Esplora il percorso dell’evidenza' }[lang];
+---
+<article class="page-shell">
+  <header class="section-shell"><p class="eyebrow">{section.title}</p><h1 class="page-title">{section.title}</h1>{section.intro.map((line: string) => <p class="lede" set:html={inline(line)}></p>)}</header>
+  {id === 'research' && <WorkCatalog lang={lang} categories={['research','policy']} title={catalogTitle} />}
+  {id === 'tools' && <WorkCatalog lang={lang} categories={['tools']} title={catalogTitle} />}
+  <section class="section-shell"><ContentBlocks section={section} /></section>
+</article>

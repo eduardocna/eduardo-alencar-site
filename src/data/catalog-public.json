@@ -1,5 +1,5 @@
 {
-  "schema_version": 1,
+  "schema_version": 2,
   "updated": "2026-09-13",
   "items": [
     {
@@ -33,7 +33,7 @@
       "status": "publicado",
       "canonical_source": "Author archive and publication record",
       "public_file": "01 — Artigos publicados/evidence-based-anti-corruption-oversight.pdf",
-      "public_url": "https://eduardocnalencar.com/publications/white-collar-times-oversight",
+      "public_url": "",
       "rights": "Cópia do autor a revisar antes de publicação.",
       "last_checked": "2026-09-13",
       "access": "resumo_publico"
@@ -51,7 +51,7 @@
       "status": "em avaliacao",
       "canonical_source": "Editorial submission record",
       "public_file": null,
-      "public_url": "https://eduardocnalencar.com/publications/formal-replies-substantive-evasion",
+      "public_url": "",
       "rights": "Publicar apenas página de resumo enquanto a avaliação editorial estiver ativa.",
       "last_checked": "2026-09-13",
       "access": "resumo_publico"
@@ -69,7 +69,7 @@
       "status": "em preparacao",
       "canonical_source": "Working-paper record",
       "public_file": null,
-      "public_url": "https://eduardocnalencar.com/publications/evasion-as-a-signal",
+      "public_url": "",
       "rights": "Resumo público; manuscrito somente após decisão editorial.",
       "last_checked": "2026-09-13",
       "access": "resumo_publico"
@@ -105,7 +105,7 @@
       "status": "publicado",
       "canonical_source": "Author archive",
       "public_file": "03 — Teses e dissertações/masters-corruption-trust.pdf",
-      "public_url": "https://eduardocnalencar.com/publications/masters-corruption-trust",
+      "public_url": "",
       "rights": "Cópia do autor; revisar antes da promoção ao repositório público.",
       "last_checked": "2026-09-13",
       "access": "resumo_publico"
@@ -123,7 +123,7 @@
       "status": "publicado",
       "canonical_source": "Author archive",
       "public_file": "04 — Policy briefs/lava-jato-corruption-trust-policy-brief.pdf",
-      "public_url": "https://eduardocnalencar.com/publications/lava-jato-corruption-trust-policy-brief",
+      "public_url": "",
       "rights": "Autoria própria; promover após conferência de versão final.",
       "last_checked": "2026-09-13",
       "access": "resumo_publico"
@@ -141,7 +141,7 @@
       "status": "apresentado",
       "canonical_source": "Conference record and author archive",
       "public_file": "05 — Congressos e apresentações/anti-corruption-sdg4-asc2025.pdf",
-      "public_url": "https://eduardocnalencar.com/publications/anti-corruption-sdg4-asc2025",
+      "public_url": "",
       "rights": "Arquivo do autor; revisar créditos e versão antes de publicar.",
       "last_checked": "2026-09-13",
       "access": "resumo_publico"
@@ -197,7 +197,7 @@
       "status": "operacional interno",
       "canonical_source": "Private operational methodology record",
       "public_file": null,
-      "public_url": "https://eduardocnalencar.com/evidence-lab/ai-parliamentary-oversight-audit",
+      "public_url": "",
       "rights": "Publicar somente metodologia, limites e exemplos anonimizados; sem dados operacionais, credenciais ou casos protegidos.",
       "last_checked": "2026-09-13",
       "access": "resumo_publico"
@@ -215,7 +215,7 @@
       "status": "atualizacao necessaria",
       "canonical_source": "Private CV master, reviewed for public release",
       "public_file": "07 — Currículo e materiais institucionais/cv-eduardo-alencar.pdf",
-      "public_url": "https://eduardocnalencar.com/cv",
+      "public_url": "",
       "rights": "Gerar PDF público sem dados pessoais e sem referências privadas.",
       "last_checked": "2026-09-13",
       "access": "resumo_publico"
@@ -233,7 +233,7 @@
       "status": "resumo publico a produzir",
       "canonical_source": "Private teaching-evaluation archive",
       "public_file": null,
-      "public_url": "https://eduardocnalencar.com/teaching",
+      "public_url": "",
       "rights": "Somente métricas agregadas e excertos anonimizados após revisão de privacidade.",
       "last_checked": "2026-09-13",
       "access": "resumo_publico"
@@ -251,7 +251,7 @@
       "status": "publicado",
       "canonical_source": "3-Resources/Casos/policy-brief-sessao-stf-pet16662-2026-09-15/outputs/policy-brief-sessao-stf-pet16662-2026-09-15.pdf",
       "public_file": "04 — Policy briefs/o-supremo-julga-um-dos-seus-2026.pdf",
-      "public_url": "https://eduardocnalencar.com/downloads/o-supremo-julga-um-dos-seus-2026.pdf",
+      "public_url": "/downloads/o-supremo-julga-um-dos-seus-2026.pdf",
       "rights": "Autoria própria; PDF aprovado para publicação.",
       "last_checked": "2026-09-16",
       "access": "publico"

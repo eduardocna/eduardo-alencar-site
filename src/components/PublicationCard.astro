@@ -1,15 +1,18 @@
 ---
-import { statusLabel, type CatalogItem } from '../data/catalog';
-interface Props { item: CatalogItem; lang?: 'en' | 'pt'; }
-const { item, lang = 'en' } = Astro.props;
-const base = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL : `${import.meta.env.BASE_URL}/`;
-const labels = lang === 'pt' ? { view: 'Ver registro', source: 'Trilha de evidência' } : { view: 'View record', source: 'Evidence trail' };
+import { statusLabel, typeLabel, type WorkItem } from '../data/catalog';
+import type { Locale } from '../data/site';
+import { workPath } from '../data/paths';
+interface Props { item: WorkItem; lang: Locale; }
+const { item, lang } = Astro.props;
+const labels = {
+  en: { view:'View work', language:'Document language' }, pt: { view:'Ver trabalho', language:'Idioma do documento' },
+  es: { view:'Ver trabajo', language:'Idioma del documento' }, it: { view:'Vedi lavoro', language:'Lingua del documento' }
+}[lang];
 ---
-<article class="publication-card" data-theme={item.themes.join(' ').toLowerCase()} data-method={item.methods.join(' ').toLowerCase()} data-status={item.status} data-language={item.languages.join(' ')}>
-  <p class="eyebrow">{item.type} · {item.year}</p>
-  <h3><a href={`${base}publications/${item.slug}/`}>{item.title}</a></h3>
-  <p>{item.summary}</p>
-  <p class="tags">{item.themes.map((theme) => <span>{theme}</span>)}</p>
-  <div class="card-footer"><span class="status">{statusLabel(item.status, lang)}</span><a href={`${base}publications/${item.slug}/`}>{labels.view} →</a></div>
-  <details><summary>{labels.source}</summary><code>{item.canonical_source}</code><p>{item.rights}</p></details>
+<article class="publication-card card reveal" data-category={item.category} data-status={item.statusCode} data-language={item.languages.join(' ')}>
+  <p class="eyebrow">{typeLabel(item, lang)} · {item.year}</p>
+  <h3><a href={workPath(lang, item.slug)}>{item.title}</a></h3>
+  <p>{item.localizedSummary[lang]}</p>
+  <div class="card-meta"><span>{statusLabel(item, lang)}</span><span>{labels.language}: {item.languages.map((value: string) => value.toUpperCase()).join(' · ')}</span></div>
+  <a class="worklink" href={workPath(lang, item.slug)}>{labels.view} →</a>
 </article>

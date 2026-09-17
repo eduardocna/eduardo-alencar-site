@@ -1,0 +1,70 @@
+---
+import type { Locale } from '../data/site';
+import { timeline } from '../data/experience';
+interface Props { lang: Locale; }
+const { lang } = Astro.props;
+const ui = {
+  en: { eyebrow:'Career timeline', title:'A career in public institutions', lede:'Month-accurate roles from 2003 to the present. Overlaps are real; education is shown separately.', career:'Professional experience', education:'Graduate education', hint:'Select a bar to inspect that chapter of the trajectory.', start:'Start', end:'End', role:'Role', institution:'Institution', result:'Contribution', table:'View timeline as a table', present:'Present', close:'Close', visit:'Visit institution' },
+  pt: { eyebrow:'Linha do tempo profissional', title:'Uma trajetória em instituições públicas', lede:'Funções com precisão mensal de 2003 ao presente. As sobreposições são reais; a formação aparece separadamente.', career:'Experiência profissional', education:'Formação acadêmica', hint:'Selecione uma faixa para examinar este capítulo da trajetória.', start:'Início', end:'Fim', role:'Função', institution:'Instituição', result:'Contribuição', table:'Ver linha do tempo como tabela', present:'Presente', close:'Fechar', visit:'Visitar instituição' },
+  es: { eyebrow:'Trayectoria profesional', title:'Una carrera en instituciones públicas', lede:'Funciones con precisión mensual desde 2003 hasta el presente. Las superposiciones son reales; la formación aparece por separado.', career:'Experiencia profesional', education:'Formación académica', hint:'Selecciona una barra para examinar este capítulo de la trayectoria.', start:'Inicio', end:'Fin', role:'Función', institution:'Institución', result:'Contribución', table:'Ver cronología como tabla', present:'Presente', close:'Cerrar', visit:'Visitar institución' },
+  it: { eyebrow:'Percorso professionale', title:'Una carriera nelle istituzioni pubbliche', lede:'Ruoli con precisione mensile dal 2003 a oggi. Le sovrapposizioni sono reali; la formazione è mostrata separatamente.', career:'Esperienza professionale', education:'Formazione accademica', hint:'Seleziona una barra per esaminare questo capitolo del percorso.', start:'Inizio', end:'Fine', role:'Ruolo', institution:'Istituzione', result:'Contributo', table:'Vedi cronologia come tabella', present:'Presente', close:'Chiudi', visit:'Visita istituzione' }
+}[lang];
+const origin = 2003 * 12;
+const rangeEnd = 2026 * 12 + 8;
+const total = rangeEnd - origin + 1;
+const month = (value: string) => { const [year, part] = value.split('-').map(Number); return year * 12 + part - 1; };
+const fmt = (value: string | null) => value ? new Intl.DateTimeFormat(lang, { month:'short', year:'numeric', timeZone:'UTC' }).format(new Date(`${value}-01T00:00:00Z`)) : ui.present;
+const rows = timeline.map((entry) => {
+  const left = (month(entry.start) - origin) / total * 100;
+  const last = entry.end ? month(entry.end) : rangeEnd;
+  const width = Math.max((last - month(entry.start) + 1) / total * 100, .7);
+  return { ...entry, left, width, date: `${fmt(entry.start)} – ${fmt(entry.end)}`, roleText: entry.role[lang], resultText: entry.result[lang] };
+});
+const ticks = [2003, 2006, 2009, 2012, 2015, 2018, 2021, 2024, 2026];
+---
+<section class="timeline section-shell reveal" id="career-timeline" aria-labelledby="timeline-title">
+  <div class="figure gantt-figure">
+    <p class="eyebrow">{ui.eyebrow}</p><h2 id="timeline-title">{ui.title}</h2><p class="lede">{ui.lede}</p>
+    <div class="gantt-scroll" tabindex="0" aria-label={ui.title}>
+      <div class="gantt" style={`--today:${(rangeEnd-origin)/total*100}%`}>
+        <div class="gantt-axis gantt-top"><span></span><div>{ticks.map((year) => <i style={`--x:${((year*12-origin)/total*100).toFixed(3)}%`}>{year}</i>)}</div></div>
+        {(['career','education'] as const).map((group) => <div class="gantt-group">
+          <h3>{group === 'career' ? ui.career : ui.education}</h3>
+          {rows.filter((row) => row.group === group).map((row) => <div class="gantt-row">
+            <div class="gantt-label"><strong>{row.institution}</strong><span>{row.roleText}</span></div>
+            <div class="gantt-track">{ticks.map((year) => <i class="gantt-gridline" style={`--x:${((year*12-origin)/total*100).toFixed(3)}%`}></i>)}<button class:list={['gantt-bar', { current: !row.end, education: row.group === 'education' }]} style={`--left:${row.left.toFixed(3)}%;--width:${row.width.toFixed(3)}%`} type="button" aria-pressed="false" aria-label={`${row.institution}, ${row.roleText}, ${row.date}`} data-gantt={JSON.stringify({ institution:row.institution, role:row.roleText, date:row.date, result:row.resultText, url:row.url ?? '' })}></button></div>
+          </div>)}
+        </div>)}
+        <div class="gantt-axis"><span></span><div>{ticks.map((year) => <i style={`--x:${((year*12-origin)/total*100).toFixed(3)}%`}>{year}</i>)}</div></div>
+      </div>
+    </div>
+    <div class="gantt-info" id="ganttInfo" aria-live="polite">{ui.hint}</div>
+    <details class="table-alternative"><summary>{ui.table}</summary><div class="table-scroll"><table><thead><tr><th>{ui.institution}</th><th>{ui.role}</th><th>{ui.start}</th><th>{ui.end}</th><th>{ui.result}</th></tr></thead><tbody>{rows.map((row) => <tr><th>{row.institution}</th><td>{row.roleText}</td><td>{fmt(row.start)}</td><td>{fmt(row.end)}</td><td>{row.resultText}</td></tr>)}</tbody></table></div></details>
+  </div>
+</section>
+<dialog class="timeline-modal" id="timelineModal" aria-labelledby="timelineModalTitle"><div><button class="modal-close" type="button" data-close-timeline aria-label={ui.close}>×</button><p class="eyebrow">{ui.eyebrow}</p><h2 id="timelineModalTitle"></h2><p class="modal-role" id="timelineModalRole"></p><p id="timelineModalResult"></p><a class="text-link" id="timelineModalLink" href="#" target="_blank" rel="noreferrer">{ui.visit} ↗</a></div></dialog>
+<script is:inline>
+  const ganttButtons = [...document.querySelectorAll('[data-gantt]')];
+  const ganttInfo = document.getElementById('ganttInfo');
+  const timelineDialog = document.getElementById('timelineModal');
+  const showTimeline = (button) => {
+    const data = JSON.parse(button.dataset.gantt);
+    ganttButtons.forEach((item) => item.setAttribute('aria-pressed', String(item === button)));
+    ganttInfo.innerHTML = `<strong>${data.institution}</strong><span>${data.role} · ${data.date}</span><p>${data.result}</p>`;
+    document.getElementById('timelineModalTitle').textContent = data.institution;
+    document.getElementById('timelineModalRole').textContent = `${data.role} · ${data.date}`;
+    document.getElementById('timelineModalResult').textContent = data.result;
+    const link = document.getElementById('timelineModalLink');
+    link.hidden = !data.url; link.href = data.url || '#';
+    timelineDialog.showModal();
+  };
+  ganttButtons.forEach((button, index) => {
+    button.addEventListener('click', () => showTimeline(button));
+    button.addEventListener('keydown', (event) => {
+      if (!['ArrowUp','ArrowDown'].includes(event.key)) return;
+      event.preventDefault(); ganttButtons[(index + (event.key === 'ArrowDown' ? 1 : -1) + ganttButtons.length) % ganttButtons.length].focus();
+    });
+  });
+  document.querySelector('[data-close-timeline]')?.addEventListener('click', () => timelineDialog.close());
+  timelineDialog?.addEventListener('click', (event) => { if (event.target === timelineDialog) timelineDialog.close(); });
+</script>

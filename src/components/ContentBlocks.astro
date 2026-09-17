@@ -1,0 +1,11 @@
+---
+import type { MarkdownSection } from '../data/site';
+import { inline } from '../data/site';
+interface Props { section: MarkdownSection; skip?: number; }
+const { section, skip = 0 } = Astro.props;
+const block = (value: string) => {
+  const [heading, ...body] = value.split('\n').filter(Boolean);
+  return { heading, paragraphs: body.filter((line) => !line.startsWith('- ')), list: body.filter((line) => line.startsWith('- ')).map((line) => line.slice(2)) };
+};
+---
+<div class="content-grid">{section.blocks.slice(skip).map((value: string) => { const item = block(value); return <article class="content-card reveal"><h3 set:html={inline(item.heading)}></h3>{item.paragraphs.map((line: string) => <p set:html={inline(line)}></p>)}{item.list.length > 0 && <ul>{item.list.map((line: string) => <li set:html={inline(line)}></li>)}</ul>}</article>; })}</div>

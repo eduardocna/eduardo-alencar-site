@@ -1,0 +1,43 @@
+---
+import type { Locale } from '../data/site';
+import { at, explorerItems, homeUi } from '../data/home';
+import { workPath } from '../data/paths';
+interface Props { lang: Locale; }
+const { lang } = Astro.props;
+---
+<section class="explorer-panel section-shell reveal" aria-labelledby="explorer-title">
+  <p class="eyebrow">{at(homeUi.explorerEyebrow, lang)}</p>
+  <h2 id="explorer-title">{at(homeUi.explorerTitle, lang)}</h2>
+  <p class="lede">{at(homeUi.explorerLede, lang)}</p>
+  <div class="explorer">
+    <div class="explorer-tabs" role="tablist" aria-label={at(homeUi.explorerEyebrow, lang)}>
+      {explorerItems.map((item, i) => <button id={`explorer-tab-${i}`} type="button" role="tab" aria-controls={`explorer-panel-${i}`} aria-selected={i === 0} tabindex={i === 0 ? 0 : -1} data-explorer-tab={i}>{at(item.tab, lang)}</button>)}
+    </div>
+    <div class="explorer-panels">
+      {explorerItems.map((item, i) => <article id={`explorer-panel-${i}`} role="tabpanel" aria-labelledby={`explorer-tab-${i}`} data-explorer-panel={i}>
+        <div class="explorer-signal"><strong>{at(item.mark, lang)}<small>{at(item.label, lang)}</small></strong><span>{at(item.tab, lang)}</span><h3>{at(item.title, lang)}</h3></div>
+        <div class="explorer-detail"><dl><div><dt>{at(homeUi.problem, lang)}</dt><dd>{at(item.problem, lang)}</dd></div><div><dt>{at(homeUi.method, lang)}</dt><dd>{at(item.method, lang)}</dd></div><div><dt>{at(homeUi.output, lang)}</dt><dd>{at(item.output, lang)}</dd></div></dl><a class="cta ghost" href={workPath(lang, item.slug)}>{at(homeUi.open, lang)} →</a></div>
+      </article>)}
+    </div>
+  </div>
+</section>
+<script is:inline>
+  const tabs = [...document.querySelectorAll('[data-explorer-tab]')];
+  const panels = [...document.querySelectorAll('[data-explorer-panel]')];
+  const selectExplorer = (index, focus = false) => {
+    tabs.forEach((tab, i) => { tab.setAttribute('aria-selected', String(i === index)); tab.tabIndex = i === index ? 0 : -1; });
+    panels.forEach((panel, i) => panel.hidden = i !== index);
+    if (focus) tabs[index]?.focus();
+  };
+  tabs.forEach((tab, index) => {
+    tab.addEventListener('click', () => selectExplorer(index));
+    tab.addEventListener('keydown', (event) => {
+      if (!['ArrowLeft','ArrowRight','Home','End'].includes(event.key)) return;
+      event.preventDefault();
+      const next = event.key === 'Home' ? 0 : event.key === 'End' ? tabs.length - 1 : (index + (event.key === 'ArrowRight' ? 1 : -1) + tabs.length) % tabs.length;
+      selectExplorer(next, true);
+    });
+  });
+  if (tabs.length) selectExplorer(0);
+</script>
+

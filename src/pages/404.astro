@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-const base = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL : `${import.meta.env.BASE_URL}/`;
+import { localePath } from '../data/paths';
+const target = localePath('en');
 ---
-<BaseLayout title="Page not found | Eduardo Alencar" description="The requested evidence record does not exist."><section class="section"><p class="eyebrow">404</p><h1 class="page-title">This record is not here.</h1><p class="lede">It may not be public, may have moved, or may not yet meet the publication standard.</p><a class="button" href={`${base}en/`}>Return to Evidence Lab</a></section></BaseLayout>
+<BaseLayout title="Page not found | Eduardo Alencar" description="The requested evidence record does not exist."><section class="section"><p class="eyebrow">404</p><h1 class="page-title">This record is not here.</h1><p class="lede">It may not be public, may have moved, or may not yet meet the publication standard.</p><a class="button" href={target}>Return to Evidence Lab</a></section></BaseLayout>

@@ -1,0 +1,11 @@
+---
+import type { Locale } from '../data/site';
+import { at, homeUi, metrics } from '../data/home';
+interface Props { lang: Locale; }
+const { lang } = Astro.props;
+---
+<section class="ledger section-shell reveal" aria-labelledby="ledger-title">
+  <header><p class="eyebrow">{at(homeUi.metrics, lang)}</p><h2 id="ledger-title">{at(homeUi.metricsLede, lang)}</h2></header>
+  <div class="metric-grid">{metrics.map((metric) => <div class="metric"><strong data-count={metric.value} data-display={at(metric.display, lang)}>{at(metric.display, lang)}</strong><span>{at(metric.label, lang)}</span></div>)}</div>
+</section>
+

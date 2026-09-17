@@ -1,42 +1,53 @@
 ---
-import '../styles/global.css';
 import '../styles/narrative.css';
+import '@fontsource/fraunces/400.css';
+import '@fontsource/fraunces/600.css';
+import '@fontsource/dm-sans/400.css';
+import '@fontsource/dm-sans/500.css';
+import '@fontsource/dm-sans/700.css';
+import '@fontsource/dm-mono/400.css';
 import { copy, locales, sectionIds, type Locale } from '../data/site';
-interface Props { title: string; description: string; lang?: Locale; }
-const { title, description, lang = 'en' } = Astro.props;
-const base = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL : `${import.meta.env.BASE_URL}/`;
-const local = (path: string) => `${base}${path.replace(/^\//, '')}`;
+import { localePath, withBase } from '../data/paths';
+interface Props { title: string; description: string; lang?: Locale; contentPath?: string; image?: string; }
+const { title, description, lang = 'en', contentPath = '', image = 'images/eduardo-alencar.jpg' } = Astro.props;
 const ui = copy[lang];
-const localeNames: Record<Locale, string> = { en: 'EN', pt: 'PT', es: 'ES', it: 'IT' };
-const canonicalPath = `/${lang}/`;
+const canonical = new URL(localePath(lang, contentPath), Astro.site);
+const localeNames: Record<Locale, string> = { en:'EN', pt:'PT', es:'ES', it:'IT' };
 ---
 <!doctype html>
-<html lang={lang} data-theme="light">
+<html lang={lang}>
   <head>
+    <script is:inline>
+      (() => { try { document.documentElement.dataset.theme = localStorage.getItem('eduardo-theme') || 'light'; } catch { document.documentElement.dataset.theme = 'light'; } })();
+    </script>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content={description} />
-    <link rel="canonical" href={new URL(canonicalPath, Astro.site)} />
-    {locales.map((locale) => <link rel="alternate" hreflang={locale} href={new URL(`/${locale}/`, Astro.site)} />)}
-    <link rel="alternate" hreflang="x-default" href={new URL('/en/', Astro.site)} />
-    <link rel="alternate" type="application/rss+xml" title="Evidence notebook" href={local('/rss.xml')} />
-    <meta property="og:title" content={title} />
-    <meta property="og:description" content={description} />
-    <meta property="og:type" content="website" />
+    <meta name="theme-color" content="#f4f5f2" />
+    <link rel="canonical" href={canonical} />
+    {locales.map((locale) => <link rel="alternate" hreflang={locale} href={new URL(localePath(locale, contentPath), Astro.site)} />)}
+    <link rel="alternate" hreflang="x-default" href={new URL(localePath('en', contentPath), Astro.site)} />
+    <link rel="alternate" type="application/rss+xml" title="Eduardo Alencar" href={withBase('rss.xml')} />
+    <meta property="og:title" content={title} /><meta property="og:description" content={description} /><meta property="og:type" content="website" /><meta property="og:url" content={canonical} /><meta property="og:image" content={new URL(withBase(image), Astro.site)} />
     <title>{title}</title>
   </head>
   <body>
-    <a class="skip" href="#home">Skip to content</a>
+    <a class="skip" href="#content">{ui.skip}</a>
     <header class="protobar">
-      <a class="brand" href={local(`/${lang}/`)}>Eduardo Alencar<span>Public integrity, measured</span></a>
-      <nav aria-label="Primary navigation">{sectionIds.map((id, index) => <a href={`#${id}`} data-page-link={id} aria-current={id === 'home' ? 'page' : 'false'}>{ui.nav[index]}</a>)}</nav>
-      <div class="toolbar"><div class="langtoggle" aria-label="Language selector">{locales.map((locale) => <a href={local(`/${locale}/`)} aria-current={locale === lang ? 'page' : undefined} aria-label={locale === lang ? `${localeNames[locale]} selected` : localeNames[locale]}>{localeNames[locale]}</a>)}</div><button class="themebtn" id="themebtn" type="button">{ui.theme}</button></div>
+      <a class="brand" href={localePath(lang)}><strong>Eduardo Alencar</strong><span>{ui.tagline}</span></a>
+      <nav aria-label={ui.nav[0]}>{sectionIds.map((id, index) => <a href={`${localePath(lang)}#${id}`} data-section-link={id} aria-current={id === 'home' ? 'page' : 'false'}>{ui.nav[index]}</a>)}</nav>
+      <div class="toolbar">
+        <div class="langtoggle" aria-label="Language selector">{locales.map((locale) => <a href={localePath(locale, contentPath)} lang={locale} hreflang={locale} aria-current={locale === lang ? 'page' : undefined} aria-label={locale === lang ? `${localeNames[locale]} selected` : localeNames[locale]}>{localeNames[locale]}</a>)}</div>
+        <button class="themebtn" id="themebtn" type="button" aria-label={ui.dark} aria-pressed="false"><span aria-hidden="true">◐</span> <b>{ui.dark}</b></button>
+      </div>
     </header>
-    <main><slot /></main>
-    <footer>
-      <p>© {new Date().getFullYear()} Eduardo Alencar · Brasília, Brazil</p>
-      <p><a href="https://www.linkedin.com/in/eduardocna">LinkedIn</a> · <a href="https://orcid.org/0000-0002-9218-1798">ORCID</a> · <a href="https://scholar.google.com/citations?user=vJ12isgAAAAJ">Google Scholar</a> · <a href="mailto:eduardocna@gmail.com">Email</a></p>
-    </footer>
-    <script is:inline>{`const b=document.getElementById('themebtn');const labels=${JSON.stringify({ light: lang==='pt'?'Visualização escura':lang==='es'?'Vista oscura':lang==='it'?'Vista scura':'Dark view', dark: ui.theme })};try{document.documentElement.dataset.theme=localStorage.getItem('eduardo-theme')||'light'}catch{};b?.addEventListener('click',()=>{const root=document.documentElement;root.dataset.theme=root.dataset.theme==='light'?'dark':'light';try{localStorage.setItem('eduardo-theme',root.dataset.theme)}catch{};b.textContent=labels[root.dataset.theme]});if(b)b.textContent=labels[document.documentElement.dataset.theme]`}</script>
+    <main id="content"><slot /></main>
+    <footer><p>© {new Date().getFullYear()} Eduardo Alencar · {ui.location}</p><p><a href="https://www.linkedin.com/in/eduardocna">LinkedIn</a> · <a href="https://orcid.org/0000-0002-9218-1798">ORCID</a> · <a href="https://scholar.google.com/citations?user=vJ12isgAAAAJ">Google Scholar</a> · <a href="mailto:eduardocna@gmail.com">Email</a></p></footer>
+    <script is:inline define:vars={{ darkLabel: ui.dark, lightLabel: ui.light }}>
+      const themeButton = document.getElementById('themebtn');
+      const updateThemeButton = () => { const dark = document.documentElement.dataset.theme === 'dark'; themeButton?.setAttribute('aria-pressed', String(dark)); if (themeButton) { const label = dark ? lightLabel : darkLabel; themeButton.querySelector('b').textContent = label; themeButton.setAttribute('aria-label', label); } };
+      updateThemeButton();
+      themeButton?.addEventListener('click', () => { const root = document.documentElement; root.dataset.theme = root.dataset.theme === 'dark' ? 'light' : 'dark'; try { localStorage.setItem('eduardo-theme', root.dataset.theme); } catch {} updateThemeButton(); });
+    </script>
   </body>
 </html>

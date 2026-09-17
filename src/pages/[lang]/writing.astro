@@ -1,10 +1,6 @@
 ---
-import BaseLayout from '../../layouts/BaseLayout.astro';
-export function getStaticPaths() { return ['en', 'pt'].map((lang) => ({ params: { lang } })); }
-const lang = Astro.params.lang === 'pt' ? 'pt' : 'en'; const pt = lang === 'pt';
-const base = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL : `${import.meta.env.BASE_URL}/`;
+import BaseLayout from '../../layouts/BaseLayout.astro'; import DirectSectionPage from '../../components/DirectSectionPage.astro'; import { isLocale, locales } from '../../data/site';
+export function getStaticPaths(){return locales.map((lang)=>({params:{lang}}));} const lang=isLocale(Astro.params.lang)?Astro.params.lang:'en';
+const meta={en:['Writing','Essays on public integrity, AI and state capacity.'],pt:['Textos','Ensaios sobre integridade pública, IA e capacidade estatal.'],es:['Textos','Ensayos sobre integridad pública, IA y capacidad estatal.'],it:['Scritti','Saggi su integrità pubblica, IA e capacità statale.']}[lang];
 ---
-<BaseLayout lang={lang} title={pt ? 'Textos | Eduardo Alencar' : 'Writing | Eduardo Alencar'} description={pt ? 'Ensaios sobre integridade pública, IA e capacidade estatal.' : 'Essays on public integrity, AI and state capacity.'}>
-  <section class="section"><p class="eyebrow">{pt ? 'Textos e newsletter' : 'Writing and newsletter'}</p><h1 class="page-title">{pt ? 'Ideias com fonte, limite e consequência.' : 'Ideas with source, limit and consequence.'}</h1><p class="lede">{pt ? 'Ensaios bilíngues que traduzem pesquisa e experiência institucional em análise utilizável sobre IA no governo, integridade, fiscalização e decisão baseada em evidência.' : 'Bilingual essays translating research and institutional experience into usable analysis on AI in government, integrity, oversight and evidence-based decision-making.'}</p><div class="actions"><a class="button" href="https://www.linkedin.com/build-relation/newsletter-follow?entityUrn=7347441938133848064">{pt ? 'Assinar no LinkedIn' : 'Subscribe on LinkedIn'}</a><a class="button secondary" href={`${base}rss.xml`}>RSS</a></div></section>
-  <section class="section"><div class="case-grid"><article class="case"><h3>{pt ? 'IA e governo digital' : 'AI and digital government'}</h3><p>{pt ? 'Viés algorítmico, avaliação de risco, soberania tecnológica e capacidade de implementação.' : 'Algorithmic bias, risk assessment, technological sovereignty and implementation capacity.'}</p></article><article class="case"><h3>{pt ? 'Integridade e anticorrupção' : 'Integrity and anti-corruption'}</h3><p>{pt ? 'Sinais de risco, compras públicas, fiscalização e consequências mensuráveis.' : 'Risk signals, public procurement, oversight and measurable consequences.'}</p></article></div></section>
-</BaseLayout>
+<BaseLayout lang={lang} title={`${meta[0]} | Eduardo Alencar`} description={meta[1]} contentPath="writing/"><DirectSectionPage lang={lang} id="writing" /></BaseLayout>
