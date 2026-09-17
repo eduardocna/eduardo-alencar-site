@@ -11,7 +11,7 @@ const localeNames: Record<Locale, string> = { en: 'EN', pt: 'PT', es: 'ES', it: 
 const canonicalPath = `/${lang}/`;
 ---
 <!doctype html>
-<html lang={lang} data-theme="dark">
+<html lang={lang} data-theme="light">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -28,7 +28,7 @@ const canonicalPath = `/${lang}/`;
   <body>
     <a class="skip" href="#home">Skip to content</a>
     <header class="protobar">
-      <a class="brand" href={local(`/${lang}/`)}>EA<span>·</span> Evidence Lab</a>
+      <a class="brand" href={local(`/${lang}/`)}>Eduardo Alencar<span>Public integrity, measured</span></a>
       <nav aria-label="Primary navigation">{sectionIds.map((id, index) => <a href={`#${id}`} data-page-link={id} aria-current={id === 'home' ? 'page' : 'false'}>{ui.nav[index]}</a>)}</nav>
       <div class="toolbar"><div class="langtoggle" aria-label="Language selector">{locales.map((locale) => <a href={local(`/${locale}/`)} aria-current={locale === lang ? 'page' : undefined} aria-label={locale === lang ? `${localeNames[locale]} selected` : localeNames[locale]}>{localeNames[locale]}</a>)}</div><button class="themebtn" id="themebtn" type="button">{ui.theme}</button></div>
     </header>
@@ -37,6 +37,6 @@ const canonicalPath = `/${lang}/`;
       <p>© {new Date().getFullYear()} Eduardo Alencar · Brasília, Brazil</p>
       <p><a href="https://www.linkedin.com/in/eduardocna">LinkedIn</a> · <a href="https://orcid.org/0000-0002-9218-1798">ORCID</a> · <a href="https://scholar.google.com/citations?user=vJ12isgAAAAJ">Google Scholar</a> · <a href="mailto:eduardocna@gmail.com">Email</a></p>
     </footer>
-    <script is:inline>{`const b=document.getElementById('themebtn');const labels=${JSON.stringify({ light: ui.theme, dark: lang==='pt'?'Visualização escura':lang==='es'?'Vista oscura':lang==='it'?'Vista scura':'Dark view' })};try{document.documentElement.dataset.theme=localStorage.getItem('eduardo-theme')||'dark'}catch{};b?.addEventListener('click',()=>{const root=document.documentElement;const light=root.dataset.theme==='light';root.dataset.theme=light?'dark':'light';try{localStorage.setItem('eduardo-theme',root.dataset.theme)}catch{};b.textContent=labels[root.dataset.theme]});if(b)b.textContent=labels[document.documentElement.dataset.theme]`}</script>
+    <script is:inline>{`const b=document.getElementById('themebtn');const labels=${JSON.stringify({ light: lang==='pt'?'Visualização escura':lang==='es'?'Vista oscura':lang==='it'?'Vista scura':'Dark view', dark: ui.theme })};try{document.documentElement.dataset.theme=localStorage.getItem('eduardo-theme')||'light'}catch{};b?.addEventListener('click',()=>{const root=document.documentElement;root.dataset.theme=root.dataset.theme==='light'?'dark':'light';try{localStorage.setItem('eduardo-theme',root.dataset.theme)}catch{};b.textContent=labels[root.dataset.theme]});if(b)b.textContent=labels[document.documentElement.dataset.theme]`}</script>
   </body>
 </html>
