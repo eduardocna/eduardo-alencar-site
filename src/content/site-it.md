@@ -69,6 +69,10 @@ Un argomento originale sul perché tecnologia, controlli e buone intenzioni non 
 
 Data e sede del lancio a Brasília saranno annunciate a breve.
 
+[Vedi la pagina di prelancio su Editora JusPodivm](https://www.editorajuspodivm.com.br/governanca-em-tempo-real-como-o-brasil-pode-parar-de-fingir-que-governa-2027-alencar)
+
+[Prenota un posto al lancio](mailto:eduardocna@gmail.com?subject=Prenotazione%20%E2%80%94%20Lancio%20Governan%C3%A7a%20em%20Tempo%20Real)
+
 ---
 
 # Ricerca
@@ -270,7 +274,7 @@ Trascrizione automatizzata e analisi testuale delle audizioni delle commissioni 
 **Campus Summer Intern**, University of California, Irvine — 2018
 Resilienza alla siccità in California con metodi econometrici, con la prof.ssa Maura Allaire.
 
-[Scarica il CV completo (PDF)](/downloads/cv-eduardo-alencar-en.pdf)
+[Scarica il CV completo (PDF)](/downloads/cv-eduardo-alencar-it.pdf)
 
 ---
 

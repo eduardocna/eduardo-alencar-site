@@ -114,6 +114,19 @@ test('every internal link across all locales resolves', async ({ page, baseURL, 
   }
 });
 
+test('language switch preserves the current section instead of jumping to the top', async ({ page }) => {
+  await page.goto('en/');
+  await page.evaluate(() => document.querySelector('#book')!.scrollIntoView({ behavior: 'instant', block: 'start' }));
+  const href = await page.evaluate(() => {
+    const link = document.querySelector('a[hreflang="pt"]') as HTMLAnchorElement;
+    const preventNav = (event: Event) => event.preventDefault();
+    link.addEventListener('click', preventNav, { capture: true, once: true });
+    link.click();
+    return link.href;
+  });
+  expect(href).toContain('/pt/#book');
+});
+
 test.describe('without JavaScript', () => {
   test.use({ javaScriptEnabled: false });
   test('content, anchors and explorer remain available', async ({ page }) => {

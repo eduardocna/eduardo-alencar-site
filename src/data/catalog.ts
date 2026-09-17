@@ -73,6 +73,17 @@ const editorial: Record<string, WorkEditorial> = {
       { kind: 'repository', href: 'https://github.com/eduardocna/radar-aberto-integridade', label: l('Code and documentation', 'Código e documentação', 'Código y documentación', 'Codice e documentazione') }
     ]
   },
+  'frente-fit-paineis-publicos': {
+    kind: 'system', status: 'published', category: 'tools',
+    summary: l('Transparency panels of the Parliamentary Front for Oversight, Integrity and Transparency (FIT): voluntary transfers, Pix budget amendments, authorities’ agendas, and Itaipu Binacional agreements and sponsorships. Institutional work led technically by Eduardo Alencar.', 'Painéis de transparência da Frente Parlamentar de Fiscalização, Integridade e Transparência (FIT): transferências voluntárias, emendas Pix, agenda de autoridades e convênios e patrocínios da Itaipu Binacional. Produção institucional, com responsabilidade técnica de Eduardo Alencar.', 'Paneles de transparencia del Frente Parlamentario de Fiscalización, Integridad y Transparencia (FIT, Brasil): transferencias voluntarias, enmiendas Pix, agenda de autoridades y convenios y patrocinios de Itaipú Binacional. Producción institucional, con responsabilidad técnica de Eduardo Alencar.', 'Pannelli di trasparenza del Fronte Parlamentare per il Controllo, l’Integrità e la Trasparenza (FIT, Brasile): trasferimenti volontari, emendamenti Pix, agenda delle autorità e accordi e sponsorizzazioni di Itaipu Binacional. Produzione istituzionale, con responsabilità tecnica di Eduardo Alencar.'),
+    methods: l('Public data monitoring', 'Monitoramento de dados públicos', 'Monitoreo de datos públicos', 'Monitoraggio di dati pubblici'),
+    links: [
+      { kind: 'report', href: 'https://www.frentefit.com.br/transferencias-voluntarias/', label: l('Voluntary transfers panel', 'Painel de transferências voluntárias', 'Panel de transferencias voluntarias', 'Pannello dei trasferimenti volontari') },
+      { kind: 'report', href: 'https://www.frentefit.com.br/emendas-pix/', label: l('Pix budget amendments panel', 'Painel de emendas Pix', 'Panel de enmiendas Pix', 'Pannello degli emendamenti Pix') },
+      { kind: 'report', href: 'https://www.frentefit.com.br/agenda-das-autoridades/', label: l('Authorities’ agenda panel', 'Painel da agenda de autoridades', 'Panel de la agenda de autoridades', 'Pannello dell’agenda delle autorità') },
+      { kind: 'report', href: 'https://www.frentefit.com.br/patrocinios-itaipu/', label: l('Itaipu Binacional agreements and sponsorships panel', 'Painel de convênios e patrocínios da Itaipu Binacional', 'Panel de convenios y patrocinios de Itaipú Binacional', 'Pannello di accordi e sponsorizzazioni di Itaipu Binacional') }
+    ]
+  },
   'indice-governanca-2026': {
     kind: 'tool', status: 'published', category: 'tools',
     summary: l('A comparison of 13 official government-plan documents focused on monitorability, accountability and implementation capacity.', 'Comparação de 13 documentos oficiais de programas de governo, com foco em monitorabilidade, responsabilização e capacidade de implementação.', 'Comparación de 13 documentos oficiales de programas de gobierno centrada en monitoreo, rendición de cuentas y capacidad de implementación.', 'Confronto tra 13 documenti ufficiali di programma di governo incentrato su monitoraggio, responsabilità e capacità di attuazione.'),
@@ -93,7 +104,9 @@ const editorial: Record<string, WorkEditorial> = {
     methods: l('Verified curriculum record', 'Currículo verificável', 'Currículum verificable', 'Curriculum verificabile'),
     links: [
       { kind: 'download', href: '/downloads/cv-eduardo-alencar-en.pdf', label: l('Download CV (English, PDF)', 'Baixar CV (inglês, PDF)', 'Descargar CV (inglés, PDF)', 'Scarica CV (inglese, PDF)') },
-      { kind: 'download', href: '/downloads/cv-eduardo-alencar-pt.pdf', label: l('Download CV (Portuguese, PDF)', 'Baixar CV (português, PDF)', 'Descargar CV (portugués, PDF)', 'Scarica CV (portoghese, PDF)') }
+      { kind: 'download', href: '/downloads/cv-eduardo-alencar-pt.pdf', label: l('Download CV (Portuguese, PDF)', 'Baixar CV (português, PDF)', 'Descargar CV (portugués, PDF)', 'Scarica CV (portoghese, PDF)') },
+      { kind: 'download', href: '/downloads/cv-eduardo-alencar-es.pdf', label: l('Download CV (Spanish, PDF)', 'Baixar CV (espanhol, PDF)', 'Descargar CV (español, PDF)', 'Scarica CV (spagnolo, PDF)') },
+      { kind: 'download', href: '/downloads/cv-eduardo-alencar-it.pdf', label: l('Download CV (Italian, PDF)', 'Baixar CV (italiano, PDF)', 'Descargar CV (italiano, PDF)', 'Scarica CV (italiano, PDF)') }
     ]
   },
   'uci-teaching-evidence': {

@@ -69,6 +69,10 @@ Un argumento autoral sobre por qué la tecnología, los controles y las buenas i
 
 La fecha y el lugar del lanzamiento en Brasília se anunciarán próximamente.
 
+[Ver la página de preventa en Editora JusPodivm](https://www.editorajuspodivm.com.br/governanca-em-tempo-real-como-o-brasil-pode-parar-de-fingir-que-governa-2027-alencar)
+
+[Reservar un lugar en el lanzamiento](mailto:eduardocna@gmail.com?subject=Reserva%20%E2%80%94%20Lanzamiento%20Governan%C3%A7a%20em%20Tempo%20Real)
+
 ---
 
 # Investigación
@@ -270,7 +274,7 @@ Transcripción automatizada y análisis textual de audiencias de comités estata
 **Campus Summer Intern**, University of California, Irvine — 2018
 Resiliencia a la sequía en California mediante métodos econométricos, con la Dra. Maura Allaire.
 
-[Descarga el CV completo (PDF)](/downloads/cv-eduardo-alencar-en.pdf)
+[Descarga el CV completo (PDF)](/downloads/cv-eduardo-alencar-es.pdf)
 
 ---
 

@@ -43,11 +43,11 @@ export const copy: Record<Locale, {
 const escape = (value: string) => value.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
 export function inline(value: string) {
   return escape(value)
-    .replace(/\[([^\]]+)\]\((https?:\/\/[^\s)]+|\/[^\s)]+)\)/g, (_match, text: string, url: string) =>
-      url.startsWith('/')
-        ? `<a href="${withBase(url)}">${text}</a>`
-        : `<a href="${url}" target="_blank" rel="noreferrer">${text}</a>`
-    )
+    .replace(/\[([^\]]+)\]\((https?:\/\/[^\s)]+|mailto:[^\s)]+|\/[^\s)]+)\)/g, (_match, text: string, url: string) => {
+      if (url.startsWith('/')) return `<a href="${withBase(url)}">${text}</a>`;
+      if (url.startsWith('mailto:')) return `<a href="${url}">${text}</a>`;
+      return `<a href="${url}" target="_blank" rel="noreferrer">${text}</a>`;
+    })
     .replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>')
     .replace(/\*([^*]+)\*/g, '<em>$1</em>');
 }

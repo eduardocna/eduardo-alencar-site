@@ -48,6 +48,17 @@ const localeNames: Record<Locale, string> = { en:'EN', pt:'PT', es:'ES', it:'IT'
       const updateThemeButton = () => { const dark = document.documentElement.dataset.theme === 'dark'; themeButton?.setAttribute('aria-pressed', String(dark)); if (themeButton) { const label = dark ? lightLabel : darkLabel; themeButton.querySelector('b').textContent = label; themeButton.setAttribute('aria-label', label); } };
       updateThemeButton();
       themeButton?.addEventListener('click', () => { const root = document.documentElement; root.dataset.theme = root.dataset.theme === 'dark' ? 'light' : 'dark'; try { localStorage.setItem('eduardo-theme', root.dataset.theme); } catch {} updateThemeButton(); });
+      document.querySelectorAll('.langtoggle a').forEach((link) => {
+        link.addEventListener('click', () => {
+          const sections = [...document.querySelectorAll('main > article[id], .editorial-section[id], #career-timeline, #evidence-story')];
+          if (sections.length < 2) return;
+          let current = sections[0];
+          for (const el of sections) { if (el.getBoundingClientRect().top <= 300) current = el; }
+          const url = new URL(link.href);
+          url.hash = current.id === 'home' ? '' : current.id;
+          link.href = url.toString();
+        });
+      });
     </script>
   </body>
 </html>

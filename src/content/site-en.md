@@ -69,6 +69,10 @@ An original argument for why technology, controls and good intentions are not en
 
 The date and venue for the Brasília launch event will be announced soon.
 
+[See the pre-launch page at Editora JusPodivm](https://www.editorajuspodivm.com.br/governanca-em-tempo-real-como-o-brasil-pode-parar-de-fingir-que-governa-2027-alencar)
+
+[Reserve a seat at the launch event](mailto:eduardocna@gmail.com?subject=Reserva%20%E2%80%94%20Lan%C3%A7amento%20Governan%C3%A7a%20em%20Tempo%20Real)
+
 ---
 
 # Research

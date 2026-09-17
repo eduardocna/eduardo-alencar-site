@@ -69,6 +69,10 @@ Um argumento autoral sobre por que tecnologia, controle e boas intenções não 
 
 Data e local do lançamento em Brasília serão divulgados em breve.
 
+[Ver a página de pré-lançamento na Editora JusPodivm](https://www.editorajuspodivm.com.br/governanca-em-tempo-real-como-o-brasil-pode-parar-de-fingir-que-governa-2027-alencar)
+
+[Reservar presença no lançamento](mailto:eduardocna@gmail.com?subject=Reserva%20%E2%80%94%20Lan%C3%A7amento%20Governan%C3%A7a%20em%20Tempo%20Real)
+
 ---
 
 # Pesquisa

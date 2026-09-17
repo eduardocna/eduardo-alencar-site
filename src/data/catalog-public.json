@@ -166,6 +166,24 @@
       "access": "publico"
     },
     {
+      "slug": "frente-fit-paineis-publicos",
+      "title": "Painéis públicos da Frente Parlamentar FIT",
+      "authors": ["Eduardo C. N. Alencar"],
+      "year": 2026,
+      "type": "Painéis públicos",
+      "languages": ["pt"],
+      "summary": "Painéis de transparência da Frente Parlamentar de Fiscalização, Integridade e Transparência: transferências voluntárias, emendas Pix, agenda de autoridades e convênios e patrocínios da Itaipu Binacional.",
+      "themes": ["transparência", "fiscalização parlamentar", "dados abertos"],
+      "methods": ["monitoramento de dados públicos"],
+      "status": "publicado",
+      "canonical_source": "Frente Parlamentar de Fiscalização, Integridade e Transparência (FIT) — atuação técnica de Eduardo Alencar",
+      "public_file": null,
+      "public_url": "https://www.frentefit.com.br/",
+      "rights": "Painéis institucionais da Frente Parlamentar FIT, produzidos por Eduardo Alencar como responsável técnico.",
+      "last_checked": "2026-09-17",
+      "access": "publico"
+    },
+    {
       "slug": "indice-governanca-2026",
       "title": "Índice de Governança das Propostas Presidenciais 2026",
       "authors": ["Eduardo C. N. Alencar"],
