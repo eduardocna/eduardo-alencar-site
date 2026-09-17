@@ -237,6 +237,24 @@
       "rights": "Somente métricas agregadas e excertos anonimizados após revisão de privacidade.",
       "last_checked": "2026-09-13",
       "access": "resumo_publico"
+    },
+    {
+      "slug": "supremo-autojulgamento-pet16662",
+      "title": "O Supremo julga um dos seus",
+      "authors": ["Eduardo C. N. Alencar"],
+      "year": 2026,
+      "type": "Policy brief",
+      "languages": ["pt"],
+      "summary": "Análise institucional da sessão extraordinária do STF de 15 de setembro de 2026 sobre a PET 16.662, examinando os limites e salvaguardas do autogoverno judicial.",
+      "themes": ["Judiciário", "integridade", "governança"],
+      "methods": ["análise institucional", "análise de transcrição"],
+      "status": "publicado",
+      "canonical_source": "3-Resources/Casos/policy-brief-sessao-stf-pet16662-2026-09-15/outputs/policy-brief-sessao-stf-pet16662-2026-09-15.pdf",
+      "public_file": "04 — Policy briefs/o-supremo-julga-um-dos-seus-2026.pdf",
+      "public_url": "https://eduardocnalencar.com/downloads/o-supremo-julga-um-dos-seus-2026.pdf",
+      "rights": "Autoria própria; PDF aprovado para publicação.",
+      "last_checked": "2026-09-16",
+      "access": "publico"
     }
   ]
 }

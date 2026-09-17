@@ -1,7 +1,4 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro';
 const base = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL : `${import.meta.env.BASE_URL}/`;
 ---
-<BaseLayout lang="en" title="Eduardo Alencar | Evidence Lab" description="Applied research, tools and evidence for public integrity.">
-  <section class="hero section-shell"><div><p class="eyebrow">Eduardo Alencar · PhD · scholar-practitioner</p><h1>Public integrity, measured.</h1><p class="lede">Choose a language to enter the evidence lab.</p><div class="ctarow"><a class="cta" href={`${base}en/`}>English</a><a class="cta ghost" href={`${base}pt/`}>Português</a><a class="cta ghost" href={`${base}es/`}>Español</a><a class="cta ghost" href={`${base}it/`}>Italiano</a></div></div><aside class="story-visual"><div class="story-center">EA<br />Evidence Lab</div></aside></section>
-</BaseLayout>
+<!doctype html><html lang="en"><head><meta charset="utf-8" /><meta http-equiv="refresh" content={`0; url=${base}en/`} /><link rel="canonical" href={`${base}en/`} /></head><body><p><a href={`${base}en/`}>Continue to Eduardo Alencar</a></p></body></html>
