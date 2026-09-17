@@ -31,14 +31,14 @@ const bookCoverAlt = { en:'Cover of “Governança em Tempo Real”', pt:'Capa d
 </article>
 
 {pages.slice(1).map((page: NarrativePage) => <article class="editorial-section" id={page.id}>
-  <header class="section-shell section-intro reveal"><p class="eyebrow">{sectionNumber(page.id)}</p><h2>{page.title}</h2>{page.intro.map((line: string) => <p class="lede" set:html={inline(line)}></p>)}</header>
+  <header class:list={['section-shell', 'section-intro', 'reveal', { 'book-copy': page.id === 'book' }]}><p class="eyebrow">{sectionNumber(page.id)}</p><h2>{page.title}</h2>{page.intro.map((line: string) => <p class="lede" set:html={inline(line)}></p>)}</header>
   {page.id === 'book' && <figure class="book-cover reveal"><img src={withBase('images/governanca-em-tempo-real-capa.png')} alt={bookCoverAlt} width="515" height="605" loading="lazy" /></figure>}
   {page.id === 'research' && <WorkCatalog lang={lang} categories={['research','policy']} title={catalogueTitle} />}
   {page.id === 'tools' && <>
     <section class="verified-scale section-shell reveal"><div><strong>30,304</strong><span>{lang === 'pt' ? 'contratações' : lang === 'es' ? 'contratos' : lang === 'it' ? 'contratti' : 'contracts'}</span></div><div><strong>R$ 59.2bn</strong><span>{lang === 'pt' ? 'valor analisado' : lang === 'es' ? 'valor analizado' : lang === 'it' ? 'valore analizzato' : 'value screened'}</span></div><div><strong>32</strong><span>{lang === 'pt' ? 'testes' : lang === 'es' ? 'pruebas' : lang === 'it' ? 'test' : 'tests'}</span></div><div><strong>13,042</strong><span>{lang === 'pt' ? 'pares RIC–resposta' : lang === 'es' ? 'pares solicitud–respuesta' : lang === 'it' ? 'coppie richiesta–risposta' : 'request–reply pairs'}</span></div></section>
     <WorkCatalog lang={lang} categories={['tools']} title={toolsTitle} />
   </>}
-  <section class="section-shell"><ContentBlocks section={page} /></section>
+  <section class:list={['section-shell', { 'book-copy': page.id === 'book' }]}><ContentBlocks section={page} /></section>
 </article>)}
 
 <script is:inline define:vars={{ numberLocale: lang }}>
