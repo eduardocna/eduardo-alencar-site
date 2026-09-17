@@ -9,7 +9,7 @@ export const isLocale = (value: string | undefined): value is Locale => locales.
 
 export const sectionIds = ['home', 'research', 'tools', 'writing', 'teaching', 'cv', 'contact'] as const;
 
-export interface MarkdownSection { title: string; blocks: string[]; }
+export interface MarkdownSection { title: string; intro: string[]; blocks: string[]; }
 export interface SiteDocument { title: string; sections: MarkdownSection[]; }
 
 function parse(raw: string): SiteDocument {
@@ -18,7 +18,8 @@ function parse(raw: string): SiteDocument {
   const [first, ...rest] = pages;
   const toSection = (page: string): MarkdownSection => {
     const [title, ...parts] = page.trim().split(/^## /m);
-    return { title: title.trim(), blocks: parts.map((part) => part.trim()) };
+    const [heading, ...intro] = title.trim().split('\n').filter(Boolean);
+    return { title: heading, intro, blocks: parts.map((part) => part.trim()) };
   };
   return { title: first.split('\n')[0].trim(), sections: [toSection(first), ...rest.map(toSection)] };
 }
