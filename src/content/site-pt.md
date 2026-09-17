@@ -57,6 +57,20 @@ Português (nativo) · Inglês (fluente) · Italiano (fluente) · Espanhol (inte
 
 ---
 
+# Livro
+
+*Governança em Tempo Real: como o Brasil pode parar de fingir que governa*, pela Editora JusPodivm. O Brasil precisa sair da governança por intuição e construir uma governança baseada em evidências, capaz de transformar integridade, dados, inteligência artificial e avaliação em capacidade pública mensurável.
+
+## Sobre o livro
+
+Um argumento autoral sobre por que tecnologia, controle e boas intenções não bastam para governar. O livro reúne trajetória em fiscalização parlamentar, integridade pública, dados e inteligência artificial aplicada ao setor público em um argumento contínuo, não uma coletânea de artigos.
+
+## Lançamento
+
+Data e local do lançamento em Brasília serão divulgados em breve.
+
+---
+
 # Pesquisa
 
 Pesquisa aplicada sobre integridade, governança e inteligência decisória, desenhada para ser utilizável por instituições públicas.

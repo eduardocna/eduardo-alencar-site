@@ -57,6 +57,20 @@ Portugués (nativo) · Inglés (fluido) · Italiano (fluido) · Español (interm
 
 ---
 
+# Libro
+
+*Governança em Tempo Real* ("Gobernanza en Tiempo Real"), próximamente por Editora JusPodivm. Brasil necesita superar la gobernanza por intuición y construir una gobernanza basada en evidencia, capaz de transformar integridad, datos, inteligencia artificial y evaluación en capacidad pública medible.
+
+## Sobre el libro
+
+Un argumento autoral sobre por qué la tecnología, los controles y las buenas intenciones no bastan para gobernar. El libro reúne una trayectoria en control parlamentario, integridad pública, datos e inteligencia artificial aplicada al sector público en un argumento continuo, no una colección de artículos.
+
+## Lanzamiento
+
+La fecha y el lugar del lanzamiento en Brasília se anunciarán próximamente.
+
+---
+
 # Investigación
 
 Investigación aplicada sobre integridad, gobernanza e inteligencia decisoria, diseñada para ser utilizable por instituciones públicas.

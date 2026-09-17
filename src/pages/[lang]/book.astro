@@ -1,0 +1,6 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro'; import DirectSectionPage from '../../components/DirectSectionPage.astro'; import { isLocale, locales } from '../../data/site';
+export function getStaticPaths(){return locales.map((lang)=>({params:{lang}}));} const lang=isLocale(Astro.params.lang)?Astro.params.lang:'en';
+const meta={en:['Book','Governança em Tempo Real, forthcoming from Editora JusPodivm.'],pt:['Livro','Governança em Tempo Real, pela Editora JusPodivm.'],es:['Libro','Governança em Tempo Real, próximamente por Editora JusPodivm.'],it:['Libro','Governança em Tempo Real, di prossima pubblicazione per Editora JusPodivm.']}[lang];
+---
+<BaseLayout lang={lang} title={`${meta[0]} | Eduardo Alencar`} description={meta[1]} contentPath="book/"><DirectSectionPage lang={lang} id="book" /></BaseLayout>

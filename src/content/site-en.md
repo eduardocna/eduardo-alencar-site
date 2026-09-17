@@ -57,6 +57,20 @@ Portuguese (native) · English (fluent) · Italian (fluent) · Spanish (intermed
 
 ---
 
+# Book
+
+*Governança em Tempo Real* ("Real-Time Governance"), forthcoming from Editora JusPodivm. Brazil needs to move beyond governance by intuition and build evidence-based governance capable of turning integrity, data, AI and evaluation into measurable public capacity.
+
+## About the book
+
+An original argument for why technology, controls and good intentions are not enough to govern well. The book brings together a career in parliamentary oversight, public integrity, data and applied artificial intelligence into one continuous argument, not a collection of essays.
+
+## Launch
+
+The date and venue for the Brasília launch event will be announced soon.
+
+---
+
 # Research
 
 Applied research on integrity, governance and decision intelligence, designed to be usable by public institutions.

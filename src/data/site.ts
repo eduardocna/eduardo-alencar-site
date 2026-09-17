@@ -8,14 +8,14 @@ export const locales = ['en', 'pt', 'es', 'it'] as const;
 export type Locale = (typeof locales)[number];
 export const isLocale = (value: string | undefined): value is Locale => locales.includes(value as Locale);
 
-export const sectionIds = ['home', 'research', 'tools', 'writing', 'teaching', 'cv', 'contact'] as const;
+export const sectionIds = ['home', 'book', 'research', 'tools', 'writing', 'teaching', 'cv', 'contact'] as const;
 
 export interface MarkdownSection { title: string; intro: string[]; blocks: string[]; }
 export interface SiteDocument { title: string; sections: MarkdownSection[]; }
 
 function parse(raw: string): SiteDocument {
   const body = raw.replace(/^---[\s\S]*?---\s*/, '').trim();
-  const pages = body.split(/^# /m).filter(Boolean);
+  const pages = body.split(/^# /m).filter(Boolean).map((page) => page.replace(/\n+---\s*$/, ''));
   const [first, ...rest] = pages;
   const toSection = (page: string): MarkdownSection => {
     const [title, ...parts] = page.trim().split(/^## /m);
@@ -34,10 +34,10 @@ export const copy: Record<Locale, {
   metrics: string; timeline: string; explorer: string; close: string; table: string;
   tagline: string; skip: string; dark: string; light: string; location: string;
 }> = {
-  en: { nav: ['Home', 'Research', 'Tools & data', 'Writing', 'Teaching', 'CV', 'Contact'], read: 'Read the research', tools: 'See the tools', cv: 'View CV', theme: 'Light view', source: 'Source and method', metrics: 'Evidence desk', timeline: 'Career timeline', explorer: 'Explore the work', close: 'Close', table: 'View data table', tagline:'Public integrity, measured', skip:'Skip to content', dark:'Dark view', light:'Light view', location:'Brasília, Brazil' },
-  pt: { nav: ['Início', 'Pesquisa', 'Ferramentas e dados', 'Textos', 'Docência', 'Currículo', 'Contato'], read: 'Ler a pesquisa', tools: 'Ver as ferramentas', cv: 'Ver currículo', theme: 'Modo claro', source: 'Fonte e método', metrics: 'Mesa de evidência', timeline: 'Linha do tempo profissional', explorer: 'Explorar o trabalho', close: 'Fechar', table: 'Ver tabela de dados', tagline:'Integridade pública, medida', skip:'Pular para o conteúdo', dark:'Modo escuro', light:'Modo claro', location:'Brasília, Brasil' },
-  es: { nav: ['Inicio', 'Investigación', 'Herramientas y datos', 'Textos', 'Docencia', 'CV', 'Contacto'], read: 'Conoce la investigación', tools: 'Ver las herramientas', cv: 'Ver CV', theme: 'Vista clara', source: 'Fuente y método', metrics: 'Mesa de evidencia', timeline: 'Trayectoria profesional', explorer: 'Explorar el trabajo', close: 'Cerrar', table: 'Ver tabla de datos', tagline:'Integridad pública, medida', skip:'Saltar al contenido', dark:'Vista oscura', light:'Vista clara', location:'Brasília, Brasil' },
-  it: { nav: ['Home', 'Ricerca', 'Strumenti e dati', 'Scritti', 'Didattica', 'CV', 'Contatti'], read: 'Leggi la ricerca', tools: 'Vedi gli strumenti', cv: 'Vedi CV', theme: 'Vista chiara', source: 'Fonte e metodo', metrics: 'Tavolo dell’evidenza', timeline: 'Percorso professionale', explorer: 'Esplora il lavoro', close: 'Chiudi', table: 'Vedi tabella dati', tagline:'Integrità pubblica, misurata', skip:'Vai al contenuto', dark:'Vista scura', light:'Vista chiara', location:'Brasília, Brasile' }
+  en: { nav: ['Home', 'Book', 'Research', 'Tools & data', 'Writing', 'Teaching', 'CV', 'Contact'], read: 'Read the research', tools: 'See the tools', cv: 'View CV', theme: 'Light view', source: 'Source and method', metrics: 'Evidence desk', timeline: 'Career timeline', explorer: 'Explore the work', close: 'Close', table: 'View data table', tagline:'Public integrity, measured', skip:'Skip to content', dark:'Dark view', light:'Light view', location:'Brasília, Brazil' },
+  pt: { nav: ['Início', 'Livro', 'Pesquisa', 'Ferramentas e dados', 'Textos', 'Docência', 'Currículo', 'Contato'], read: 'Ler a pesquisa', tools: 'Ver as ferramentas', cv: 'Ver currículo', theme: 'Modo claro', source: 'Fonte e método', metrics: 'Mesa de evidência', timeline: 'Linha do tempo profissional', explorer: 'Explorar o trabalho', close: 'Fechar', table: 'Ver tabela de dados', tagline:'Integridade pública, medida', skip:'Pular para o conteúdo', dark:'Modo escuro', light:'Modo claro', location:'Brasília, Brasil' },
+  es: { nav: ['Inicio', 'Libro', 'Investigación', 'Herramientas y datos', 'Textos', 'Docencia', 'CV', 'Contacto'], read: 'Conoce la investigación', tools: 'Ver las herramientas', cv: 'Ver CV', theme: 'Vista clara', source: 'Fuente y método', metrics: 'Mesa de evidencia', timeline: 'Trayectoria profesional', explorer: 'Explorar el trabajo', close: 'Cerrar', table: 'Ver tabla de datos', tagline:'Integridad pública, medida', skip:'Saltar al contenido', dark:'Vista oscura', light:'Vista clara', location:'Brasília, Brasil' },
+  it: { nav: ['Home', 'Libro', 'Ricerca', 'Strumenti e dati', 'Scritti', 'Didattica', 'CV', 'Contatti'], read: 'Leggi la ricerca', tools: 'Vedi gli strumenti', cv: 'Vedi CV', theme: 'Vista chiara', source: 'Fonte e metodo', metrics: 'Tavolo dell’evidenza', timeline: 'Percorso professionale', explorer: 'Esplora il lavoro', close: 'Chiudi', table: 'Vedi tabella dati', tagline:'Integrità pubblica, misurata', skip:'Vai al contenuto', dark:'Vista scura', light:'Vista chiara', location:'Brasília, Brasile' }
 };
 
 const escape = (value: string) => value.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');

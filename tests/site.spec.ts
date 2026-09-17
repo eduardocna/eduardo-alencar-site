@@ -4,7 +4,7 @@ const locales = ['en','pt','es','it'];
 
 test('all locale homes and direct section routes resolve', async ({ page }) => {
   for (const locale of locales) {
-    for (const route of ['', 'research/', 'evidence-lab/', 'writing/', 'teaching/', 'cv/', 'contact/']) {
+    for (const route of ['', 'book/', 'research/', 'evidence-lab/', 'writing/', 'teaching/', 'cv/', 'contact/']) {
       const response = await page.goto(`${locale}/${route}`);
       expect(response?.ok(), `${locale}/${route}`).toBeTruthy();
       await expect(page.locator('html')).toHaveAttribute('lang', locale);
@@ -90,7 +90,7 @@ test('mobile Gantt retains a proportional horizontal scale', async ({ page }, te
 
 test('every internal link across all locales resolves', async ({ page, baseURL, request }) => {
   const basePath = new URL(baseURL!).pathname;
-  const routes = ['', 'research/', 'evidence-lab/', 'writing/', 'teaching/', 'cv/', 'contact/', 'publications/'];
+  const routes = ['', 'book/', 'research/', 'evidence-lab/', 'writing/', 'teaching/', 'cv/', 'contact/', 'publications/'];
   const toCheck = new Set<string>();
   for (const locale of locales) {
     for (const route of routes) {
