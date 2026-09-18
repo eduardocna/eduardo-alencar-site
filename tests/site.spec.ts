@@ -16,7 +16,7 @@ test('home exposes the complete narrative and verified interactions', async ({ p
   await page.goto('en/');
   await expect(page.locator('.evidence-cell')).toHaveCount(70);
   await expect(page.locator('[data-story-beat]')).toHaveCount(4);
-  await expect(page.locator('[data-gantt]')).toHaveCount(18);
+  await expect(page.locator('[data-gantt]')).toHaveCount(16);
   await expect(page.locator('[data-explorer-tab]')).toHaveCount(4);
   await page.locator('[data-explorer-tab="2"]').click();
   await expect(page.locator('[data-explorer-tab="2"]')).toHaveAttribute('aria-selected', 'true');

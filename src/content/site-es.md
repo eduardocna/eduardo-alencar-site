@@ -91,7 +91,7 @@ Investigación aplicada sobre integridad, gobernanza e inteligencia decisoria, d
 
 ## Publicación revisada por pares
 
-Alencar, E. C. N., & Jackson-Green, B. (2021). Applying Synthetic Control Method to estimate the impact of the Lava Jato operation on the Worldwide Governance Indicators in Brazil. *Journal of White-Collar and Corporate Crime*. DOI: 10.1177/2631309X211017874
+Alencar, E. C. N., & Jackson-Green, B. (2021). Applying Synthetic Control Method to estimate the impact of the Lava Jato operation on the Worldwide Governance Indicators in Brazil. *Journal of White-Collar and Corporate Crime*. DOI: [10.1177/2631309X211017874](https://doi.org/10.1177/2631309X211017874)
 
 ## Artículos y boletines
 
@@ -120,28 +120,28 @@ Alencar, E. C. N. (2026, primavera). Evidence-based anti-corruption oversight: s
 
 - Reformas anticorrupción en Brasil, Kenia y Ruanda: evaluación del impacto en resultados educativos (ODS 4). Encuentro anual de la American Society of Criminology, Washington DC, noviembre de 2025.
 - Bridging Digital Transformation and Sustainability: overcoming governance challenges for green policy implementation. Encuentro anual de la American Society of Criminology, Washington DC, noviembre de 2025.
-- Detección de fraude en sistemas de registro de precios. 50º Encuentro Nacional de Economía (ANPEC), Fortaleza, 2022.
+- [Detección de fraude en sistemas de registro de precios](/downloads/anpec-2022-deteccao-fraude-registro-precos.pdf). 50º Encuentro Nacional de Economía (ANPEC), Fortaleza, 2022.
 - Allaire, M., & Alencar, E. (2018). Trends in water rate structures to encourage conservation: evidence from California. AGU Fall Meeting, Washington DC.
 
 ## Tesis
 
-- **Tesis doctoral** (University of California, Irvine, 2021; título conferido el 18 de marzo de 2022). Evaluación del potencial de detección de fraude en la contratación pública brasileña mediante análisis de clases latentes.
-- **Tesis de maestría** (University of California, Irvine, 2020). Aplicación del modelado de ecuaciones estructurales para analizar la causalidad mutua entre corrupción y confianza y el impacto de Lava Jato: evidencia de Brasil y México.
+- **[Tesis doctoral](https://escholarship.org/uc/item/0b2363z1)** (University of California, Irvine, 2021; título conferido el 18 de marzo de 2022). Evaluación del potencial de detección de fraude en la contratación pública brasileña mediante análisis de clases latentes.
+- **[Tesis de maestría](https://escholarship.org/uc/item/8r29q2wk)** (University of California, Irvine, 2020). Aplicación del modelado de ecuaciones estructurales para analizar la causalidad mutua entre corrupción y confianza y el impacto de Lava Jato: evidencia de Brasil y México.
 
 ## Productos de política pública
 
 - *Governança em Tempo Real: Evidência, Integridade e Inteligência Artificial para Reconstruir a Capacidade Pública.* Manuscrito de libro en producción, 2026.
-- *La Corte Suprema juzga a uno de los suyos.* Análisis de la sesión extraordinaria del Supremo Tribunal Federal de Brasil del 15 de septiembre de 2026 sobre la Petición 16.662 (caso Banco Master), que examina si la Corte puso a prueba en vivo, durante casi ocho horas, su propio mecanismo de autojuzgamiento cuando la persona investigada es uno de los guardianes de la Constitución. Policy brief, 2026.
+- *[La Corte Suprema juzga a uno de los suyos](/downloads/o-supremo-julga-um-dos-seus-2026.pdf).* Análisis de la sesión extraordinaria del Supremo Tribunal Federal de Brasil del 15 de septiembre de 2026 sobre la Petición 16.662 (caso Banco Master), que examina si la Corte puso a prueba en vivo, durante casi ocho horas, su propio mecanismo de autojuzgamiento cuando la persona investigada es uno de los guardianes de la Constitución. Policy brief, 2026.
 - De la carga administrativa a la regulación basada en riesgo: análisis de clases latentes y discontinuidades regulatorias en compras públicas en América Latina y el Caribe. Nota técnica conceptual para el BID, 2026.
-- Principales hallazgos relacionados con los desembolsos de convenios y patrocinios de Itaipú Binacional. Frente Parlamentario de Fiscalización, Integridad y Transparencia (FIT), 2 de abril de 2025.
+- [Principales hallazgos relacionados con los desembolsos de convenios y patrocinios de Itaipú Binacional](https://www.frentefit.com.br/relatorio-2025-principais-achados-relacionados-aos-desembolsos-de-convenios-e-patrocinios-da-itaipu-binacional/). Frente Parlamentario de Fiscalización, Integridad y Transparencia (FIT), 2 de abril de 2025.
 - El impacto de Lava Jato sobre la corrupción y la confianza: evidencia de Brasil. Policy brief, 2020.
-- *Caderno Vozes da Classe Média: Classe Média e Emprego Assalariado.* Secretaría de Asuntos Estratégicos, 2013.
-- Gestão de pessoas aplicada ao coaching, en *Coaching e Mentoring: Foco na Excelência*. Sermais, 2014.
-- *Política industrial, acompanhamento e análise*, números 21–24. Instituto de Investigación Económica Aplicada (Ipea), 2003–2004.
+- *[Caderno Vozes da Classe Média: Classe Média e Emprego Assalariado](/downloads/caderno-vozes-classe-media-2013.pdf).* Secretaría de Asuntos Estratégicos, 2013.
+- [Gestão de pessoas aplicada ao coaching](/downloads/gestao-pessoas-coaching-sermais-2014.pdf), en *Coaching e Mentoring: Foco na Excelência*. Sermais, 2014.
+- *Política industrial, acompanhamento e análise*, números [21](/downloads/ipea-boletim-pi-21.pdf), [22](/downloads/ipea-boletim-pi-22.pdf), [23](/downloads/ipea-boletim-pi-23.pdf) y [24](/downloads/ipea-boletim-pi-24.pdf). Instituto de Investigación Económica Aplicada (Ipea), 2003–2004.
 
 ## Perfiles
 
-Google Scholar · ORCID · LinkedIn
+[Google Scholar](https://scholar.google.com/citations?user=vJ12isgAAAAJ) · [ORCID](https://orcid.org/0000-0002-9218-1798) · [LinkedIn](https://www.linkedin.com/in/eduardocna)
 
 ---
 
@@ -282,10 +282,10 @@ Resiliencia a la sequía en California mediante métodos econométricos, con la 
 
 Brasília, Brasil · Disponible para reubicación
 
-- Correo: eduardocna@gmail.com · ealencar@uci.edu
-- LinkedIn: linkedin.com/in/eduardocna
-- Google Scholar: scholar.google.com/citations?user=vJ12isgAAAAJ
-- ORCID: orcid.org/0000-0002-9218-1798
+- Correo: [eduardocna@gmail.com](mailto:eduardocna@gmail.com) · ealencar@uci.edu
+- LinkedIn: [linkedin.com/in/eduardocna](https://www.linkedin.com/in/eduardocna)
+- Google Scholar: [scholar.google.com/citations?user=vJ12isgAAAAJ](https://scholar.google.com/citations?user=vJ12isgAAAAJ)
+- ORCID: [orcid.org/0000-0002-9218-1798](https://orcid.org/0000-0002-9218-1798)
 - X: @eduardo_cna
 
 Disponible para colaborar en integridad pública, analítica de compras, medición de la fiscalización e IA responsable en el gobierno.

@@ -14,11 +14,32 @@ const rangeEnd = 2026 * 12 + 8;
 const total = rangeEnd - origin + 1;
 const month = (value: string) => { const [year, part] = value.split('-').map(Number); return year * 12 + part - 1; };
 const fmt = (value: string | null) => value ? new Intl.DateTimeFormat(lang, { month:'short', year:'numeric', timeZone:'UTC' }).format(new Date(`${value}-01T00:00:00Z`)) : ui.present;
-const rows = timeline.map((entry) => {
-  const left = (month(entry.start) - origin) / total * 100;
-  const last = entry.end ? month(entry.end) : rangeEnd;
-  const width = Math.max((last - month(entry.start) + 1) / total * 100, .7);
-  return { ...entry, left, width, date: `${fmt(entry.start)} – ${fmt(entry.end)}`, roleText: entry.role[lang], resultText: entry.result[lang] };
+const tableRows = timeline.map((entry) => ({ ...entry, institutionText: entry.institution[lang], roleText: entry.role[lang], resultText: entry.result[lang] }));
+
+const stints = Object.values(
+  timeline.reduce<Record<string, typeof timeline>>((acc, entry) => {
+    const key = entry.stintId ?? entry.id;
+    (acc[key] ??= []).push(entry);
+    return acc;
+  }, {})
+).map((entries) => {
+  const sorted = [...entries].sort((a, b) => month(a.start) - month(b.start));
+  const first = sorted[0];
+  const ongoing = sorted.some((entry) => entry.end === null);
+  const start = sorted[0].start;
+  const end = ongoing ? null : sorted.reduce((latest, entry) => (entry.end && month(entry.end) > month(latest) ? entry.end : latest), sorted[0].end as string);
+  const left = (month(start) - origin) / total * 100;
+  const last = end ? month(end) : rangeEnd;
+  const width = Math.max((last - month(start) + 1) / total * 100, .7);
+  const stops = sorted.map((entry) => ({ role: entry.role[lang], date: `${fmt(entry.start)} – ${fmt(entry.end)}`, result: entry.result[lang], url: entry.url }));
+  return {
+    group: first.group,
+    institution: first.institution[lang],
+    left, width,
+    ongoing,
+    date: `${fmt(start)} – ${fmt(end)}`,
+    stops
+  };
 });
 const ticks = [2003, 2006, 2009, 2012, 2015, 2018, 2021, 2024, 2026];
 ---
@@ -30,32 +51,35 @@ const ticks = [2003, 2006, 2009, 2012, 2015, 2018, 2021, 2024, 2026];
         <div class="gantt-axis gantt-top"><span></span><div>{ticks.map((year) => <i style={`--x:${((year*12-origin)/total*100).toFixed(3)}%`}>{year}</i>)}</div></div>
         {(['career','education'] as const).map((group) => <div class="gantt-group">
           <h3>{group === 'career' ? ui.career : ui.education}</h3>
-          {rows.filter((row) => row.group === group).map((row) => <div class="gantt-row">
-            <div class="gantt-label"><strong>{row.institution}</strong><span>{row.roleText}</span></div>
-            <div class="gantt-track">{ticks.map((year) => <i class="gantt-gridline" style={`--x:${((year*12-origin)/total*100).toFixed(3)}%`}></i>)}<button class:list={['gantt-bar', { current: !row.end, education: row.group === 'education' }]} style={`--left:${row.left.toFixed(3)}%;--width:${row.width.toFixed(3)}%`} type="button" aria-pressed="false" aria-label={`${row.institution}, ${row.roleText}, ${row.date}`} data-gantt={JSON.stringify({ institution:row.institution, role:row.roleText, date:row.date, result:row.resultText, url:row.url ?? '' })}></button></div>
+          {stints.filter((stint) => stint.group === group).map((stint) => <div class="gantt-row">
+            <div class="gantt-label"><strong>{stint.institution}</strong><span>{stint.stops[0].role}{stint.stops.length > 1 ? ` +${stint.stops.length - 1}` : ''}</span></div>
+            <div class="gantt-track">{ticks.map((year) => <i class="gantt-gridline" style={`--x:${((year*12-origin)/total*100).toFixed(3)}%`}></i>)}<button class:list={['gantt-bar', { current: stint.ongoing, education: stint.group === 'education' }]} style={`--left:${stint.left.toFixed(3)}%;--width:${stint.width.toFixed(3)}%`} type="button" aria-pressed="false" aria-label={`${stint.institution}, ${stint.stops[0].role}, ${stint.date}`} data-gantt={JSON.stringify({ institution:stint.institution, date:stint.date, stops:stint.stops })}></button></div>
           </div>)}
         </div>)}
         <div class="gantt-axis"><span></span><div>{ticks.map((year) => <i style={`--x:${((year*12-origin)/total*100).toFixed(3)}%`}>{year}</i>)}</div></div>
       </div>
     </div>
     <div class="gantt-info" id="ganttInfo" aria-live="polite">{ui.hint}</div>
-    <details class="table-alternative"><summary>{ui.table}</summary><div class="table-scroll"><table><thead><tr><th>{ui.institution}</th><th>{ui.role}</th><th>{ui.start}</th><th>{ui.end}</th><th>{ui.result}</th></tr></thead><tbody>{rows.map((row) => <tr><th>{row.institution}</th><td>{row.roleText}</td><td>{fmt(row.start)}</td><td>{fmt(row.end)}</td><td>{row.resultText}</td></tr>)}</tbody></table></div></details>
+    <details class="table-alternative"><summary>{ui.table}</summary><div class="table-scroll"><table><thead><tr><th>{ui.institution}</th><th>{ui.role}</th><th>{ui.start}</th><th>{ui.end}</th><th>{ui.result}</th></tr></thead><tbody>{tableRows.map((row) => <tr><th>{row.institutionText}</th><td>{row.roleText}</td><td>{fmt(row.start)}</td><td>{fmt(row.end)}</td><td>{row.resultText}</td></tr>)}</tbody></table></div></details>
   </div>
 </section>
-<dialog class="timeline-modal" id="timelineModal" aria-labelledby="timelineModalTitle"><div><button class="modal-close" type="button" data-close-timeline aria-label={ui.close}>×</button><p class="eyebrow">{ui.eyebrow}</p><h2 id="timelineModalTitle"></h2><p class="modal-role" id="timelineModalRole"></p><p id="timelineModalResult"></p><a class="text-link" id="timelineModalLink" href="#" target="_blank" rel="noreferrer">{ui.visit} ↗</a></div></dialog>
-<script is:inline>
+<dialog class="timeline-modal" id="timelineModal" aria-labelledby="timelineModalTitle"><div><button class="modal-close" type="button" data-close-timeline aria-label={ui.close}>×</button><p class="eyebrow">{ui.eyebrow}</p><h2 id="timelineModalTitle"></h2><div id="timelineModalStops"></div></div></dialog>
+<script is:inline define:vars={{ visitLabel: ui.visit }}>
   const ganttButtons = [...document.querySelectorAll('[data-gantt]')];
   const ganttInfo = document.getElementById('ganttInfo');
   const timelineDialog = document.getElementById('timelineModal');
+  const escapeHtml = (value) => String(value).replace(/[&<>"']/g, (ch) => ({ '&':'&amp;', '<':'&lt;', '>':'&gt;', '"':'&quot;', "'":'&#39;' }[ch]));
   const showTimeline = (button) => {
     const data = JSON.parse(button.dataset.gantt);
     ganttButtons.forEach((item) => item.setAttribute('aria-pressed', String(item === button)));
-    ganttInfo.innerHTML = `<strong>${data.institution}</strong><span>${data.role} · ${data.date}</span><p>${data.result}</p>`;
+    const stopsHtml = data.stops.map((stop) => `
+      <p class="modal-role">${escapeHtml(stop.role)} · ${escapeHtml(stop.date)}</p>
+      <p>${escapeHtml(stop.result)}</p>
+      ${stop.url ? `<a class="text-link" href="${escapeHtml(stop.url)}" target="_blank" rel="noreferrer">${escapeHtml(visitLabel)} ↗</a>` : ''}
+    `).join('');
+    ganttInfo.innerHTML = `<strong>${escapeHtml(data.institution)}</strong><span>${escapeHtml(data.date)}</span>${stopsHtml}`;
     document.getElementById('timelineModalTitle').textContent = data.institution;
-    document.getElementById('timelineModalRole').textContent = `${data.role} · ${data.date}`;
-    document.getElementById('timelineModalResult').textContent = data.result;
-    const link = document.getElementById('timelineModalLink');
-    link.hidden = !data.url; link.href = data.url || '#';
+    document.getElementById('timelineModalStops').innerHTML = stopsHtml;
     timelineDialog.showModal();
   };
   ganttButtons.forEach((button, index) => {

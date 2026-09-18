@@ -91,7 +91,7 @@ Ricerca applicata su integrità, governance e intelligenza decisionale, progetta
 
 ## Pubblicazione peer-reviewed
 
-Alencar, E. C. N., & Jackson-Green, B. (2021). Applying Synthetic Control Method to estimate the impact of the Lava Jato operation on the Worldwide Governance Indicators in Brazil. *Journal of White-Collar and Corporate Crime*. DOI: 10.1177/2631309X211017874
+Alencar, E. C. N., & Jackson-Green, B. (2021). Applying Synthetic Control Method to estimate the impact of the Lava Jato operation on the Worldwide Governance Indicators in Brazil. *Journal of White-Collar and Corporate Crime*. DOI: [10.1177/2631309X211017874](https://doi.org/10.1177/2631309X211017874)
 
 ## Articoli e newsletter
 
@@ -120,28 +120,28 @@ Alencar, E. C. N. (2026, primavera). Evidence-based anti-corruption oversight: s
 
 - Riforme anticorruzione in Brasile, Kenya e Ruanda: valutazione dell'impatto sui risultati educativi (SDG 4). Incontro annuale dell'American Society of Criminology, Washington DC, novembre 2025.
 - Bridging Digital Transformation and Sustainability: overcoming governance challenges for green policy implementation. Incontro annuale dell'American Society of Criminology, Washington DC, novembre 2025.
-- Rilevamento di frodi nei sistemi di registrazione dei prezzi. 50º Incontro Nazionale di Economia (ANPEC), Fortaleza, 2022.
+- [Rilevamento di frodi nei sistemi di registrazione dei prezzi](/downloads/anpec-2022-deteccao-fraude-registro-precos.pdf). 50º Incontro Nazionale di Economia (ANPEC), Fortaleza, 2022.
 - Allaire, M., & Alencar, E. (2018). Trends in water rate structures to encourage conservation: evidence from California. AGU Fall Meeting, Washington DC.
 
 ## Tesi
 
-- **Tesi di dottorato** (University of California, Irvine, 2021; titolo conferito il 18 marzo 2022). Valutazione del potenziale di rilevamento delle frodi negli appalti pubblici brasiliani tramite analisi delle classi latenti.
-- **Tesi di master** (University of California, Irvine, 2020). Applicazione della modellazione di equazioni strutturali per analizzare la causalità reciproca tra corruzione e fiducia e l'impatto dell'operazione Lava Jato: evidenze da Brasile e Messico.
+- **[Tesi di dottorato](https://escholarship.org/uc/item/0b2363z1)** (University of California, Irvine, 2021; titolo conferito il 18 marzo 2022). Valutazione del potenziale di rilevamento delle frodi negli appalti pubblici brasiliani tramite analisi delle classi latenti.
+- **[Tesi di master](https://escholarship.org/uc/item/8r29q2wk)** (University of California, Irvine, 2020). Applicazione della modellazione di equazioni strutturali per analizzare la causalità reciproca tra corruzione e fiducia e l'impatto dell'operazione Lava Jato: evidenze da Brasile e Messico.
 
 ## Prodotti di politica pubblica
 
 - *Governança em Tempo Real: Evidência, Integridade e Inteligência Artificial para Reconstruir a Capacidade Pública.* Manoscritto di libro in produzione, 2026.
-- *La Corte Suprema giudica uno dei suoi.* Analisi della sessione straordinaria della Corte Suprema Federale brasiliana del 15 settembre 2026 sulla Petizione 16.662 (caso Banco Master), che esamina se la Corte abbia testato dal vivo, per quasi otto ore, il proprio meccanismo di autogiudizio quando la persona indagata è uno dei custodi della Costituzione. Policy brief, 2026.
+- *[La Corte Suprema giudica uno dei suoi](/downloads/o-supremo-julga-um-dos-seus-2026.pdf).* Analisi della sessione straordinaria della Corte Suprema Federale brasiliana del 15 settembre 2026 sulla Petizione 16.662 (caso Banco Master), che esamina se la Corte abbia testato dal vivo, per quasi otto ore, il proprio meccanismo di autogiudizio quando la persona indagata è uno dei custodi della Costituzione. Policy brief, 2026.
 - Dall'onere amministrativo alla regolamentazione basata sul rischio: analisi delle classi latenti e discontinuità regolatorie negli appalti pubblici in America Latina e Caraibi. Nota tecnica concettuale per la BID, 2026 (in spagnolo).
-- Principali risultati relativi agli esborsi di convenzioni e sponsorizzazioni di Itaipu Binacional. Fronte Parlamentare per il Controllo, l'Integrità e la Trasparenza (FIT), 2 aprile 2025.
+- [Principali risultati relativi agli esborsi di convenzioni e sponsorizzazioni di Itaipu Binacional](https://www.frentefit.com.br/relatorio-2025-principais-achados-relacionados-aos-desembolsos-de-convenios-e-patrocinios-da-itaipu-binacional/). Fronte Parlamentare per il Controllo, l'Integrità e la Trasparenza (FIT), 2 aprile 2025.
 - L'impatto dell'operazione Lava Jato su corruzione e fiducia: evidenze dal Brasile. Policy brief, 2020.
-- *Caderno Vozes da Classe Média: Classe Média e Emprego Assalariado.* Segreteria per gli Affari Strategici, 2013.
-- Gestão de pessoas aplicada ao coaching, in *Coaching e Mentoring: Foco na Excelência*. Sermais, 2014.
-- *Política industrial, acompanhamento e análise*, numeri 21–24. Istituto di Ricerca Economica Applicata (Ipea), 2003–2004.
+- *[Caderno Vozes da Classe Média: Classe Média e Emprego Assalariado](/downloads/caderno-vozes-classe-media-2013.pdf).* Segreteria per gli Affari Strategici, 2013.
+- [Gestão de pessoas aplicada ao coaching](/downloads/gestao-pessoas-coaching-sermais-2014.pdf), in *Coaching e Mentoring: Foco na Excelência*. Sermais, 2014.
+- *Política industrial, acompanhamento e análise*, numeri [21](/downloads/ipea-boletim-pi-21.pdf), [22](/downloads/ipea-boletim-pi-22.pdf), [23](/downloads/ipea-boletim-pi-23.pdf) e [24](/downloads/ipea-boletim-pi-24.pdf). Istituto di Ricerca Economica Applicata (Ipea), 2003–2004.
 
 ## Profili
 
-Google Scholar · ORCID · LinkedIn
+[Google Scholar](https://scholar.google.com/citations?user=vJ12isgAAAAJ) · [ORCID](https://orcid.org/0000-0002-9218-1798) · [LinkedIn](https://www.linkedin.com/in/eduardocna)
 
 ---
 
@@ -282,10 +282,10 @@ Resilienza alla siccità in California con metodi econometrici, con la prof.ssa 
 
 Brasília, Brasile · Disponibile al trasferimento
 
-- Email: eduardocna@gmail.com · ealencar@uci.edu
-- LinkedIn: linkedin.com/in/eduardocna
-- Google Scholar: scholar.google.com/citations?user=vJ12isgAAAAJ
-- ORCID: orcid.org/0000-0002-9218-1798
+- Email: [eduardocna@gmail.com](mailto:eduardocna@gmail.com) · ealencar@uci.edu
+- LinkedIn: [linkedin.com/in/eduardocna](https://www.linkedin.com/in/eduardocna)
+- Google Scholar: [scholar.google.com/citations?user=vJ12isgAAAAJ](https://scholar.google.com/citations?user=vJ12isgAAAAJ)
+- ORCID: [orcid.org/0000-0002-9218-1798](https://orcid.org/0000-0002-9218-1798)
 - X: @eduardo_cna
 
 Disponibile per collaborazioni su integrità pubblica, analitica degli appalti, misurazione del controllo parlamentare e IA responsabile nel governo.
