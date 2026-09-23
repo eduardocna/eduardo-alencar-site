@@ -4,7 +4,7 @@ const locales = ['en','pt','es','it'];
 
 test('all locale homes and direct section routes resolve', async ({ page }) => {
   for (const locale of locales) {
-    for (const route of ['', 'book/', 'research/', 'evidence-lab/', 'writing/', 'teaching/', 'cv/', 'contact/']) {
+    for (const route of ['', 'book/', 'research/', 'briefs/', 'evidence-lab/', 'writing/', 'teaching/', 'cv/', 'contact/']) {
       const response = await page.goto(`${locale}/${route}`);
       expect(response?.ok(), `${locale}/${route}`).toBeTruthy();
       await expect(page.locator('html')).toHaveAttribute('lang', locale);
@@ -55,14 +55,23 @@ test('scroll narrative advances through all four evidence states', async ({ page
   expect(stickyTop).toBeLessThanOrEqual(170);
 });
 
-test('catalogue filters expose the selected work type', async ({ page }) => {
+test('research and policy brief catalogues are separate and filterable', async ({ page }) => {
   await page.goto('en/');
-  const catalogue = page.locator('#research .work-catalog');
-  await catalogue.locator('[data-work-filter="policy"]').click();
-  await expect(catalogue.locator('[data-category="policy"]').first()).toBeVisible();
-  await expect(catalogue.locator('[data-category="research"]').first()).toBeHidden();
-  await catalogue.locator('[data-work-filter="all"]').click();
-  await expect(catalogue.locator('[data-category="research"]').first()).toBeVisible();
+  const research = page.locator('#research .work-catalog');
+  await expect(research.locator('[data-category="research"]').first()).toBeVisible();
+  await expect(research.locator('[data-category="policy"]')).toHaveCount(0);
+  const briefs = page.locator('#briefs .work-catalog');
+  await expect(briefs.locator('[data-category="policy"]').first()).toBeVisible();
+  await briefs.locator('[data-work-filter="policy"]').click();
+  await expect(briefs.locator('[data-category="policy"]').first()).toBeVisible();
+  await briefs.locator('[data-work-filter="all"]').click();
+  await expect(briefs.locator('[data-category="policy"]').first()).toBeVisible();
+});
+
+test('catalogue cards open the document directly in a new tab', async ({ page }) => {
+  await page.goto('pt/');
+  const card = page.locator('#briefs a[href*="o-supremo-julga-um-dos-seus-2026.pdf"]').first();
+  await expect(card).toHaveAttribute('target', '_blank');
 });
 
 test('work pages use internal routes and verified sources', async ({ page }) => {
@@ -90,7 +99,7 @@ test('mobile Gantt retains a proportional horizontal scale', async ({ page }, te
 
 test('every internal link across all locales resolves', async ({ page, baseURL, request }) => {
   const basePath = new URL(baseURL!).pathname;
-  const routes = ['', 'book/', 'research/', 'evidence-lab/', 'writing/', 'teaching/', 'cv/', 'contact/', 'publications/'];
+  const routes = ['', 'book/', 'research/', 'briefs/', 'evidence-lab/', 'writing/', 'teaching/', 'cv/', 'contact/', 'publications/'];
   const toCheck = new Set<string>();
   for (const locale of locales) {
     for (const route of routes) {
