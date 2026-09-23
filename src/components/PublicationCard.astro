@@ -1,18 +1,24 @@
 ---
 import { statusLabel, typeLabel, type WorkItem } from '../data/catalog';
 import type { Locale } from '../data/site';
-import { workPath } from '../data/paths';
+import { workPath, withBase } from '../data/paths';
 interface Props { item: WorkItem; lang: Locale; }
 const { item, lang } = Astro.props;
 const labels = {
-  en: { view:'View work', language:'Document language' }, pt: { view:'Ver trabalho', language:'Idioma do documento' },
-  es: { view:'Ver trabajo', language:'Idioma del documento' }, it: { view:'Vedi lavoro', language:'Lingua del documento' }
+  en: { view:'Open document', language:'Document language' }, pt: { view:'Abrir documento', language:'Idioma do documento' },
+  es: { view:'Abrir documento', language:'Idioma del documento' }, it: { view:'Apri documento', language:'Lingua del documento' }
 }[lang];
+const primary = item.verifiedLinks[0];
+const internal = primary?.href.startsWith('/');
+const href = primary ? (internal ? withBase(primary.href) : primary.href) : workPath(lang, item.slug);
+const external = primary ? { target: '_blank', rel: 'noopener noreferrer' } : {};
+const arrow = primary ? '↗' : '→';
+const viewLabel = primary ? labels.view : { en:'View work', pt:'Ver trabalho', es:'Ver trabajo', it:'Vedi lavoro' }[lang];
 ---
 <article class="publication-card card reveal" data-category={item.category} data-status={item.statusCode} data-language={item.languages.join(' ')}>
   <p class="eyebrow">{typeLabel(item, lang)} · {item.year}</p>
-  <h3><a href={workPath(lang, item.slug)}>{item.title}</a></h3>
+  <h3><a href={href} {...external}>{item.title}</a></h3>
   <p>{item.localizedSummary[lang]}</p>
   <div class="card-meta"><span>{statusLabel(item, lang)}</span><span>{labels.language}: {item.languages.map((value: string) => value.toUpperCase()).join(' · ')}</span></div>
-  <a class="worklink" href={workPath(lang, item.slug)}>{labels.view} →</a>
+  <a class="worklink" href={href} {...external}>{viewLabel} {arrow}</a>
 </article>

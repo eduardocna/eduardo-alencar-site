@@ -59,7 +59,7 @@ Portuguese (native) · English (fluent) · Italian (fluent) · Spanish (intermed
 
 # Book
 
-*Governança em Tempo Real* ("Real-Time Governance"), forthcoming from Editora JusPodivm. Brazil needs to move beyond governance by intuition and build evidence-based governance capable of turning integrity, data, AI and evaluation into measurable public capacity.
+*Governança em Tempo Real* ("Real-Time Governance"), published by Editora JusPodivm. Brazil needs to move beyond governance by intuition and build evidence-based governance capable of turning integrity, data, AI and evaluation into measurable public capacity.
 
 ## About the book
 
@@ -67,9 +67,9 @@ An original argument for why technology, controls and good intentions are not en
 
 ## Launch
 
-The date and venue for the Brasília launch event will be announced soon.
+The book launch takes place on **22 October 2026 (Thursday), at 7 pm**, at **Livraria Leitura, Terraço Shopping (Sudoeste), Brasília**: an evening of conversation and book signing. Sales on the night are exclusively at the bookshop.
 
-[See the pre-launch page at Editora JusPodivm](https://www.editorajuspodivm.com.br/governanca-em-tempo-real-como-o-brasil-pode-parar-de-fingir-que-governa-2027-alencar)
+[See the book page at Editora JusPodivm](https://www.editorajuspodivm.com.br/governanca-em-tempo-real-como-o-brasil-pode-parar-de-fingir-que-governa-2027-alencar)
 
 [Reserve a seat at the launch event](https://forms.gle/LdBksUCusmA99NvV8)
 
@@ -142,6 +142,12 @@ Alencar, E. C. N. (2026, Spring). Evidence-based anti-corruption oversight: stop
 ## Profiles
 
 [Google Scholar](https://scholar.google.com/citations?user=vJ12isgAAAAJ) · [ORCID](https://orcid.org/0000-0002-9218-1798) · [LinkedIn](https://www.linkedin.com/in/eduardocna)
+
+---
+
+# Policy briefs
+
+Short, evidence-based briefs that turn research and institutional experience into options for public decision-makers. Each item opens the document directly.
 
 ---
 

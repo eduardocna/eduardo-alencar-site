@@ -59,7 +59,7 @@ Portoghese (madrelingua) · Inglese (fluente) · Italiano (fluente) · Spagnolo 
 
 # Libro
 
-*Governança em Tempo Real* ("Governance in tempo reale"), di prossima pubblicazione per Editora JusPodivm. Il Brasile deve superare la governance per intuizione e costruire una governance basata sull'evidenza, capace di trasformare integrità, dati, intelligenza artificiale e valutazione in capacità pubblica misurabile.
+*Governança em Tempo Real* ("Governance in tempo reale"), pubblicato da Editora JusPodivm. Il Brasile deve superare la governance per intuizione e costruire una governance basata sull'evidenza, capace di trasformare integrità, dati, intelligenza artificiale e valutazione in capacità pubblica misurabile.
 
 ## Sul libro
 
@@ -67,9 +67,9 @@ Un argomento originale sul perché tecnologia, controlli e buone intenzioni non 
 
 ## Lancio
 
-Data e sede del lancio a Brasília saranno annunciate a breve.
+Il lancio del libro si terrà il **22 ottobre 2026 (giovedì), alle 19:00 (ora di Brasília)**, presso la **Livraria Leitura del Terraço Shopping (Sudoeste), a Brasília**: una serata di conversazione e firma delle copie. La vendita durante la serata è esclusiva della libreria.
 
-[Vedi la pagina di prelancio su Editora JusPodivm](https://www.editorajuspodivm.com.br/governanca-em-tempo-real-como-o-brasil-pode-parar-de-fingir-que-governa-2027-alencar)
+[Vedi la pagina del libro su Editora JusPodivm](https://www.editorajuspodivm.com.br/governanca-em-tempo-real-como-o-brasil-pode-parar-de-fingir-que-governa-2027-alencar)
 
 [Prenota un posto al lancio](https://forms.gle/LdBksUCusmA99NvV8)
 
@@ -142,6 +142,12 @@ Alencar, E. C. N. (2026, primavera). Evidence-based anti-corruption oversight: s
 ## Profili
 
 [Google Scholar](https://scholar.google.com/citations?user=vJ12isgAAAAJ) · [ORCID](https://orcid.org/0000-0002-9218-1798) · [LinkedIn](https://www.linkedin.com/in/eduardocna)
+
+---
+
+# Policy brief
+
+Sintesi brevi, basate sull'evidenza, che trasformano ricerca ed esperienza istituzionale in opzioni per chi decide in ambito pubblico. Ogni voce apre direttamente il documento.
 
 ---
 

@@ -67,9 +67,9 @@ Um argumento autoral sobre por que tecnologia, controle e boas intenções não 
 
 ## Lançamento
 
-Data e local do lançamento em Brasília serão divulgados em breve.
+O lançamento do livro será em **22 de outubro de 2026 (quinta-feira), às 19h**, na **Livraria Leitura do Terraço Shopping (Sudoeste), em Brasília**: uma noite de conversa e autógrafos. A venda no dia é exclusiva na loja.
 
-[Ver a página de pré-lançamento na Editora JusPodivm](https://www.editorajuspodivm.com.br/governanca-em-tempo-real-como-o-brasil-pode-parar-de-fingir-que-governa-2027-alencar)
+[Ver a página do livro na Editora JusPodivm](https://www.editorajuspodivm.com.br/governanca-em-tempo-real-como-o-brasil-pode-parar-de-fingir-que-governa-2027-alencar)
 
 [Reservar presença no lançamento](https://forms.gle/LdBksUCusmA99NvV8)
 
@@ -142,6 +142,12 @@ Alencar, E. C. N. (2026). Evidence-based anti-corruption oversight: stop countin
 ## Perfis
 
 [Google Scholar](https://scholar.google.com/citations?user=vJ12isgAAAAJ) · [ORCID](https://orcid.org/0000-0002-9218-1798) · [LinkedIn](https://www.linkedin.com/in/eduardocna)
+
+---
+
+# Policy briefs
+
+Sínteses curtas, baseadas em evidências, que transformam pesquisa e experiência institucional em opções para quem decide na esfera pública. Cada item abre o documento diretamente.
 
 ---
 

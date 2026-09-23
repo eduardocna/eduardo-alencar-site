@@ -1,0 +1,9 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import DirectSectionPage from '../../components/DirectSectionPage.astro';
+import { isLocale, locales } from '../../data/site';
+export function getStaticPaths() { return locales.map((lang) => ({ params: { lang } })); }
+const lang = isLocale(Astro.params.lang) ? Astro.params.lang : 'en';
+const meta = { en:['Policy briefs','Evidence-based policy briefs on integrity, oversight and public governance.'], pt:['Policy briefs','Policy briefs baseados em evidências sobre integridade, fiscalização e governança pública.'], es:['Policy briefs','Policy briefs basados en evidencia sobre integridad, control y gobernanza pública.'], it:['Policy brief','Policy brief basati sull’evidenza su integrità, controllo e governance pubblica.'] }[lang];
+---
+<BaseLayout lang={lang} title={`${meta[0]} | Eduardo Alencar`} description={meta[1]} contentPath="briefs/"><DirectSectionPage lang={lang} id="briefs" /></BaseLayout>

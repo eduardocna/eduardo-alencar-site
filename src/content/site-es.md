@@ -59,7 +59,7 @@ Portugués (nativo) · Inglés (fluido) · Italiano (fluido) · Español (interm
 
 # Libro
 
-*Governança em Tempo Real* ("Gobernanza en Tiempo Real"), próximamente por Editora JusPodivm. Brasil necesita superar la gobernanza por intuición y construir una gobernanza basada en evidencia, capaz de transformar integridad, datos, inteligencia artificial y evaluación en capacidad pública medible.
+*Governança em Tempo Real* ("Gobernanza en Tiempo Real"), publicado por Editora JusPodivm. Brasil necesita superar la gobernanza por intuición y construir una gobernanza basada en evidencia, capaz de transformar integridad, datos, inteligencia artificial y evaluación en capacidad pública medible.
 
 ## Sobre el libro
 
@@ -67,9 +67,9 @@ Un argumento autoral sobre por qué la tecnología, los controles y las buenas i
 
 ## Lanzamiento
 
-La fecha y el lugar del lanzamiento en Brasília se anunciarán próximamente.
+El lanzamiento del libro será el **22 de octubre de 2026 (jueves), a las 19:00 (hora de Brasilia)**, en la **Livraria Leitura del Terraço Shopping (Sudoeste), en Brasília**: una noche de conversación y firma de ejemplares. La venta ese día es exclusiva en la librería.
 
-[Ver la página de preventa en Editora JusPodivm](https://www.editorajuspodivm.com.br/governanca-em-tempo-real-como-o-brasil-pode-parar-de-fingir-que-governa-2027-alencar)
+[Ver la página del libro en Editora JusPodivm](https://www.editorajuspodivm.com.br/governanca-em-tempo-real-como-o-brasil-pode-parar-de-fingir-que-governa-2027-alencar)
 
 [Reservar un lugar en el lanzamiento](https://forms.gle/LdBksUCusmA99NvV8)
 
@@ -142,6 +142,12 @@ Alencar, E. C. N. (2026, primavera). Evidence-based anti-corruption oversight: s
 ## Perfiles
 
 [Google Scholar](https://scholar.google.com/citations?user=vJ12isgAAAAJ) · [ORCID](https://orcid.org/0000-0002-9218-1798) · [LinkedIn](https://www.linkedin.com/in/eduardocna)
+
+---
+
+# Policy briefs
+
+Síntesis breves, basadas en evidencia, que convierten investigación y experiencia institucional en opciones para quienes deciden en el ámbito público. Cada ítem abre el documento directamente.
 
 ---
 
