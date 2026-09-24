@@ -57,7 +57,8 @@ const editorial: Record<string, WorkEditorial> = {
   'lava-jato-corruption-trust-policy-brief': {
     kind: 'brief', status: 'published', category: 'policy',
     summary: l('A policy brief on the effects of Lava Jato on corruption and institutional trust.', 'Policy brief sobre os efeitos da Lava Jato na corrupção e na confiança institucional.', 'Policy brief sobre los efectos de Lava Jato en la corrupción y la confianza institucional.', 'Policy brief sugli effetti di Lava Jato sulla corruzione e sulla fiducia istituzionale.'),
-    methods: l('Structural modelling', 'Modelagem estrutural', 'Modelado estructural', 'Modellazione strutturale')
+    methods: l('Structural modelling', 'Modelagem estrutural', 'Modelado estructural', 'Modellazione strutturale'),
+    links: [{ kind: 'download', href: '/downloads/lava-jato-corruption-trust-policy-brief-2020.pdf', label: l('Download policy brief (PDF, English)', 'Baixar policy brief (PDF, inglês)', 'Descargar policy brief (PDF, inglés)', 'Scarica policy brief (PDF, inglese)') }]
   },
   'anti-corruption-sdg4-asc2025': {
     kind: 'presentation', status: 'presented', category: 'research',
