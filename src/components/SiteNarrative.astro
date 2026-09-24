@@ -18,6 +18,7 @@ const home = pages[0];
 const sectionNumber = (id: string) => String(sectionIds.indexOf(id as typeof sectionIds[number]) + 1).padStart(2, '0');
 const catalogueTitle = { en:'Selected research and public work', pt:'Pesquisa e trabalhos públicos selecionados', es:'Investigación y trabajos públicos seleccionados', it:'Ricerca e lavori pubblici selezionati' }[lang];
 const briefsTitle = { en:'Policy briefs', pt:'Policy briefs', es:'Policy briefs', it:'Policy brief' }[lang];
+const bookVideo = { label:{ en:'Promotional video for “Governança em Tempo Real”', pt:'Vídeo de apresentação de “Governança em Tempo Real”', es:'Vídeo de presentación de “Governança em Tempo Real”', it:'Video di presentazione di “Governança em Tempo Real”' }[lang], caption:{ en:'Watch: the book in 25 seconds.', pt:'Assista: o livro em 25 segundos.', es:'Mira: el libro en 25 segundos.', it:'Guarda: il libro in 25 secondi.' }[lang] };
 const toolsTitle = { en:'Tools with a public evidence trail', pt:'Ferramentas com trilha pública de evidências', es:'Herramientas con ruta pública de evidencia', it:'Strumenti con un percorso pubblico di evidenza' }[lang];
 const bookCoverAlt = { en:'Cover of “Governança em Tempo Real”', pt:'Capa de “Governança em Tempo Real”', es:'Portada de “Governança em Tempo Real”', it:'Copertina di “Governança em Tempo Real”' }[lang];
 ---
@@ -42,6 +43,7 @@ const bookCoverAlt = { en:'Cover of “Governança em Tempo Real”', pt:'Capa d
   </>}
   {page.id === 'writing' && <section class="verified-scale section-shell reveal"><div><strong>4,943</strong><span>{lang === 'pt' ? 'conexões no LinkedIn (set/2026)' : lang === 'es' ? 'conexiones en LinkedIn (sep/2026)' : lang === 'it' ? 'collegamenti su LinkedIn (set/2026)' : 'LinkedIn connections (Sep 2026)'}</span></div><div><strong>5,096</strong><span>{lang === 'pt' ? 'seguidores no LinkedIn (jul/2026)' : lang === 'es' ? 'seguidores en LinkedIn (jul/2026)' : lang === 'it' ? 'follower su LinkedIn (lug/2026)' : 'LinkedIn followers (Jul 2026)'}</span></div><div><strong>50,507</strong><span>{lang === 'pt' ? 'impressões (jul/2026)' : lang === 'es' ? 'impresiones (jul/2026)' : lang === 'it' ? 'impressioni (lug/2026)' : 'impressions (Jul 2026)'}</span></div><div><strong>93+</strong><span>{lang === 'pt' ? 'artigos e posts publicados' : lang === 'es' ? 'artículos y publicaciones' : lang === 'it' ? 'articoli e post pubblicati' : 'articles and posts published'}</span></div></section>}
   <section class:list={['section-shell', { 'book-copy': page.id === 'book' }]}><ContentBlocks section={page} /></section>
+  {page.id === 'book' && <figure class="book-video book-copy section-shell reveal"><video controls playsinline preload="none" poster={withBase('videos/lancamento-governanca-em-tempo-real.jpg')} width="506" height="900" aria-label={bookVideo.label}><source src={withBase('videos/lancamento-governanca-em-tempo-real.mp4')} type="video/mp4" /></video><figcaption>{bookVideo.caption}</figcaption></figure>}
 </article>)}
 
 <script is:inline define:vars={{ numberLocale: lang }}>

@@ -146,3 +146,13 @@ test.describe('without JavaScript', () => {
     await expect(page.locator('a[href*="/work/radar-aberto-integridade/"]').first()).toBeVisible();
   });
 });
+
+test('book section embeds the launch video without autoplay', async ({ page, request }) => {
+  await page.goto('pt/');
+  const video = page.locator('#book video');
+  await expect(video).toHaveCount(1);
+  await expect(video).toHaveAttribute('preload', 'none');
+  const src = await page.locator('#book video source').getAttribute('src');
+  const response = await request.get(new URL(src!, page.url()).toString());
+  expect(response.ok()).toBeTruthy();
+});
