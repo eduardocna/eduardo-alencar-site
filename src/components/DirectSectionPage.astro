@@ -3,11 +3,11 @@ import type { Locale } from '../data/site';
 import { documents, inline, sectionIds } from '../data/site';
 import ContentBlocks from './ContentBlocks.astro';
 import WorkCatalog from './WorkCatalog.astro';
+import BookLaunch from './BookLaunch.astro';
 import { withBase } from '../data/paths';
 interface Props { lang: Locale; id: typeof sectionIds[number]; }
 const { lang, id } = Astro.props;
 const section = documents[lang].sections[sectionIds.indexOf(id)];
-const bookVideo = { label:{ en:'Promotional video for “Governança em Tempo Real”', pt:'Vídeo de apresentação de “Governança em Tempo Real”', es:'Vídeo de presentación de “Governança em Tempo Real”', it:'Video di presentazione di “Governança em Tempo Real”' }[lang], caption:{ en:'Watch: the book in 25 seconds.', pt:'Assista: o livro em 25 segundos.', es:'Mira: el libro en 25 segundos.', it:'Guarda: il libro in 25 secondi.' }[lang] };
 const catalogTitle = { en:'Browse the evidence trail', pt:'Explore a trilha de evidências', es:'Explora la ruta de evidencia', it:'Esplora il percorso dell’evidenza' }[lang];
 const bookCoverAlt = { en:'Cover of “Governança em Tempo Real”', pt:'Capa de “Governança em Tempo Real”', es:'Portada de “Governança em Tempo Real”', it:'Copertina di “Governança em Tempo Real”' }[lang];
 ---
@@ -18,6 +18,6 @@ const bookCoverAlt = { en:'Cover of “Governança em Tempo Real”', pt:'Capa d
   {id === 'briefs' && <WorkCatalog lang={lang} categories={['policy']} title={catalogTitle} />}
   {id === 'tools' && <WorkCatalog lang={lang} categories={['tools']} title={catalogTitle} />}
   {id === 'writing' && <section class="verified-scale section-shell reveal"><div><strong>4,943</strong><span>{lang === 'pt' ? 'conexões no LinkedIn (set/2026)' : lang === 'es' ? 'conexiones en LinkedIn (sep/2026)' : lang === 'it' ? 'collegamenti su LinkedIn (set/2026)' : 'LinkedIn connections (Sep 2026)'}</span></div><div><strong>5,096</strong><span>{lang === 'pt' ? 'seguidores no LinkedIn (jul/2026)' : lang === 'es' ? 'seguidores en LinkedIn (jul/2026)' : lang === 'it' ? 'follower su LinkedIn (lug/2026)' : 'LinkedIn followers (Jul 2026)'}</span></div><div><strong>50,507</strong><span>{lang === 'pt' ? 'impressões (jul/2026)' : lang === 'es' ? 'impresiones (jul/2026)' : lang === 'it' ? 'impressioni (lug/2026)' : 'impressions (Jul 2026)'}</span></div><div><strong>93+</strong><span>{lang === 'pt' ? 'artigos e posts publicados' : lang === 'es' ? 'artículos y publicaciones' : lang === 'it' ? 'articoli e post pubblicati' : 'articles and posts published'}</span></div></section>}
-  <section class:list={['section-shell', { 'book-copy': id === 'book' }]}><ContentBlocks section={section} /></section>
-  {id === 'book' && <figure class="book-video book-copy section-shell reveal"><video controls playsinline preload="none" poster={withBase('videos/lancamento-governanca-em-tempo-real.jpg')} width="506" height="900" aria-label={bookVideo.label}><source src={withBase('videos/lancamento-governanca-em-tempo-real.mp4')} type="video/mp4" /></video><figcaption>{bookVideo.caption}</figcaption></figure>}
+  <section class:list={['section-shell', { 'book-copy': id === 'book' }]}><ContentBlocks section={id === 'book' ? { ...section, blocks: section.blocks.slice(0, 1) } : section} /></section>
+  {id === 'book' && <BookLaunch lang={lang} section={section} />}
 </article>

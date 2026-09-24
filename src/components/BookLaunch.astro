@@ -1,0 +1,25 @@
+---
+import type { Locale, MarkdownSection } from '../data/site';
+import { inline } from '../data/site';
+import { withBase } from '../data/paths';
+interface Props { lang: Locale; section: MarkdownSection; }
+const { lang, section } = Astro.props;
+const [heading, ...body] = (section.blocks[1] ?? '').split('\n').filter(Boolean);
+const links = body.filter((line) => line.startsWith('['));
+const text = body.filter((line) => !line.startsWith('['));
+const video = {
+  label: { en:'Promotional video for “Governança em Tempo Real”', pt:'Vídeo de apresentação de “Governança em Tempo Real”', es:'Vídeo de presentación de “Governança em Tempo Real”', it:'Video di presentazione di “Governança em Tempo Real”' }[lang],
+  caption: { en:'Watch the book presentation', pt:'Assista à apresentação do livro', es:'Mira la presentación del libro', it:'Guarda la presentazione del libro' }[lang]
+};
+---
+<section class="book-launch reveal" aria-labelledby="book-launch-title">
+  <div class="launch-copy">
+    <p class="eyebrow">{heading}</p>
+    {text.map((line: string, i: number) => i === 0 ? <h3 id="book-launch-title" class="launch-lede" set:html={inline(line)}></h3> : <p set:html={inline(line)}></p>)}
+    <div class="launch-actions">{links.map((line: string, i: number) => <p class:list={['launch-link', { primary: i === links.length - 1 }]} set:html={inline(line)}></p>)}</div>
+  </div>
+  <figure class="book-video">
+    <video controls playsinline preload="none" poster={withBase('videos/lancamento-governanca-em-tempo-real.jpg')} width="506" height="900" aria-label={video.label}><source src={withBase('videos/lancamento-governanca-em-tempo-real.mp4')} type="video/mp4" /></video>
+    <figcaption>{video.caption}</figcaption>
+  </figure>
+</section>
