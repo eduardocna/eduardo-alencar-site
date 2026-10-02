@@ -26,7 +26,7 @@ const localeNames: Record<Locale, string> = { en:'EN', pt:'PT', es:'ES', it:'IT'
     <meta name="theme-color" content="#f4f5f2" />
     <link rel="canonical" href={canonical} />
     {locales.map((locale) => <link rel="alternate" hreflang={locale} href={new URL(localePath(locale, contentPath), Astro.site)} />)}
-    <link rel="alternate" hreflang="x-default" href={new URL(localePath('en', contentPath), Astro.site)} />
+    <link rel="alternate" hreflang="x-default" href={new URL(localePath('pt', contentPath), Astro.site)} />
     <link rel="alternate" type="application/rss+xml" title="Eduardo Alencar" href={withBase('rss.xml')} />
     <meta property="og:title" content={title} /><meta property="og:description" content={description} /><meta property="og:type" content="website" /><meta property="og:url" content={canonical} /><meta property="og:image" content={new URL(withBase(image), Astro.site)} />
     <title>{title}</title>

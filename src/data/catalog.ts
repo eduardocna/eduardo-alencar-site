@@ -116,6 +116,36 @@ const editorial: Record<string, WorkEditorial> = {
     summary: l('An aggregate, privacy-reviewed account of UC Irvine student feedback on clarity, accessibility and quantitative learning support.', 'Síntese agregada e revisada quanto à privacidade das avaliações discentes da UC Irvine sobre clareza, disponibilidade e apoio à aprendizagem quantitativa.', 'Síntesis agregada y revisada en materia de privacidad de evaluaciones estudiantiles de UC Irvine sobre claridad, accesibilidad y apoyo al aprendizaje cuantitativo.', 'Sintesi aggregata e sottoposta a revisione della privacy delle valutazioni degli studenti UC Irvine su chiarezza, disponibilità e supporto all’apprendimento quantitativo.'),
     methods: l('Aggregated teaching evidence', 'Evidência docente agregada', 'Evidencia docente agregada', 'Evidenza didattica aggregata')
   },
+  'government-ai-oversight': {
+    kind: 'article', status: 'published', category: 'research',
+    summary: l('Explains why oversight is essential to responsible AI in government, using Brazil as an institutional case study.', 'Explica por que a fiscalização é essencial à IA responsável no governo, usando o Brasil como estudo de caso institucional.', 'Explica por qué el control es esencial para la IA responsable en el gobierno, usando Brasil como estudio de caso institucional.', 'Spiega perché il controllo è essenziale per un’IA responsabile nel governo, usando il Brasile come caso istituzionale.'),
+    methods: l('Institutional analysis and case study', 'Análise institucional e estudo de caso', 'Análisis institucional y estudio de caso', 'Analisi istituzionale e studio di caso'),
+    links: [{ kind: 'repository', href: 'https://www.linkedin.com/pulse/weakest-link-government-ai-oversight-brazil-case-study-alencar-txamf', label: l('Read on LinkedIn', 'Ler no LinkedIn', 'Leer en LinkedIn', 'Leggi su LinkedIn') }]
+  },
+  'public-procurement-red-flags': {
+    kind: 'article', status: 'published', category: 'research',
+    summary: l('Examines evidence on how whistleblowing, internal audit and risk indicators help detect procurement fraud.', 'Examina evidências sobre como denúncia, auditoria interna e indicadores de risco ajudam a detectar fraude em compras públicas.', 'Examina evidencias sobre cómo las denuncias, la auditoría interna y los indicadores de riesgo ayudan a detectar fraude en la contratación pública.', 'Esamina le prove su come segnalazioni, audit interno e indicatori di rischio aiutino a rilevare le frodi negli appalti pubblici.'),
+    methods: l('Evidence synthesis and risk analysis', 'Síntese de evidências e análise de risco', 'Síntesis de evidencias y análisis de riesgo', 'Sintesi delle evidenze e analisi del rischio'),
+    links: [{ kind: 'repository', href: 'https://www.linkedin.com/pulse/red-flags-public-procurement-what-data-actually-shows-eduardo-alencar-frrke', label: l('Read on LinkedIn', 'Ler no LinkedIn', 'Leer en LinkedIn', 'Leggi su LinkedIn') }]
+  },
+  'ai-controls-ai': {
+    kind: 'article', status: 'published', category: 'research',
+    summary: l('Sets out the controls needed when AI systems influence public audit, investigation and oversight decisions.', 'Apresenta os controles necessários quando sistemas de IA influenciam decisões de auditoria, investigação e fiscalização pública.', 'Presenta los controles necesarios cuando sistemas de IA influyen en decisiones de auditoría, investigación y control público.', 'Definisce i controlli necessari quando i sistemi di IA influenzano decisioni di audit, indagine e controllo pubblico.'),
+    methods: l('Governance analysis and institutional safeguards', 'Análise de governança e salvaguardas institucionais', 'Análisis de gobernanza y salvaguardas institucionales', 'Analisi della governance e salvaguardie istituzionali'),
+    links: [{ kind: 'repository', href: 'https://www.linkedin.com/pulse/who-controls-ai-does-control-eduardo-alencar-2yx3f', label: l('Read on LinkedIn', 'Ler no LinkedIn', 'Leer en LinkedIn', 'Leggi su LinkedIn') }]
+  },
+  'ai-democracy-beyond-disinformation': {
+    kind: 'article', status: 'published', category: 'research',
+    summary: l('Connects AI and democracy through institutions, controls and the ability to contest public decisions.', 'Conecta IA e democracia por meio de instituições, controles e da possibilidade de contestar decisões públicas.', 'Conecta la IA y la democracia a través de instituciones, controles y la posibilidad de impugnar decisiones públicas.', 'Collega IA e democrazia attraverso istituzioni, controlli e la possibilità di contestare le decisioni pubbliche.'),
+    methods: l('Institutional analysis', 'Análise institucional', 'Análisis institucional', 'Analisi istituzionale'),
+    links: [{ kind: 'repository', href: 'https://www.linkedin.com/pulse/ai-democracy-beyond-disinformation-eduardo-alencar-ekbjf', label: l('Read on LinkedIn', 'Ler no LinkedIn', 'Leer en LinkedIn', 'Leggi su LinkedIn') }]
+  },
+  'public-projects-last-mile': {
+    kind: 'article', status: 'published', category: 'research',
+    summary: l('Shows why public projects fail at delivery and which management routines connect design, decision and execution.', 'Mostra por que projetos públicos falham na entrega e quais rotinas conectam desenho, decisão e execução.', 'Muestra por qué los proyectos públicos fallan en la entrega y qué rutinas conectan diseño, decisión y ejecución.', 'Mostra perché i progetti pubblici falliscono nella consegna e quali routine collegano progettazione, decisione ed esecuzione.'),
+    methods: l('Implementation analysis and portfolio management', 'Análise de implementação e gestão de portfólio', 'Análisis de implementación y gestión de cartera', 'Analisi dell’attuazione e gestione del portafoglio'),
+    links: [{ kind: 'repository', href: 'https://www.linkedin.com/pulse/public-projects-fail-last-mile-eduardo-alencar-dglhf', label: l('Read on LinkedIn', 'Ler no LinkedIn', 'Leer en LinkedIn', 'Leggi su LinkedIn') }]
+  },
   'supremo-autojulgamento-pet16662': {
     kind: 'brief', status: 'published', category: 'policy',
     summary: l('An institutional analysis of the Brazilian Supreme Court’s extraordinary session of 15 September 2026 concerning Petition 16,662.', 'Análise institucional da sessão extraordinária do STF de 15 de setembro de 2026 sobre a PET 16.662.', 'Análisis institucional de la sesión extraordinaria del Supremo Tribunal Federal de Brasil del 15 de septiembre de 2026 sobre la Petición 16.662.', 'Analisi istituzionale della sessione straordinaria della Corte Suprema Federale brasiliana del 15 settembre 2026 sulla Petizione 16.662.'),

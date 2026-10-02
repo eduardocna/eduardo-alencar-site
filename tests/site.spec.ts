@@ -2,6 +2,13 @@ import { expect, test } from '@playwright/test';
 
 const locales = ['en','pt','es','it'];
 
+test('root defaults to Portuguese and declares it as the default locale', async ({ page }) => {
+  await page.goto('/');
+  await expect(page).toHaveURL(/\/pt\/$/);
+  await expect(page.locator('html')).toHaveAttribute('lang', 'pt');
+  await expect(page.locator('link[hreflang="x-default"]')).toHaveAttribute('href', /\/pt\/$/);
+});
+
 test('all locale homes and direct section routes resolve', async ({ page }) => {
   for (const locale of locales) {
     for (const route of ['', 'book/', 'research/', 'briefs/', 'evidence-lab/', 'writing/', 'teaching/', 'cv/', 'contact/']) {
@@ -10,6 +17,17 @@ test('all locale homes and direct section routes resolve', async ({ page }) => {
       await expect(page.locator('html')).toHaveAttribute('lang', locale);
     }
   }
+});
+
+test('LinkedIn metrics are consistent on the home and direct writing pages', async ({ page }) => {
+  await page.goto('pt/');
+  const homeMetrics = await page.locator('#writing .verified-scale').innerText();
+  await page.goto('pt/writing/');
+  const writingMetrics = await page.locator('.verified-scale').innerText();
+  expect(homeMetrics).toBe(writingMetrics);
+  expect(writingMetrics).toContain('4,969');
+  expect(writingMetrics).toContain('21 jul. 2026');
+  expect(writingMetrics).not.toContain('93+');
 });
 
 test('home exposes the complete narrative and verified interactions', async ({ page }) => {
