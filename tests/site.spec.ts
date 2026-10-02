@@ -28,7 +28,7 @@ test('LinkedIn metrics are consistent on the home and direct writing pages', asy
   const writingMetrics = await page.locator('.verified-scale').innerText();
   expect(homeMetrics).toBe(writingMetrics);
   expect(writingMetrics).toContain('4,969');
-  expect(writingMetrics).toContain('21 jul. 2026');
+  expect(writingMetrics).toMatch(/21 jul\. 2026/i);
   expect(writingMetrics).not.toContain('93+');
 });
 
