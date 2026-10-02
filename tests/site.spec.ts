@@ -2,11 +2,13 @@ import { expect, test } from '@playwright/test';
 
 const locales = ['en','pt','es','it'];
 
-test('root defaults to Portuguese and declares it as the default locale', async ({ page }) => {
-  await page.goto('/');
-  await expect(page).toHaveURL(/\/pt\/$/);
-  await expect(page.locator('html')).toHaveAttribute('lang', 'pt');
-  await expect(page.locator('link[hreflang="x-default"]')).toHaveAttribute('href', /\/pt\/$/);
+test('root defaults to Portuguese and declares it as the default locale', async ({ request }) => {
+  const response = await request.get('/');
+  const html = await response.text();
+  expect(response.ok()).toBeTruthy();
+  expect(html).toContain('<html lang="pt-BR">');
+  expect(html).toContain('http-equiv="refresh" content="0; url=/pt/"');
+  expect(html).toContain('hreflang="x-default" href="/pt/"');
 });
 
 test('all locale homes and direct section routes resolve', async ({ page }) => {
