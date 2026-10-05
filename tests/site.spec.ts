@@ -25,6 +25,7 @@ test('LinkedIn metrics are consistent on the home and direct writing pages', asy
   await page.goto('pt/');
   const homeMetrics = await page.locator('#writing .verified-scale').innerText();
   await page.goto('pt/writing/');
+  await expect(page.locator('.verified-scale [data-li-count]:not([data-done])')).toHaveCount(0);
   const writingMetrics = await page.locator('.verified-scale').innerText();
   expect(homeMetrics).toBe(writingMetrics);
   expect(writingMetrics).toContain('4,969');
@@ -114,6 +115,13 @@ test('White Collar Times card opens the article PDF', async ({ page, request }) 
   const pdf = await request.get(await card.getAttribute('href') as string);
   expect(pdf.ok()).toBeTruthy();
   expect(pdf.headers()['content-type']).toContain('pdf');
+});
+
+test('LinkedIn metrics count up to the verified values', async ({ page }) => {
+  await page.goto('pt/writing/');
+  const first = page.locator('.verified-scale [data-li-count]').first();
+  await expect(first).toHaveAttribute('data-done', '1');
+  await expect(first).toHaveText('4,969');
 });
 
 test('research map highlights the work linked to a selected axis', async ({ page }) => {
