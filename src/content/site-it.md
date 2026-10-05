@@ -95,7 +95,7 @@ Alencar, E. C. N., & Jackson-Green, B. (2021). Applying Synthetic Control Method
 
 ## Articoli e newsletter
 
-Alencar, E. C. N. (2026, primavera). Evidence-based anti-corruption oversight: stop counting activity, start measuring consequences. *The White Collar Times*, newsletter ufficiale della divisione ASC sui crimini dei colletti bianchi e societari.
+Alencar, E. C. N. (2026, primavera). [Evidence-based anti-corruption oversight: stop counting activity, start measuring consequences](/downloads/white-collar-times-2026-evidence-based-oversight.pdf). *The White Collar Times*, newsletter ufficiale della divisione ASC sui crimini dei colletti bianchi e societari.
 
 ## In revisione
 
@@ -185,11 +185,11 @@ Iniziativa di integrazione dei dati tra uffici parlamentari per il controllo, il
 
 ---
 
-# Scritti
+# Newsletter
 
 Brevi saggi bilingui che traducono la ricerca e l'esperienza istituzionale in analisi utilizzabile su integrità, trasparenza e decisioni basate sull'evidenza nel settore pubblico.
 
-## Newsletter
+## Iscrizione
 
 Newsletter settimanale bilingue (portoghese e inglese) su integrità pubblica, intelligenza artificiale nel governo, controllo e capacità statale.
 

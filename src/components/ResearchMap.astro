@@ -1,0 +1,241 @@
+---
+import type { Locale } from '../data/site';
+import { typeLabel, workBySlug } from '../data/catalog';
+import { withBase } from '../data/paths';
+interface Props { lang: Locale; }
+const { lang } = Astro.props;
+const t = (en: string, pt: string, es: string, it: string) => ({ en, pt, es, it })[lang];
+
+const ui = {
+  eyebrow: t('Research agenda map', 'Mapa da agenda de pesquisa', 'Mapa de la agenda de investigación', 'Mappa dell’agenda di ricerca'),
+  title: t('Four questions, one evidence programme', 'Quatro perguntas, um programa de evidência', 'Cuatro preguntas, un programa de evidencia', 'Quattro domande, un programma di evidenza'),
+  hint: t('Select an axis to trace the work that answers it.', 'Selecione um eixo para ver os trabalhos que respondem a ele.', 'Selecciona un eje para ver los trabajos que responden a él.', 'Seleziona un asse per vedere i lavori che vi rispondono.'),
+  axes: t('Research axes', 'Eixos de pesquisa', 'Ejes de investigación', 'Assi di ricerca'),
+  works: t('Related work', 'Trabalhos relacionados', 'Trabajos relacionados', 'Lavori correlati'),
+  count: t('works', 'trabalhos', 'trabajos', 'lavori'),
+};
+
+const axes = [
+  { id: 'procurement', color: '--blue', label: t('Integrity and procurement analytics', 'Analítica de integridade e compras públicas', 'Analítica de integridad y compras públicas', 'Analisi dell’integrità e degli appalti'), question: t('Which suppliers and contracts deserve audit priority?', 'Quais fornecedores e contratos merecem prioridade de auditoria?', '¿Qué proveedores y contratos merecen prioridad de auditoría?', 'Quali fornitori e contratti meritano priorità di audit?') },
+  { id: 'causal', color: '--mint', label: t('Causal inference for reforms', 'Inferência causal para reformas', 'Inferencia causal para reformas', 'Inferenza causale per le riforme'), question: t('Did the reform actually change outcomes?', 'A reforma de fato alterou resultados?', '¿La reforma cambió realmente los resultados?', 'La riforma ha davvero cambiato i risultati?') },
+  { id: 'trust', color: '--orange', label: t('Corruption and trust', 'Corrupção e confiança', 'Corrupción y confianza', 'Corruzione e fiducia'), question: t('How do corruption and institutional trust feed each other?', 'Como corrupção e confiança institucional se alimentam?', '¿Cómo se retroalimentan corrupción y confianza institucional?', 'Come si alimentano corruzione e fiducia istituzionale?') },
+  { id: 'oversight', color: '--ochre', label: t('Oversight analytics', 'Analítica de fiscalização', 'Analítica de control', 'Analisi del controllo'), question: t('Does the executive really answer parliament?', 'O Executivo realmente responde ao Parlamento?', '¿El Ejecutivo responde realmente al Parlamento?', 'L’esecutivo risponde davvero al Parlamento?') },
+];
+
+const nodes = [
+  { slug: 'phd-procurement-fraud', axes: ['procurement'], short: t('Procurement fraud detection with latent classes', 'Detecção de fraude em compras por classes latentes', 'Detección de fraude en compras con clases latentes', 'Rilevazione delle frodi negli appalti con classi latenti') },
+  { slug: 'evasion-as-a-signal', axes: ['oversight', 'procurement'], short: t('Evasion as a signal of state capture', 'Evasão como sinal de captura do Estado', 'La evasión como señal de captura del Estado', 'L’evasione come segnale di cattura dello Stato') },
+  { slug: 'formal-replies-substantive-evasion', axes: ['oversight'], short: t('Formal replies, substantive evasion', 'Respostas formais, evasão substantiva', 'Respuestas formales, evasión sustantiva', 'Risposte formali, evasione sostanziale') },
+  { slug: 'white-collar-times-oversight', axes: ['oversight', 'causal'], short: t('Stop counting activity, start measuring consequences', 'Parar de contar atividade, medir consequências', 'Dejar de contar actividad, medir consecuencias', 'Smettere di contare attività, misurare conseguenze') },
+  { slug: 'synthetic-control-lava-jato', axes: ['causal', 'trust'], short: t('Synthetic control: Lava Jato and governance indicators', 'Controle sintético: Lava Jato e indicadores de governança', 'Control sintético: Lava Jato e indicadores de gobernanza', 'Controllo sintetico: Lava Jato e indicatori di governance') },
+  { slug: 'anti-corruption-sdg4-asc2025', axes: ['causal'], short: t('Anti-corruption reforms and education outcomes', 'Reformas anticorrupção e resultados educacionais', 'Reformas anticorrupción y resultados educativos', 'Riforme anticorruzione e risultati educativi') },
+  { slug: 'masters-corruption-trust', axes: ['trust', 'causal'], short: t('Corruption, trust and Lava Jato in Brazil and Mexico', 'Corrupção, confiança e Lava Jato no Brasil e no México', 'Corrupción, confianza y Lava Jato en Brasil y México', 'Corruzione, fiducia e Lava Jato in Brasile e Messico') },
+  { slug: 'lava-jato-corruption-trust-policy-brief', axes: ['trust'], short: t('Policy brief: Lava Jato, corruption and trust', 'Policy brief: Lava Jato, corrupção e confiança', 'Policy brief: Lava Jato, corrupción y confianza', 'Policy brief: Lava Jato, corruzione e fiducia') },
+].flatMap((node) => {
+  const item = workBySlug(node.slug);
+  if (!item) return [];
+  const link = item.verifiedLinks[0]?.href;
+  return [{ ...node, meta: `${typeLabel(item, lang)} · ${item.year}`, href: link ? (link.startsWith('/') ? withBase(link) : link) : undefined }];
+});
+const axisById = Object.fromEntries(axes.map((axis) => [axis.id, axis]));
+---
+<section class="research-map section-shell reveal" data-research-map aria-labelledby="research-map-title">
+  <header class="rm-head">
+    <p class="eyebrow">{ui.eyebrow}</p>
+    <h2 id="research-map-title">{ui.title}</h2>
+    <p class="lede">{ui.hint}</p>
+  </header>
+  <div class="rm-stage" data-rm-stage>
+    <svg class="rm-links" aria-hidden="true" focusable="false" data-rm-svg></svg>
+    <div class="rm-axes" role="group" aria-label={ui.axes}>
+      {axes.map((axis, i) => <button type="button" class="rm-axis" data-axis={axis.id} aria-pressed="false" style={`--axis:var(${axis.color})`}>
+        <span class="rm-index">0{i + 1}</span>
+        <strong>{axis.label}</strong>
+        <span class="rm-question">{axis.question}</span>
+        <small>{nodes.filter((node) => node.axes.includes(axis.id)).length} {ui.count}</small>
+      </button>)}
+    </div>
+    <ul class="rm-works" aria-label={ui.works}>
+      {nodes.map((node) => <li class="rm-work" data-work={node.slug} data-axes={node.axes.join(' ')}>
+        <span class="rm-meta">{node.meta}</span>
+        {node.href
+          ? <a href={node.href} target="_blank" rel="noopener noreferrer">{node.short} <span aria-hidden="true">↗</span></a>
+          : <strong>{node.short}</strong>}
+        <span class="rm-tags">{node.axes.map((id) => <span style={`--axis:var(${axisById[id].color})`}>{axisById[id].label}</span>)}</span>
+      </li>)}
+    </ul>
+  </div>
+</section>
+
+<style is:global>
+  .research-map{padding-bottom:30px}
+  .rm-head h2{margin:0;font:400 clamp(36px,4.4vw,58px)/1.02 var(--serif);letter-spacing:-.03em}
+  .rm-head .lede{margin:14px 0 0;max-width:640px}
+  .rm-stage{position:relative;display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:clamp(70px,11vw,170px);margin-top:42px;padding:34px;border:1px solid var(--rule);border-radius:18px;background:radial-gradient(circle at 18% 20%,color-mix(in srgb,var(--accent) 7%,transparent),transparent 42%),var(--surface);box-shadow:var(--shadow)}
+  .rm-links{position:absolute;inset:0;width:100%;height:100%;overflow:visible;pointer-events:none}
+  .rm-links path{fill:none;stroke-width:1.6;stroke-linecap:round;opacity:.5;transition:opacity .35s,stroke-width .35s,stroke-dashoffset 1.1s cubic-bezier(.6,.05,.25,1)}
+  .rm-links path.is-on{opacity:1;stroke-width:2.8}
+  .rm-links path.is-dim{opacity:.08}
+  .rm-links circle{filter:drop-shadow(0 0 5px currentColor)}
+  .rm-axes,.rm-works{position:relative;z-index:1;display:grid;gap:12px;margin:0;padding:0;list-style:none;align-content:center}
+  .rm-axis{display:grid;grid-template-columns:auto 1fr;column-gap:14px;row-gap:4px;width:100%;padding:18px 20px;text-align:left;border:1px solid var(--rule);border-left:4px solid var(--axis);border-radius:12px;background:var(--surface);color:var(--ink);font:inherit;cursor:pointer;transition:transform .3s,box-shadow .3s,opacity .3s,background .3s}
+  .rm-axis:hover,.rm-axis[aria-pressed="true"],.rm-axis.is-on{transform:translateX(6px);background:color-mix(in srgb,var(--axis) 9%,var(--surface));box-shadow:0 14px 30px -22px var(--axis)}
+  .rm-axis.is-dim{opacity:.45}
+  .rm-index{grid-row:1/4;color:var(--axis);font:600 13px var(--mono);padding-top:3px}
+  .rm-axis strong{font:400 21px/1.15 var(--serif)}
+  .rm-question{color:var(--ink-2);font-size:14px;line-height:1.4}
+  .rm-axis small{color:var(--muted);font:10px var(--mono);letter-spacing:.1em;text-transform:uppercase}
+  .rm-work{padding:13px 16px;border:1px solid var(--rule);border-radius:10px;background:color-mix(in srgb,var(--surface) 92%,transparent);transition:opacity .3s,transform .3s,border-color .3s}
+  .rm-work.is-on{transform:translateX(-4px);border-color:var(--accent)}
+  .rm-work.is-dim{opacity:.32}
+  .rm-meta{display:block;color:var(--muted);font:10px var(--mono);letter-spacing:.08em;text-transform:uppercase}
+  .rm-work a,.rm-work strong{display:block;margin-top:3px;font-weight:600;line-height:1.3;text-decoration:none}
+  .rm-work a:hover{color:var(--accent-ink);text-decoration:underline}
+  .rm-tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}
+  .rm-tags span{padding:2px 8px;border-radius:99px;background:color-mix(in srgb,var(--axis) 14%,transparent);color:var(--ink-2);font-size:11.5px}
+  .rm-stage.has-map .rm-tags{display:none}
+  @media(max-width:760px){
+    .rm-stage{grid-template-columns:1fr;gap:22px;padding:18px}
+    .rm-links{display:none}
+    .rm-axes{grid-template-columns:1fr}
+    .rm-axis:hover,.rm-axis[aria-pressed="true"],.rm-axis.is-on{transform:none}
+    .rm-work.is-on{transform:none}
+    .rm-stage.has-map .rm-tags{display:flex}
+  }
+</style>
+
+<script is:inline>
+  (() => {
+    document.querySelectorAll('[data-research-map]').forEach((root) => {
+      const stage = root.querySelector('[data-rm-stage]');
+      const svg = root.querySelector('[data-rm-svg]');
+      const axes = [...root.querySelectorAll('.rm-axis')];
+      const works = [...root.querySelectorAll('.rm-work')];
+      const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
+      const ns = 'http://www.w3.org/2000/svg';
+      let paths = [];
+      let pinned = null;
+      let preview = null;
+      let autoplay = !reduced;
+      let autoTimer = 0;
+      let drawn = false;
+      let raf = 0;
+
+      const build = () => {
+        svg.replaceChildren();
+        paths = [];
+        if (getComputedStyle(svg).display === 'none') return;
+        const box = stage.getBoundingClientRect();
+        works.forEach((work) => {
+          const w = work.getBoundingClientRect();
+          work.dataset.axes.split(' ').forEach((id) => {
+            const axis = axes.find((button) => button.dataset.axis === id);
+            const a = axis.getBoundingClientRect();
+            const x1 = a.right - box.left, y1 = a.top + a.height / 2 - box.top;
+            const x2 = w.left - box.left, y2 = w.top + w.height / 2 - box.top;
+            const dx = (x2 - x1) * 0.55;
+            const path = document.createElementNS(ns, 'path');
+            path.setAttribute('d', `M${x1},${y1} C${x1 + dx},${y1} ${x2 - dx},${y2} ${x2},${y2}`);
+            path.style.stroke = getComputedStyle(axis).getPropertyValue('--axis');
+            path.dataset.axis = id;
+            path.dataset.work = work.dataset.work;
+            svg.append(path);
+            const len = path.getTotalLength();
+            path.style.strokeDasharray = `${len}`;
+            path.style.strokeDashoffset = drawn || reduced ? '0' : `${len}`;
+            paths.push(path);
+          });
+        });
+        stage.classList.add('has-map');
+        apply();
+      };
+
+      const draw = () => {
+        if (drawn) return;
+        drawn = true;
+        paths.forEach((path, i) => { path.style.transitionDelay = `${i * 90}ms`; path.style.strokeDashoffset = '0'; });
+        setTimeout(() => paths.forEach((path) => { path.style.transitionDelay = ''; }), paths.length * 90 + 1200);
+        if (autoplay) autoTimer = setTimeout(cycle, paths.length * 90 + 1600);
+      };
+
+      const cycle = () => {
+        if (!autoplay) return;
+        const current = axes.findIndex((axis) => axis.dataset.axis === preview);
+        preview = axes[(current + 1) % axes.length].dataset.axis;
+        apply();
+        autoTimer = setTimeout(cycle, 3200);
+      };
+
+      const stopAutoplay = () => { if (!autoplay) return; autoplay = false; clearTimeout(autoTimer); preview = null; apply(); };
+
+      const apply = (workFocus = null) => {
+        const active = pinned ?? preview;
+        const linkedAxes = workFocus ? works.find((w) => w.dataset.work === workFocus).dataset.axes.split(' ') : null;
+        axes.forEach((axis) => {
+          const id = axis.dataset.axis;
+          axis.setAttribute('aria-pressed', String(pinned === id));
+          const on = linkedAxes ? linkedAxes.includes(id) : active === id;
+          axis.classList.toggle('is-on', !!(active || linkedAxes) && on);
+          axis.classList.toggle('is-dim', !!(active || linkedAxes) && !on);
+        });
+        works.forEach((work) => {
+          const on = linkedAxes ? work.dataset.work === workFocus : work.dataset.axes.split(' ').includes(active);
+          work.classList.toggle('is-on', !!(active || linkedAxes) && on);
+          work.classList.toggle('is-dim', !!(active || linkedAxes) && !on);
+        });
+        paths.forEach((path) => {
+          const on = linkedAxes ? path.dataset.work === workFocus : path.dataset.axis === active;
+          path.classList.toggle('is-on', !!(active || linkedAxes) && on);
+          path.classList.toggle('is-dim', !!(active || linkedAxes) && !on);
+        });
+        animateParticles();
+      };
+
+      const animateParticles = () => {
+        cancelAnimationFrame(raf);
+        svg.querySelectorAll('circle').forEach((dot) => dot.remove());
+        if (reduced) return;
+        const live = paths.filter((path) => path.classList.contains('is-on'));
+        if (!live.length) return;
+        const dots = live.map((path) => {
+          const dot = document.createElementNS(ns, 'circle');
+          dot.setAttribute('r', '4.5');
+          dot.style.fill = path.style.stroke;
+          dot.style.color = path.style.stroke;
+          svg.append(dot);
+          return { dot, path, len: path.getTotalLength() };
+        });
+        const tick = (now) => {
+          dots.forEach(({ dot, path, len }, i) => {
+            const p = path.getPointAtLength(((now / 1700 + i * 0.17) % 1) * len);
+            dot.setAttribute('cx', p.x); dot.setAttribute('cy', p.y);
+          });
+          raf = requestAnimationFrame(tick);
+        };
+        raf = requestAnimationFrame(tick);
+      };
+
+      axes.forEach((axis) => {
+        const id = axis.dataset.axis;
+        axis.addEventListener('click', () => { stopAutoplay(); pinned = pinned === id ? null : id; apply(); });
+        axis.addEventListener('pointerenter', () => { if (pinned) return; stopAutoplay(); preview = id; apply(); });
+        axis.addEventListener('pointerleave', () => { if (pinned) return; preview = null; apply(); });
+        axis.addEventListener('focus', () => { if (pinned) return; stopAutoplay(); preview = id; apply(); });
+        axis.addEventListener('blur', () => { if (pinned) return; preview = null; apply(); });
+      });
+      works.forEach((work) => {
+        work.addEventListener('pointerenter', () => { if (pinned) return; stopAutoplay(); apply(work.dataset.work); });
+        work.addEventListener('pointerleave', () => { if (pinned) return; apply(); });
+      });
+
+      build();
+      let resizeTimer = 0;
+      new ResizeObserver(() => { clearTimeout(resizeTimer); resizeTimer = setTimeout(build, 120); }).observe(stage);
+      if (reduced || !('IntersectionObserver' in window)) { drawn = true; build(); return; }
+      const observer = new IntersectionObserver((entries) => entries.forEach((entry) => {
+        if (entry.isIntersecting) { draw(); observer.disconnect(); }
+      }), { threshold: 0.25 });
+      observer.observe(stage);
+    });
+  })();
+</script>

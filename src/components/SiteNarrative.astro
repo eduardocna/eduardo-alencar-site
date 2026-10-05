@@ -8,6 +8,7 @@ import WorkExplorer from './WorkExplorer.astro';
 import CareerGantt from './CareerGantt.astro';
 import ContentBlocks from './ContentBlocks.astro';
 import WorkCatalog from './WorkCatalog.astro';
+import ResearchMap from './ResearchMap.astro';
 import BookLaunch from './BookLaunch.astro';
 import LinkedInMetrics from './LinkedInMetrics.astro';
 import { withBase } from '../data/paths';
@@ -36,6 +37,7 @@ const bookCoverAlt = { en:'Cover of “Governança em Tempo Real”', pt:'Capa d
 {pages.slice(1).map((page: NarrativePage) => <article class="editorial-section" id={page.id}>
   <header class:list={['section-shell', 'section-intro', 'reveal', { 'book-copy': page.id === 'book' }]}><p class="eyebrow">{sectionNumber(page.id)}</p><h2>{page.title}</h2>{page.intro.map((line: string) => <p class="lede" set:html={inline(line)}></p>)}</header>
   {page.id === 'book' && <figure class="book-cover reveal"><img src={withBase('images/governanca-em-tempo-real-capa.png')} alt={bookCoverAlt} width="515" height="605" loading="lazy" /></figure>}
+  {page.id === 'research' && <ResearchMap lang={lang} />}
   {page.id === 'research' && <WorkCatalog lang={lang} categories={['research']} title={catalogueTitle} />}
   {page.id === 'briefs' && <WorkCatalog lang={lang} categories={['policy']} title={briefsTitle} />}
   {page.id === 'tools' && <>

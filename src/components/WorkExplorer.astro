@@ -1,9 +1,16 @@
 ---
 import type { Locale } from '../data/site';
 import { at, explorerItems, homeUi } from '../data/home';
-import { workPath } from '../data/paths';
+import { withBase } from '../data/paths';
+import { workBySlug } from '../data/catalog';
 interface Props { lang: Locale; }
 const { lang } = Astro.props;
+const destinations = explorerItems.map((item) => {
+  const link = workBySlug(item.slug)?.verifiedLinks[0];
+  if (!link) return null;
+  const internal = link.href.startsWith('/');
+  return { href: internal ? withBase(link.href) : link.href, internal };
+});
 ---
 <section class="explorer-panel section-shell reveal" aria-labelledby="explorer-title">
   <p class="eyebrow">{at(homeUi.explorerEyebrow, lang)}</p>
@@ -16,7 +23,7 @@ const { lang } = Astro.props;
     <div class="explorer-panels">
       {explorerItems.map((item, i) => <article id={`explorer-panel-${i}`} role="tabpanel" aria-labelledby={`explorer-tab-${i}`} data-explorer-panel={i}>
         <div class="explorer-signal"><strong>{at(item.mark, lang)}<small>{at(item.label, lang)}</small></strong><span>{at(item.tab, lang)}</span><h3>{at(item.title, lang)}</h3></div>
-        <div class="explorer-detail"><dl><div><dt>{at(homeUi.problem, lang)}</dt><dd>{at(item.problem, lang)}</dd></div><div><dt>{at(homeUi.method, lang)}</dt><dd>{at(item.method, lang)}</dd></div><div><dt>{at(homeUi.output, lang)}</dt><dd>{at(item.output, lang)}</dd></div></dl><a class="cta ghost" href={workPath(lang, item.slug)}>{at(homeUi.open, lang)} →</a></div>
+        <div class="explorer-detail"><dl><div><dt>{at(homeUi.problem, lang)}</dt><dd>{at(item.problem, lang)}</dd></div><div><dt>{at(homeUi.method, lang)}</dt><dd>{at(item.method, lang)}</dd></div><div><dt>{at(homeUi.output, lang)}</dt><dd>{at(item.output, lang)}</dd></div></dl>{destinations[i] && <a class="cta ghost" href={destinations[i].href} target={destinations[i].internal ? undefined : '_blank'} rel={destinations[i].internal ? undefined : 'noopener noreferrer'}>{at(homeUi.open, lang)} {destinations[i].internal ? '→' : '↗'}</a>}</div>
       </article>)}
     </div>
   </div>

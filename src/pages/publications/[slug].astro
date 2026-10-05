@@ -1,5 +1,5 @@
 ---
-import { works, type WorkItem } from '../../data/catalog'; import { workPath } from '../../data/paths';
-export function getStaticPaths(){return works.map((item)=>({params:{slug:item.slug},props:{item}}));} interface Props{item:WorkItem} const {item}=Astro.props; const destination=workPath('en',item.slug);
+import { works, type WorkItem } from '../../data/catalog'; import { workDestination } from '../../data/paths';
+export function getStaticPaths(){return works.map((item)=>({params:{slug:item.slug},props:{item}}));} interface Props{item:WorkItem} const {item}=Astro.props; const destination=workDestination('en',item);
 ---
 <!doctype html><html lang="en"><head><meta charset="utf-8"/><meta name="robots" content="noindex"/><meta http-equiv="refresh" content={`0; url=${destination}`}/><link rel="canonical" href={new URL(destination,Astro.site)}/><title>{item.title}</title></head><body><p><a href={destination}>Continue to {item.title}</a></p></body></html>

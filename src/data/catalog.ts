@@ -31,7 +31,8 @@ const editorial: Record<string, WorkEditorial> = {
   'white-collar-times-oversight': {
     kind: 'article', status: 'published', category: 'policy',
     summary: l('An essay on anti-corruption oversight organized around measurable consequences rather than activity counts.', 'Ensaio sobre fiscalização anticorrupção orientada por consequências mensuráveis, não por contagem de atividades.', 'Ensayo sobre control anticorrupción orientado por consecuencias mensurables, no por recuentos de actividad.', 'Saggio sul controllo anticorruzione orientato a conseguenze misurabili, non al conteggio delle attività.'),
-    methods: l('Oversight analytics', 'Analítica de fiscalização', 'Analítica de control', 'Analisi del controllo')
+    methods: l('Oversight analytics', 'Analítica de fiscalização', 'Analítica de control', 'Analisi del controllo'),
+    links: [{ kind: 'download', href: '/downloads/white-collar-times-2026-evidence-based-oversight.pdf', label: l('Download article (PDF, English)', 'Baixar artigo (PDF, inglês)', 'Descargar artículo (PDF, inglés)', 'Scarica articolo (PDF, inglese)') }]
   },
   'formal-replies-substantive-evasion': {
     kind: 'working-paper', status: 'under-review', category: 'research',

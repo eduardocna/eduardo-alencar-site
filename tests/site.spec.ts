@@ -41,7 +41,7 @@ test('home exposes the complete narrative and verified interactions', async ({ p
   await page.locator('[data-explorer-tab="2"]').click();
   await expect(page.locator('[data-explorer-tab="2"]')).toHaveAttribute('aria-selected', 'true');
   await expect(page.locator('[data-explorer-panel="2"]')).toBeVisible();
-  await expect(page.locator('[data-explorer-panel="2"] a')).toHaveAttribute('href', /work\/indice-governanca-2026/);
+  await expect(page.locator('[data-explorer-panel="2"] a')).toHaveAttribute('href', 'https://planosgov2026.online/');
   await page.locator('#career-timeline').scrollIntoViewIfNeeded();
   await expect(page.locator('#career-timeline')).toHaveClass(/is-visible/);
   await page.locator('[data-gantt]').first().click();
@@ -94,13 +94,37 @@ test('catalogue cards open the document directly in a new tab', async ({ page })
   await expect(card).toHaveAttribute('target', '_blank');
 });
 
-test('work pages use internal routes and verified sources', async ({ page }) => {
-  let response = await page.goto('en/work/radar-aberto-integridade/');
-  expect(response?.ok()).toBeTruthy();
-  await expect(page.getByRole('link', { name: /Open application/ })).toHaveAttribute('href', 'https://radar-aberto-integridade.streamlit.app/');
-  response = await page.goto('pt/work/supremo-autojulgamento-pet16662/');
-  expect(response?.ok()).toBeTruthy();
-  await expect(page.getByRole('link', { name: /Baixar policy brief/ })).toHaveAttribute('href', /downloads\/o-supremo-julga-um-dos-seus-2026.pdf/);
+test('explorer opens the real destination and work pages no longer exist', async ({ page }) => {
+  await page.goto('pt/');
+  const radar = page.locator('#explorer-panel-0 a.cta');
+  await expect(radar).toHaveAttribute('href', 'https://radar-aberto-integridade.streamlit.app/');
+  await expect(radar).toHaveAttribute('target', '_blank');
+  await expect(page.locator('#explorer-panel-1 a.cta')).toHaveCount(0);
+  await expect(page.locator('#explorer-panel-2 a.cta')).toHaveAttribute('href', 'https://planosgov2026.online/');
+  await expect(page.locator('#explorer-panel-3 a.cta')).toHaveAttribute('href', 'https://doi.org/10.1177/2631309X211017874');
+  await expect(page.locator('a[href*="/work/"]')).toHaveCount(0);
+  const response = await page.goto('en/work/radar-aberto-integridade/');
+  expect(response?.status()).toBe(404);
+});
+
+test('White Collar Times card opens the article PDF', async ({ page, request }) => {
+  await page.goto('pt/briefs/');
+  const card = page.locator('a.worklink[href*="white-collar-times-2026-evidence-based-oversight.pdf"]').first();
+  await expect(card).toHaveAttribute('target', '_blank');
+  const pdf = await request.get(await card.getAttribute('href') as string);
+  expect(pdf.ok()).toBeTruthy();
+  expect(pdf.headers()['content-type']).toContain('pdf');
+});
+
+test('research map highlights the work linked to a selected axis', async ({ page }) => {
+  await page.setViewportSize({ width: 1400, height: 1000 });
+  await page.goto('pt/research/');
+  const map = page.locator('[data-research-map]');
+  await expect(map.locator('svg path')).toHaveCount(12);
+  await map.locator('button[data-axis="oversight"]').click();
+  await expect(map.locator('button[data-axis="oversight"]')).toHaveAttribute('aria-pressed', 'true');
+  await expect(map.locator('li[data-work="formal-replies-substantive-evasion"]')).toHaveClass(/is-on/);
+  await expect(map.locator('li[data-work="phd-procurement-fraud"]')).toHaveClass(/is-dim/);
 });
 
 test('reduced motion keeps the visual content visible', async ({ page }) => {
@@ -163,7 +187,7 @@ test.describe('without JavaScript', () => {
     await expect(page.locator('#research')).toBeVisible();
     await expect(page.locator('[data-explorer-panel]')).toHaveCount(4);
     await expect(page.locator('a[href$="#research"]').first()).toBeVisible();
-    await expect(page.locator('a[href*="/work/radar-aberto-integridade/"]').first()).toBeVisible();
+    await expect(page.locator('a[href="https://radar-aberto-integridade.streamlit.app/"]').first()).toBeAttached();
   });
 });
 

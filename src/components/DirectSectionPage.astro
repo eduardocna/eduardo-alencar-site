@@ -3,6 +3,7 @@ import type { Locale } from '../data/site';
 import { documents, inline, sectionIds } from '../data/site';
 import ContentBlocks from './ContentBlocks.astro';
 import WorkCatalog from './WorkCatalog.astro';
+import ResearchMap from './ResearchMap.astro';
 import BookLaunch from './BookLaunch.astro';
 import LinkedInMetrics from './LinkedInMetrics.astro';
 import { withBase } from '../data/paths';
@@ -15,6 +16,7 @@ const bookCoverAlt = { en:'Cover of “Governança em Tempo Real”', pt:'Capa d
 <article class="page-shell" id={id}>
   <header class:list={['section-shell', { 'book-copy': id === 'book' }]}><p class="eyebrow">{section.title}</p><h1 class="page-title">{section.title}</h1>{section.intro.map((line: string) => <p class="lede" set:html={inline(line)}></p>)}</header>
   {id === 'book' && <figure class="book-cover reveal"><img src={withBase('images/governanca-em-tempo-real-capa.png')} alt={bookCoverAlt} width="515" height="605" loading="lazy" /></figure>}
+  {id === 'research' && <ResearchMap lang={lang} />}
   {id === 'research' && <WorkCatalog lang={lang} categories={['research']} title={catalogTitle} />}
   {id === 'briefs' && <WorkCatalog lang={lang} categories={['policy']} title={catalogTitle} />}
   {id === 'tools' && <WorkCatalog lang={lang} categories={['tools']} title={catalogTitle} />}

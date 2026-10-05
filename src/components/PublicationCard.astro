@@ -1,7 +1,7 @@
 ---
 import { statusLabel, typeLabel, type WorkItem } from '../data/catalog';
 import type { Locale } from '../data/site';
-import { workPath, withBase } from '../data/paths';
+import { withBase } from '../data/paths';
 interface Props { item: WorkItem; lang: Locale; }
 const { item, lang } = Astro.props;
 const labels = {
@@ -10,15 +10,13 @@ const labels = {
 }[lang];
 const primary = item.verifiedLinks[0];
 const internal = primary?.href.startsWith('/');
-const href = primary ? (internal ? withBase(primary.href) : primary.href) : workPath(lang, item.slug);
-const external = primary ? { target: '_blank', rel: 'noopener noreferrer' } : {};
-const arrow = primary ? '↗' : '→';
-const viewLabel = primary ? labels.view : { en:'View work', pt:'Ver trabalho', es:'Ver trabajo', it:'Vedi lavoro' }[lang];
+const href = primary ? (internal ? withBase(primary.href) : primary.href) : undefined;
+const external = { target: '_blank', rel: 'noopener noreferrer' };
 ---
 <article class="publication-card card reveal" data-category={item.category} data-status={item.statusCode} data-language={item.languages.join(' ')}>
   <p class="eyebrow">{typeLabel(item, lang)} · {item.year}</p>
-  <h3><a href={href} {...external}>{item.title}</a></h3>
+  <h3>{href ? <a href={href} {...external}>{item.title}</a> : item.title}</h3>
   <p>{item.localizedSummary[lang]}</p>
   <div class="card-meta"><span>{statusLabel(item, lang)}</span><span>{labels.language}: {item.languages.map((value: string) => value.toUpperCase()).join(' · ')}</span></div>
-  <a class="worklink" href={href} {...external}>{viewLabel} {arrow}</a>
+  {href && <a class="worklink" href={href} {...external}>{labels.view} ↗</a>}
 </article>

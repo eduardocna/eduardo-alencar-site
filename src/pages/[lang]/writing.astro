@@ -1,6 +1,6 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro'; import DirectSectionPage from '../../components/DirectSectionPage.astro'; import { isLocale, locales } from '../../data/site';
 export function getStaticPaths(){return locales.map((lang)=>({params:{lang}}));} const lang=isLocale(Astro.params.lang)?Astro.params.lang:'en';
-const meta={en:['Writing','Essays on public integrity, AI and state capacity.'],pt:['Textos','Ensaios sobre integridade pública, IA e capacidade estatal.'],es:['Textos','Ensayos sobre integridad pública, IA y capacidad estatal.'],it:['Scritti','Saggi su integrità pubblica, IA e capacità statale.']}[lang];
+const meta={en:['Newsletter','Weekly bilingual newsletter on public integrity, AI and state capacity.'],pt:['Newsletter','Newsletter semanal bilíngue sobre integridade pública, IA e capacidade estatal.'],es:['Newsletter','Newsletter semanal bilingüe sobre integridad pública, IA y capacidad estatal.'],it:['Newsletter','Newsletter settimanale bilingue su integrità pubblica, IA e capacità statale.']}[lang];
 ---
 <BaseLayout lang={lang} title={`${meta[0]} | Eduardo Alencar`} description={meta[1]} contentPath="writing/"><DirectSectionPage lang={lang} id="writing" /></BaseLayout>

@@ -95,7 +95,7 @@ Alencar, E. C. N., & Jackson-Green, B. (2021). Applying Synthetic Control Method
 
 ## Artículos y boletines
 
-Alencar, E. C. N. (2026, primavera). Evidence-based anti-corruption oversight: stop counting activity, start measuring consequences. *The White Collar Times*, boletín oficial de la división de crímenes de cuello blanco y corporativos de la American Society of Criminology.
+Alencar, E. C. N. (2026, primavera). [Evidence-based anti-corruption oversight: stop counting activity, start measuring consequences](/downloads/white-collar-times-2026-evidence-based-oversight.pdf). *The White Collar Times*, boletín oficial de la división de crímenes de cuello blanco y corporativos de la American Society of Criminology.
 
 ## En evaluación
 
@@ -185,11 +185,11 @@ Iniciativa de integración de bases de datos entre oficinas parlamentarias para 
 
 ---
 
-# Textos
+# Newsletter
 
 Ensayos breves y bilingües que traducen investigación y experiencia institucional en análisis utilizable sobre integridad, transparencia y decisiones basadas en evidencia en el sector público.
 
-## Newsletter
+## Suscripción
 
 Boletín semanal bilingüe (portugués e inglés) sobre integridad pública, inteligencia artificial en el gobierno, fiscalización y capacidad estatal.
 
