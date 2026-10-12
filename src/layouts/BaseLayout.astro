@@ -45,7 +45,7 @@ const selectedLabel = { en:'selected', pt:'selecionado', es:'seleccionado', it:'
       </div>
     </header>
     <main id="content"><slot /></main>
-    <footer><p>© {new Date().getFullYear()} Eduardo Alencar · {ui.location}</p><p><a href="https://www.linkedin.com/in/eduardocna">LinkedIn</a> · <a href="https://orcid.org/0000-0002-9218-1798">ORCID</a> · <a href="https://scholar.google.com/citations?user=vJ12isgAAAAJ">Google Scholar</a> · <a href="https://www.youtube.com/channel/UCLi9UQ1JUeMfcusjNjKiIAw">YouTube</a> · <a href="mailto:eduardocna@gmail.com">Email</a></p></footer>
+    <footer><p>© {new Date().getFullYear()} Eduardo Alencar · {ui.location}</p><p><a href="https://www.linkedin.com/in/eduardocna">LinkedIn</a> · <a href="https://orcid.org/0000-0002-9218-1798">ORCID</a> · <a href="https://scholar.google.com/citations?user=vJ12isgAAAAJ">Google Scholar</a> · <a href="https://www.youtube.com/@eduardocnalencar">YouTube</a> · <a href="mailto:eduardocna@gmail.com">Email</a></p></footer>
     <script is:inline define:vars={{ darkLabel: ui.dark, lightLabel: ui.light }}>
       const themeButton = document.getElementById('themebtn');
       const updateThemeButton = () => { const dark = document.documentElement.dataset.theme === 'dark'; themeButton?.setAttribute('aria-pressed', String(dark)); if (themeButton) { const label = dark ? lightLabel : darkLabel; themeButton.querySelector('b').textContent = label; themeButton.setAttribute('aria-label', label); } };

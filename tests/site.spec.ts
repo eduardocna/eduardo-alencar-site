@@ -33,6 +33,15 @@ test('LinkedIn metrics are consistent on the home and direct writing pages', asy
   expect(writingMetrics).not.toContain('93+');
 });
 
+test('the public YouTube channel is consistent across every locale', async ({ page }) => {
+  const channelUrl = 'https://www.youtube.com/@eduardocnalencar';
+  for (const locale of locales) {
+    await page.goto(`${locale}/contact/`);
+    await expect(page.locator(`a[href="${channelUrl}"]`).first()).toHaveText(/youtube\.com\/@eduardocnalencar/i);
+    await expect(page.locator('footer a').filter({ hasText: 'YouTube' })).toHaveAttribute('href', channelUrl);
+  }
+});
+
 test('home exposes the complete narrative and verified interactions', async ({ page }) => {
   await page.goto('en/');
   await expect(page.locator('.evidence-cell')).toHaveCount(70);

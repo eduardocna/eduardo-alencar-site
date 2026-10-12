@@ -142,7 +142,7 @@ Alencar, E. C. N. (2026, Spring). [Evidence-based anti-corruption oversight: sto
 
 ## Profiles
 
-[Google Scholar](https://scholar.google.com/citations?user=vJ12isgAAAAJ) · [ORCID](https://orcid.org/0000-0002-9218-1798) · [LinkedIn](https://www.linkedin.com/in/eduardocna) · [YouTube](https://www.youtube.com/channel/UCLi9UQ1JUeMfcusjNjKiIAw)
+[Google Scholar](https://scholar.google.com/citations?user=vJ12isgAAAAJ) · [ORCID](https://orcid.org/0000-0002-9218-1798) · [LinkedIn](https://www.linkedin.com/in/eduardocna) · [YouTube](https://www.youtube.com/@eduardocnalencar)
 
 ---
 
@@ -293,7 +293,7 @@ Brasília, Brazil · Open to relocate
 - LinkedIn: [linkedin.com/in/eduardocna](https://www.linkedin.com/in/eduardocna)
 - Google Scholar: [scholar.google.com/citations?user=vJ12isgAAAAJ](https://scholar.google.com/citations?user=vJ12isgAAAAJ)
 - ORCID: [orcid.org/0000-0002-9218-1798](https://orcid.org/0000-0002-9218-1798)
-- YouTube: [youtube.com/channel/UCLi9UQ1JUeMfcusjNjKiIAw](https://www.youtube.com/channel/UCLi9UQ1JUeMfcusjNjKiIAw)
+- YouTube: [youtube.com/@eduardocnalencar](https://www.youtube.com/@eduardocnalencar)
 - X: @eduardo_cna
 
 Open to collaboration on public integrity, procurement analytics, oversight measurement and responsible AI in government.
