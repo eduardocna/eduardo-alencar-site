@@ -1,6 +1,6 @@
 {
   "schema_version": 2,
-  "updated": "2026-09-13",
+  "updated": "2026-10-11",
   "items": [
     {
       "slug": "synthetic-control-lava-jato",
@@ -362,6 +362,24 @@
       "public_url": "/downloads/o-supremo-julga-um-dos-seus-2026.pdf",
       "rights": "Autoria própria; PDF aprovado para publicação.",
       "last_checked": "2026-09-16",
+      "access": "publico"
+    },
+    {
+      "slug": "regra-existia-registro-pela-metade",
+      "title": "A regra existia, o registro foi feito pela metade",
+      "authors": ["Eduardo C. N. Alencar"],
+      "year": 2026,
+      "type": "Policy brief",
+      "languages": ["pt"],
+      "summary": "Examina o caso Banco Master a partir da decisão cautelar e do acórdão de referendo do STF, da legislação sobre conflito de interesses e das regras de registro de audiências do Banco Central. Recomenda o registro obrigatório e auditável das interações substantivas entre supervisores e instituições supervisionadas.",
+      "themes": ["integridade", "conflito de interesses", "supervisão bancária"],
+      "methods": ["análise institucional", "análise documental"],
+      "status": "publicado",
+      "canonical_source": "Zenodo, DOI 10.5281/zenodo.23307256",
+      "public_file": "04 — Policy briefs/a-regra-existia-o-registro-foi-feito-pela-metade-2026.pdf",
+      "public_url": "/downloads/a-regra-existia-o-registro-foi-feito-pela-metade-2026.pdf",
+      "rights": "Autoria própria; CC BY 4.0; publicado no Zenodo pelo autor em 11/10/2026.",
+      "last_checked": "2026-10-11",
       "access": "publico"
     }
   ]

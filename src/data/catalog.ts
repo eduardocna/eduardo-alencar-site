@@ -152,6 +152,15 @@ const editorial: Record<string, WorkEditorial> = {
     summary: l('An institutional analysis of the Brazilian Supreme Court’s extraordinary session of 15 September 2026 concerning Petition 16,662.', 'Análise institucional da sessão extraordinária do STF de 15 de setembro de 2026 sobre a PET 16.662.', 'Análisis institucional de la sesión extraordinaria del Supremo Tribunal Federal de Brasil del 15 de septiembre de 2026 sobre la Petición 16.662.', 'Analisi istituzionale della sessione straordinaria della Corte Suprema Federale brasiliana del 15 settembre 2026 sulla Petizione 16.662.'),
     methods: l('Institutional and transcript analysis', 'Análise institucional e de transcrição', 'Análisis institucional y de transcripción', 'Analisi istituzionale e della trascrizione'),
     links: [{ kind: 'download', href: '/downloads/o-supremo-julga-um-dos-seus-2026.pdf', label: l('Download policy brief (PDF, Portuguese)', 'Baixar policy brief (PDF)', 'Descargar policy brief (PDF, portugués)', 'Scarica policy brief (PDF, portoghese)') }]
+  },
+  'regra-existia-registro-pela-metade': {
+    kind: 'brief', status: 'published', category: 'policy',
+    summary: l('Examines the Banco Master case through the Brazilian Supreme Court’s precautionary decision, conflict-of-interest law and the Central Bank’s meeting-record rules, and recommends a mandatory, auditable record of substantive contacts between supervisors and supervised institutions.', 'Examina o caso Banco Master a partir da decisão cautelar do STF, da legislação sobre conflito de interesses e das regras de registro de audiências do Banco Central, e recomenda o registro obrigatório e auditável das interações substantivas entre supervisores e instituições supervisionadas.', 'Examina el caso Banco Master a partir de la decisión cautelar del Supremo Tribunal Federal de Brasil, de la legislación sobre conflicto de intereses y de las reglas de registro de audiencias del Banco Central, y recomienda el registro obligatorio y auditable de las interacciones sustantivas entre supervisores e instituciones supervisadas.', 'Esamina il caso Banco Master a partire dalla decisione cautelare della Corte Suprema Federale brasiliana, dalla normativa sul conflitto di interessi e dalle regole di registrazione delle udienze della Banca Centrale, e raccomanda la registrazione obbligatoria e verificabile delle interazioni sostanziali tra supervisori e istituzioni vigilate.'),
+    methods: l('Institutional and documentary analysis', 'Análise institucional e documental', 'Análisis institucional y documental', 'Analisi istituzionale e documentale'),
+    links: [
+      { kind: 'download', href: '/downloads/a-regra-existia-o-registro-foi-feito-pela-metade-2026.pdf', label: l('Download policy brief (PDF, Portuguese)', 'Baixar policy brief (PDF)', 'Descargar policy brief (PDF, portugués)', 'Scarica policy brief (PDF, portoghese)') },
+      { kind: 'doi', href: 'https://doi.org/10.5281/zenodo.23307256', label: l('Open DOI', 'Abrir DOI', 'Abrir DOI', 'Apri DOI') }
+    ]
   }
 };
 
