@@ -1,7 +1,7 @@
 ---
 lang: pt
 source: memory/CV_Eduardo_Alencar_2025 detailed6.docx
-updated: 2026-08-17
+updated: 2026-10-12
 note: Fonte da verdade da versão em português de eduardocnalencar.com. Editar aqui e regerar o site.
 ---
 
@@ -130,7 +130,7 @@ Alencar, E. C. N. (2026). [Evidence-based anti-corruption oversight: stop counti
 
 ## Produtos de política pública
 
-- *Governança em Tempo Real: Evidência, Integridade e Inteligência Artificial para Reconstruir a Capacidade Pública.* Manuscrito de livro em produção, 2026.
+- *Governança em Tempo Real: como o Brasil pode parar de fingir que governa.* Livro, Editora JusPodivm, 2026. ISBN 978-85-442-7915-1.
 - *[A regra existia, o registro foi feito pela metade](/downloads/a-regra-existia-o-registro-foi-feito-pela-metade-2026.pdf).* O que o caso Banco Master e a decisão cautelar do STF de 3 de março de 2026 ensinam sobre integridade e conflito de interesses na supervisão bancária, com a recomendação de registro obrigatório e auditável das interações substantivas entre supervisores e instituições supervisionadas. Policy brief, 2026. DOI: [10.5281/zenodo.23307256](https://doi.org/10.5281/zenodo.23307256).
 - *[O Supremo julga um dos seus](/downloads/o-supremo-julga-um-dos-seus-2026.pdf).* Análise da sessão extraordinária do STF de 15 de setembro de 2026 sobre a Petição 16.662 (caso Banco Master), examinando se a Corte testou ao vivo, por quase oito horas, seu próprio mecanismo de autojulgamento quando o investigado é um dos guardiões da Constituição. Policy brief, 2026.
 - De la carga administrativa a la regulación basada en riesgo: análisis de clases latentes y discontinuidades regulatorias en compras públicas en América Latina y el Caribe. Nota técnica conceitual para o BID, 2026.
@@ -142,7 +142,7 @@ Alencar, E. C. N. (2026). [Evidence-based anti-corruption oversight: stop counti
 
 ## Perfis
 
-[Google Scholar](https://scholar.google.com/citations?user=vJ12isgAAAAJ) · [ORCID](https://orcid.org/0000-0002-9218-1798) · [LinkedIn](https://www.linkedin.com/in/eduardocna)
+[Google Scholar](https://scholar.google.com/citations?user=vJ12isgAAAAJ) · [ORCID](https://orcid.org/0000-0002-9218-1798) · [LinkedIn](https://www.linkedin.com/in/eduardocna) · [YouTube](https://www.youtube.com/channel/UCLi9UQ1JUeMfcusjNjKiIAw)
 
 ---
 
@@ -174,7 +174,7 @@ Painel de risco em contratações públicas construído sobre dados abertos bras
 
 Cinco telas: visão geral, mapa de atenção, fornecedores, órgãos e método. O desenho separa deliberadamente o índice de atenção da força da evidência, sempre mostra denominadores, inclui casos sem sinais e encerra cada caso com um roteiro de verificação humana.
 
-*Situação:* concluído em 18 de julho de 2026. Submissão ao concurso pendente, com prazo em 11 de setembro de 2026. Trata-se de uma submissão, não de premiação.
+*Situação:* concluído em 18 de julho de 2026. Inscrição no concurso enviada em 6 de setembro e reúso homologado em 22 de setembro. Resultado do concurso pendente; o projeto não recebeu premiação até esta atualização.
 
 ## Painéis públicos da Frente Parlamentar FIT
 
@@ -293,6 +293,7 @@ Brasília, Brasil · Aberto a recolocação internacional
 - LinkedIn: [linkedin.com/in/eduardocna](https://www.linkedin.com/in/eduardocna)
 - Google Scholar: [scholar.google.com/citations?user=vJ12isgAAAAJ](https://scholar.google.com/citations?user=vJ12isgAAAAJ)
 - ORCID: [orcid.org/0000-0002-9218-1798](https://orcid.org/0000-0002-9218-1798)
+- YouTube: [youtube.com/channel/UCLi9UQ1JUeMfcusjNjKiIAw](https://www.youtube.com/channel/UCLi9UQ1JUeMfcusjNjKiIAw)
 - X: @eduardo_cna
 
 Aberto a colaborações em integridade pública, analítica de compras, medição de fiscalização e uso responsável de inteligência artificial no governo.

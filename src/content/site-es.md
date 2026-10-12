@@ -1,7 +1,7 @@
 ---
 lang: es
 source: content/en/site-en.md (traducción)
-updated: 2026-09-16
+updated: 2026-10-12
 note: Fuente editorial pública en español para eduardocnalencar.com. El sitio Astro (site-astro/) la publica junto con EN/PT/IT desde 2026-09-16.
 ---
 
@@ -130,7 +130,7 @@ Alencar, E. C. N. (2026, primavera). [Evidence-based anti-corruption oversight: 
 
 ## Productos de política pública
 
-- *Governança em Tempo Real: Evidência, Integridade e Inteligência Artificial para Reconstruir a Capacidade Pública.* Manuscrito de libro en producción, 2026.
+- *Governança em Tempo Real: como o Brasil pode parar de fingir que governa.* Libro, Editora JusPodivm, 2026. ISBN 978-85-442-7915-1.
 - *[La regla existía, el registro se hizo a medias](/downloads/a-regra-existia-o-registro-foi-feito-pela-metade-2026.pdf).* Qué enseñan el caso Banco Master y la decisión cautelar del Supremo Tribunal Federal de Brasil del 3 de marzo de 2026 sobre integridad y conflicto de intereses en la supervisión bancaria, con la recomendación de un registro obligatorio y auditable de las interacciones sustantivas entre supervisores e instituciones supervisadas. Policy brief (en portugués), 2026. DOI: [10.5281/zenodo.23307256](https://doi.org/10.5281/zenodo.23307256).
 - *[La Corte Suprema juzga a uno de los suyos](/downloads/o-supremo-julga-um-dos-seus-2026.pdf).* Análisis de la sesión extraordinaria del Supremo Tribunal Federal de Brasil del 15 de septiembre de 2026 sobre la Petición 16.662 (caso Banco Master), que examina si la Corte puso a prueba en vivo, durante casi ocho horas, su propio mecanismo de autojuzgamiento cuando la persona investigada es uno de los guardianes de la Constitución. Policy brief, 2026.
 - De la carga administrativa a la regulación basada en riesgo: análisis de clases latentes y discontinuidades regulatorias en compras públicas en América Latina y el Caribe. Nota técnica conceptual para el BID, 2026.
@@ -142,7 +142,7 @@ Alencar, E. C. N. (2026, primavera). [Evidence-based anti-corruption oversight: 
 
 ## Perfiles
 
-[Google Scholar](https://scholar.google.com/citations?user=vJ12isgAAAAJ) · [ORCID](https://orcid.org/0000-0002-9218-1798) · [LinkedIn](https://www.linkedin.com/in/eduardocna)
+[Google Scholar](https://scholar.google.com/citations?user=vJ12isgAAAAJ) · [ORCID](https://orcid.org/0000-0002-9218-1798) · [LinkedIn](https://www.linkedin.com/in/eduardocna) · [YouTube](https://www.youtube.com/channel/UCLi9UQ1JUeMfcusjNjKiIAw)
 
 ---
 
@@ -174,7 +174,7 @@ Tablero de riesgo en contrataciones públicas construido sobre datos abiertos br
 
 Cinco vistas: panorama general, mapa de atención, proveedores, organismos y metodología. El diseño separa deliberadamente el índice de atención de la fuerza de la evidencia, siempre muestra los denominadores, incluye casos sin señales y cierra cada caso con una guía de verificación humana.
 
-*Estado:* concluido el 18 de julio de 2026. Postulación al concurso en curso, con plazo el 11 de septiembre de 2026. Se trata de una postulación, no de un premio.
+*Estado:* concluido el 18 de julio de 2026. Inscripción al concurso enviada el 6 de septiembre; el reúso de datos fue homologado el 22 de septiembre. El resultado del concurso está pendiente; el proyecto no ha recibido un premio hasta esta actualización.
 
 ## Tableros públicos del Frente Parlamentario FIT
 
@@ -293,6 +293,7 @@ Brasília, Brasil · Disponible para reubicación
 - LinkedIn: [linkedin.com/in/eduardocna](https://www.linkedin.com/in/eduardocna)
 - Google Scholar: [scholar.google.com/citations?user=vJ12isgAAAAJ](https://scholar.google.com/citations?user=vJ12isgAAAAJ)
 - ORCID: [orcid.org/0000-0002-9218-1798](https://orcid.org/0000-0002-9218-1798)
+- YouTube: [youtube.com/channel/UCLi9UQ1JUeMfcusjNjKiIAw](https://www.youtube.com/channel/UCLi9UQ1JUeMfcusjNjKiIAw)
 - X: @eduardo_cna
 
 Disponible para colaborar en integridad pública, analítica de compras, medición de la fiscalización e IA responsable en el gobierno.

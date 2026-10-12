@@ -1,7 +1,7 @@
 ---
 lang: en
 source: memory/CV_Eduardo_Alencar_2025 detailed6.docx
-updated: 2026-08-17
+updated: 2026-10-12
 note: Source of truth for the English version of eduardocnalencar.com. Edit here, then regenerate the site.
 ---
 
@@ -130,7 +130,7 @@ Alencar, E. C. N. (2026, Spring). [Evidence-based anti-corruption oversight: sto
 
 ## Policy and practice outputs
 
-- *Governança em Tempo Real: Evidência, Integridade e Inteligência Artificial para Reconstruir a Capacidade Pública.* Book manuscript in production, 2026.
+- *Governança em Tempo Real: como o Brasil pode parar de fingir que governa.* Book, Editora JusPodivm, 2026. ISBN 978-85-442-7915-1.
 - *[The rule existed, the record was only half kept](/downloads/a-regra-existia-o-registro-foi-feito-pela-metade-2026.pdf).* What the Banco Master case and the Brazilian Supreme Court’s precautionary decision of 3 March 2026 show about integrity and conflict of interest in banking supervision, with a recommendation for a mandatory, auditable record of substantive contacts between supervisors and supervised institutions. Policy brief (in Portuguese), 2026. DOI: [10.5281/zenodo.23307256](https://doi.org/10.5281/zenodo.23307256).
 - *[The Supreme Court judges one of its own](/downloads/o-supremo-julga-um-dos-seus-2026.pdf).* Analysis of the Brazilian Supreme Court's extraordinary session of 15 September 2026 on Petition 16,662 (Banco Master case), examining whether the Court live-tested its own self-adjudication mechanism, over nearly eight hours, when the person under investigation is one of the Constitution's guardians. Policy brief, 2026.
 - From administrative burden to risk-based regulation: latent class analysis and regulatory discontinuities in Latin American and Caribbean public procurement. IDB technical concept note, 2026 (in Spanish).
@@ -142,7 +142,7 @@ Alencar, E. C. N. (2026, Spring). [Evidence-based anti-corruption oversight: sto
 
 ## Profiles
 
-[Google Scholar](https://scholar.google.com/citations?user=vJ12isgAAAAJ) · [ORCID](https://orcid.org/0000-0002-9218-1798) · [LinkedIn](https://www.linkedin.com/in/eduardocna)
+[Google Scholar](https://scholar.google.com/citations?user=vJ12isgAAAAJ) · [ORCID](https://orcid.org/0000-0002-9218-1798) · [LinkedIn](https://www.linkedin.com/in/eduardocna) · [YouTube](https://www.youtube.com/channel/UCLi9UQ1JUeMfcusjNjKiIAw)
 
 ---
 
@@ -174,7 +174,7 @@ A public-procurement risk dashboard built on Brazilian open data for the Office 
 
 Five views: overview, attention map, suppliers, agencies, and a methods section. The design deliberately separates the attention index from the strength of the evidence, always shows denominators, includes cases with no signals, and closes every case with a human verification script.
 
-*Status:* completed 18 July 2026. Contest submission pending; deadline 11 September 2026. This is a submission, not an award.
+*Status:* completed 18 July 2026. Contest application submitted on 6 September; the data reuse entry was approved on 22 September. The contest result is pending; the project has not received an award as of this update.
 
 ## FIT public dashboards
 
@@ -293,6 +293,7 @@ Brasília, Brazil · Open to relocate
 - LinkedIn: [linkedin.com/in/eduardocna](https://www.linkedin.com/in/eduardocna)
 - Google Scholar: [scholar.google.com/citations?user=vJ12isgAAAAJ](https://scholar.google.com/citations?user=vJ12isgAAAAJ)
 - ORCID: [orcid.org/0000-0002-9218-1798](https://orcid.org/0000-0002-9218-1798)
+- YouTube: [youtube.com/channel/UCLi9UQ1JUeMfcusjNjKiIAw](https://www.youtube.com/channel/UCLi9UQ1JUeMfcusjNjKiIAw)
 - X: @eduardo_cna
 
 Open to collaboration on public integrity, procurement analytics, oversight measurement and responsible AI in government.
