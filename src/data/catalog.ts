@@ -72,6 +72,7 @@ const editorial: Record<string, WorkEditorial> = {
     methods: l('Red flags and risk analysis', 'Red flags e análise de risco', 'Banderas rojas y análisis de riesgo', 'Red flag e analisi del rischio'),
     links: [
       { kind: 'app', href: 'https://radar-aberto-integridade.streamlit.app/', label: l('Open application', 'Abrir aplicação', 'Abrir aplicación', 'Apri applicazione') },
+      { kind: 'report', href: 'https://dados.gov.br/dados/reuso/193', label: l('Official open-data reuse listing', 'Registro oficial do reúso', 'Registro oficial de reutilización', 'Scheda ufficiale del riuso') },
       { kind: 'repository', href: 'https://github.com/eduardocna/radar-aberto-integridade', label: l('Code and documentation', 'Código e documentação', 'Código y documentación', 'Codice e documentazione') }
     ]
   },
@@ -160,6 +161,15 @@ const editorial: Record<string, WorkEditorial> = {
     links: [
       { kind: 'download', href: '/downloads/a-regra-existia-o-registro-foi-feito-pela-metade-2026.pdf', label: l('Download policy brief (PDF, Portuguese)', 'Baixar policy brief (PDF)', 'Descargar policy brief (PDF, portugués)', 'Scarica policy brief (PDF, portoghese)') },
       { kind: 'doi', href: 'https://doi.org/10.5281/zenodo.23307256', label: l('Open DOI', 'Abrir DOI', 'Abrir DOI', 'Apri DOI') }
+    ]
+  },
+  'autenticar-chamada-mp-1396': {
+    kind: 'brief', status: 'published', category: 'policy',
+    summary: l('Analyses Brazil’s Provisional Measure 1,396/2026 (call authentication, branded caller ID and blocking of mass dialers) against a 10-criterion rubric and proposes three additions for its conversion into law.', 'Analisa a Medida Provisória 1.396/2026 (autenticação de chamadas, exibição de nome e logotipo e bloqueio de chamadas em massa) por uma rubrica de 10 critérios e propõe três acréscimos para a conversão em lei.', 'Analiza la Medida Provisoria 1.396/2026 de Brasil (autenticación de llamadas, exhibición de nombre y logotipo y bloqueo de llamadas masivas) con una rúbrica de 10 criterios y propone tres añadidos para su conversión en ley.', 'Analizza la Misura Provvisoria 1.396/2026 del Brasile (autenticazione delle chiamate, visualizzazione di nome e logo e blocco delle chiamate di massa) con una rubrica di 10 criteri e propone tre aggiunte per la conversione in legge.'),
+    methods: l('Legislative rubric and documentary analysis', 'Análise legislativa por rubrica e documental', 'Análisis legislativo por rúbrica y documental', 'Analisi legislativa per rubrica e documentale'),
+    links: [
+      { kind: 'download', href: '/downloads/autenticar-a-chamada-nao-e-autenticar-quem-chama-2026.pdf', label: l('Download policy brief (PDF, Portuguese)', 'Baixar policy brief (PDF)', 'Descargar policy brief (PDF, portugués)', 'Scarica policy brief (PDF, portoghese)') },
+      { kind: 'doi', href: 'https://doi.org/10.5281/zenodo.23404841', label: l('Open DOI', 'Abrir DOI', 'Abrir DOI', 'Apri DOI') }
     ]
   }
 };

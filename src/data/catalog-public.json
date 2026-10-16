@@ -161,8 +161,9 @@
       "public_file": "06 — Ferramentas e projetos/radar-aberto-integridade/",
       "public_url": "https://radar-aberto-integridade.streamlit.app/",
       "repository_url": "https://github.com/eduardocna/radar-aberto-integridade",
+      "reuse_url": "https://dados.gov.br/dados/reuso/193",
       "rights": "Código e documentação publicados pelo autor.",
-      "last_checked": "2026-09-13",
+      "last_checked": "2026-10-15",
       "access": "publico"
     },
     {
@@ -380,6 +381,35 @@
       "public_url": "/downloads/a-regra-existia-o-registro-foi-feito-pela-metade-2026.pdf",
       "rights": "Autoria própria; CC BY 4.0; publicado no Zenodo pelo autor em 11/10/2026.",
       "last_checked": "2026-10-11",
+      "access": "publico"
+    },
+    {
+      "slug": "autenticar-chamada-mp-1396",
+      "title": "Autenticar a chamada não é autenticar quem chama",
+      "authors": [
+            "Eduardo C. N. Alencar"
+      ],
+      "year": 2026,
+      "type": "Policy brief",
+      "languages": [
+            "pt"
+      ],
+      "summary": "Analisa a Medida Provisória 1.396/2026 (autenticação de chamadas, exibição de nome e logotipo e bloqueio de chamadas em massa) por uma rubrica de 10 critérios e propõe três acréscimos para a conversão em lei.",
+      "themes": [
+            "telecomunicações",
+            "golpes digitais",
+            "regulação"
+      ],
+      "methods": [
+            "análise legislativa por rubrica",
+            "análise documental"
+      ],
+      "status": "publicado",
+      "canonical_source": "Zenodo, DOI 10.5281/zenodo.23404841",
+      "public_file": "04 — Policy briefs/autenticar-a-chamada-nao-e-autenticar-quem-chama-2026.pdf",
+      "public_url": "/downloads/autenticar-a-chamada-nao-e-autenticar-quem-chama-2026.pdf",
+      "rights": "Autoria própria; CC BY 4.0; publicado no Zenodo pelo autor em 15/10/2026.",
+      "last_checked": "2026-10-15",
       "access": "publico"
     }
   ]

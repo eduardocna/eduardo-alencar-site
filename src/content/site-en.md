@@ -50,6 +50,8 @@ Portuguese (native) · English (fluent) · Italian (fluent) · Spanish (intermed
 
 ## Recent
 
+- **Oct 2026** — [Radar Aberto de Integridade listed on Brazil’s Open Data Portal](https://dados.gov.br/dados/reuso/193). The dashboard uses five explainable signals to guide human review.
+- **Oct 2026** — Interview with *Correio Braziliense* about the book: [“Gestão a partir de evidências”](https://www.correiobraziliense.com.br/economia/2026/10/7518431-gestao-a-partir-de-evidencias.html) (in Portuguese)
 - **Nov 2026** — Two papers accepted for presentation at the American Society of Criminology Annual Meeting, Chicago
 - **Dec 2026** — Extended abstract accepted at the XIV CEFOR Research and Extension Conference, Chamber of Deputies
 - **2026** — Article in *The White Collar Times*, newsletter of the ASC Division of White-Collar and Corporate Crime
@@ -68,6 +70,8 @@ An original argument for why technology, controls and good intentions are not en
 ## Launch
 
 The book launch takes place on **22 October 2026 (Thursday), at 7 pm**, at **Livraria Leitura, Terraço Shopping (Sudoeste), Brasília**: an evening of conversation and book signing. Sales on the night are exclusively at the bookshop.
+
+In the press: [“Gestão a partir de evidências”](https://www.correiobraziliense.com.br/economia/2026/10/7518431-gestao-a-partir-de-evidencias.html), interview with *Correio Braziliense* (11 October 2026, in Portuguese).
 
 [See the book page at Editora JusPodivm](https://www.editorajuspodivm.com.br/governanca-em-tempo-real-como-o-brasil-pode-parar-de-fingir-que-governa-2027-alencar)
 
@@ -132,6 +136,7 @@ Alencar, E. C. N. (2026, Spring). [Evidence-based anti-corruption oversight: sto
 
 - *Governança em Tempo Real: como o Brasil pode parar de fingir que governa.* Book, Editora JusPodivm, 2026. ISBN 978-85-442-7915-1.
 - *[The rule existed, the record was only half kept](/downloads/a-regra-existia-o-registro-foi-feito-pela-metade-2026.pdf).* What the Banco Master case and the Brazilian Supreme Court’s precautionary decision of 3 March 2026 show about integrity and conflict of interest in banking supervision, with a recommendation for a mandatory, auditable record of substantive contacts between supervisors and supervised institutions. Policy brief (in Portuguese), 2026. DOI: [10.5281/zenodo.23307256](https://doi.org/10.5281/zenodo.23307256).
+- *[Authenticating the call is not authenticating the caller](/downloads/autenticar-a-chamada-nao-e-autenticar-quem-chama-2026.pdf).* Analysis of Brazil’s Provisional Measure 1,396/2026, which turns call authentication, branded caller ID with company name and logo, and the blocking of mass dialers into law. It scores the text against a 10-criterion rubric and proposes three additions for the conversion into law: identity verification for the name-and-logo database, rules for calls coming from abroad, and a public indicator dashboard with an impact evaluation. Policy brief (in Portuguese), 2026. DOI: [10.5281/zenodo.23404841](https://doi.org/10.5281/zenodo.23404841).
 - *[The Supreme Court judges one of its own](/downloads/o-supremo-julga-um-dos-seus-2026.pdf).* Analysis of the Brazilian Supreme Court's extraordinary session of 15 September 2026 on Petition 16,662 (Banco Master case), examining whether the Court live-tested its own self-adjudication mechanism, over nearly eight hours, when the person under investigation is one of the Constitution's guardians. Policy brief, 2026.
 - From administrative burden to risk-based regulation: latent class analysis and regulatory discontinuities in Latin American and Caribbean public procurement. IDB technical concept note, 2026 (in Spanish).
 - [Principais achados relacionados aos desembolsos de convênios e patrocínios da Itaipu Binacional](https://www.frentefit.com.br/relatorio-2025-principais-achados-relacionados-aos-desembolsos-de-convenios-e-patrocinios-da-itaipu-binacional/). Parliamentary Front for Oversight, Integrity and Transparency (FIT), 2 April 2025.
@@ -175,6 +180,8 @@ A public-procurement risk dashboard built on Brazilian open data for the Office 
 Five views: overview, attention map, suppliers, agencies, and a methods section. The design deliberately separates the attention index from the strength of the evidence, always shows denominators, includes cases with no signals, and closes every case with a human verification script.
 
 *Status:* completed 18 July 2026. Contest application submitted on 6 September; the data reuse entry was approved on 22 September. The contest result is pending; the project has not received an award as of this update.
+
+[View the official reuse listing](https://dados.gov.br/dados/reuso/193), [open the dashboard](https://radar-aberto-integridade.streamlit.app/), or [inspect the code and documentation](https://github.com/eduardocna/radar-aberto-integridade).
 
 ## FIT public dashboards
 

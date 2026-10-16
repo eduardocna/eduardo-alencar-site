@@ -50,6 +50,8 @@ Portugués (nativo) · Inglés (fluido) · Italiano (fluido) · Español (interm
 
 ## Reciente
 
+- **Oct 2026** — [Radar Aberto de Integridade registrado en el Portal Brasileño de Datos Abiertos](https://dados.gov.br/dados/reuso/193). El panel utiliza cinco señales explicables para orientar la revisión humana.
+- **Oct 2026** — Entrevista con el *Correio Braziliense* sobre el libro: [“Gestão a partir de evidências”](https://www.correiobraziliense.com.br/economia/2026/10/7518431-gestao-a-partir-de-evidencias.html) (en portugués)
 - **Nov 2026** — Dos trabajos aceptados para presentación en el encuentro anual de la American Society of Criminology, Chicago
 - **Dic 2026** — Resumen extendido aceptado en la XIV Jornada de Investigación y Extensión del CEFOR, Cámara de Diputados
 - **2026** — Artículo en *The White Collar Times*, boletín de la división de crímenes de cuello blanco de la ASC
@@ -68,6 +70,8 @@ Un argumento autoral sobre por qué la tecnología, los controles y las buenas i
 ## Lanzamiento
 
 El lanzamiento del libro será el **22 de octubre de 2026 (jueves), a las 19:00 (hora de Brasilia)**, en la **Livraria Leitura del Terraço Shopping (Sudoeste), en Brasília**: una noche de conversación y firma de ejemplares. La venta ese día es exclusiva en la librería.
+
+En la prensa: [“Gestão a partir de evidências”](https://www.correiobraziliense.com.br/economia/2026/10/7518431-gestao-a-partir-de-evidencias.html), entrevista con el *Correio Braziliense* (11 de octubre de 2026, en portugués).
 
 [Ver la página del libro en Editora JusPodivm](https://www.editorajuspodivm.com.br/governanca-em-tempo-real-como-o-brasil-pode-parar-de-fingir-que-governa-2027-alencar)
 
@@ -132,6 +136,7 @@ Alencar, E. C. N. (2026, primavera). [Evidence-based anti-corruption oversight: 
 
 - *Governança em Tempo Real: como o Brasil pode parar de fingir que governa.* Libro, Editora JusPodivm, 2026. ISBN 978-85-442-7915-1.
 - *[La regla existía, el registro se hizo a medias](/downloads/a-regra-existia-o-registro-foi-feito-pela-metade-2026.pdf).* Qué enseñan el caso Banco Master y la decisión cautelar del Supremo Tribunal Federal de Brasil del 3 de marzo de 2026 sobre integridad y conflicto de intereses en la supervisión bancaria, con la recomendación de un registro obligatorio y auditable de las interacciones sustantivas entre supervisores e instituciones supervisadas. Policy brief (en portugués), 2026. DOI: [10.5281/zenodo.23307256](https://doi.org/10.5281/zenodo.23307256).
+- *[Autenticar la llamada no es autenticar a quien llama](/downloads/autenticar-a-chamada-nao-e-autenticar-quem-chama-2026.pdf).* Análisis de la Medida Provisoria 1.396/2026 de Brasil, que da fuerza de ley a la autenticación de las llamadas, a la exhibición del nombre y del logotipo de quien llama y al bloqueo de llamadas masivas. Evalúa el texto con una rúbrica de 10 criterios y propone tres añadidos para la conversión en ley: verificación de identidad en la base de nombre y logotipo, tratamiento de las llamadas desde el exterior y un panel público de indicadores con evaluación de impacto. Policy brief (en portugués), 2026. DOI: [10.5281/zenodo.23404841](https://doi.org/10.5281/zenodo.23404841).
 - *[La Corte Suprema juzga a uno de los suyos](/downloads/o-supremo-julga-um-dos-seus-2026.pdf).* Análisis de la sesión extraordinaria del Supremo Tribunal Federal de Brasil del 15 de septiembre de 2026 sobre la Petición 16.662 (caso Banco Master), que examina si la Corte puso a prueba en vivo, durante casi ocho horas, su propio mecanismo de autojuzgamiento cuando la persona investigada es uno de los guardianes de la Constitución. Policy brief, 2026.
 - De la carga administrativa a la regulación basada en riesgo: análisis de clases latentes y discontinuidades regulatorias en compras públicas en América Latina y el Caribe. Nota técnica conceptual para el BID, 2026.
 - [Principales hallazgos relacionados con los desembolsos de convenios y patrocinios de Itaipú Binacional](https://www.frentefit.com.br/relatorio-2025-principais-achados-relacionados-aos-desembolsos-de-convenios-e-patrocinios-da-itaipu-binacional/). Frente Parlamentario de Fiscalización, Integridad y Transparencia (FIT), 2 de abril de 2025.
@@ -175,6 +180,8 @@ Tablero de riesgo en contrataciones públicas construido sobre datos abiertos br
 Cinco vistas: panorama general, mapa de atención, proveedores, organismos y metodología. El diseño separa deliberadamente el índice de atención de la fuerza de la evidencia, siempre muestra los denominadores, incluye casos sin señales y cierra cada caso con una guía de verificación humana.
 
 *Estado:* concluido el 18 de julio de 2026. Inscripción al concurso enviada el 6 de septiembre; el reúso de datos fue homologado el 22 de septiembre. El resultado del concurso está pendiente; el proyecto no ha recibido un premio hasta esta actualización.
+
+[Consulte el registro oficial de reutilización](https://dados.gov.br/dados/reuso/193), [abra el panel](https://radar-aberto-integridade.streamlit.app/) o [examine el código y la documentación](https://github.com/eduardocna/radar-aberto-integridade).
 
 ## Tableros públicos del Frente Parlamentario FIT
 

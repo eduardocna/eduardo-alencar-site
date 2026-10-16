@@ -50,6 +50,8 @@ Português (nativo) · Inglês (fluente) · Italiano (fluente) · Espanhol (inte
 
 ## Recente
 
+- **Outubro de 2026:** [Radar Aberto de Integridade no catálogo de reúsos do Portal Brasileiro de Dados Abertos](https://dados.gov.br/dados/reuso/193). O painel usa cinco sinais explicáveis para orientar revisão humana.
+- **Outubro de 2026:** entrevista ao *Correio Braziliense* sobre o livro: [“Gestão a partir de evidências”](https://www.correiobraziliense.com.br/economia/2026/10/7518431-gestao-a-partir-de-evidencias.html)
 - **Novembro de 2026:** dois trabalhos aceitos para apresentação no encontro anual da American Society of Criminology, em Chicago
 - **Dezembro de 2026:** resumo expandido aceito na XIV Jornada de Pesquisa e Extensão do Cefor, Câmara dos Deputados
 - **2026:** artigo no *The White Collar Times*, boletim da divisão de crimes de colarinho branco da American Society of Criminology
@@ -68,6 +70,8 @@ Um argumento autoral sobre por que tecnologia, controle e boas intenções não 
 ## Lançamento
 
 O lançamento do livro será em **22 de outubro de 2026 (quinta-feira), às 19h**, na **Livraria Leitura do Terraço Shopping (Sudoeste), em Brasília**: uma noite de conversa e autógrafos. A venda no dia é exclusiva na loja.
+
+Na imprensa: [“Gestão a partir de evidências”](https://www.correiobraziliense.com.br/economia/2026/10/7518431-gestao-a-partir-de-evidencias.html), entrevista ao *Correio Braziliense* (11 de outubro de 2026).
 
 [Ver a página do livro na Editora JusPodivm](https://www.editorajuspodivm.com.br/governanca-em-tempo-real-como-o-brasil-pode-parar-de-fingir-que-governa-2027-alencar)
 
@@ -132,6 +136,7 @@ Alencar, E. C. N. (2026). [Evidence-based anti-corruption oversight: stop counti
 
 - *Governança em Tempo Real: como o Brasil pode parar de fingir que governa.* Livro, Editora JusPodivm, 2026. ISBN 978-85-442-7915-1.
 - *[A regra existia, o registro foi feito pela metade](/downloads/a-regra-existia-o-registro-foi-feito-pela-metade-2026.pdf).* O que o caso Banco Master e a decisão cautelar do STF de 3 de março de 2026 ensinam sobre integridade e conflito de interesses na supervisão bancária, com a recomendação de registro obrigatório e auditável das interações substantivas entre supervisores e instituições supervisionadas. Policy brief, 2026. DOI: [10.5281/zenodo.23307256](https://doi.org/10.5281/zenodo.23307256).
+- *[Autenticar a chamada não é autenticar quem chama](/downloads/autenticar-a-chamada-nao-e-autenticar-quem-chama-2026.pdf).* Análise da Medida Provisória 1.396/2026, que dá força de lei à autenticação das chamadas, à exibição do nome e do logotipo de quem liga e ao bloqueio de chamadas em massa. Avalia o texto por uma rubrica de 10 critérios e propõe três acréscimos para a conversão em lei: verificação de identidade na base de nome e logotipo, tratamento das chamadas vindas do exterior e painel público de indicadores com avaliação de impacto. Policy brief, 2026. DOI: [10.5281/zenodo.23404841](https://doi.org/10.5281/zenodo.23404841).
 - *[O Supremo julga um dos seus](/downloads/o-supremo-julga-um-dos-seus-2026.pdf).* Análise da sessão extraordinária do STF de 15 de setembro de 2026 sobre a Petição 16.662 (caso Banco Master), examinando se a Corte testou ao vivo, por quase oito horas, seu próprio mecanismo de autojulgamento quando o investigado é um dos guardiões da Constituição. Policy brief, 2026.
 - De la carga administrativa a la regulación basada en riesgo: análisis de clases latentes y discontinuidades regulatorias en compras públicas en América Latina y el Caribe. Nota técnica conceitual para o BID, 2026.
 - [Relatório: principais achados relacionados aos desembolsos de convênios e patrocínios da Itaipu Binacional](https://www.frentefit.com.br/relatorio-2025-principais-achados-relacionados-aos-desembolsos-de-convenios-e-patrocinios-da-itaipu-binacional/). Frente Parlamentar de Fiscalização, Integridade e Transparência (FIT), 2 de abril de 2025.
@@ -175,6 +180,8 @@ Painel de risco em contratações públicas construído sobre dados abertos bras
 Cinco telas: visão geral, mapa de atenção, fornecedores, órgãos e método. O desenho separa deliberadamente o índice de atenção da força da evidência, sempre mostra denominadores, inclui casos sem sinais e encerra cada caso com um roteiro de verificação humana.
 
 *Situação:* concluído em 18 de julho de 2026. Inscrição no concurso enviada em 6 de setembro e reúso homologado em 22 de setembro. Resultado do concurso pendente; o projeto não recebeu premiação até esta atualização.
+
+[Consulte o registro oficial do reúso](https://dados.gov.br/dados/reuso/193), [abra o painel](https://radar-aberto-integridade.streamlit.app/) ou [examine o código e a documentação](https://github.com/eduardocna/radar-aberto-integridade).
 
 ## Painéis públicos da Frente Parlamentar FIT
 
