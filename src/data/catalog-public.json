@@ -1,17 +1,28 @@
 {
   "schema_version": 2,
-  "updated": "2026-10-11",
+  "updated": "2026-10-19",
   "items": [
     {
       "slug": "synthetic-control-lava-jato",
       "title": "Applying Synthetic Control Method to Estimate the Impact of the Lava Jato Operation on the Worldwide Governance Indicators in Brazil",
-      "authors": ["Eduardo C. N. Alencar", "Bryant Jackson-Green"],
+      "authors": [
+        "Eduardo C. N. Alencar",
+        "Bryant Jackson-Green"
+      ],
       "year": 2021,
       "type": "Artigo revisado por pares",
-      "languages": ["en"],
+      "languages": [
+        "en"
+      ],
       "summary": "Aplica controle sintético para testar associações entre a Operação Lava Jato e indicadores mundiais de governança no Brasil.",
-      "themes": ["governança", "anticorrupção", "inferência causal"],
-      "methods": ["controle sintético"],
+      "themes": [
+        "governança",
+        "anticorrupção",
+        "inferência causal"
+      ],
+      "methods": [
+        "controle sintético"
+      ],
       "status": "publicado",
       "canonical_source": "Peer-reviewed article record and author archive",
       "public_file": "01 — Artigos publicados/applying-synthetic-control-lava-jato.pdf",
@@ -23,13 +34,22 @@
     {
       "slug": "white-collar-times-oversight",
       "title": "Evidence-based anti-corruption oversight: stop counting activity, start measuring consequences",
-      "authors": ["Eduardo C. N. Alencar"],
+      "authors": [
+        "Eduardo C. N. Alencar"
+      ],
       "year": 2026,
       "type": "Boletim profissional",
-      "languages": ["en"],
+      "languages": [
+        "en"
+      ],
       "summary": "Ensaio sobre fiscalização anticorrupção orientada por consequências mensuráveis.",
-      "themes": ["integridade", "fiscalização"],
-      "methods": ["analítica de fiscalização"],
+      "themes": [
+        "integridade",
+        "fiscalização"
+      ],
+      "methods": [
+        "analítica de fiscalização"
+      ],
       "status": "publicado",
       "canonical_source": "Author archive and publication record",
       "public_file": "01 — Artigos publicados/evidence-based-anti-corruption-oversight.pdf",
@@ -39,33 +59,25 @@
       "access": "resumo_publico"
     },
     {
-      "slug": "formal-replies-substantive-evasion",
-      "title": "Stop Counting Activity, Start Measuring Consequences: Measuring What Matters in Legislative Oversight",
-      "authors": ["Eduardo C. N. Alencar"],
-      "year": 2026,
-      "type": "Manuscrito não aceito",
-      "languages": ["en"],
-      "summary": "Estuda 13.042 pares de requerimento e resposta para distinguir entrega formal de resposta substantiva na fiscalização legislativa.",
-      "themes": ["fiscalização", "capacidade estatal", "integridade"],
-      "methods": ["text-as-data", "análise de resposta"],
-      "status": "não aceito",
-      "canonical_source": "Editorial submission record",
-      "public_file": null,
-      "public_url": "",
-      "rights": "Publicar apenas resumo; manuscrito não liberado para download.",
-      "last_checked": "2026-10-18",
-      "access": "resumo_publico"
-    },
-    {
       "slug": "evasion-as-a-signal",
       "title": "Evasion as a Signal: Executive Responsiveness to Parliamentary Oversight Requests as a Diagnostic Tool for State Capture",
-      "authors": ["Eduardo C. N. Alencar"],
+      "authors": [
+        "Eduardo C. N. Alencar"
+      ],
       "year": 2026,
       "type": "Working paper",
-      "languages": ["en"],
+      "languages": [
+        "en"
+      ],
       "summary": "Working paper sobre evasão substantiva como sinal para diagnóstico de riscos institucionais.",
-      "themes": ["fiscalização", "captura do Estado"],
-      "methods": ["text-as-data", "análise institucional"],
+      "themes": [
+        "fiscalização",
+        "captura do Estado"
+      ],
+      "methods": [
+        "text-as-data",
+        "análise institucional"
+      ],
       "status": "em preparacao",
       "canonical_source": "Working-paper record",
       "public_file": null,
@@ -77,13 +89,23 @@
     {
       "slug": "phd-procurement-fraud",
       "title": "Assessing the Potential for Detecting Fraud in Brazilian Public Procurement Using Latent Class Analysis",
-      "authors": ["Eduardo C. N. Alencar"],
+      "authors": [
+        "Eduardo C. N. Alencar"
+      ],
       "year": 2021,
       "type": "Tese de doutorado",
-      "languages": ["en"],
+      "languages": [
+        "en"
+      ],
       "summary": "Avalia o potencial de identificar padrões de risco em compras públicas brasileiras por análise de classes latentes.",
-      "themes": ["compras públicas", "fraude", "integridade"],
-      "methods": ["análise de classes latentes"],
+      "themes": [
+        "compras públicas",
+        "fraude",
+        "integridade"
+      ],
+      "methods": [
+        "análise de classes latentes"
+      ],
       "status": "publicado",
       "canonical_source": "UC Irvine institutional repository",
       "public_file": "03 — Teses e dissertações/phd-procurement-fraud.pdf",
@@ -95,13 +117,23 @@
     {
       "slug": "masters-corruption-trust",
       "title": "Applying Structural Equation Modeling to Analyze the Mutual Causality between Corruption and Trust and the Impact of Lava Jato",
-      "authors": ["Eduardo C. N. Alencar"],
+      "authors": [
+        "Eduardo C. N. Alencar"
+      ],
       "year": 2020,
       "type": "Dissertação de mestrado",
-      "languages": ["en"],
+      "languages": [
+        "en"
+      ],
       "summary": "Modela relações entre corrupção, confiança e a Operação Lava Jato no Brasil e no México.",
-      "themes": ["corrupção", "confiança", "governança"],
-      "methods": ["modelagem de equações estruturais"],
+      "themes": [
+        "corrupção",
+        "confiança",
+        "governança"
+      ],
+      "methods": [
+        "modelagem de equações estruturais"
+      ],
       "status": "publicado",
       "canonical_source": "Author archive",
       "public_file": "03 — Teses e dissertações/masters-corruption-trust.pdf",
@@ -113,13 +145,23 @@
     {
       "slug": "lava-jato-corruption-trust-policy-brief",
       "title": "The Impact of Lava Jato on Corruption and Trust: Evidence from Brazil",
-      "authors": ["Eduardo C. N. Alencar"],
+      "authors": [
+        "Eduardo C. N. Alencar"
+      ],
       "year": 2020,
       "type": "Policy brief",
-      "languages": ["en"],
+      "languages": [
+        "en"
+      ],
       "summary": "Nota de política sobre impactos da Lava Jato em corrupção e confiança institucional.",
-      "themes": ["anticorrupção", "confiança", "políticas públicas"],
-      "methods": ["modelagem estrutural"],
+      "themes": [
+        "anticorrupção",
+        "confiança",
+        "políticas públicas"
+      ],
+      "methods": [
+        "modelagem estrutural"
+      ],
       "status": "publicado",
       "canonical_source": "Author archive",
       "public_file": "04 — Policy briefs/lava-jato-corruption-trust-policy-brief.pdf",
@@ -131,13 +173,23 @@
     {
       "slug": "anti-corruption-sdg4-asc2025",
       "title": "Anti-Corruption Reforms in Brazil, Kenya, and Rwanda: Assessing the Impact on Education Outcomes (SDG 4)",
-      "authors": ["Eduardo C. N. Alencar"],
+      "authors": [
+        "Eduardo C. N. Alencar"
+      ],
       "year": 2025,
       "type": "Apresentação em congresso",
-      "languages": ["en"],
+      "languages": [
+        "en"
+      ],
       "summary": "Apresentação sobre reformas anticorrupção e resultados educacionais no Brasil, Quênia e Ruanda.",
-      "themes": ["anticorrupção", "educação", "ODS 4"],
-      "methods": ["inferência causal"],
+      "themes": [
+        "anticorrupção",
+        "educação",
+        "ODS 4"
+      ],
+      "methods": [
+        "inferência causal"
+      ],
       "status": "apresentado",
       "canonical_source": "Conference record and author archive",
       "public_file": "05 — Congressos e apresentações/anti-corruption-sdg4-asc2025.pdf",
@@ -149,13 +201,24 @@
     {
       "slug": "radar-aberto-integridade",
       "title": "Radar Aberto de Integridade em Compras Públicas",
-      "authors": ["Eduardo C. N. Alencar"],
+      "authors": [
+        "Eduardo C. N. Alencar"
+      ],
       "year": 2026,
       "type": "Aplicação e dataset",
-      "languages": ["pt"],
+      "languages": [
+        "pt"
+      ],
       "summary": "Painel de risco com 30.304 contratações federais e 32 testes automatizados, desenhado para priorização com verificação humana.",
-      "themes": ["compras públicas", "integridade", "dados abertos"],
-      "methods": ["red flags", "análise de risco"],
+      "themes": [
+        "compras públicas",
+        "integridade",
+        "dados abertos"
+      ],
+      "methods": [
+        "red flags",
+        "análise de risco"
+      ],
       "status": "publicado",
       "canonical_source": "Public GitHub repository and application documentation",
       "public_file": "06 — Ferramentas e projetos/radar-aberto-integridade/",
@@ -169,13 +232,23 @@
     {
       "slug": "frente-fit-paineis-publicos",
       "title": "Painéis públicos da Frente Parlamentar FIT",
-      "authors": ["Eduardo C. N. Alencar"],
+      "authors": [
+        "Eduardo C. N. Alencar"
+      ],
       "year": 2026,
       "type": "Painéis públicos",
-      "languages": ["pt"],
+      "languages": [
+        "pt"
+      ],
       "summary": "Painéis de transparência da Frente Parlamentar de Fiscalização, Integridade e Transparência: transferências voluntárias, emendas Pix, agenda de autoridades e convênios e patrocínios da Itaipu Binacional.",
-      "themes": ["transparência", "fiscalização parlamentar", "dados abertos"],
-      "methods": ["monitoramento de dados públicos"],
+      "themes": [
+        "transparência",
+        "fiscalização parlamentar",
+        "dados abertos"
+      ],
+      "methods": [
+        "monitoramento de dados públicos"
+      ],
       "status": "publicado",
       "canonical_source": "Frente Parlamentar de Fiscalização, Integridade e Transparência (FIT) — atuação técnica de Eduardo Alencar",
       "public_file": null,
@@ -187,13 +260,24 @@
     {
       "slug": "indice-governanca-2026",
       "title": "Índice de Governança das Propostas Presidenciais 2026",
-      "authors": ["Eduardo C. N. Alencar"],
+      "authors": [
+        "Eduardo C. N. Alencar"
+      ],
       "year": 2026,
       "type": "Aplicação, dataset e relatório",
-      "languages": ["pt"],
+      "languages": [
+        "pt"
+      ],
       "summary": "Leitura comparativa de documentos de programas de governo: mede o documento, não a pessoa, não é ranking eleitoral e não prevê desempenho.",
-      "themes": ["governança", "eleições", "capacidade de implementação"],
-      "methods": ["análise documental", "rubrica de governança"],
+      "themes": [
+        "governança",
+        "eleições",
+        "capacidade de implementação"
+      ],
+      "methods": [
+        "análise documental",
+        "rubrica de governança"
+      ],
       "status": "publicado",
       "canonical_source": "Public application and certified report",
       "public_file": "06 — Ferramentas e projetos/indice-governanca-2026/",
@@ -206,13 +290,26 @@
     {
       "slug": "ai-parliamentary-oversight-audit",
       "title": "Sistema de Auditoria de Respostas Parlamentares com IA",
-      "authors": ["Eduardo C. N. Alencar", "Arthur Leite"],
+      "authors": [
+        "Eduardo C. N. Alencar",
+        "Arthur Leite"
+      ],
       "year": 2026,
       "type": "Sistema aplicado",
-      "languages": ["pt", "en"],
+      "languages": [
+        "pt",
+        "en"
+      ],
       "summary": "Pipeline com revisão humana que avalia completude, objetividade, tempestividade, evidência e sinais de irregularidade em respostas a requerimentos.",
-      "themes": ["IA", "fiscalização", "integridade"],
-      "methods": ["LLM com validação humana", "text-as-data"],
+      "themes": [
+        "IA",
+        "fiscalização",
+        "integridade"
+      ],
+      "methods": [
+        "LLM com validação humana",
+        "text-as-data"
+      ],
       "status": "operacional interno",
       "canonical_source": "Private operational methodology record",
       "public_file": null,
@@ -224,12 +321,21 @@
     {
       "slug": "cv-eduardo-alencar",
       "title": "Curriculum Vitae — Eduardo Alencar",
-      "authors": ["Eduardo C. N. Alencar"],
+      "authors": [
+        "Eduardo C. N. Alencar"
+      ],
       "year": 2026,
       "type": "Currículo público",
-      "languages": ["en", "pt"],
+      "languages": [
+        "en",
+        "pt"
+      ],
       "summary": "Currículo acadêmico e profissional com trajetória pública, pesquisa, docência, prêmios e serviço profissional.",
-      "themes": ["trajetória", "pesquisa", "docência"],
+      "themes": [
+        "trajetória",
+        "pesquisa",
+        "docência"
+      ],
       "methods": [],
       "status": "publicado",
       "canonical_source": "Private CV master, reviewed for public release",
@@ -242,12 +348,19 @@
     {
       "slug": "uci-teaching-evidence",
       "title": "Teaching at UC Irvine: evidence and selected feedback",
-      "authors": ["Eduardo C. N. Alencar"],
+      "authors": [
+        "Eduardo C. N. Alencar"
+      ],
       "year": 2020,
       "type": "Material de docência",
-      "languages": ["en"],
+      "languages": [
+        "en"
+      ],
       "summary": "Síntese de avaliações discentes de cursos da UC Irvine, destacando clareza, disponibilidade e apoio à aprendizagem quantitativa.",
-      "themes": ["docência", "métodos quantitativos"],
+      "themes": [
+        "docência",
+        "métodos quantitativos"
+      ],
       "methods": [],
       "status": "resumo publico a produzir",
       "canonical_source": "Private teaching-evaluation archive",
@@ -260,13 +373,25 @@
     {
       "slug": "government-ai-oversight",
       "title": "The Weakest Link in Government AI Is Oversight",
-      "authors": ["Eduardo C. N. Alencar"],
+      "authors": [
+        "Eduardo C. N. Alencar"
+      ],
       "year": 2026,
       "type": "Newsletter LinkedIn",
-      "languages": ["en", "pt"],
+      "languages": [
+        "en",
+        "pt"
+      ],
       "summary": "Análise sobre fiscalização como condição para o uso responsável de IA no governo, com o caso brasileiro como evidência institucional.",
-      "themes": ["IA", "fiscalização", "governança pública"],
-      "methods": ["análise institucional", "estudo de caso"],
+      "themes": [
+        "IA",
+        "fiscalização",
+        "governança pública"
+      ],
+      "methods": [
+        "análise institucional",
+        "estudo de caso"
+      ],
       "status": "publicado",
       "canonical_source": "LinkedIn Complete Data Export, 2026-09-22",
       "public_file": null,
@@ -278,13 +403,25 @@
     {
       "slug": "public-procurement-red-flags",
       "title": "Red Flags in Public Procurement: What the Data Actually Shows",
-      "authors": ["Eduardo C. N. Alencar"],
+      "authors": [
+        "Eduardo C. N. Alencar"
+      ],
       "year": 2026,
       "type": "Newsletter LinkedIn",
-      "languages": ["en", "pt"],
+      "languages": [
+        "en",
+        "pt"
+      ],
       "summary": "Leitura de evidências sobre como denúncias, auditoria interna e indicadores de risco contribuem para detectar fraude em compras públicas.",
-      "themes": ["compras públicas", "integridade", "auditoria"],
-      "methods": ["síntese de evidências", "análise de risco"],
+      "themes": [
+        "compras públicas",
+        "integridade",
+        "auditoria"
+      ],
+      "methods": [
+        "síntese de evidências",
+        "análise de risco"
+      ],
       "status": "publicado",
       "canonical_source": "LinkedIn Complete Data Export, 2026-09-22",
       "public_file": null,
@@ -296,13 +433,25 @@
     {
       "slug": "ai-controls-ai",
       "title": "Who Controls the AI That Does Control?",
-      "authors": ["Eduardo C. N. Alencar"],
+      "authors": [
+        "Eduardo C. N. Alencar"
+      ],
       "year": 2026,
       "type": "Newsletter LinkedIn",
-      "languages": ["en", "pt"],
+      "languages": [
+        "en",
+        "pt"
+      ],
       "summary": "Examina os controles necessários quando sistemas de IA influenciam decisões de auditoria, investigação e fiscalização pública.",
-      "themes": ["IA", "fiscalização", "integridade"],
-      "methods": ["análise de governança", "salvaguardas institucionais"],
+      "themes": [
+        "IA",
+        "fiscalização",
+        "integridade"
+      ],
+      "methods": [
+        "análise de governança",
+        "salvaguardas institucionais"
+      ],
       "status": "publicado",
       "canonical_source": "LinkedIn Complete Data Export, 2026-09-22",
       "public_file": null,
@@ -314,13 +463,24 @@
     {
       "slug": "ai-democracy-beyond-disinformation",
       "title": "AI and Democracy: Beyond Disinformation",
-      "authors": ["Eduardo C. N. Alencar"],
+      "authors": [
+        "Eduardo C. N. Alencar"
+      ],
       "year": 2026,
       "type": "Newsletter LinkedIn",
-      "languages": ["en", "pt"],
+      "languages": [
+        "en",
+        "pt"
+      ],
       "summary": "Discute como a IA afeta a democracia por meio das instituições, dos controles e da capacidade de tornar decisões públicas contestáveis.",
-      "themes": ["IA", "democracia", "governança pública"],
-      "methods": ["análise institucional"],
+      "themes": [
+        "IA",
+        "democracia",
+        "governança pública"
+      ],
+      "methods": [
+        "análise institucional"
+      ],
       "status": "publicado",
       "canonical_source": "LinkedIn Complete Data Export, 2026-09-22",
       "public_file": null,
@@ -332,13 +492,25 @@
     {
       "slug": "public-projects-last-mile",
       "title": "Public Projects Fail at the Last Mile",
-      "authors": ["Eduardo C. N. Alencar"],
+      "authors": [
+        "Eduardo C. N. Alencar"
+      ],
       "year": 2026,
       "type": "Newsletter LinkedIn",
-      "languages": ["en", "pt"],
+      "languages": [
+        "en",
+        "pt"
+      ],
       "summary": "Mostra por que projetos públicos falham na entrega e quais rotinas de gestão conectam desenho, decisão e execução.",
-      "themes": ["capacidade estatal", "gestão de projetos", "governança pública"],
-      "methods": ["análise de implementação", "gestão de portfólio"],
+      "themes": [
+        "capacidade estatal",
+        "gestão de projetos",
+        "governança pública"
+      ],
+      "methods": [
+        "análise de implementação",
+        "gestão de portfólio"
+      ],
       "status": "publicado",
       "canonical_source": "LinkedIn Complete Data Export, 2026-09-22",
       "public_file": null,
@@ -350,13 +522,24 @@
     {
       "slug": "supremo-autojulgamento-pet16662",
       "title": "O Supremo julga um dos seus",
-      "authors": ["Eduardo C. N. Alencar"],
+      "authors": [
+        "Eduardo C. N. Alencar"
+      ],
       "year": 2026,
       "type": "Policy brief",
-      "languages": ["pt"],
+      "languages": [
+        "pt"
+      ],
       "summary": "Análise institucional da sessão extraordinária do STF de 15 de setembro de 2026 sobre a PET 16.662, examinando os limites e salvaguardas do autogoverno judicial.",
-      "themes": ["Judiciário", "integridade", "governança"],
-      "methods": ["análise institucional", "análise de transcrição"],
+      "themes": [
+        "Judiciário",
+        "integridade",
+        "governança"
+      ],
+      "methods": [
+        "análise institucional",
+        "análise de transcrição"
+      ],
       "status": "publicado",
       "canonical_source": "3-Resources/Casos/policy-brief-sessao-stf-pet16662-2026-09-15/outputs/policy-brief-sessao-stf-pet16662-2026-09-15.pdf",
       "public_file": "04 — Policy briefs/o-supremo-julga-um-dos-seus-2026.pdf",
@@ -368,13 +551,24 @@
     {
       "slug": "regra-existia-registro-pela-metade",
       "title": "A regra existia, o registro foi feito pela metade",
-      "authors": ["Eduardo C. N. Alencar"],
+      "authors": [
+        "Eduardo C. N. Alencar"
+      ],
       "year": 2026,
       "type": "Policy brief",
-      "languages": ["pt"],
+      "languages": [
+        "pt"
+      ],
       "summary": "Examina o caso Banco Master a partir da decisão cautelar e do acórdão de referendo do STF, da legislação sobre conflito de interesses e das regras de registro de audiências do Banco Central. Recomenda o registro obrigatório e auditável das interações substantivas entre supervisores e instituições supervisionadas.",
-      "themes": ["integridade", "conflito de interesses", "supervisão bancária"],
-      "methods": ["análise institucional", "análise documental"],
+      "themes": [
+        "integridade",
+        "conflito de interesses",
+        "supervisão bancária"
+      ],
+      "methods": [
+        "análise institucional",
+        "análise documental"
+      ],
       "status": "publicado",
       "canonical_source": "Zenodo, DOI 10.5281/zenodo.23307256",
       "public_file": "04 — Policy briefs/a-regra-existia-o-registro-foi-feito-pela-metade-2026.pdf",
@@ -387,22 +581,22 @@
       "slug": "autenticar-chamada-mp-1396",
       "title": "Autenticar a chamada não é autenticar quem chama",
       "authors": [
-            "Eduardo C. N. Alencar"
+        "Eduardo C. N. Alencar"
       ],
       "year": 2026,
       "type": "Policy brief",
       "languages": [
-            "pt"
+        "pt"
       ],
       "summary": "Analisa a Medida Provisória 1.396/2026 (autenticação de chamadas, exibição de nome e logotipo e bloqueio de chamadas em massa) por uma rubrica de 10 critérios e propõe três acréscimos para a conversão em lei.",
       "themes": [
-            "telecomunicações",
-            "golpes digitais",
-            "regulação"
+        "telecomunicações",
+        "golpes digitais",
+        "regulação"
       ],
       "methods": [
-            "análise legislativa por rubrica",
-            "análise documental"
+        "análise legislativa por rubrica",
+        "análise documental"
       ],
       "status": "publicado",
       "canonical_source": "Zenodo, DOI 10.5281/zenodo.23404841",

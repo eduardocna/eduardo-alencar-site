@@ -101,10 +101,6 @@ Alencar, E. C. N., & Jackson-Green, B. (2021). Applying Synthetic Control Method
 
 Alencar, E. C. N. (2026, primavera). [Evidence-based anti-corruption oversight: stop counting activity, start measuring consequences](/downloads/white-collar-times-2026-evidence-based-oversight.pdf). *The White Collar Times*, boletín oficial de la división de crímenes de cuello blanco y corporativos de la American Society of Criminology.
 
-## Manuscrito presentado
-
-**Stop Counting Activity, Start Measuring Consequences: Measuring What Matters in Legislative Oversight.** Presentado a *Public Integrity*; no aceptado. Base de datos: 13.042 pares de solicitud y respuesta, Cámara de Diputados de Brasil, 2019–2024.
-
 ## Working papers y trabajos en preparación
 
 - **Evasion as a Signal: Executive Responsiveness to Parliamentary Oversight Requests as a Diagnostic Tool for State Capture.** Propuesta de working paper para un número especial del *Journal of Financial Crime*.
@@ -173,7 +169,7 @@ Tecnologías: Python · pdfplumber · pyairtable · API de Anthropic · python-d
 
 ## Base de datos de RICs 2019–2024
 
-13.042 pares de solicitud y respuesta de la Cámara de Diputados de Brasil, con tiempos de respuesta, retrasos y medidas de completitud sustantiva. Sustenta el manuscrito presentado a *Public Integrity* (no aceptado), la propuesta MSCA BEYOND, el working paper del *Journal of Financial Crime* y las dos presentaciones en ASC 2026.
+13.042 pares de solicitud y respuesta de la Cámara de Diputados de Brasil, con tiempos de respuesta, retrasos y medidas de completitud sustantiva. Sustenta la propuesta MSCA BEYOND, el working paper del *Journal of Financial Crime* y las dos presentaciones en ASC 2026.
 
 ## Radar Abierto de Integridad en Compras Públicas (2026)
 

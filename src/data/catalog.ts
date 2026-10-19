@@ -34,11 +34,6 @@ const editorial: Record<string, WorkEditorial> = {
     methods: l('Oversight analytics', 'Analítica de fiscalização', 'Analítica de control', 'Analisi del controllo'),
     links: [{ kind: 'download', href: '/downloads/white-collar-times-2026-evidence-based-oversight.pdf', label: l('Download article (PDF, English)', 'Baixar artigo (PDF, inglês)', 'Descargar artículo (PDF, inglés)', 'Scarica articolo (PDF, inglese)') }]
   },
-  'formal-replies-substantive-evasion': {
-    kind: 'working-paper', status: 'not-accepted', category: 'research',
-    summary: l('Examines 13,042 parliamentary request–reply pairs to distinguish formal delivery from substantive executive engagement.', 'Examina 13.042 pares de requerimento e resposta para distinguir entrega formal de resposta substantiva do Executivo.', 'Examina 13.042 pares de solicitud y respuesta para distinguir la entrega formal del compromiso sustantivo del Ejecutivo.', 'Esamina 13.042 coppie richiesta-risposta per distinguere la consegna formale dall’impegno sostanziale dell’esecutivo.'),
-    methods: l('Text-as-data and response analysis', 'Text-as-data e análise de resposta', 'Text-as-data y análisis de respuesta', 'Text-as-data e analisi delle risposte')
-  },
   'evasion-as-a-signal': {
     kind: 'working-paper', status: 'in-preparation', category: 'research',
     summary: l('A working-paper proposal treating substantive evasion as a diagnostic signal of institutional risk.', 'Proposta de working paper que trata a evasão substantiva como sinal diagnóstico de risco institucional.', 'Propuesta de working paper que trata la evasión sustantiva como señal diagnóstica de riesgo institucional.', 'Proposta di working paper che considera l’evasione sostanziale un segnale diagnostico di rischio istituzionale.'),

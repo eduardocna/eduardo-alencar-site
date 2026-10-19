@@ -137,10 +137,10 @@ test('research map highlights the work linked to a selected axis', async ({ page
   await page.setViewportSize({ width: 1400, height: 1000 });
   await page.goto('pt/research/');
   const map = page.locator('[data-research-map]');
-  await expect(map.locator('svg path')).toHaveCount(12);
+  await expect(map.locator('svg path')).toHaveCount(11);
   await map.locator('button[data-axis="oversight"]').click();
   await expect(map.locator('button[data-axis="oversight"]')).toHaveAttribute('aria-pressed', 'true');
-  await expect(map.locator('li[data-work="formal-replies-substantive-evasion"]')).toHaveClass(/is-on/);
+  await expect(map.locator('li[data-work="evasion-as-a-signal"]')).toHaveClass(/is-on/);
   await expect(map.locator('li[data-work="phd-procurement-fraud"]')).toHaveClass(/is-dim/);
 });
 
