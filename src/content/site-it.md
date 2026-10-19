@@ -101,9 +101,9 @@ Alencar, E. C. N., & Jackson-Green, B. (2021). Applying Synthetic Control Method
 
 Alencar, E. C. N. (2026, primavera). [Evidence-based anti-corruption oversight: stop counting activity, start measuring consequences](/downloads/white-collar-times-2026-evidence-based-oversight.pdf). *The White Collar Times*, newsletter ufficiale della divisione ASC sui crimini dei colletti bianchi e societari.
 
-## In revisione
+## Manoscritto presentato
 
-**Formal Replies, Substantive Evasion: Executive Responsiveness to Parliamentary Oversight Requests in Brazil.** In revisione presso *Public Integrity*. Dataset: 13.042 coppie di richieste e risposte, Camera dei Deputati brasiliana, 2019–2024.
+**Stop Counting Activity, Start Measuring Consequences: Measuring What Matters in Legislative Oversight.** Presentato a *Public Integrity*; non accettato. Dataset: 13.042 coppie di richieste e risposte, Camera dei Deputati brasiliana, 2019–2024.
 
 ## Working paper e lavori in preparazione
 
@@ -121,6 +121,8 @@ Alencar, E. C. N. (2026, primavera). [Evidence-based anti-corruption oversight: 
 - Sistema di audit delle risposte parlamentari basato su IA (con Arthur Leite). Abstract esteso accettato il 20 luglio 2026; XIV Conferenza di Ricerca ed Estensione del CEFOR, Camera dei Deputati, 3–4 dicembre 2026.
 
 **Presentati**
+
+- *Assessing the Impact of Anti-Corruption Reforms on Governance in Latin America: A Synthetic Control Analysis Including the United States, Mexico, Brazil, and Understudied Countries*. 7ª Conferenza di Academia against Corruption in the Americas, Bogotá, 21–23 maggio 2025.
 
 - Riforme anticorruzione in Brasile, Kenya e Ruanda: valutazione dell'impatto sui risultati educativi (SDG 4). Incontro annuale dell'American Society of Criminology, Washington DC, novembre 2025.
 - Bridging Digital Transformation and Sustainability: overcoming governance challenges for green policy implementation. Incontro annuale dell'American Society of Criminology, Washington DC, novembre 2025.
@@ -171,7 +173,7 @@ Stack tecnologico: Python · pdfplumber · pyairtable · API Anthropic · python
 
 ## Dataset RICs 2019–2024
 
-13.042 coppie di richieste e risposte della Camera dei Deputati brasiliana, con tempi di risposta, ritardi e misure di completezza sostanziale. Alla base del manoscritto sottoposto a *Public Integrity*, della proposta MSCA BEYOND, del working paper per il *Journal of Financial Crime* e di entrambe le presentazioni ASC 2026.
+13.042 coppie di richieste e risposte della Camera dei Deputati brasiliana, con tempi di risposta, ritardi e misure di completezza sostanziale. Alla base del manoscritto presentado a *Public Integrity* (non accettato), della proposta MSCA BEYOND, del working paper per il *Journal of Financial Crime* e di entrambe le presentazioni ASC 2026.
 
 ## Radar Aperto di Integrità negli Appalti Pubblici (2026)
 
@@ -227,8 +229,8 @@ Corsi post-laurea: Leadership; Governance pubblica; Intelligenza artificiale.
 **Gran Faculdade**, Brasília — Docente, 01/2024–oggi
 Regolazione delle infrastrutture in telecomunicazioni, trasporti e servizi idrici; modelli di concessione; partenariati pubblico-privati; intelligenza artificiale, crittografia e regolazione.
 
-**Scuola Nazionale di Amministrazione Pubblica (ENAP)**, Brasília — Docente, 01/2023–oggi
-Governance pubblica orientata ai risultati.
+**Scuola Nazionale di Amministrazione Pubblica (ENAP)**, Brasília — Docente occasionale, 2023
+Governance pubblica orientata ai risultati. Due corsi tenuti nel 2023: 29 maggio–5 giugno e 13–21 novembre, 23 ore ciascuno, come docente incaricato occasionale.
 
 ## Precedente
 
@@ -240,6 +242,10 @@ Programma post-laurea: Gestione strategica e Business Process Management.
 
 **Anatel e Voyager Business Technology**, Brasília — Istruttore, 2005–2009
 Certificazione in project management e ITIL Foundation.
+
+## Formazione didattica
+
+Programma di Certificazione in Progettazione dei Corsi, University of California, Irvine (16/07/2019); Formazione dei Facilitatori dell’Apprendimento, ENAP (40 ore, 2022); Formazione dei Docenti-Facilitatori in Governance Pubblica per i Risultati, ENAP (6 ore, 2023).
 
 ## Valutazioni degli studenti
 
@@ -266,9 +272,13 @@ Valutazioni selezionate dai corsi alla University of California, Irvine (2018–
 - Miguel Velez Fellowship, 2019 e 2021
 - Master of Public Policy Fellowship, 2017
 
+## Presentazioni selezionate
+
+- *Assessing the Impact of Anti-Corruption Reforms on Governance in Latin America: A Synthetic Control Analysis Including the United States, Mexico, Brazil, and Understudied Countries*. 7ª Conferenza di Academia against Corruption in the Americas, Bogotá, 21–23 maggio 2025.
+
 ## Certificazioni
 
-Digital Transformation for Sustainability (ITU / UNU-MERIT, 2024) · UCI Mentoring Excellence Program (2021) · PRINCE2 Practitioner (2014) · Global Change Agents, Harvard University (2012) · ITIL Foundation (2011) · COBIT Foundation (2011) · Project Management Professional, PMP (2004)
+Programma di Certificazione in Progettazione dei Corsi (UCI, 16/07/2019) · Formazione dei Facilitatori dell’Apprendimento (ENAP, 40 ore, 2022) · Formazione dei Docenti-Facilitatori in Governance Pubblica per i Risultati (ENAP, 6 ore, 2023) · IA, Piattaforme Digitali e Regolazione (ITS Rio, 24 ore, 2025) · IA Generativa Applicata al Diritto (OAB SP, Trybe, Jusbrasil e ITS, 4 ore, 2024) · Digital Transformation for Sustainability (ITU / UNU-MERIT, 2024) · UCI Mentoring Excellence Program (2021) · PRINCE2 Practitioner (2014) · Global Change Agents, Harvard University (2012) · ITIL Foundation (2011) · COBIT Foundation (2011) · Project Management Professional, PMP (2004)
 
 ## Attività professionale e volontariato
 

@@ -3,7 +3,7 @@ import type { Locale } from './site';
 
 export type LocalizedText = Record<Locale, string>;
 export type WorkKind = 'article' | 'brief' | 'working-paper' | 'thesis' | 'presentation' | 'tool' | 'system' | 'profile' | 'teaching';
-export type WorkStatus = 'published' | 'presented' | 'under-review' | 'in-preparation' | 'internal' | 'updating' | 'summary-pending';
+export type WorkStatus = 'published' | 'presented' | 'under-review' | 'not-accepted' | 'in-preparation' | 'internal' | 'updating' | 'summary-pending';
 export type WorkCategory = 'research' | 'policy' | 'tools' | 'profile';
 const l = (en: string, pt: string, es: string, it: string): LocalizedText => ({ en, pt, es, it });
 
@@ -35,7 +35,7 @@ const editorial: Record<string, WorkEditorial> = {
     links: [{ kind: 'download', href: '/downloads/white-collar-times-2026-evidence-based-oversight.pdf', label: l('Download article (PDF, English)', 'Baixar artigo (PDF, inglês)', 'Descargar artículo (PDF, inglés)', 'Scarica articolo (PDF, inglese)') }]
   },
   'formal-replies-substantive-evasion': {
-    kind: 'working-paper', status: 'under-review', category: 'research',
+    kind: 'working-paper', status: 'not-accepted', category: 'research',
     summary: l('Examines 13,042 parliamentary request–reply pairs to distinguish formal delivery from substantive executive engagement.', 'Examina 13.042 pares de requerimento e resposta para distinguir entrega formal de resposta substantiva do Executivo.', 'Examina 13.042 pares de solicitud y respuesta para distinguir la entrega formal del compromiso sustantivo del Ejecutivo.', 'Esamina 13.042 coppie richiesta-risposta per distinguere la consegna formale dall’impegno sostanziale dell’esecutivo.'),
     methods: l('Text-as-data and response analysis', 'Text-as-data e análise de resposta', 'Text-as-data y análisis de respuesta', 'Text-as-data e analisi delle risposte')
   },
@@ -183,7 +183,7 @@ export const kindLabels: Record<WorkKind, LocalizedText> = {
 };
 export const statusLabels: Record<WorkStatus, LocalizedText> = {
   published: l('Published', 'Publicado', 'Publicado', 'Pubblicato'), presented: l('Presented', 'Apresentado', 'Presentado', 'Presentato'),
-  'under-review': l('Under review', 'Em avaliação', 'En evaluación', 'In valutazione'), 'in-preparation': l('In preparation', 'Em preparação', 'En preparación', 'In preparazione'),
+  'under-review': l('Under review', 'Em avaliação', 'En evaluación', 'In valutazione'), 'not-accepted': l('Not accepted', 'Não aceito', 'No aceptado', 'Non accettato'), 'in-preparation': l('In preparation', 'Em preparação', 'En preparación', 'In preparazione'),
   internal: l('Internal operational system', 'Sistema operacional interno', 'Sistema operativo interno', 'Sistema operativo interno'), updating: l('Update in progress', 'Atualização em andamento', 'Actualización en curso', 'Aggiornamento in corso'),
   'summary-pending': l('Public summary in preparation', 'Resumo público em preparação', 'Resumen público en preparación', 'Sintesi pubblica in preparazione')
 };

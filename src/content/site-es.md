@@ -101,9 +101,9 @@ Alencar, E. C. N., & Jackson-Green, B. (2021). Applying Synthetic Control Method
 
 Alencar, E. C. N. (2026, primavera). [Evidence-based anti-corruption oversight: stop counting activity, start measuring consequences](/downloads/white-collar-times-2026-evidence-based-oversight.pdf). *The White Collar Times*, boletín oficial de la división de crímenes de cuello blanco y corporativos de la American Society of Criminology.
 
-## En evaluación
+## Manuscrito presentado
 
-**Formal Replies, Substantive Evasion: Executive Responsiveness to Parliamentary Oversight Requests in Brazil.** En evaluación en *Public Integrity*. Base de datos: 13.042 pares de solicitud y respuesta, Cámara de Diputados de Brasil, 2019–2024.
+**Stop Counting Activity, Start Measuring Consequences: Measuring What Matters in Legislative Oversight.** Presentado a *Public Integrity*; no aceptado. Base de datos: 13.042 pares de solicitud y respuesta, Cámara de Diputados de Brasil, 2019–2024.
 
 ## Working papers y trabajos en preparación
 
@@ -122,7 +122,9 @@ Alencar, E. C. N. (2026, primavera). [Evidence-based anti-corruption oversight: 
 
 **Presentadas**
 
-- Reformas anticorrupción en Brasil, Kenia y Ruanda: evaluación del impacto en resultados educativos (ODS 4). Encuentro anual de la American Society of Criminology, Washington DC, noviembre de 2025.
+- Reformas anticorrupción
+- *Assessing the Impact of Anti-Corruption Reforms on Governance in Latin America: A Synthetic Control Analysis Including the United States, Mexico, Brazil, and Understudied Countries*. 7.ª Conferencia de Academia against Corruption in the Americas, Bogotá, 21–23 de mayo de 2025.
+ en Brasil, Kenia y Ruanda: evaluación del impacto en resultados educativos (ODS 4). Encuentro anual de la American Society of Criminology, Washington DC, noviembre de 2025.
 - Bridging Digital Transformation and Sustainability: overcoming governance challenges for green policy implementation. Encuentro anual de la American Society of Criminology, Washington DC, noviembre de 2025.
 - [Detección de fraude en sistemas de registro de precios](/downloads/anpec-2022-deteccao-fraude-registro-precos.pdf). 50º Encuentro Nacional de Economía (ANPEC), Fortaleza, 2022.
 - Allaire, M., & Alencar, E. (2018). Trends in water rate structures to encourage conservation: evidence from California. AGU Fall Meeting, Washington DC.
@@ -171,7 +173,7 @@ Tecnologías: Python · pdfplumber · pyairtable · API de Anthropic · python-d
 
 ## Base de datos de RICs 2019–2024
 
-13.042 pares de solicitud y respuesta de la Cámara de Diputados de Brasil, con tiempos de respuesta, retrasos y medidas de completitud sustantiva. Sustenta el manuscrito sometido a *Public Integrity*, la propuesta MSCA BEYOND, el working paper del *Journal of Financial Crime* y las dos presentaciones en ASC 2026.
+13.042 pares de solicitud y respuesta de la Cámara de Diputados de Brasil, con tiempos de respuesta, retrasos y medidas de completitud sustantiva. Sustenta el manuscrito presentado a *Public Integrity* (no aceptado), la propuesta MSCA BEYOND, el working paper del *Journal of Financial Crime* y las dos presentaciones en ASC 2026.
 
 ## Radar Abierto de Integridad en Compras Públicas (2026)
 
@@ -227,8 +229,8 @@ Programas de posgrado: Liderazgo; Gobernanza Pública; Inteligencia Artificial.
 **Gran Faculdade**, Brasília — Profesor, 01/2024–presente
 Regulación de infraestructura en telecomunicaciones, transporte y saneamiento; modelos de concesión; asociaciones público-privadas; inteligencia artificial, criptografía y regulación.
 
-**Escuela Nacional de Administración Pública (ENAP)**, Brasília — Profesor, 01/2023–presente
-Gobernanza pública para resultados.
+**Escuela Nacional de Administración Pública (ENAP)**, Brasília — Profesor eventual, 2023
+Gobernanza pública para resultados. Impartió dos grupos en 2023: del 29 de mayo al 5 de junio y del 13 al 21 de noviembre, 23 horas cada uno, como profesor eventual.
 
 ## Anterior
 
@@ -240,6 +242,10 @@ Programa de posgrado: Gestión Estratégica y Business Process Management.
 
 **Anatel y Voyager Business Technology**, Brasília — Instructor, 2005–2009
 Certificación en gestión de proyectos e ITIL Foundation.
+
+## Formación docente
+
+Programa de Certificado en Diseño de Cursos, University of California, Irvine (16/07/2019); Formación de Facilitadores del Aprendizaje, ENAP (40 horas, 2022); Formación de Docentes-Facilitadores en Gobernanza Pública para Resultados, ENAP (6 horas, 2023).
 
 ## Evaluaciones de estudiantes
 
@@ -266,9 +272,13 @@ Evaluaciones seleccionadas de cursos en la University of California, Irvine (201
 - Miguel Velez Fellowship, 2019 y 2021
 - Master of Public Policy Fellowship, 2017
 
+## Presentaciones seleccionadas
+
+- *Assessing the Impact of Anti-Corruption Reforms on Governance in Latin America: A Synthetic Control Analysis Including the United States, Mexico, Brazil, and Understudied Countries*. 7.ª Conferencia de Academia against Corruption in the Americas, Bogotá, 21–23 de mayo de 2025.
+
 ## Certificaciones
 
-Digital Transformation for Sustainability (ITU / UNU-MERIT, 2024) · UCI Mentoring Excellence Program (2021) · PRINCE2 Practitioner (2014) · Global Change Agents, Harvard University (2012) · ITIL Foundation (2011) · COBIT Foundation (2011) · Project Management Professional, PMP (2004)
+Programa de Certificado en Diseño de Cursos (UCI, 16/07/2019) · Formación de Facilitadores del Aprendizaje (ENAP, 40 h, 2022) · Formación de Docentes-Facilitadores en Gobernanza Pública para Resultados (ENAP, 6 h, 2023) · IA, Plataformas Digitales y Regulación (ITS Rio, 24 h, 2025) · IA Generativa Aplicada al Derecho (OAB SP, Trybe, Jusbrasil e ITS, 4 h, 2024) · Digital Transformation for Sustainability (ITU / UNU-MERIT, 2024) · UCI Mentoring Excellence Program (2021) · PRINCE2 Practitioner (2014) · Global Change Agents, Harvard University (2012) · ITIL Foundation (2011) · COBIT Foundation (2011) · Project Management Professional, PMP (2004)
 
 ## Actividad profesional y voluntaria
 
