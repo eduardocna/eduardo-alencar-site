@@ -1,6 +1,6 @@
 {
   "schema_version": 2,
-  "updated": "2026-10-19",
+  "updated": "2026-10-28",
   "items": [
     {
       "slug": "synthetic-control-lava-jato",
@@ -605,6 +605,64 @@
       "rights": "Autoria própria; CC BY 4.0; publicado no Zenodo pelo autor em 15/10/2026.",
       "last_checked": "2026-10-15",
       "access": "publico"
+    },
+    {
+      "authors": [
+        "Eduardo C. N. Alencar"
+      ],
+      "year": 2026,
+      "type": "Policy brief",
+      "status": "publicado",
+      "access": "publico",
+      "last_checked": "2026-10-28",
+      "themes": [
+        "foresight",
+        "políticas públicas",
+        "transição energética"
+      ],
+      "methods": [
+        "análise de literatura",
+        "análise documental"
+      ],
+      "slug": "tres-horizontes-politica-publica",
+      "title": "Três Horizontes na política pública",
+      "languages": [
+        "pt"
+      ],
+      "summary": "Analisa o livro The Three Horizons Approach (Palgrave, 2026), avalia a utilidade do método para a política pública e identifica lacunas de evidência e de aplicação ao Brasil. Propõe testar o método na transição energética, com cinco recomendações com ator, condição e marco.",
+      "canonical_source": "Zenodo, DOI 10.5281/zenodo.23735591",
+      "public_file": "04 — Policy briefs/tres-horizontes-politica-publica-2026.pdf",
+      "public_url": "/downloads/tres-horizontes-politica-publica-2026.pdf",
+      "rights": "Autoria própria; CC BY 4.0; publicado no Zenodo pelo autor em 28/10/2026."
+    },
+    {
+      "authors": [
+        "Eduardo C. N. Alencar"
+      ],
+      "year": 2026,
+      "type": "Policy brief",
+      "status": "publicado",
+      "access": "publico",
+      "last_checked": "2026-10-28",
+      "themes": [
+        "foresight",
+        "políticas públicas",
+        "transição energética"
+      ],
+      "methods": [
+        "análise de literatura",
+        "análise documental"
+      ],
+      "slug": "three-horizons-public-policy",
+      "title": "Three Horizons in Public Policy",
+      "languages": [
+        "en"
+      ],
+      "summary": "Analyses the book The Three Horizons Approach (Palgrave, 2026), assesses the method's usefulness for public policy and identifies gaps in evidence and in application to Brazil. Proposes testing the method in Brazil's energy transition, with five recommendations naming actor, condition and milestone.",
+      "canonical_source": "Zenodo, DOI 10.5281/zenodo.23735638",
+      "public_file": "04 — Policy briefs/three-horizons-public-policy-brazil-2026.pdf",
+      "public_url": "/downloads/three-horizons-public-policy-brazil-2026.pdf",
+      "rights": "Own authorship; CC BY 4.0; published on Zenodo by the author on 28/10/2026."
     }
   ]
 }

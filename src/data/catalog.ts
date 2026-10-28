@@ -166,6 +166,24 @@ const editorial: Record<string, WorkEditorial> = {
       { kind: 'download', href: '/downloads/autenticar-a-chamada-nao-e-autenticar-quem-chama-2026.pdf', label: l('Download policy brief (PDF, Portuguese)', 'Baixar policy brief (PDF)', 'Descargar policy brief (PDF, portugués)', 'Scarica policy brief (PDF, portoghese)') },
       { kind: 'doi', href: 'https://doi.org/10.5281/zenodo.23404841', label: l('Open DOI', 'Abrir DOI', 'Abrir DOI', 'Apri DOI') }
     ]
+  },
+  'tres-horizontes-politica-publica': {
+    kind: 'brief', status: 'published', category: 'policy',
+    summary: l('Analyses the book The Three Horizons Approach (Palgrave, 2026), assesses the method’s usefulness for public policy and identifies gaps in evidence and in application to Brazil. Proposes testing the method in Brazil’s energy transition, with five recommendations naming actor, condition and milestone.', 'Analisa o livro The Three Horizons Approach (Palgrave, 2026), avalia a utilidade do método para a política pública e identifica lacunas de evidência e de aplicação ao Brasil. Propõe testar o método na transição energética, com cinco recomendações com ator, condição e marco.', 'Analiza el libro The Three Horizons Approach (Palgrave, 2026), evalúa la utilidad del método para la política pública e identifica vacíos de evidencia y de aplicación a Brasil. Propone probar el método en la transición energética, con cinco recomendaciones con actor, condición e hito.', 'Analizza il libro The Three Horizons Approach (Palgrave, 2026), valuta l’utilità del metodo per le politiche pubbliche e individua lacune di evidenza e di applicazione al Brasile. Propone di sperimentare il metodo nella transizione energetica, con cinque raccomandazioni con attore, condizione e traguardo.'),
+    methods: l('Literature and documentary analysis', 'Análise de literatura e documental', 'Análisis de literatura y documental', 'Analisi della letteratura e documentale'),
+    links: [
+      { kind: 'download', href: '/downloads/tres-horizontes-politica-publica-2026.pdf', label: l('Download policy brief (PDF, Portuguese)', 'Baixar policy brief (PDF)', 'Descargar policy brief (PDF, portugués)', 'Scarica policy brief (PDF, portoghese)') },
+      { kind: 'doi', href: 'https://doi.org/10.5281/zenodo.23735591', label: l('Open DOI', 'Abrir DOI', 'Abrir DOI', 'Apri DOI') }
+    ]
+  },
+  'three-horizons-public-policy': {
+    kind: 'brief', status: 'published', category: 'policy',
+    summary: l('Analyses the book The Three Horizons Approach (Palgrave, 2026), assesses the method’s usefulness for public policy and identifies gaps in evidence and in application to Brazil. Proposes testing the method in Brazil’s energy transition, with five recommendations naming actor, condition and milestone.', 'Analisa o livro The Three Horizons Approach (Palgrave, 2026), avalia a utilidade do método para a política pública e identifica lacunas de evidência e de aplicação ao Brasil. Propõe testar o método na transição energética, com cinco recomendações com ator, condição e marco.', 'Analiza el libro The Three Horizons Approach (Palgrave, 2026), evalúa la utilidad del método para la política pública e identifica vacíos de evidencia y de aplicación a Brasil. Propone probar el método en la transición energética, con cinco recomendaciones con actor, condición e hito.', 'Analizza il libro The Three Horizons Approach (Palgrave, 2026), valuta l’utilità del metodo per le politiche pubbliche e individua lacune di evidenza e di applicazione al Brasile. Propone di sperimentare il metodo nella transizione energetica, con cinque raccomandazioni con attore, condizione e traguardo.'),
+    methods: l('Literature and documentary analysis', 'Análise de literatura e documental', 'Análisis de literatura y documental', 'Analisi della letteratura e documentale'),
+    links: [
+      { kind: 'download', href: '/downloads/three-horizons-public-policy-brazil-2026.pdf', label: l('Download policy brief (PDF, English)', 'Baixar policy brief (PDF, inglês)', 'Descargar policy brief (PDF, inglés)', 'Scarica policy brief (PDF, inglese)') },
+      { kind: 'doi', href: 'https://doi.org/10.5281/zenodo.23735638', label: l('Open DOI', 'Abrir DOI', 'Abrir DOI', 'Apri DOI') }
+    ]
   }
 };
 
