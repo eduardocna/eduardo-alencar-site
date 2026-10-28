@@ -40,7 +40,7 @@ test('the public YouTube channel is consistent across every locale', async ({ pa
   const channelUrl = 'https://www.youtube.com/@eduardocnalencar';
   for (const locale of locales) {
     await page.goto(`${locale}/contact/`);
-    await expect(page.locator(`a[href="${channelUrl}"]`).first()).toHaveText(/youtube\.com\/@eduardocnalencar/i);
+    await expect(page.locator(`a[href="${channelUrl}"]`).first()).toHaveText('@eduardocnalencar');
     await expect(page.locator('footer a').filter({ hasText: 'YouTube' })).toHaveAttribute('href', channelUrl);
   }
 });
