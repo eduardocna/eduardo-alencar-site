@@ -1,6 +1,7 @@
 ---
 import type { Locale } from '../data/site';
 import { at, dimensions, homeUi, storySteps } from '../data/home';
+import { landing } from '../data/landing';
 interface Props { lang: Locale; }
 const { lang } = Astro.props;
 ---
@@ -17,7 +18,7 @@ const { lang } = Astro.props;
     <header class="story-intro">
       <p class="eyebrow">{at(homeUi.storyEyebrow, lang)}</p>
       <h2 id="story-title">{at(homeUi.storyTitle, lang)}</h2>
-      <p class="lede">{at(homeUi.storyLede, lang)}</p>
+      <p class="lede">{landing[lang].storyLede}</p>
     </header>
     {storySteps.map((step, i) => <article class="story-beat" data-story-beat={i + 1}>
       <span>0{i + 1}</span><h3>{at(step.title, lang)}</h3><p>{at(step.detail, lang)}</p>

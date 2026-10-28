@@ -1,26 +1,19 @@
 ---
-import type { MarkdownSection, Locale } from '../data/site';
-import { copy, inline } from '../data/site';
-import { withBase } from '../data/paths';
-interface Props { lang: Locale; section: MarkdownSection; }
-const { lang, section } = Astro.props;
-const lines = section.blocks[0]?.split('\n').filter(Boolean) ?? [];
-const name = lines[1] ?? '**Eduardo Alencar**';
-const headline = lines[2] ?? section.title;
-const lede = lines[3] ?? '';
-const location = lines[4] ?? '';
-const ui = copy[lang];
+import type { Locale } from '../data/site';
+import { landing } from '../data/landing';
+import { localePath, withBase } from '../data/paths';
+interface Props { lang: Locale; }
+const { lang } = Astro.props;
+const t = landing[lang];
 ---
 <section class="hero section-shell" aria-labelledby="hero-title">
   <div class="hero-copy reveal">
-    <p class="eyebrow" set:html={inline(name)}></p>
-    <h1 id="hero-title">{headline}</h1>
-    <p class="hero-lede">{lede}</p>
-    <p class="hero-location">{location}</p>
+    <p class="eyebrow">Eduardo Alencar</p>
+    <h1 id="hero-title">{t.heroTitle}</h1>
+    <p class="hero-lede">{t.heroText}</p>
     <div class="ctarow">
-      <a class="cta" href="#research">{ui.read}</a>
-      <a class="cta ghost" href="#tools">{ui.tools}</a>
-      <a class="cta ghost" href="#cv">{ui.cv}</a>
+      <a class="cta" href={localePath(lang, 'newsletter/')}>{t.ctaNewsletter}</a>
+      <a class="cta ghost glass-btn" href={localePath(lang, 'book/')}>{t.ctaBook}</a>
     </div>
   </div>
   <div class="hero-stage reveal" aria-hidden="true">
@@ -28,8 +21,6 @@ const ui = copy[lang];
     <div class="hero-orbit hero-orbit-b"></div>
     <div class="hero-particles">{Array.from({ length: 40 }).map((_, i) => <i style={`--i:${i};--ring:${i % 4};--tone:${i % 5}`}></i>)}</div>
     <img src={withBase('images/eduardo-alencar.jpg')} alt="" width="280" height="280" />
-    <span class="hero-index">13,042 → 30,304</span>
   </div>
-  <a class="scroll-hint" href="#evidence-story"><span>{lang === 'pt' ? 'Role para explorar' : lang === 'es' ? 'Desplázate para explorar' : lang === 'it' ? 'Scorri per esplorare' : 'Scroll to explore'}</span><i></i></a>
+  <a class="scroll-hint" href="#impact"><span>{lang === 'pt' ? 'Role para explorar' : lang === 'es' ? 'Desplázate para explorar' : lang === 'it' ? 'Scorri per esplorare' : 'Scroll to explore'}</span><i></i></a>
 </section>
-

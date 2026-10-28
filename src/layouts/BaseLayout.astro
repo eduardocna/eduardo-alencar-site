@@ -6,14 +6,20 @@ import '@fontsource/dm-sans/400.css';
 import '@fontsource/dm-sans/500.css';
 import '@fontsource/dm-sans/700.css';
 import '@fontsource/dm-mono/400.css';
-import { copy, locales, sectionIds, type Locale } from '../data/site';
+import { copy, locales, type Locale } from '../data/site';
 import { localePath, withBase } from '../data/paths';
 import { about } from '../data/about';
+import RevealScript from '../components/RevealScript.astro';
 interface Props { title: string; description: string; lang?: Locale; contentPath?: string; image?: string; }
 const { title, description, lang = 'en', contentPath = '', image = 'images/eduardo-alencar.jpg' } = Astro.props;
 const ui = copy[lang];
 const canonical = new URL(localePath(lang, contentPath), Astro.site);
 const localeNames: Record<Locale, string> = { en:'EN', pt:'PT', es:'ES', it:'IT' };
+const toolsLabel = { en:'Tools', pt:'Ferramentas', es:'Herramientas', it:'Strumenti' }[lang];
+const navItems = [
+  { path: '', label: ui.nav[0] }, { path: 'about/', label: about[lang].nav }, { path: 'book/', label: ui.nav[1] },
+  { path: 'research/', label: ui.nav[2] }, { path: 'evidence-lab/', label: toolsLabel }, { path: 'newsletter/', label: ui.nav[5] }, { path: 'contact/', label: ui.nav[8] }
+];
 const navigationLabel = { en:'Main navigation', pt:'Navegação principal', es:'Navegación principal', it:'Navigazione principale' }[lang];
 const languageLabel = { en:'Language', pt:'Idioma', es:'Idioma', it:'Lingua' }[lang];
 const selectedLabel = { en:'selected', pt:'selecionado', es:'seleccionado', it:'selezionato' }[lang];
@@ -39,13 +45,14 @@ const selectedLabel = { en:'selected', pt:'selecionado', es:'seleccionado', it:'
     <a class="skip" href="#content">{ui.skip}</a>
     <header class="protobar">
       <a class="brand" href={localePath(lang)}><strong>Eduardo Alencar</strong><span>{ui.tagline}</span></a>
-      <nav aria-label={navigationLabel}>{sectionIds.map((id, index) => <><a href={`${localePath(lang)}#${id}`} data-section-link={id} aria-current={contentPath === '' && id === 'home' ? 'page' : undefined}>{ui.nav[index]}</a>{id === 'home' && <a href={localePath(lang, 'about/')} aria-current={contentPath === 'about/' ? 'page' : undefined}>{about[lang].nav}</a>}</>)}</nav>
+      <nav aria-label={navigationLabel}>{navItems.map((item) => <a href={localePath(lang, item.path)} aria-current={contentPath === item.path || (item.path === 'research/' && contentPath === 'briefs/') || (item.path === 'newsletter/' && contentPath === 'writing/') ? 'page' : undefined}>{item.label}</a>)}</nav>
       <div class="toolbar">
         <div class="langtoggle" role="group" aria-label={languageLabel}>{locales.map((locale) => <a href={localePath(locale, contentPath)} lang={locale} hreflang={locale} aria-current={locale === lang ? 'page' : undefined} aria-label={locale === lang ? `${localeNames[locale]} ${selectedLabel}` : localeNames[locale]}>{localeNames[locale]}</a>)}</div>
         <button class="themebtn" id="themebtn" type="button" aria-label={ui.dark} aria-pressed="false"><span aria-hidden="true">◐</span> <b>{ui.dark}</b></button>
       </div>
     </header>
     <main id="content"><slot /></main>
+    <RevealScript lang={lang} />
     <footer><p>© {new Date().getFullYear()} Eduardo Alencar · {ui.location}</p><p><a href="https://www.linkedin.com/in/eduardocna">LinkedIn</a> · <a href="https://orcid.org/0000-0002-9218-1798">ORCID</a> · <a href="https://scholar.google.com/citations?user=vJ12isgAAAAJ">Google Scholar</a> · <a href="https://www.youtube.com/@eduardocnalencar">YouTube</a> · <a href="mailto:eduardocna@gmail.com">Email</a></p></footer>
     <script is:inline define:vars={{ darkLabel: ui.dark, lightLabel: ui.light }}>
       const themeButton = document.getElementById('themebtn');

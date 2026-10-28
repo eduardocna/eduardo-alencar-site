@@ -69,13 +69,11 @@ An original argument for why technology, controls and good intentions are not en
 
 ## Launch
 
-The book launch takes place on **22 October 2026 (Thursday), at 7 pm**, at **Livraria Leitura, Terraço Shopping (Sudoeste), Brasília**: an evening of conversation and book signing. Sales on the night are exclusively at the bookshop.
+The book was launched on **22 October 2026** at **Livraria Leitura, Terraço Shopping, Brasília**, with an evening of conversation and book signing.
 
 In the press: [“Gestão a partir de evidências”](https://www.correiobraziliense.com.br/economia/2026/10/7518431-gestao-a-partir-de-evidencias.html), interview with *Correio Braziliense* (11 October 2026, in Portuguese).
 
 [See the book page at Editora JusPodivm](https://www.editorajuspodivm.com.br/governanca-em-tempo-real-como-o-brasil-pode-parar-de-fingir-que-governa-2027-alencar)
-
-[Reserve a seat at the launch event](https://forms.gle/LdBksUCusmA99NvV8)
 
 ---
 
@@ -185,6 +183,8 @@ Five views: overview, attention map, suppliers, agencies, and a methods section.
 
 Public transparency dashboards built for the Parliamentary Front for Oversight, Integrity and Transparency: voluntary federal transfers, PIX budget amendments, authorities' official agendas, and Itaipu Binational agreements and sponsorships.
 
+[Itaipu Binacional agreements and sponsorships panel](https://www.frentefit.com.br/patrocinios-itaipu/) · [Voluntary transfers](https://www.frentefit.com.br/transferencias-voluntarias/) · [PIX budget amendments](https://www.frentefit.com.br/emendas-pix/) · [Authorities' agendas](https://www.frentefit.com.br/agenda-das-autoridades/)
+
 ## Shared Data Lake for congressional offices
 
 An initiative to integrate data assets across congressional offices for oversight, legislative monitoring, communications and strategic decision-making.
@@ -193,13 +193,13 @@ An initiative to integrate data assets across congressional offices for oversigh
 
 # Newsletter
 
-Short bilingual essays translating research and institutional experience into usable analysis on integrity, transparency and evidence-based decision-making in the public sector.
+One short analysis a week on government, data and public integrity, in English and Portuguese.
 
 ## Subscribe
 
-A weekly bilingual newsletter (Portuguese and English) on public integrity, artificial intelligence in government, oversight and state capacity.
+**By email:** every Tuesday at 7 am (Brasília time), with extra material only for subscribers. [Subscribe on Substack](https://eduardocnalencar.substack.com/subscribe)
 
-[Subscribe on LinkedIn](https://www.linkedin.com/build-relation/newsletter-follow?entityUrn=7347441938133848064)
+**On LinkedIn:** the same edition comes out at 9 am in Portuguese and 11 am in English. [Follow the newsletter on LinkedIn](https://www.linkedin.com/build-relation/newsletter-follow?entityUrn=7347441938133848064)
 
 ## Themes
 

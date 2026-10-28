@@ -13,7 +13,7 @@ test('root defaults to Portuguese and declares it as the default locale', async 
 
 test('all locale homes and direct section routes resolve', async ({ page }) => {
   for (const locale of locales) {
-    for (const route of ['', 'book/', 'research/', 'briefs/', 'evidence-lab/', 'writing/', 'teaching/', 'cv/', 'contact/']) {
+    for (const route of ['', 'about/', 'book/', 'research/', 'briefs/', 'evidence-lab/', 'newsletter/', 'writing/', 'teaching/', 'cv/', 'contact/']) {
       const response = await page.goto(`${locale}/${route}`);
       expect(response?.ok(), `${locale}/${route}`).toBeTruthy();
       await expect(page.locator('html')).toHaveAttribute('lang', locale);
@@ -21,10 +21,13 @@ test('all locale homes and direct section routes resolve', async ({ page }) => {
   }
 });
 
-test('LinkedIn metrics are consistent on the home and direct writing pages', async ({ page }) => {
-  await page.goto('pt/');
-  const homeMetrics = await page.locator('#writing .verified-scale').innerText();
+test('LinkedIn metrics are consistent on the newsletter and writing pages', async ({ page }) => {
+  await page.goto('pt/newsletter/');
+  await page.locator('.verified-scale').scrollIntoViewIfNeeded();
+  await expect(page.locator('.verified-scale [data-li-count]:not([data-done])')).toHaveCount(0);
+  const homeMetrics = await page.locator('.verified-scale').innerText();
   await page.goto('pt/writing/');
+  await page.locator('.verified-scale').scrollIntoViewIfNeeded();
   await expect(page.locator('.verified-scale [data-li-count]:not([data-done])')).toHaveCount(0);
   const writingMetrics = await page.locator('.verified-scale').innerText();
   expect(homeMetrics).toBe(writingMetrics);
@@ -42,16 +45,28 @@ test('the public YouTube channel is consistent across every locale', async ({ pa
   }
 });
 
-test('home exposes the complete narrative and verified interactions', async ({ page }) => {
-  await page.goto('en/');
+test('lean home: hero, three explained numbers, evidence story, book, newsletter and recent posts', async ({ page }) => {
+  await page.goto('pt/');
+  await expect(page.locator('h1')).toHaveText('Ajudo instituições a descobrir se o que elas fazem funciona.');
+  await expect(page.locator('.impact-tile')).toHaveCount(3);
+  for (const tile of await page.locator('.impact-tile').all()) await expect(tile.locator('p')).not.toBeEmpty();
   await expect(page.locator('.evidence-cell')).toHaveCount(70);
   await expect(page.locator('[data-story-beat]')).toHaveCount(4);
-  await expect(page.locator('[data-gantt]')).toHaveCount(14);
+  await expect(page.locator('#book-home a[href*="editorajuspodivm"]')).toHaveCount(1);
+  await expect(page.locator('#newsletter iframe[src="https://eduardocnalencar.substack.com/embed"]')).toHaveCount(1);
+  await expect(page.locator('.feed-item a[href^="https://"]').first()).toBeVisible();
+  await expect(page.locator('.protobar nav a')).toHaveCount(7);
+});
+
+test('about holds the career timeline and research holds the explorer', async ({ page }) => {
+  await page.goto('en/research/');
   await expect(page.locator('[data-explorer-tab]')).toHaveCount(4);
   await page.locator('[data-explorer-tab="2"]').click();
   await expect(page.locator('[data-explorer-tab="2"]')).toHaveAttribute('aria-selected', 'true');
   await expect(page.locator('[data-explorer-panel="2"]')).toBeVisible();
   await expect(page.locator('[data-explorer-panel="2"] a')).toHaveAttribute('href', 'https://planosgov2026.online/');
+  await page.goto('en/about/');
+  await expect(page.locator('[data-gantt]')).toHaveCount(14);
   await page.locator('#career-timeline').scrollIntoViewIfNeeded();
   await expect(page.locator('#career-timeline')).toHaveClass(/is-visible/);
   await page.locator('[data-gantt]').first().click();
@@ -86,8 +101,8 @@ test('scroll narrative advances through all four evidence states', async ({ page
 });
 
 test('research and policy brief catalogues are separate and filterable', async ({ page }) => {
-  await page.goto('en/');
-  const research = page.locator('#research .work-catalog');
+  await page.goto('en/research/');
+  const research = page.locator('#research .work-catalog').first();
   await expect(research.locator('[data-category="research"]').first()).toBeVisible();
   await expect(research.locator('[data-category="policy"]')).toHaveCount(0);
   const briefs = page.locator('#briefs .work-catalog');
@@ -99,13 +114,13 @@ test('research and policy brief catalogues are separate and filterable', async (
 });
 
 test('catalogue cards open the document directly in a new tab', async ({ page }) => {
-  await page.goto('pt/');
+  await page.goto('pt/research/');
   const card = page.locator('#briefs a[href*="o-supremo-julga-um-dos-seus-2026.pdf"]').first();
   await expect(card).toHaveAttribute('target', '_blank');
 });
 
 test('explorer opens the real destination and work pages no longer exist', async ({ page }) => {
-  await page.goto('pt/');
+  await page.goto('pt/research/');
   const radar = page.locator('#explorer-panel-0 a.cta');
   await expect(radar).toHaveAttribute('href', 'https://radar-aberto-integridade.streamlit.app/');
   await expect(radar).toHaveAttribute('target', '_blank');
@@ -128,6 +143,7 @@ test('White Collar Times card opens the article PDF', async ({ page, request }) 
 
 test('LinkedIn metrics count up to the verified values', async ({ page }) => {
   await page.goto('pt/writing/');
+  await page.locator('.verified-scale').scrollIntoViewIfNeeded();
   const first = page.locator('.verified-scale [data-li-count]').first();
   await expect(first).toHaveAttribute('data-done', '1');
   await expect(first).toHaveText('4,969');
@@ -148,19 +164,20 @@ test('reduced motion keeps the visual content visible', async ({ page }) => {
   await page.emulateMedia({ reducedMotion: 'reduce' });
   await page.goto('en/');
   await expect(page.locator('.story-stage')).toHaveAttribute('data-step', '4');
+  await page.goto('en/about/');
   await expect(page.locator('.gantt-bar').first()).toHaveCSS('transform', 'matrix(1, 0, 0, 1, 0, 0)');
 });
 
 test('mobile Gantt retains a proportional horizontal scale', async ({ page }, testInfo) => {
   test.skip(testInfo.project.name !== 'mobile');
-  await page.goto('en/');
+  await page.goto('en/about/');
   const sizes = await page.locator('.gantt-scroll').evaluate((node) => ({ client: node.clientWidth, scroll: node.scrollWidth }));
   expect(sizes.scroll).toBeGreaterThan(sizes.client);
 });
 
 test('every internal link across all locales resolves', async ({ page, baseURL, request }) => {
   const basePath = new URL(baseURL!).pathname;
-  const routes = ['', 'book/', 'research/', 'briefs/', 'evidence-lab/', 'writing/', 'teaching/', 'cv/', 'contact/', 'publications/'];
+  const routes = ['', 'about/', 'book/', 'research/', 'briefs/', 'evidence-lab/', 'newsletter/', 'writing/', 'teaching/', 'cv/', 'contact/', 'publications/'];
   const toCheck = new Set<string>();
   for (const locale of locales) {
     for (const route of routes) {
@@ -186,7 +203,7 @@ test('every internal link across all locales resolves', async ({ page, baseURL, 
 
 test('language switch preserves the current section instead of jumping to the top', async ({ page }) => {
   await page.goto('en/');
-  await page.evaluate(() => document.querySelector('#book')!.scrollIntoView({ behavior: 'instant', block: 'start' }));
+  await page.evaluate(() => document.querySelector('#evidence-story')!.scrollIntoView({ behavior: 'instant', block: 'start' }));
   const href = await page.evaluate(() => {
     const link = document.querySelector('a[hreflang="pt"]') as HTMLAnchorElement;
     const preventNav = (event: Event) => event.preventDefault();
@@ -194,26 +211,87 @@ test('language switch preserves the current section instead of jumping to the to
     link.click();
     return link.href;
   });
-  expect(href).toContain('/pt/#book');
+  expect(href).toContain('/pt/#evidence-story');
 });
 
 test.describe('without JavaScript', () => {
   test.use({ javaScriptEnabled: false });
   test('content, anchors and explorer remain available', async ({ page }) => {
-    await page.goto('en/');
+    await page.goto('en/research/');
     await expect(page.locator('#research')).toBeVisible();
     await expect(page.locator('[data-explorer-panel]')).toHaveCount(4);
-    await expect(page.locator('a[href$="#research"]').first()).toBeVisible();
+    await expect(page.locator('.protobar a[href$="/en/research/"]').first()).toBeVisible();
     await expect(page.locator('a[href="https://radar-aberto-integridade.streamlit.app/"]').first()).toBeAttached();
   });
 });
 
 test('book section embeds the launch video without autoplay', async ({ page, request }) => {
-  await page.goto('pt/');
+  await page.goto('pt/book/');
   const video = page.locator('#book video');
   await expect(video).toHaveCount(1);
   await expect(video).toHaveAttribute('preload', 'none');
   const src = await page.locator('#book video source').getAttribute('src');
   const response = await request.get(new URL(src!, page.url()).toString());
   expect(response.ok()).toBeTruthy();
+});
+
+test('boxes move under the mouse on home, about and research', async ({ page }, testInfo) => {
+  test.skip(testInfo.project.name !== 'desktop');
+  for (const [route, selector] of [['pt/', '.impact-tile'], ['pt/', '.feed-item'], ['pt/about/', '.about-scene figure'], ['pt/research/', '.publication-card']]) {
+    await page.goto(route);
+    const box = page.locator(selector).first();
+    await box.scrollIntoViewIfNeeded();
+    await box.hover({ position: { x: 30, y: 30 } });
+    await expect(box, `${route} ${selector}`).toHaveClass(/tilting/);
+  }
+});
+
+test('home infographics animate once visible and stay static with reduced motion', async ({ page }) => {
+  await page.goto('pt/');
+  await page.locator('.impact-tile').first().scrollIntoViewIfNeeded();
+  await expect(page.locator('.impact-tile').first()).toHaveClass(/is-visible/);
+  expect(await page.locator('.ig-grow').first().evaluate((n) => getComputedStyle(n).animationName)).toBe('ig-grow');
+  expect(await page.locator('.ig-scan').first().evaluate((n) => getComputedStyle(n).animationName)).toBe('ig-scan');
+  await page.emulateMedia({ reducedMotion: 'reduce' });
+  await page.reload();
+  expect(await page.locator('.ig-grow').first().evaluate((n) => getComputedStyle(n).animationName)).toBe('none');
+});
+
+test('every policy brief card shows its cover; about uses one launch photo and three infographics', async ({ page, request }) => {
+  await page.goto('pt/research/');
+  const briefs = page.locator('#briefs .publication-card');
+  const covers = page.locator('#briefs .card-cover img');
+  await expect(covers).toHaveCount(await briefs.count());
+  const src = await covers.first().getAttribute('src');
+  expect((await request.get(src!)).ok()).toBeTruthy();
+  await page.goto('pt/about/');
+  const scenes = await page.locator('.about-scene img').evaluateAll((imgs) => imgs.map((i) => i.getAttribute('src') || ''));
+  expect(scenes).toEqual(['/images/sobre-formacao.webp']);
+  await expect(page.locator('.about-scene .about-infographic svg')).toHaveCount(3);
+  for (const logo of ['unb.svg', 'fgv.png', 'uc-irvine.png']) {
+    const href = await page.locator(`.about-infographic image[href$="${logo}"]`).getAttribute('href');
+    expect((await request.get(href!)).ok(), logo).toBeTruthy();
+  }
+  await expect(page.locator('.about-infographic').nth(2)).toContainText('Fraud Research Group');
+});
+
+test('page navigation uses a cross-document view transition', async ({ page }) => {
+  await page.goto('pt/');
+  const declared = await page.evaluate(() => [...document.styleSheets].some((sheet) => { try { return [...sheet.cssRules].some((rule) => rule.cssText.includes('view-transition')); } catch { return false; } }));
+  expect(declared).toBeTruthy();
+  await page.locator('.protobar nav a[href$="/pt/about/"]').click();
+  await expect(page).toHaveURL(/\/pt\/about\/$/);
+  await expect(page.locator('h1')).toHaveText('Eduardo Alencar');
+});
+
+test('contact hub lists every channel once and FIT panels link to all four dashboards', async ({ page }) => {
+  await page.goto('pt/contact/');
+  await expect(page.locator('.contact-card')).toHaveCount(9);
+  await expect(page.locator('.contact-card [data-copy="eduardocna@gmail.com"]')).toHaveCount(1);
+  await expect(page.locator('main .lede')).toHaveCount(0);
+  await page.goto('pt/evidence-lab/');
+  for (const panel of ['patrocinios-itaipu', 'transferencias-voluntarias', 'emendas-pix', 'agenda-das-autoridades']) {
+    await expect(page.locator(`main a[href="https://www.frentefit.com.br/${panel}/"]`).first()).toBeAttached();
+  }
+  await expect(page.locator('.publication-card a.worklink[href$="patrocinios-itaipu/"]')).toContainText('Itaipu');
 });

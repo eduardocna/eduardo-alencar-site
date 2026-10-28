@@ -1,0 +1,39 @@
+---
+// Publicações recentes: gerado por Skills/_shared/feed_site.py a partir do calendário
+// do P10. Só entra o que já saiu, com link (decisão de Eduardo, 27/10/2026).
+import type { Locale } from '../data/site';
+import feed from '../data/feed.json';
+import { landing, profiles } from '../data/landing';
+interface Props { lang: Locale; limit?: number; canal?: string; }
+const { lang, limit = 6, canal } = Astro.props;
+const t = landing[lang];
+const preferred = lang === 'pt' ? ['pt'] : lang === 'en' ? ['en'] : [lang, 'en'];
+const all = (feed.itens as { data: string; canal: string; idioma: string; titulo: string; url: string }[]).filter((i) => !canal || i.canal === canal);
+const seen = new Set<string>();
+const items = all.filter((i) => preferred.includes(i.idioma) || i.canal === 'youtube').filter((i) => { const k = `${i.data}|${i.canal}|${i.titulo}`; if (seen.has(k)) return false; seen.add(k); return true; }).slice(0, limit);
+const fmt = (d: string) => new Date(`${d}T12:00:00`).toLocaleDateString({ pt: 'pt-BR', en: 'en-GB', es: 'es-ES', it: 'it-IT' }[lang], { day: 'numeric', month: 'short' });
+---
+{items.length > 0 && (
+  <section class="section-shell feed" id="recent" aria-labelledby="recent-title">
+    <header class="feed-head reveal">
+      <p class="eyebrow">{t.feedEyebrow}</p>
+      <h2 id="recent-title">{t.feedTitle}</h2>
+      <p>{t.feedText}</p>
+    </header>
+    <ul class="feed-grid">
+      {items.map((i) => (
+        <li class="glass feed-item reveal">
+          <a href={i.url} target="_blank" rel="noreferrer">
+            <span class={`feed-chip chip-${i.canal}`}>{t.channels[i.canal] ?? i.canal}</span>
+            <strong>{i.titulo}</strong>
+            <time datetime={i.data}>{fmt(i.data)}</time>
+          </a>
+        </li>
+      ))}
+    </ul>
+    <nav class="feed-follow" aria-label={t.follow}>
+      <span>{t.follow}</span>
+      {profiles.map((p) => <a class={`glass-btn chip-${p.canal}`} href={p.href} target="_blank" rel="noreferrer">{p.label}</a>)}
+    </nav>
+  </section>
+)}

@@ -6,21 +6,34 @@ import WorkCatalog from './WorkCatalog.astro';
 import ResearchMap from './ResearchMap.astro';
 import BookLaunch from './BookLaunch.astro';
 import LinkedInMetrics from './LinkedInMetrics.astro';
+import WorkExplorer from './WorkExplorer.astro';
+import NewsletterSignup from './NewsletterSignup.astro';
+import RecentFeed from './RecentFeed.astro';
+import ContactCards from './ContactCards.astro';
 import { withBase } from '../data/paths';
 interface Props { lang: Locale; id: typeof sectionIds[number]; }
 const { lang, id } = Astro.props;
 const section = documents[lang].sections[sectionIds.indexOf(id)];
+const home = documents[lang].sections[0];
+const howTitle = { en:'How I work', pt:'Como trabalho', es:'Cómo trabajo', it:'Come lavoro' }[lang];
+const briefsTitle = { en:'Policy briefs', pt:'Policy briefs', es:'Policy briefs', it:'Policy brief' }[lang];
 const catalogTitle = { en:'Browse the evidence trail', pt:'Explore a trilha de evidências', es:'Explora la ruta de evidencia', it:'Esplora il percorso dell’evidenza' }[lang];
 const bookCoverAlt = { en:'Cover of “Governança em Tempo Real”', pt:'Capa de “Governança em Tempo Real”', es:'Portada de “Governança em Tempo Real”', it:'Copertina di “Governança em Tempo Real”' }[lang];
 ---
 <article class="page-shell" id={id}>
-  <header class:list={['section-shell', { 'book-copy': id === 'book' }]}><p class="eyebrow">{section.title}</p><h1 class="page-title">{section.title}</h1>{section.intro.map((line: string) => <p class="lede" set:html={inline(line)}></p>)}</header>
+  <header class:list={['section-shell', { 'book-copy': id === 'book', 'page-head-photo': id === 'writing' }]}><div><p class="eyebrow">{section.title}</p><h1 class="page-title">{section.title}</h1>{id !== 'contact' && section.intro.map((line: string) => <p class="lede" set:html={inline(line)}></p>)}</div>{id === 'writing' && <figure class="glass reveal"><img src={withBase('images/newsletter-autografo.webp')} alt={{ en:'Eduardo Alencar signing a copy at the book launch', pt:'Eduardo Alencar autografando no lançamento do livro', es:'Eduardo Alencar firmando en el lanzamiento del libro', it:'Eduardo Alencar firma una copia alla presentazione del libro' }[lang]} width="960" height="1200" loading="eager" /></figure>}</header>
   {id === 'book' && <figure class="book-cover reveal"><img src={withBase('images/governanca-em-tempo-real-capa.png')} alt={bookCoverAlt} width="515" height="605" loading="lazy" /></figure>}
   {id === 'research' && <ResearchMap lang={lang} />}
   {id === 'research' && <WorkCatalog lang={lang} categories={['research']} title={catalogTitle} />}
+  {id === 'research' && <section class="section-shell"><h2 class="section-subtitle">{howTitle}</h2><ContentBlocks section={{ ...home, blocks: home.blocks.slice(1, 3) }} /></section>}
+  {id === 'research' && <WorkExplorer lang={lang} />}
+  {id === 'research' && <div id="briefs"><WorkCatalog lang={lang} categories={['policy']} title={briefsTitle} /></div>}
   {id === 'briefs' && <WorkCatalog lang={lang} categories={['policy']} title={catalogTitle} />}
   {id === 'tools' && <WorkCatalog lang={lang} categories={['tools']} title={catalogTitle} />}
+  {id === 'writing' && <NewsletterSignup lang={lang} id="newsletter-signup" />}
+  {id === 'writing' && <RecentFeed lang={lang} canal="newsletter" />}
   {id === 'writing' && <LinkedInMetrics lang={lang} />}
-  <section class:list={['section-shell', { 'book-copy': id === 'book' }]}><ContentBlocks section={id === 'book' ? { ...section, blocks: section.blocks.slice(0, 1) } : section} /></section>
+  {id === 'contact' && <ContactCards lang={lang} />}
+  {id !== 'contact' && <section class:list={['section-shell', { 'book-copy': id === 'book' }]}><ContentBlocks section={id === 'book' ? { ...section, blocks: section.blocks.slice(0, 1) } : section} /></section>}
   {id === 'book' && <BookLaunch lang={lang} section={section} />}
 </article>

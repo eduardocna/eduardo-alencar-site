@@ -2,6 +2,7 @@
 import { statusLabel, typeLabel, type WorkItem } from '../data/catalog';
 import type { Locale } from '../data/site';
 import { withBase } from '../data/paths';
+import covers from '../data/covers.json';
 interface Props { item: WorkItem; lang: Locale; }
 const { item, lang } = Astro.props;
 const labels = {
@@ -12,11 +13,22 @@ const primary = item.verifiedLinks[0];
 const internal = primary?.href.startsWith('/');
 const href = primary ? (internal ? withBase(primary.href) : primary.href) : undefined;
 const external = { target: '_blank', rel: 'noopener noreferrer' };
+// Miniatura da capa (27/10/2026): primeira página do PDF publicado, gerada em public/images/covers/.
+const pdf = item.verifiedLinks.find((link: { href: string }) => link.href.startsWith('/downloads/') && link.href.endsWith('.pdf'));
+const coverFile = pdf ? pdf.href.split('/').pop()!.replace(/\.pdf$/, '.webp') : '';
+const cover = coverFile && (covers as string[]).includes(coverFile) ? withBase(`images/covers/${coverFile}`) : '';
+const coverAlt = { en:'Cover', pt:'Capa', es:'Portada', it:'Copertina' }[lang];
 ---
 <article class="publication-card card reveal" data-category={item.category} data-status={item.statusCode} data-language={item.languages.join(' ')}>
-  <p class="eyebrow">{typeLabel(item, lang)} · {item.year}</p>
-  <h3>{href ? <a href={href} {...external}>{item.title}</a> : item.title}</h3>
+  <div class:list={['card-head', { 'has-cover': cover }]}>
+    {cover && <a class="card-cover" href={href} {...external} tabindex="-1" aria-hidden="true"><img src={cover} alt={`${coverAlt}: ${item.title}`} width="420" height="594" loading="lazy" /></a>}
+    <div>
+      <p class="eyebrow">{typeLabel(item, lang)} · {item.year}</p>
+      <h3>{href ? <a href={href} {...external}>{item.title}</a> : item.title}</h3>
+    </div>
+  </div>
   <p>{item.localizedSummary[lang]}</p>
   <div class="card-meta"><span>{statusLabel(item, lang)}</span><span>{labels.language}: {item.languages.map((value: string) => value.toUpperCase()).join(' · ')}</span></div>
-  {href && <a class="worklink" href={href} {...external}>{labels.view} ↗</a>}
+  {item.verifiedLinks.length > 1 && <ul class="card-links">{item.verifiedLinks.slice(1).map((link: { href: string; label: Record<string, string> }) => <li><a href={link.href.startsWith('/') ? withBase(link.href) : link.href} {...external}>{link.label[lang]} ↗</a></li>)}</ul>}
+  {href && <a class="worklink" href={href} {...external}>{(primary as { label?: Record<string, string> })?.label?.[lang] ?? labels.view} ↗</a>}
 </article>

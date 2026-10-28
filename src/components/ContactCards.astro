@@ -1,0 +1,65 @@
+---
+// Página de Contato (27/10/2026): um cartão de vidro por canal, com ícone, endereço e ação.
+// Endereços conferidos no conteúdo da seção Contato (src/content/site-*.md) e no rodapé.
+import type { Locale } from '../data/site';
+import { substackUrl } from '../data/landing';
+import { withBase } from '../data/paths';
+interface Props { lang: Locale; }
+const { lang } = Astro.props;
+const t = {
+  pt: { lead: 'Vamos conversar', text: 'Estou aberto a colaborações em integridade pública, análise de compras, medição da fiscalização e uso responsável de inteligência artificial no governo.', topics: ['Pesquisa e coautoria', 'Palestras e eventos', 'Imprensa', 'Formação e cursos'], copy: 'Copiar', copied: 'Copiado', write: 'Escrever', open: 'Abrir', subscribe: 'Assinar', where: 'Brasília, Brasil · Aberto a recolocação internacional', email: 'E-mail', uci: 'E-mail acadêmico', news: 'Newsletter por e-mail' },
+  en: { lead: 'Let’s talk', text: 'Open to collaboration on public integrity, procurement analytics, oversight measurement and responsible AI in government.', topics: ['Research and co-authorship', 'Talks and events', 'Press', 'Training and courses'], copy: 'Copy', copied: 'Copied', write: 'Write', open: 'Open', subscribe: 'Subscribe', where: 'Brasília, Brazil · Open to relocate', email: 'Email', uci: 'Academic email', news: 'Email newsletter' },
+  es: { lead: 'Conversemos', text: 'Abierto a colaboraciones en integridad pública, análisis de compras, medición del control y uso responsable de la inteligencia artificial en el gobierno.', topics: ['Investigación y coautoría', 'Conferencias y eventos', 'Prensa', 'Formación y cursos'], copy: 'Copiar', copied: 'Copiado', write: 'Escribir', open: 'Abrir', subscribe: 'Suscribirse', where: 'Brasília, Brasil · Abierto a reubicación internacional', email: 'Correo', uci: 'Correo académico', news: 'Newsletter por correo' },
+  it: { lead: 'Parliamone', text: 'Aperto a collaborazioni su integrità pubblica, analisi degli appalti, misurazione del controllo e uso responsabile dell’intelligenza artificiale nel governo.', topics: ['Ricerca e coautoria', 'Conferenze ed eventi', 'Stampa', 'Formazione e corsi'], copy: 'Copia', copied: 'Copiato', write: 'Scrivi', open: 'Apri', subscribe: 'Iscriviti', where: 'Brasília, Brasile · Disponibile al trasferimento', email: 'Email', uci: 'Email accademica', news: 'Newsletter via email' }
+}[lang];
+const icon: Record<string, string> = {
+  mail: 'M3 6h18v12H3z M3 7l9 6 9-6',
+  linkedin: 'M4 9h4v11H4z M6 4.5a2 2 0 1 1 0 4 2 2 0 0 1 0-4 M10 9h4v1.6c.6-1 1.9-1.9 3.6-1.9 3 0 3.4 2 3.4 4.6V20h-4v-5.6c0-1.3 0-2.9-1.8-2.9S14 13 14 14.3V20h-4z',
+  scholar: 'M12 3 1 9l11 6 9-4.9V17h2V9z M5 13.2V17c0 1.7 3.1 3 7 3s7-1.3 7-3v-3.8L12 17z',
+  orcid: 'M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20z M8 7.5a1 1 0 1 1 0 2 1 1 0 0 1 0-2 M7.2 10.5h1.6V17H7.2z M10.5 7.8h3.2c2.6 0 4.3 1.8 4.3 4.6S16.3 17 13.7 17h-3.2z M12.1 9.3v6.2h1.5c1.8 0 2.8-1.2 2.8-3.1s-1-3.1-2.8-3.1z',
+  youtube: 'M21.6 7.2c-.2-.9-.9-1.6-1.8-1.8C18.2 5 12 5 12 5s-6.2 0-7.8.4c-.9.2-1.6.9-1.8 1.8C2 8.8 2 12 2 12s0 3.2.4 4.8c.2.9.9 1.6 1.8 1.8 1.6.4 7.8.4 7.8.4s6.2 0 7.8-.4c.9-.2 1.6-.9 1.8-1.8.4-1.6.4-4.8.4-4.8s0-3.2-.4-4.8z M10 15.5v-7l6 3.5z',
+  x: 'M4 4l16 16 M20 4 4 20',
+  instagram: 'M7 3h10a4 4 0 0 1 4 4v10a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4V7a4 4 0 0 1 4-4z M12 8a4 4 0 1 1 0 8 4 4 0 0 1 0-8 M17.5 6.3a.9.9 0 1 1 0 1.8.9.9 0 0 1 0-1.8',
+  news: 'M4 5h13v14H6a2 2 0 0 1-2-2z M17 9h3v8a2 2 0 0 1-2 2 M7 9h7 M7 12h7 M7 15h4'
+};
+const channels = [
+  { key: 'mail', label: t.email, value: 'eduardocna@gmail.com', href: 'mailto:eduardocna@gmail.com', action: t.write, copy: 'eduardocna@gmail.com', tone: 'accent' },
+  { key: 'mail', label: t.uci, value: 'ealencar@uci.edu', href: 'mailto:ealencar@uci.edu', action: t.write, copy: 'ealencar@uci.edu', tone: 'blue' },
+  { key: 'linkedin', label: 'LinkedIn', value: 'linkedin.com/in/eduardocna', href: 'https://www.linkedin.com/in/eduardocna', action: t.open, tone: 'linkedin' },
+  { key: 'news', label: t.news, value: 'eduardocnalencar.substack.com', href: substackUrl, action: t.subscribe, tone: 'accent' },
+  { key: 'youtube', label: 'YouTube', value: 'youtube.com/@eduardocnalencar', href: 'https://www.youtube.com/@eduardocnalencar', action: t.open, tone: 'youtube' },
+  { key: 'instagram', label: 'Instagram', value: '@eduardocna', href: 'https://www.instagram.com/eduardocna/', action: t.open, tone: 'instagram' },
+  { key: 'x', label: 'X', value: '@eduardo_cna', href: 'https://x.com/eduardo_cna', action: t.open, tone: 'x' },
+  { key: 'scholar', label: 'Google Scholar', value: 'scholar.google.com/citations?user=vJ12isgAAAAJ', href: 'https://scholar.google.com/citations?user=vJ12isgAAAAJ', action: t.open, tone: 'blue' },
+  { key: 'orcid', label: 'ORCID', value: 'orcid.org/0000-0002-9218-1798', href: 'https://orcid.org/0000-0002-9218-1798', action: t.open, tone: 'orcid' }
+];
+---
+<section class="section-shell contact-hub">
+  <div class="glass contact-intro reveal">
+    <img src={withBase('images/eduardo-alencar.jpg')} alt="" width="120" height="120" />
+    <div>
+      <p class="eyebrow">{t.where}</p>
+      <h2>{t.lead}</h2>
+      <p>{t.text}</p>
+      <ul class="contact-topics">{t.topics.map((topic, i) => <li style={`--i:${i}`}>{topic}</li>)}</ul>
+    </div>
+  </div>
+  <ul class="contact-grid">
+    {channels.map((c, i) => (
+      <li class={`glass contact-card tone-${c.tone} reveal`} style={`--i:${i}`}>
+        <span class="contact-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d={icon[c.key]} /></svg></span>
+        <span class="contact-label">{c.label}</span>
+        <a class="contact-value" href={c.href} {...(c.href.startsWith('http') ? { target: '_blank', rel: 'noreferrer' } : {})}>{c.value}</a>
+        <span class="contact-actions">
+          <a href={c.href} {...(c.href.startsWith('http') ? { target: '_blank', rel: 'noreferrer' } : {})}>{c.action} →</a>
+          {c.copy && <button type="button" data-copy={c.copy} data-done={t.copied}>{t.copy}</button>}
+        </span>
+      </li>
+    ))}
+  </ul>
+</section>
+<script is:inline>
+  document.querySelectorAll('.contact-card [data-copy]').forEach((button) => button.addEventListener('click', async () => {
+    try { await navigator.clipboard.writeText(button.dataset.copy); const label = button.textContent; button.textContent = button.dataset.done; button.classList.add('is-done'); setTimeout(() => { button.textContent = label; button.classList.remove('is-done'); }, 1600); } catch {}
+  }));
+</script>

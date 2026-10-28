@@ -1,0 +1,23 @@
+---
+import type { Locale } from '../data/site';
+import { bookUrl, landing } from '../data/landing';
+import { localePath, withBase } from '../data/paths';
+interface Props { lang: Locale; }
+const { lang } = Astro.props;
+const t = landing[lang];
+---
+<section class="section-shell book-tile" id="book-home" aria-labelledby="book-tile-title">
+  <div class="glass book-tile-card reveal">
+    <figure class="book-tile-photo"><img src={withBase('images/lancamento-livraria-leitura.webp')} alt={t.bookPhotoAlt} width="1100" height="825" loading="lazy" /></figure>
+    <div class="book-tile-copy">
+      <p class="eyebrow">{t.bookEyebrow}</p>
+      <h2 id="book-tile-title">{t.bookTitle}</h2>
+      <p>{t.bookText}</p>
+      <div class="ctarow">
+        <a class="cta" href={bookUrl} target="_blank" rel="noreferrer">{t.bookBuy}</a>
+        <a class="cta ghost glass-btn" href={localePath(lang, 'book/')}>{t.bookMore}</a>
+      </div>
+    </div>
+    <img class="book-tile-cover" src={withBase('images/governanca-em-tempo-real-capa.png')} alt="" width="515" height="605" loading="lazy" />
+  </div>
+</section>

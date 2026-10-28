@@ -1,0 +1,46 @@
+---
+// Animações de entrada, contadores, progresso de rolagem e menu ativo (extraído de SiteNarrative em 27/10/2026).
+import type { Locale } from '../data/site';
+interface Props { lang: Locale; }
+const { lang } = Astro.props;
+---
+<div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+<script is:inline define:vars={{ numberLocale: lang }}>
+  document.documentElement.classList.add('js');
+  const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const progress = document.getElementById('scrollProgress');
+  const updateProgress = () => { const max = document.documentElement.scrollHeight - innerHeight; progress.style.transform = `scaleX(${max > 0 ? scrollY / max : 0})`; };
+  addEventListener('scroll', updateProgress, { passive:true }); updateProgress();
+  const count = (node) => {
+    if (node.dataset.done) return; node.dataset.done = '1';
+    if (reduced) { node.textContent = node.dataset.display; return; }
+    const target = Number(node.dataset.count), start = performance.now(), formatter = new Intl.NumberFormat(numberLocale);
+    const frame = (now) => { const p = Math.min(1, (now - start) / 1100); node.textContent = p === 1 ? node.dataset.display : formatter.format(Math.round(target * (1 - Math.pow(1-p, 3)))); if (p < 1) requestAnimationFrame(frame); };
+    requestAnimationFrame(frame);
+  };
+  const reveal = (node) => { node.classList.add('is-visible'); node.querySelectorAll('[data-count]').forEach(count); };
+  if (!reduced && 'IntersectionObserver' in window) {
+    const observer = new IntersectionObserver((entries) => entries.forEach((entry) => { if (entry.isIntersecting) { reveal(entry.target); observer.unobserve(entry.target); } }), { threshold:.1 });
+    document.querySelectorAll('.reveal').forEach((node) => observer.observe(node));
+  } else document.querySelectorAll('.reveal').forEach(reveal);
+  if (!reduced) document.querySelectorAll('.card').forEach((card) => card.addEventListener('pointermove', (event) => { const rect = card.getBoundingClientRect(); card.style.setProperty('--mx', `${event.clientX-rect.left}px`); card.style.setProperty('--my', `${event.clientY-rect.top}px`); }));
+  // Movimento ao passar o mouse em toda caixa do site (27/10/2026): elevação, inclinação 3D e brilho que segue o cursor.
+  const tiltTargets = '.glass, .content-card, .card, .publication-card, .about-bio-grid article, .about-scene figure, .feed-item, .verified-scale > div, .explorer-panel';
+  if (!reduced && matchMedia('(hover: hover)').matches) document.querySelectorAll(tiltTargets).forEach((box) => {
+    box.classList.add('tilt');
+    box.addEventListener('pointermove', (event) => {
+      const r = box.getBoundingClientRect(); const x = (event.clientX - r.left) / r.width, y = (event.clientY - r.top) / r.height;
+      const max = 7 * Math.min(1, 420 / r.width);
+      box.style.setProperty('--mx', `${x * 100}%`); box.style.setProperty('--my', `${y * 100}%`);
+      box.style.setProperty('--ry', `${((x - .5) * 2 * max).toFixed(2)}deg`); box.style.setProperty('--rx', `${((.5 - y) * 2 * max).toFixed(2)}deg`);
+      box.classList.add('tilting');
+    });
+    box.addEventListener('pointerleave', () => { box.classList.remove('tilting'); box.style.setProperty('--rx', '0deg'); box.style.setProperty('--ry', '0deg'); });
+  });
+  const sections = [...document.querySelectorAll('main > article[id], .editorial-section[id]')];
+  const nav = [...document.querySelectorAll('[data-section-link]')];
+  if ('IntersectionObserver' in window) {
+    const sectionObserver = new IntersectionObserver((entries) => entries.forEach((entry) => { if (entry.isIntersecting) nav.forEach((link) => link.setAttribute('aria-current', String(link.dataset.sectionLink === entry.target.id ? 'page' : 'false'))); }), { rootMargin:'-20% 0px -70% 0px' });
+    sections.forEach((section) => sectionObserver.observe(section));
+  }
+</script>

@@ -1,0 +1,26 @@
+---
+// Inscrição na newsletter por e-mail (Substack), com o LinkedIn como alternativa.
+import type { Locale } from '../data/site';
+import { landing, linkedinNewsletter, substackEmbed, substackUrl } from '../data/landing';
+import { withBase } from '../data/paths';
+interface Props { lang: Locale; id?: string; }
+const { lang, id = 'newsletter' } = Astro.props;
+const t = landing[lang];
+---
+<section class="nl-band" id={id} aria-labelledby={`${id}-title`} style={`--nl-photo:url('${withBase('images/congresso-ceu-azul.webp')}')`}>
+  <div class="section-shell">
+    <div class="glass nl-card reveal">
+      <div class="nl-copy">
+        <p class="eyebrow">{t.nlEyebrow}</p>
+        <h2 id={`${id}-title`}>{t.nlTitle}</h2>
+        <p>{t.nlText}</p>
+        <p class="nl-alt"><a href={linkedinNewsletter} target="_blank" rel="noreferrer">{t.nlAlt}</a></p>
+      </div>
+      <div class="nl-form">
+        <iframe src={substackEmbed} title={t.nlFrame} width="480" height="150" loading="eager"></iframe>
+        <noscript><a class="cta" href={substackUrl}>{t.nlEyebrow}</a></noscript>
+      </div>
+    </div>
+    <p class="photo-credit">{t.photoCredit}</p>
+  </div>
+</section>

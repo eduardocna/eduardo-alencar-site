@@ -1,77 +1,21 @@
 ---
-import type { Locale, MarkdownSection } from '../data/site';
-import { documents, inline, sectionIds } from '../data/site';
+// Home enxuta (27/10/2026): hero, o que eu faço (3 blocos com contexto), registro → evidência,
+// livro, newsletter e publicações recentes. O restante vive nas páginas próprias.
+import type { Locale } from '../data/site';
 import Hero from './Hero.astro';
-import MetricLedger from './MetricLedger.astro';
+import ImpactTiles from './ImpactTiles.astro';
 import EvidenceStory from './EvidenceStory.astro';
-import WorkExplorer from './WorkExplorer.astro';
-import CareerGantt from './CareerGantt.astro';
-import ContentBlocks from './ContentBlocks.astro';
-import WorkCatalog from './WorkCatalog.astro';
-import ResearchMap from './ResearchMap.astro';
-import BookLaunch from './BookLaunch.astro';
-import LinkedInMetrics from './LinkedInMetrics.astro';
-import { withBase } from '../data/paths';
+import BookTile from './BookTile.astro';
+import NewsletterSignup from './NewsletterSignup.astro';
+import RecentFeed from './RecentFeed.astro';
 interface Props { lang: Locale; }
 const { lang } = Astro.props;
-const doc = documents[lang];
-type NarrativePage = MarkdownSection & { id: typeof sectionIds[number] };
-const pages: NarrativePage[] = doc.sections.map((section: MarkdownSection, index: number) => ({ ...section, id: sectionIds[index] }));
-const home = pages[0];
-const sectionNumber = (id: string) => String(sectionIds.indexOf(id as typeof sectionIds[number]) + 1).padStart(2, '0');
-const catalogueTitle = { en:'Selected research and public work', pt:'Pesquisa e trabalhos públicos selecionados', es:'Investigación y trabajos públicos seleccionados', it:'Ricerca e lavori pubblici selezionati' }[lang];
-const briefsTitle = { en:'Policy briefs', pt:'Policy briefs', es:'Policy briefs', it:'Policy brief' }[lang];
-const toolsTitle = { en:'Tools with a public evidence trail', pt:'Ferramentas com trilha pública de evidências', es:'Herramientas con ruta pública de evidencia', it:'Strumenti con un percorso pubblico di evidenza' }[lang];
-const bookCoverAlt = { en:'Cover of “Governança em Tempo Real”', pt:'Capa de “Governança em Tempo Real”', es:'Portada de “Governança em Tempo Real”', it:'Copertina di “Governança em Tempo Real”' }[lang];
 ---
-<div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
-<article id="home">
-  <Hero lang={lang} section={home} />
-  <MetricLedger lang={lang} />
+<article id="home" class="home-v2">
+  <Hero lang={lang} />
+  <ImpactTiles lang={lang} />
   <EvidenceStory lang={lang} />
-  <section class="section-shell home-profile"><p class="eyebrow">{home.title}</p><ContentBlocks section={home} skip={1} /></section>
-  <WorkExplorer lang={lang} />
-  <CareerGantt lang={lang} />
+  <BookTile lang={lang} />
+  <NewsletterSignup lang={lang} />
+  <RecentFeed lang={lang} />
 </article>
-
-{pages.slice(1).map((page: NarrativePage) => <article class="editorial-section" id={page.id}>
-  <header class:list={['section-shell', 'section-intro', 'reveal', { 'book-copy': page.id === 'book' }]}><p class="eyebrow">{sectionNumber(page.id)}</p><h2>{page.title}</h2>{page.intro.map((line: string) => <p class="lede" set:html={inline(line)}></p>)}</header>
-  {page.id === 'book' && <figure class="book-cover reveal"><img src={withBase('images/governanca-em-tempo-real-capa.png')} alt={bookCoverAlt} width="515" height="605" loading="lazy" /></figure>}
-  {page.id === 'research' && <ResearchMap lang={lang} />}
-  {page.id === 'research' && <WorkCatalog lang={lang} categories={['research']} title={catalogueTitle} />}
-  {page.id === 'briefs' && <WorkCatalog lang={lang} categories={['policy']} title={briefsTitle} />}
-  {page.id === 'tools' && <>
-    <section class="verified-scale section-shell reveal"><div><strong>30,304</strong><span>{lang === 'pt' ? 'contratações' : lang === 'es' ? 'contratos' : lang === 'it' ? 'contratti' : 'contracts'}</span></div><div><strong>R$ 59.2bn</strong><span>{lang === 'pt' ? 'valor analisado' : lang === 'es' ? 'valor analizado' : lang === 'it' ? 'valore analizzato' : 'value screened'}</span></div><div><strong>32</strong><span>{lang === 'pt' ? 'testes' : lang === 'es' ? 'pruebas' : lang === 'it' ? 'test' : 'tests'}</span></div><div><strong>13,042</strong><span>{lang === 'pt' ? 'pares RIC–resposta' : lang === 'es' ? 'pares solicitud–respuesta' : lang === 'it' ? 'coppie richiesta–risposta' : 'request–reply pairs'}</span></div></section>
-    <WorkCatalog lang={lang} categories={['tools']} title={toolsTitle} />
-  </>}
-  {page.id === 'writing' && <LinkedInMetrics lang={lang} />}
-  <section class:list={['section-shell', { 'book-copy': page.id === 'book' }]}><ContentBlocks section={page.id === 'book' ? { ...page, blocks: page.blocks.slice(0, 1) } : page} /></section>
-  {page.id === 'book' && <BookLaunch lang={lang} section={page} />}
-</article>)}
-
-<script is:inline define:vars={{ numberLocale: lang }}>
-  document.documentElement.classList.add('js');
-  const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
-  const progress = document.getElementById('scrollProgress');
-  const updateProgress = () => { const max = document.documentElement.scrollHeight - innerHeight; progress.style.transform = `scaleX(${max > 0 ? scrollY / max : 0})`; };
-  addEventListener('scroll', updateProgress, { passive:true }); updateProgress();
-  const count = (node) => {
-    if (node.dataset.done) return; node.dataset.done = '1';
-    if (reduced) { node.textContent = node.dataset.display; return; }
-    const target = Number(node.dataset.count), start = performance.now(), formatter = new Intl.NumberFormat(numberLocale);
-    const frame = (now) => { const p = Math.min(1, (now - start) / 1100); node.textContent = p === 1 ? node.dataset.display : formatter.format(Math.round(target * (1 - Math.pow(1-p, 3)))); if (p < 1) requestAnimationFrame(frame); };
-    requestAnimationFrame(frame);
-  };
-  const reveal = (node) => { node.classList.add('is-visible'); node.querySelectorAll('[data-count]').forEach(count); };
-  if (!reduced && 'IntersectionObserver' in window) {
-    const observer = new IntersectionObserver((entries) => entries.forEach((entry) => { if (entry.isIntersecting) { reveal(entry.target); observer.unobserve(entry.target); } }), { threshold:.1 });
-    document.querySelectorAll('.reveal').forEach((node) => observer.observe(node));
-  } else document.querySelectorAll('.reveal').forEach(reveal);
-  if (!reduced) document.querySelectorAll('.card').forEach((card) => card.addEventListener('pointermove', (event) => { const rect = card.getBoundingClientRect(); card.style.setProperty('--mx', `${event.clientX-rect.left}px`); card.style.setProperty('--my', `${event.clientY-rect.top}px`); }));
-  const sections = [...document.querySelectorAll('main > article[id], .editorial-section[id]')];
-  const nav = [...document.querySelectorAll('[data-section-link]')];
-  if ('IntersectionObserver' in window) {
-    const sectionObserver = new IntersectionObserver((entries) => entries.forEach((entry) => { if (entry.isIntersecting) nav.forEach((link) => link.setAttribute('aria-current', String(link.dataset.sectionLink === entry.target.id ? 'page' : 'false'))); }), { rootMargin:'-20% 0px -70% 0px' });
-    sections.forEach((section) => sectionObserver.observe(section));
-  }
-</script>

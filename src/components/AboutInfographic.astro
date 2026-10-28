@@ -1,0 +1,86 @@
+---
+// Infográficos da página Sobre (27/10/2026), no lugar das fotos de "O que pesquiso" e "Docência e redes".
+// research: as duas linhas de pesquisa (fiscalização parlamentar e compras públicas), do dado à decisão humana.
+// education: formação (UnB, FGV, UC Irvine) com as logos oficiais (Wikimedia Commons), em linha do tempo.
+// network: Eduardo ao centro, ligado às instituições de ensino, pesquisa e redes citadas no texto (fonte: CV detailed6).
+import type { Locale } from '../data/site';
+import { withBase } from '../data/paths';
+interface Props { lang: Locale; kind: 'research' | 'network' | 'education'; }
+const { lang, kind } = Astro.props;
+const t = {
+  pt: { title: ['Duas linhas de pesquisa,', 'do dado à decisão humana'], a: 'Fiscalização parlamentar', a1: '13.042 perguntas e respostas', a1b: 'Câmara × Executivo, 2019 a 2024', a2: '5 dimensões avaliadas', a3: 'Respondeu de verdade?', b: 'Compras públicas', b1: '30.304 compras federais', b1b: 'Radar Aberto de Integridade', b2: 'Sinais de risco', b3: 'Revisão humana', end: 'Evidência para decidir a tempo', dims: ['Completude', 'Objetividade', 'Prazo', 'Evidência', 'Risco'], net: 'Ensino, pesquisa e redes', teach: 'Ensino', research: 'Pesquisa', nets: 'Redes internacionais', edit: 'Editorial', enap: 'Enap', uny: 'Unyleya', gran: 'Gran Faculdade', frg: 'Fraud Research Group', aston: 'Aston University', itu: 'U4SSC · UIT', itu2: 'grupos de trabalho 3, 5, 6 e 7', jw: 'Journal of White Collar', jw2: 'and Corporate Crime (parecerista)' },
+  en: { title: ['Two research lines,', 'from data to human decision'], a: 'Parliamentary oversight', a1: '13,042 questions and answers', a1b: 'Congress × Executive, 2019 to 2024', a2: '5 dimensions assessed', a3: 'A real answer?', b: 'Public procurement', b1: '30,304 federal purchases', b1b: 'Radar Aberto de Integridade', b2: 'Risk signals', b3: 'Human review', end: 'Evidence to decide in time', dims: ['Completeness', 'Objectivity', 'Timeliness', 'Evidence', 'Risk'], net: 'Teaching, research and networks', teach: 'Teaching', research: 'Research', nets: 'International networks', edit: 'Editorial', enap: 'ENAP', uny: 'Unyleya', gran: 'Gran Faculdade', frg: 'Fraud Research Group', aston: 'Aston University', itu: 'U4SSC · ITU', itu2: 'working groups 3, 5, 6 and 7', jw: 'Journal of White Collar', jw2: 'and Corporate Crime (reviewer)' },
+  es: { title: ['Dos líneas de investigación,', 'del dato a la decisión humana'], a: 'Fiscalización parlamentaria', a1: '13.042 preguntas y respuestas', a1b: 'Congreso × Ejecutivo, 2019 a 2024', a2: '5 dimensiones evaluadas', a3: '¿Respondió de verdad?', b: 'Compras públicas', b1: '30.304 compras federales', b1b: 'Radar Aberto de Integridade', b2: 'Señales de riesgo', b3: 'Revisión humana', end: 'Evidencia para decidir a tiempo', dims: ['Completitud', 'Objetividad', 'Plazo', 'Evidencia', 'Riesgo'], net: 'Docencia, investigación y redes', teach: 'Docencia', research: 'Investigación', nets: 'Redes internacionales', edit: 'Editorial', enap: 'Enap', uny: 'Unyleya', gran: 'Gran Faculdade', frg: 'Fraud Research Group', aston: 'Aston University', itu: 'U4SSC · UIT', itu2: 'grupos de trabajo 3, 5, 6 y 7', jw: 'Journal of White Collar', jw2: 'and Corporate Crime (revisor)' },
+  it: { title: ['Due linee di ricerca,', 'dal dato alla decisione umana'], a: 'Controllo parlamentare', a1: '13.042 domande e risposte', a1b: 'Congresso × Esecutivo, 2019-2024', a2: '5 dimensioni valutate', a3: 'Risposta vera?', b: 'Appalti pubblici', b1: '30.304 acquisti federali', b1b: 'Radar Aberto de Integridade', b2: 'Segnali di rischio', b3: 'Revisione umana', end: 'Evidenza per decidere in tempo', dims: ['Completezza', 'Obiettività', 'Tempestività', 'Evidenza', 'Rischio'], net: 'Didattica, ricerca e reti', teach: 'Didattica', research: 'Ricerca', nets: 'Reti internazionali', edit: 'Editoriale', enap: 'Enap', uny: 'Unyleya', gran: 'Gran Faculdade', frg: 'Fraud Research Group', aston: 'Aston University', itu: 'U4SSC · UIT', itu2: 'gruppi di lavoro 3, 5, 6 e 7', jw: 'Journal of White Collar', jw2: 'and Corporate Crime (revisore)' }
+}[lang];
+const edu = {
+  pt: { title: 'De Brasília à Califórnia', degrees: [['Ciências Econômicas', 'Bacharelado · 1999 a 2003'], ['MBA Executivo', 'Internacional · 2006 a 2007'], ['Mestrado e Doutorado', 'Social Ecology · 2017 a 2022']], credit: 'Logos: Wikimedia Commons' },
+  en: { title: 'From Brasília to California', degrees: [['B.S. in Economics', 'Undergraduate · 1999 to 2003'], ['Executive MBA', 'International · 2006 to 2007'], ['M.A. and Ph.D.', 'Social Ecology · 2017 to 2022']], credit: 'Logos: Wikimedia Commons' },
+  es: { title: 'De Brasilia a California', degrees: [['Ciencias Económicas', 'Licenciatura · 1999 a 2003'], ['MBA Ejecutivo', 'Internacional · 2006 a 2007'], ['Maestría y Doctorado', 'Social Ecology · 2017 a 2022']], credit: 'Logos: Wikimedia Commons' },
+  it: { title: 'Da Brasília alla California', degrees: [['Scienze Economiche', 'Laurea · 1999-2003'], ['MBA Executive', 'Internazionale · 2006-2007'], ['Master e Dottorato', 'Social Ecology · 2017-2022']], credit: 'Loghi: Wikimedia Commons' }
+}[lang];
+const schools = [
+  { x: 24, logo: 'images/logos/unb.svg', w: 64, h: 59, year: '1999', name: 'Universidade de Brasília' },
+  { x: 232, logo: 'images/logos/fgv.png', w: 132, h: 24, year: '2006', name: 'Fundação Getulio Vargas' },
+  { x: 440, logo: 'images/logos/uc-irvine.png', w: 150, h: 20, year: '2017', name: 'University of California, Irvine' }
+];
+const nodes = [
+  { x: 95, y: 92, group: t.teach, tone: 'mint', lines: [t.enap] },
+  { x: 95, y: 178, group: '', tone: 'mint', lines: [t.uny] },
+  { x: 95, y: 264, group: '', tone: 'mint', lines: [t.gran] },
+  { x: 488, y: 92, group: t.research, tone: 'orange', lines: [t.frg, t.aston] },
+  { x: 488, y: 214, group: t.nets, tone: 'blue', lines: [t.itu, t.itu2] },
+  { x: 488, y: 336, group: t.edit, tone: 'ochre', lines: [t.jw, t.jw2] }
+];
+---
+<figure class="glass about-infographic" aria-label={kind === 'research' ? `${t.title[0]} ${t.title[1]}` : kind === 'education' ? edu.title : t.net}>
+  {kind === 'education' ? (
+    <svg viewBox="0 0 640 420" role="img">
+      <title>{edu.title}: {schools.map((sc) => sc.name).join(', ')}</title>
+      <text x="24" y="42" class="ai-title">{edu.title}</text>
+      <path d="M112 340 H528" class="ai-lane" />
+      <path d="M112 340 H528" class="ai-timeline" />
+      <circle cx="112" cy="340" r="6" class="ai-packet tone-fill-blue"><animateMotion dur="5s" repeatCount="indefinite" path="M0 0 H416" /></circle>
+      {schools.map((sc, i) => <g class="ai-step" style={`--i:${i * 0.8}`}>
+        <rect x={sc.x} y="78" width="176" height="200" rx="16" class="ai-box ai-school" />
+        <image href={withBase(sc.logo)} x={sc.x + 88 - sc.w / 2} y={128 - sc.h / 2} width={sc.w} height={sc.h} preserveAspectRatio="xMidYMid meet"><title>{sc.name}</title></image>
+        <path d={`M${sc.x + 24} 184 H${sc.x + 152}`} class="ai-rule-soft" />
+        <text x={sc.x + 88} y="214" text-anchor="middle" class="ai-strong">{edu.degrees[i][0]}</text>
+        <text x={sc.x + 88} y="236" text-anchor="middle" class="ai-small">{edu.degrees[i][1]}</text>
+        <path d={`M${sc.x + 88} 278 V326`} class="ai-join" />
+        <circle cx={sc.x + 88} cy="340" r="9" class="ai-year-dot ai-blink" style={`--i:${i}`} />
+        <text x={sc.x + 88} y="372" text-anchor="middle" class="ai-year">{sc.year}</text>
+      </g>)}
+    </svg>
+  ) : kind === 'research' ? (
+    <svg viewBox="0 0 660 420" role="img">
+      <title>{t.title.join(' ')}</title>
+      <text x="24" y="38" class="ai-title">{t.title[0]}</text><text x="24" y="62" class="ai-title">{t.title[1]}</text>
+      <path d="M40 151 H636" class="ai-lane" /><path d="M40 301 H636" class="ai-lane" />
+      {[0, 1, 2].map((i) => <circle cx="40" cy="151" r="5" class="ai-packet tone-fill-blue"><animateMotion dur="4.5s" begin={`${i * 1.5}s`} repeatCount="indefinite" path="M0 0 H596" /></circle>)}
+      {[0, 1, 2].map((i) => <circle cx="40" cy="301" r="5" class="ai-packet tone-fill-orange"><animateMotion dur="4.5s" begin={`${0.75 + i * 1.5}s`} repeatCount="indefinite" path="M0 0 H596" /></circle>)}
+      <text x="24" y="110" class="ai-lane-label tone-blue">{t.a}</text>
+      <text x="24" y="262" class="ai-lane-label tone-orange">{t.b}</text>
+      <g class="ai-step" style="--i:0"><rect x="24" y="124" width="204" height="54" rx="12" class="ai-box" /><text x="38" y="147" class="ai-strong">{t.a1}</text><text x="38" y="166" class="ai-small">{t.a1b}</text></g>
+      <g class="ai-step" style="--i:1"><rect x="244" y="124" width="172" height="54" rx="12" class="ai-box" /><text x="258" y="147" class="ai-strong">{t.a2}</text>{t.dims.map((d, i) => <rect x={258 + i * 29} y="157" width="24" height="10" rx="3" class={`ai-dim ai-d${i}`} style={`--i:${i}`}><title>{d}</title></rect>)}</g>
+      <g class="ai-step" style="--i:2"><rect x="432" y="124" width="204" height="54" rx="12" class="ai-box ai-box-q" /><text x="446" y="156" class="ai-strong">{t.a3}</text></g>
+      <g class="ai-step" style="--i:0.5"><rect x="24" y="274" width="204" height="54" rx="12" class="ai-box" /><text x="38" y="297" class="ai-strong">{t.b1}</text><text x="38" y="316" class="ai-small">{t.b1b}</text></g>
+      <g class="ai-step" style="--i:1.5"><rect x="244" y="274" width="172" height="54" rx="12" class="ai-box" /><text x="258" y="297" class="ai-strong">{t.b2}</text>{[0,1,2,3,4,5,6,7].map((i) => <circle cx={264 + i * 17} cy="314" r="4.5" class={[2, 5].includes(i) ? 'ai-flag ai-blink' : 'ai-pt'} style={`--i:${i}`} />)}</g>
+      <g class="ai-step" style="--i:2.5"><rect x="432" y="274" width="204" height="54" rx="12" class="ai-box" /><text x="446" y="306" class="ai-strong">{t.b3}</text></g>
+      <path d="M534 178 V228 M534 274 V246" class="ai-join" /><rect x="404" y="227" width="260" height="20" rx="10" class="ai-end" /><text x="534" y="241" class="ai-end-text" text-anchor="middle">{t.end}</text>
+    </svg>
+  ) : (
+    <svg viewBox="0 0 640 420" role="img">
+      <title>{t.net}</title>
+      {nodes.map((n, i) => <path d={`M300 214 C ${n.x < 300 ? 220 : 380} 214, ${n.x < 300 ? 240 : 360} ${n.y}, ${n.x < 300 ? n.x + 80 : n.x - 80} ${n.y}`} class={`ai-edge tone-stroke-${n.tone}`} style={`--i:${i}`} />)}
+      {nodes.map((n, i) => <circle r="4" cx="0" cy="0" class={`ai-packet tone-fill-${n.tone}`} opacity="0"><animate attributeName="opacity" values="0;.9;.9;0" dur="3.2s" begin={`${i * 0.45}s`} repeatCount="indefinite" /><animateMotion dur="3.2s" begin={`${i * 0.45}s`} repeatCount="indefinite" path={`M300 214 C ${n.x < 300 ? 220 : 380} 214, ${n.x < 300 ? 240 : 360} ${n.y}, ${n.x < 300 ? n.x + 80 : n.x - 80} ${n.y}`} /></circle>)}
+      <g class="ai-core"><circle cx="300" cy="214" r="46" class="ai-core-ring" /><circle cx="300" cy="214" r="34" class="ai-core-dot" /><text x="300" y="210" text-anchor="middle" class="ai-core-text">Eduardo</text><text x="300" y="226" text-anchor="middle" class="ai-core-text">Alencar</text></g>
+      {nodes.map((n, i) => <g class="ai-node ai-step" style={`--i:${i * 0.4}`}>
+        {n.group && <text x={n.x < 300 ? n.x - 80 : n.x - 80} y={n.y - 34} class={`ai-group tone-${n.tone}`}>{n.group}</text>}
+        <rect x={n.x - 80} y={n.y - 24} width={n.x < 300 ? 160 : 216} height={n.lines.length > 1 ? 50 : 40} rx="12" class={`ai-box ai-node-box tone-border-${n.tone}`} />
+        {n.lines.map((line, k) => <text x={n.x - 68} y={n.y - 1 + k * 18} class={k === 0 ? 'ai-strong' : 'ai-small'}>{line}</text>)}
+      </g>)}
+    </svg>
+  )}
+  {kind === 'education' && <figcaption class="ai-credit">{edu.credit}</figcaption>}
+</figure>

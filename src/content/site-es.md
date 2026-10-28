@@ -69,13 +69,11 @@ Un argumento autoral sobre por qué la tecnología, los controles y las buenas i
 
 ## Lanzamiento
 
-El lanzamiento del libro será el **22 de octubre de 2026 (jueves), a las 19:00 (hora de Brasilia)**, en la **Livraria Leitura del Terraço Shopping (Sudoeste), en Brasília**: una noche de conversación y firma de ejemplares. La venta ese día es exclusiva en la librería.
+El libro se lanzó el **22 de octubre de 2026** en la **Livraria Leitura del Terraço Shopping, en Brasília**, con una noche de conversación y firma de ejemplares.
 
 En la prensa: [“Gestão a partir de evidências”](https://www.correiobraziliense.com.br/economia/2026/10/7518431-gestao-a-partir-de-evidencias.html), entrevista con el *Correio Braziliense* (11 de octubre de 2026, en portugués).
 
 [Ver la página del libro en Editora JusPodivm](https://www.editorajuspodivm.com.br/governanca-em-tempo-real-como-o-brasil-pode-parar-de-fingir-que-governa-2027-alencar)
-
-[Reservar un lugar en el lanzamiento](https://forms.gle/LdBksUCusmA99NvV8)
 
 ---
 
@@ -185,6 +183,8 @@ Cinco vistas: panorama general, mapa de atención, proveedores, organismos y met
 
 Tableros de transparencia construidos para el Frente Parlamentario de Fiscalización, Integridad y Transparencia: transferencias voluntarias de la Unión, enmiendas Pix, agendas oficiales de autoridades y convenios y patrocinios de Itaipú Binacional.
 
+[Panel de convenios y patrocinios de Itaipú Binacional](https://www.frentefit.com.br/patrocinios-itaipu/) · [Transferencias voluntarias](https://www.frentefit.com.br/transferencias-voluntarias/) · [Enmiendas Pix](https://www.frentefit.com.br/emendas-pix/) · [Agenda de autoridades](https://www.frentefit.com.br/agenda-das-autoridades/)
+
 ## Data Lake compartido para oficinas parlamentarias
 
 Iniciativa de integración de bases de datos entre oficinas parlamentarias para fiscalización, monitoreo legislativo, comunicación y decisión estratégica.
@@ -193,13 +193,13 @@ Iniciativa de integración de bases de datos entre oficinas parlamentarias para 
 
 # Newsletter
 
-Ensayos breves y bilingües que traducen investigación y experiencia institucional en análisis utilizable sobre integridad, transparencia y decisiones basadas en evidencia en el sector público.
+Un análisis breve por semana sobre gobierno, datos e integridad pública, en portugués e inglés.
 
 ## Suscripción
 
-Boletín semanal bilingüe (portugués e inglés) sobre integridad pública, inteligencia artificial en el gobierno, fiscalización y capacidad estatal.
+**Por correo:** cada martes a las 7:00 (hora de Brasilia), con material extra solo para suscriptores. [Suscríbete en Substack](https://eduardocnalencar.substack.com/subscribe)
 
-[Suscríbete en LinkedIn](https://www.linkedin.com/build-relation/newsletter-follow?entityUrn=7347441938133848064)
+**En LinkedIn:** la misma edición sale a las 9:00 en portugués y a las 11:00 en inglés. [Sigue la newsletter en LinkedIn](https://www.linkedin.com/build-relation/newsletter-follow?entityUrn=7347441938133848064)
 
 ## Temas
 

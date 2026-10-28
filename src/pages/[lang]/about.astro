@@ -3,9 +3,16 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import { isLocale, locales } from '../../data/site';
 import { about } from '../../data/about';
 import { localePath, withBase } from '../../data/paths';
+import CareerGantt from '../../components/CareerGantt.astro';
+import AboutInfographic from '../../components/AboutInfographic.astro';
 export function getStaticPaths(){return locales.map((lang)=>({params:{lang}}));}
 const lang=isLocale(Astro.params.lang)?Astro.params.lang:'en';
 const t=about[lang];
+// Uma imagem por seção (27/10/2026): fotos reais do lançamento de Governança em Tempo Real
+// (Livraria Leitura, 22/10/2026). Fotos geradas por IA não entram (decisão de Eduardo).
+const scenes=['sobre-formacao.webp','education','research','network'];
+// "O que pesquiso" e "Docência e redes" usam infográficos (pedido de Eduardo, 27/10/2026).
+const sceneAlt={pt:'Eduardo Alencar no lançamento de Governança em Tempo Real, na Livraria Leitura, em Brasília',en:'Eduardo Alencar at the launch of Governança em Tempo Real, Livraria Leitura, Brasília',es:'Eduardo Alencar en el lanzamiento de Governança em Tempo Real, Livraria Leitura, Brasília',it:'Eduardo Alencar alla presentazione di Governança em Tempo Real, Livraria Leitura, Brasília'}[lang];
 ---
 <BaseLayout lang={lang} title={`${t.nav} | Eduardo Alencar`} description={t.meta} contentPath="about/">
 <section class="section-shell page-shell about">
@@ -19,8 +26,9 @@ const t=about[lang];
     <img class="about-photo" src={withBase('images/eduardo-alencar.jpg')} alt={t.photoAlt} width="420" height="420" loading="eager" />
   </div>
   <div class="about-body">
-    {t.sections.map((s)=> <section><h2>{s.title}</h2>{s.paragraphs.map((p)=> <p>{p}</p>)}</section>)}
+    {t.sections.map((s, i)=> <section class:list={['about-scene', 'reveal', { flip: i % 2 === 1 }]}><div class="about-scene-copy"><h2>{s.title}</h2>{s.paragraphs.map((p)=> <p>{p}</p>)}</div>{scenes[i].endsWith('.webp') ? <figure><img src={withBase(`images/${scenes[i]}`)} alt={sceneAlt} width="1200" height="900" loading="lazy" /></figure> : <AboutInfographic lang={lang} kind={scenes[i] as 'research' | 'network' | 'education'} />}</section>)}
     <p class="about-langs">{t.languages}</p>
+    <p class="about-more"><a href={localePath(lang,'cv/')}>{t.ctaCv} →</a> · <a href={localePath(lang,'teaching/')}>{({pt:'Docência',en:'Teaching',es:'Docencia',it:'Didattica'})[lang]} →</a></p>
   </div>
   <section class="about-bios" aria-labelledby="bios">
     <h2 id="bios">{t.bioTitle}</h2>
@@ -31,4 +39,5 @@ const t=about[lang];
     </div>
   </section>
 </section>
+<CareerGantt lang={lang} />
 </BaseLayout>

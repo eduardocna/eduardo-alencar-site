@@ -1,0 +1,60 @@
+---
+// "O que eu faço": 3 blocos de vidro sobre a foto do Congresso, cada um com um
+// infográfico do mecanismo (esquema, não dado) e o número explicado em uma frase.
+import type { Locale } from '../data/site';
+import { landing } from '../data/landing';
+import { localePath, withBase } from '../data/paths';
+interface Props { lang: Locale; }
+const { lang } = Astro.props;
+const t = landing[lang];
+const href = (h: string, external?: boolean) => external ? h : localePath(lang, h);
+---
+<section class="impact" id="impact" aria-labelledby="impact-title" style={`--impact-photo:url('${withBase('images/congresso-entardecer.webp')}')`}>
+  <div class="section-shell">
+    <header class="impact-head reveal">
+      <p class="eyebrow">{t.tilesEyebrow}</p>
+      <h2 id="impact-title">{t.tilesTitle}</h2>
+      <p>{t.tilesText}</p>
+    </header>
+    <div class="impact-grid">
+      {t.tiles.map((tile) => (
+        <article class="glass impact-tile reveal">
+          <figure class={`impact-figure ig-${tile.svg}`} aria-hidden="true">
+            {tile.svg === 'oversight' && (
+              <svg viewBox="0 0 240 120" role="presentation">
+                <g class="ig-pulse"><rect x="6" y="30" width="62" height="46" rx="10" class="ig-fill-a" /><text x="37" y="54" class="ig-q">?</text></g>
+                <path d="M74 53 H102" class="ig-line ig-draw" style="--i:0" /><path d="M96 47 L104 53 L96 59" class="ig-line ig-draw" style="--i:0" />
+                <g class="ig-pop" style="--i:1"><rect x="108" y="22" width="48" height="62" rx="6" class="ig-doc" /><path d="M118 38 H146 M118 48 H146 M118 58 H138" class="ig-rule" /></g>
+                <path d="M162 53 H184" class="ig-line ig-draw" style="--i:2" /><path d="M178 47 L186 53 L178 59" class="ig-line ig-draw" style="--i:2" />
+                {[40,26,48,18,34].map((h, i) => <rect x={192 + i * 9} y={84 - h} width="6" height={h} rx="2" class={`ig-bar ig-grow ig-t${i}`} style={`--i:${i}`} />)}
+              </svg>
+            )}
+            {tile.svg === 'procurement' && (
+              <svg viewBox="0 0 240 120" role="presentation">
+                {Array.from({ length: 40 }).map((_, i) => <circle cx={14 + (i % 10) * 15} cy={22 + Math.floor(i / 10) * 22} r="5" class={[7, 18, 26, 33].includes(i) ? 'ig-dot ig-hot ig-blink' : 'ig-dot ig-twinkle'} style={`--i:${(i % 10) + Math.floor(i / 10)}`} />)}
+                <path d="M166 60 H186" class="ig-line ig-draw" style="--i:1" /><path d="M180 54 L188 60 L180 66" class="ig-line ig-draw" style="--i:1" />
+                <g class="ig-scan"><circle cx="210" cy="50" r="16" class="ig-lens" /><path d="M221 62 L232 74" class="ig-handle" /><circle cx="210" cy="50" r="5" class="ig-hot ig-blink" style="--i:3" /></g>
+              </svg>
+            )}
+            {tile.svg === 'plans' && (
+              <svg viewBox="0 0 240 120" role="presentation">
+                {Array.from({ length: 13 }).map((_, i) => <rect x={8 + (i % 7) * 18} y={20 + Math.floor(i / 7) * 42} width="13" height="17" rx="2" class="ig-doc ig-pop" style={`--i:${i}`} />)}
+                <path d="M136 60 H158" class="ig-line ig-draw" style="--i:5" /><path d="M152 54 L160 60 L152 66" class="ig-line ig-draw" style="--i:5" />
+                {[0,1,2].map((i) => <g>
+                  <rect x="168" y={26 + i * 24} width="14" height="14" rx="3" class={i === 1 ? 'ig-box-off ig-pop' : 'ig-box ig-pop'} style={`--i:${7 + i * 2}`} />
+                  {i === 1 ? <path d={`M171 ${29 + i * 24} l8 8 M179 ${29 + i * 24} l-8 8`} class="ig-x ig-shake" style={`--i:${8 + i * 2}`} /> : <path d={`M171 ${33 + i * 24} l3 3 l6 -7`} class="ig-check ig-draw" style={`--i:${8 + i * 2}`} />}
+                  <path d={`M188 ${33 + i * 24} H226`} class="ig-rule ig-draw" style={`--i:${8 + i * 2}`} />
+                </g>)}
+              </svg>
+            )}
+          </figure>
+          <strong class="impact-figure-num">{tile.figure}</strong>
+          <h3>{tile.title}</h3>
+          <p>{tile.text}</p>
+          <a class="impact-link" href={href(tile.href, tile.external)} {...(tile.external ? { target: '_blank', rel: 'noreferrer' } : {})}>{tile.cta} →</a>
+        </article>
+      ))}
+    </div>
+    <p class="photo-credit">{t.photoCredit}</p>
+  </div>
+</section>

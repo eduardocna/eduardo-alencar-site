@@ -69,13 +69,11 @@ Um argumento autoral sobre por que tecnologia, controle e boas intenções não 
 
 ## Lançamento
 
-O lançamento do livro será em **22 de outubro de 2026 (quinta-feira), às 19h**, na **Livraria Leitura do Terraço Shopping (Sudoeste), em Brasília**: uma noite de conversa e autógrafos. A venda no dia é exclusiva na loja.
+O livro foi lançado em **22 de outubro de 2026**, na **Livraria Leitura do Terraço Shopping, em Brasília**, numa noite de conversa e autógrafos.
 
 Na imprensa: [“Gestão a partir de evidências”](https://www.correiobraziliense.com.br/economia/2026/10/7518431-gestao-a-partir-de-evidencias.html), entrevista ao *Correio Braziliense* (11 de outubro de 2026).
 
 [Ver a página do livro na Editora JusPodivm](https://www.editorajuspodivm.com.br/governanca-em-tempo-real-como-o-brasil-pode-parar-de-fingir-que-governa-2027-alencar)
-
-[Reservar presença no lançamento](https://forms.gle/LdBksUCusmA99NvV8)
 
 ---
 
@@ -185,6 +183,8 @@ Cinco telas: visão geral, mapa de atenção, fornecedores, órgãos e método. 
 
 Painéis de transparência construídos para a Frente Parlamentar de Fiscalização, Integridade e Transparência: transferências voluntárias da União, emendas Pix, agenda de autoridades e convênios e patrocínios da Itaipu Binacional.
 
+[Painel de convênios e patrocínios da Itaipu Binacional](https://www.frentefit.com.br/patrocinios-itaipu/) · [Transferências voluntárias](https://www.frentefit.com.br/transferencias-voluntarias/) · [Emendas Pix](https://www.frentefit.com.br/emendas-pix/) · [Agenda das autoridades](https://www.frentefit.com.br/agenda-das-autoridades/)
+
 ## Data Lake compartilhado para gabinetes parlamentares
 
 Iniciativa de integração de bases entre gabinetes para fiscalização, monitoramento legislativo, comunicação e decisão estratégica.
@@ -193,13 +193,13 @@ Iniciativa de integração de bases entre gabinetes para fiscalização, monitor
 
 # Newsletter
 
-Ensaios curtos e bilíngues que traduzem pesquisa e experiência institucional em análise utilizável sobre integridade, transparência e decisão baseada em evidência no setor público.
+Uma análise curta por semana sobre governo, dados e integridade pública, em português e inglês.
 
 ## Assinatura
 
-Newsletter semanal bilíngue, em português e inglês, sobre integridade pública, inteligência artificial no governo, fiscalização e capacidade estatal.
+**Por e-mail:** toda terça às 7h, com material extra só para quem assina. [Assine no Substack](https://eduardocnalencar.substack.com/subscribe)
 
-[Assine no LinkedIn](https://www.linkedin.com/build-relation/newsletter-follow?entityUrn=7347441938133848064)
+**No LinkedIn:** a mesma edição sai às 9h, em português, e às 11h, em inglês. [Siga a newsletter no LinkedIn](https://www.linkedin.com/build-relation/newsletter-follow?entityUrn=7347441938133848064)
 
 ## Temas
 
