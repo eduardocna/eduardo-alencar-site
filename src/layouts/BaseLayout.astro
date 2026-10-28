@@ -8,6 +8,7 @@ import '@fontsource/dm-sans/700.css';
 import '@fontsource/dm-mono/400.css';
 import { copy, locales, sectionIds, type Locale } from '../data/site';
 import { localePath, withBase } from '../data/paths';
+import { about } from '../data/about';
 interface Props { title: string; description: string; lang?: Locale; contentPath?: string; image?: string; }
 const { title, description, lang = 'en', contentPath = '', image = 'images/eduardo-alencar.jpg' } = Astro.props;
 const ui = copy[lang];
@@ -38,7 +39,7 @@ const selectedLabel = { en:'selected', pt:'selecionado', es:'seleccionado', it:'
     <a class="skip" href="#content">{ui.skip}</a>
     <header class="protobar">
       <a class="brand" href={localePath(lang)}><strong>Eduardo Alencar</strong><span>{ui.tagline}</span></a>
-      <nav aria-label={navigationLabel}>{sectionIds.map((id, index) => <a href={`${localePath(lang)}#${id}`} data-section-link={id} aria-current={contentPath === '' && id === 'home' ? 'page' : undefined}>{ui.nav[index]}</a>)}</nav>
+      <nav aria-label={navigationLabel}>{sectionIds.map((id, index) => <><a href={`${localePath(lang)}#${id}`} data-section-link={id} aria-current={contentPath === '' && id === 'home' ? 'page' : undefined}>{ui.nav[index]}</a>{id === 'home' && <a href={localePath(lang, 'about/')} aria-current={contentPath === 'about/' ? 'page' : undefined}>{about[lang].nav}</a>}</>)}</nav>
       <div class="toolbar">
         <div class="langtoggle" role="group" aria-label={languageLabel}>{locales.map((locale) => <a href={localePath(locale, contentPath)} lang={locale} hreflang={locale} aria-current={locale === lang ? 'page' : undefined} aria-label={locale === lang ? `${localeNames[locale]} ${selectedLabel}` : localeNames[locale]}>{localeNames[locale]}</a>)}</div>
         <button class="themebtn" id="themebtn" type="button" aria-label={ui.dark} aria-pressed="false"><span aria-hidden="true">◐</span> <b>{ui.dark}</b></button>

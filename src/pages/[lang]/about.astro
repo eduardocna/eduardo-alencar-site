@@ -1,0 +1,34 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { isLocale, locales } from '../../data/site';
+import { about } from '../../data/about';
+import { localePath, withBase } from '../../data/paths';
+export function getStaticPaths(){return locales.map((lang)=>({params:{lang}}));}
+const lang=isLocale(Astro.params.lang)?Astro.params.lang:'en';
+const t=about[lang];
+---
+<BaseLayout lang={lang} title={`${t.nav} | Eduardo Alencar`} description={t.meta} contentPath="about/">
+<section class="section-shell page-shell about">
+  <div class="about-head">
+    <div>
+      <p class="eyebrow">{t.eyebrow}</p>
+      <h1 class="page-title">{t.title}</h1>
+      <p class="lede">{t.lede}</p>
+      <div class="ctarow"><a class="cta" href={localePath(lang,'cv/')}>{t.ctaCv}</a><a class="cta ghost" href={localePath(lang,'contact/')}>{t.ctaContact}</a></div>
+    </div>
+    <img class="about-photo" src={withBase('images/eduardo-alencar.jpg')} alt={t.photoAlt} width="420" height="420" loading="eager" />
+  </div>
+  <div class="about-body">
+    {t.sections.map((s)=> <section><h2>{s.title}</h2>{s.paragraphs.map((p)=> <p>{p}</p>)}</section>)}
+    <p class="about-langs">{t.languages}</p>
+  </div>
+  <section class="about-bios" aria-labelledby="bios">
+    <h2 id="bios">{t.bioTitle}</h2>
+    <p class="about-note">{t.bioNote}</p>
+    <div class="about-bio-grid">
+      <article><h3>{t.shortLabel}</h3><p>{t.shortBio}</p></article>
+      <article><h3>{t.longLabel}</h3><p>{t.longBio}</p></article>
+    </div>
+  </section>
+</section>
+</BaseLayout>
