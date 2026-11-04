@@ -1,6 +1,55 @@
 {
-  "atualizado": "2026-10-29",
+  "atualizado": "2026-11-02",
   "itens": [
+    {
+      "data": "2026-11-02",
+      "canal": "linkedin",
+      "idioma": "pt",
+      "titulo": "Os primeiros resultados do Novo Marco do Saneamento",
+      "url": "https://www.linkedin.com/feed/update/urn:li:share:7523044068050968576/"
+    },
+    {
+      "data": "2026-11-02",
+      "canal": "linkedin",
+      "idioma": "en",
+      "titulo": "Os primeiros resultados do Novo Marco do Saneamento",
+      "url": "https://www.linkedin.com/feed/update/urn:li:share:7523044109448671233/"
+    },
+    {
+      "data": "2026-11-01",
+      "canal": "youtube",
+      "idioma": "pt",
+      "titulo": "O gargalo não é o dado, é a decisão (Short)",
+      "url": "https://youtu.be/_xxHzvEaE0Y"
+    },
+    {
+      "data": "2026-11-01",
+      "canal": "linkedin",
+      "idioma": "en",
+      "titulo": "Ontario audit: government AI without blocking",
+      "url": "https://www.linkedin.com/feed/update/urn:li:share:7522679458294829056/"
+    },
+    {
+      "data": "2026-11-01",
+      "canal": "linkedin",
+      "idioma": "pt",
+      "titulo": "Ontário: IA no governo sem bloqueio",
+      "url": "https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7522641927532593152"
+    },
+    {
+      "data": "2026-10-30",
+      "canal": "youtube",
+      "idioma": "pt",
+      "titulo": "Indicador amarelo não é veredito (Short)",
+      "url": "https://youtu.be/e4DN5B9iCwQ"
+    },
+    {
+      "data": "2026-10-29",
+      "canal": "linkedin",
+      "idioma": "en",
+      "titulo": "Brazil in BCG's AI Maturity Matrix",
+      "url": "https://www.linkedin.com/feed/update/urn:li:share:7521571961659953152/"
+    },
     {
       "data": "2026-10-29",
       "canal": "linkedin",
@@ -27,7 +76,7 @@
       "canal": "linkedin",
       "idioma": "pt",
       "titulo": "Policy brief: Três Horizontes na política pública",
-      "url": "https://www.linkedin.com/feed/update/urn:li:share:7521234161827880960/"
+      "url": "https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7521234161827880960"
     },
     {
       "data": "2026-10-28",
@@ -41,7 +90,7 @@
       "canal": "linkedin",
       "idioma": "pt",
       "titulo": "Dia do Servidor Público: fazer o que é certo porque é certo",
-      "url": "https://www.linkedin.com/feed/update/urn:li:share:7521211980691431424/"
+      "url": "https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7521211980691431424"
     },
     {
       "data": "2026-10-28",
@@ -161,6 +210,13 @@
       "idioma": "pt",
       "titulo": "Hoje, às 19h, lanço Governança em Tempo Real em Brasília",
       "url": "https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7518966740249346048"
+    },
+    {
+      "data": "2026-10-15",
+      "canal": "linkedin",
+      "idioma": "pt",
+      "titulo": "Autenticar a chamada não é autenticar quem chama (policy brief)",
+      "url": "https://www.linkedin.com/feed/update/urn:li:ugcPost:7516599789153832961"
     }
   ]
 }
