@@ -4,6 +4,20 @@
     {
       "data": "2026-11-11",
       "canal": "linkedin",
+      "idioma": "pt",
+      "titulo": "Energia limpa virou o gargalo da IA",
+      "url": "https://www.linkedin.com/feed/update/urn:li:share:7526320364591734784/"
+    },
+    {
+      "data": "2026-11-11",
+      "canal": "linkedin",
+      "idioma": "en",
+      "titulo": "Clean energy is now AI's bottleneck",
+      "url": "https://www.linkedin.com/feed/update/urn:li:share:7526307783076589569/"
+    },
+    {
+      "data": "2026-11-11",
+      "canal": "linkedin",
       "idioma": "en",
       "titulo": "Regulating AI requires multidisciplinary debate",
       "url": "https://www.linkedin.com/feed/update/urn:li:share:7526286715985203201/"
@@ -266,20 +280,6 @@
       "idioma": "pt",
       "titulo": "O lançamento de Governança em Tempo Real, em vídeo",
       "url": "https://www.linkedin.com/feed/update/urn%3Ali%3AugcPost%3A7519526771201953793"
-    },
-    {
-      "data": "2026-10-22",
-      "canal": "linkedin",
-      "idioma": "en",
-      "titulo": "Today I launch Governança em Tempo Real in Brasília",
-      "url": "https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7518967625582964736"
-    },
-    {
-      "data": "2026-10-22",
-      "canal": "linkedin",
-      "idioma": "pt",
-      "titulo": "Hoje, às 19h, lanço Governança em Tempo Real em Brasília",
-      "url": "https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7518966740249346048"
     }
   ]
 }
