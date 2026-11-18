@@ -1,6 +1,20 @@
 {
-  "atualizado": "2026-11-17",
+  "atualizado": "2026-11-18",
   "itens": [
+    {
+      "data": "2026-11-18",
+      "canal": "linkedin",
+      "idioma": "en",
+      "titulo": "Integrity: prevention",
+      "url": "https://www.linkedin.com/feed/update/urn:li:ugcPost:7528819534481461249/"
+    },
+    {
+      "data": "2026-11-18",
+      "canal": "linkedin",
+      "idioma": "pt",
+      "titulo": "Integridade: prevenção",
+      "url": "https://www.linkedin.com/feed/update/urn:li:ugcPost:7528827864906035200/"
+    },
     {
       "data": "2026-11-17",
       "canal": "newsletter",
@@ -266,20 +280,6 @@
       "idioma": "en",
       "titulo": "Tomorrow: a short video on 20+ years in public service",
       "url": "https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7520517384512782337"
-    },
-    {
-      "data": "2026-10-26",
-      "canal": "linkedin",
-      "idioma": "pt",
-      "titulo": "Amanhã: um vídeo sobre 20 anos no serviço público",
-      "url": "https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7520516879178989568"
-    },
-    {
-      "data": "2026-10-26",
-      "canal": "linkedin",
-      "idioma": "es",
-      "titulo": "Un sistema puede existir sin mejorar la decisión (Capítulo 8)",
-      "url": "https://www.linkedin.com/feed/update/urn%3Ali%3AugcPost%3A7520478813072453633"
     }
   ]
 }
