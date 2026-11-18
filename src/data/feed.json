@@ -1,6 +1,34 @@
 {
-  "atualizado": "2026-11-11",
+  "atualizado": "2026-11-17",
   "itens": [
+    {
+      "data": "2026-11-17",
+      "canal": "newsletter",
+      "idioma": "en",
+      "titulo": "Measuring Corruption Without Overclaiming: When the Right Answer Depends on Who Owns the System",
+      "url": "https://www.linkedin.com/pulse/measuring-corruption-without-overclaiming-when-right-answer-alencar-pyzgf/"
+    },
+    {
+      "data": "2026-11-17",
+      "canal": "newsletter",
+      "idioma": "pt",
+      "titulo": "Medir corrupção sem exagerar: quando a resposta certa depende de quem é dono do sistema",
+      "url": "https://www.linkedin.com/pulse/medir-corrup%C3%A7%C3%A3o-sem-exagerar-quando-resposta-certa-depende-alencar-mm0if/"
+    },
+    {
+      "data": "2026-11-12",
+      "canal": "linkedin",
+      "idioma": "en",
+      "titulo": "WEF framework for agentic AI government readiness",
+      "url": "https://www.linkedin.com/feed/update/urn:li:share:7526783420346097664/"
+    },
+    {
+      "data": "2026-11-12",
+      "canal": "linkedin",
+      "idioma": "pt",
+      "titulo": "WEF: framework de prontidão institucional para IA agêntica",
+      "url": "https://www.linkedin.com/feed/update/urn:li:share:7526753220229099520/"
+    },
     {
       "data": "2026-11-11",
       "canal": "linkedin",
@@ -252,34 +280,6 @@
       "idioma": "es",
       "titulo": "Un sistema puede existir sin mejorar la decisión (Capítulo 8)",
       "url": "https://www.linkedin.com/feed/update/urn%3Ali%3AugcPost%3A7520478813072453633"
-    },
-    {
-      "data": "2026-10-26",
-      "canal": "linkedin",
-      "idioma": "it",
-      "titulo": "Un sistema può esistere senza migliorare la decisione (Capitolo 8)",
-      "url": "https://www.linkedin.com/feed/update/urn%3Ali%3AugcPost%3A7520478566656917506"
-    },
-    {
-      "data": "2026-10-26",
-      "canal": "linkedin",
-      "idioma": "en",
-      "titulo": "A system can exist without improving a decision (Chapter 8, carousel)",
-      "url": "https://www.linkedin.com/feed/update/urn%3Ali%3AugcPost%3A7520478287622758400"
-    },
-    {
-      "data": "2026-10-26",
-      "canal": "youtube",
-      "idioma": "pt",
-      "titulo": "Paciente, biópsia e necropsia (Short)",
-      "url": "https://youtu.be/3Qk4oG190Gc"
-    },
-    {
-      "data": "2026-10-23",
-      "canal": "linkedin",
-      "idioma": "pt",
-      "titulo": "O lançamento de Governança em Tempo Real, em vídeo",
-      "url": "https://www.linkedin.com/feed/update/urn%3Ali%3AugcPost%3A7519526771201953793"
     }
   ]
 }
